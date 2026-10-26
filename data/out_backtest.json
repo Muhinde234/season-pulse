@@ -1,0 +1,34 @@
+{
+  "test_cells_2024": 303,
+  "mae_log_naive": 0.48,
+  "mae_log_model": 0.416,
+  "error_reduction_pct": 13.3,
+  "low_district_flags": {
+    "actual_low": 84,
+    "flagged": 69,
+    "precision": 0.45,
+    "recall": 0.37
+  },
+  "by_crop_mae": {
+    "Beans": {
+      "naive": 0.45,
+      "model": 0.393
+    },
+    "Cassava": {
+      "naive": 0.301,
+      "model": 0.35
+    },
+    "Irish potatoes": {
+      "naive": 0.414,
+      "model": 0.335
+    },
+    "Maize": {
+      "naive": 0.689,
+      "model": 0.512
+    },
+    "Tomatoes": {
+      "naive": 0.561,
+      "model": 0.5
+    }
+  }
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Field reports are runtime data, never committed
+data/reports.db
+
+# Large raw census (37 MB) - only its aggregate data/district_cooperatives.csv is needed by the app
+data/raw/establishment_census.csv
+# Intermediate file containing raw (unit-inconsistent) yields - not used by the app
+data/out_sas_clean_ryi.csv
