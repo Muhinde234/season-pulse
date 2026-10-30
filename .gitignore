@@ -4,9 +4,12 @@ __pycache__/
 venv/
 
 # Field reports are runtime data, never committed
-data/reports.db
+app_data/reports.db
 
-# Large raw census (37 MB) - only its aggregate data/district_cooperatives.csv is needed by the app
+# Large raw census (37 MB) - only its aggregate app_data/district_cooperatives.csv is needed by the app
 data/raw/establishment_census.csv
 # Intermediate file containing raw (unit-inconsistent) yields - not used by the app
 data/out_sas_clean_ryi.csv
+
+# CHIRPS monthly rasters (~250 MB) - only the per-district aggregates in app_data/ are committed
+data/raw/chirps/

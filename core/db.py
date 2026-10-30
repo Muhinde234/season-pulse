@@ -8,7 +8,7 @@ import pandas as pd
 
 from core.data import CROPS, DISTRICT_PROVINCE, DISTRICTS
 
-DB_PATH = Path(__file__).resolve().parent.parent / "data" / "reports.db"
+DB_PATH = Path(__file__).resolve().parent.parent / "app_data" / "reports.db"
 
 SIM_COUNT = 150
 RAIN_OPTIONS = ["None", "Too little rain / dry spell", "Too much rain / flooding", "Late onset of rains"]
@@ -25,25 +25,32 @@ CREATE TABLE IF NOT EXISTS reports (
     rain_problem TEXT NOT NULL,
     notes TEXT,
     reporter TEXT,
-    is_simulated INTEGER NOT NULL DEFAULT 0
+    is_simulated INTEGER NOT NULL DEFAULT 0,
+    source TEXT NOT NULL DEFAULT 'Web form'
 )
 """
+SOURCES = ["Web form", "USSD (simulated)", "Simulator"]
 
 
 def _conn() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.execute(SCHEMA)
+    # Databases created before the source column existed: add it (existing rows count as web-form reports)
+    if "source" not in {row[1] for row in conn.execute("PRAGMA table_info(reports)")}:
+        conn.execute("ALTER TABLE reports ADD COLUMN source TEXT NOT NULL DEFAULT 'Web form'")
+        conn.execute("UPDATE reports SET source = 'Simulator' WHERE is_simulated = 1")
     return conn
 
 
 def add_report(district, crop, season, condition, pests, rain_problem, notes="", reporter="", simulated=False,
-               created_at=None):
+               created_at=None, source=None):
+    source = source or ("Simulator" if simulated else "Web form")
     with _conn() as conn:
         conn.execute(
             "INSERT INTO reports (created_at, district, crop, season, condition, pests, rain_problem, notes, "
-            "reporter, is_simulated) VALUES (?,?,?,?,?,?,?,?,?,?)",
+            "reporter, is_simulated, source) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
             ((created_at or datetime.now()).isoformat(timespec="seconds"), district, crop, season, int(condition),
-             int(pests), rain_problem, notes, reporter, int(simulated)),
+             int(pests), rain_problem, notes, reporter, int(simulated), source),
         )
 
 

@@ -4,20 +4,25 @@ Run locally:  streamlit run app.py
 """
 import streamlit as st
 
+from core.ui import apply_theme, sidebar_brand, sidebar_note
+
 st.set_page_config(page_title="Season Pulse", page_icon="🌱", layout="wide")
+apply_theme()
 
-pages = [
-    st.Page("views/map.py", title="District map", icon="🗺️", default=True),
-    st.Page("views/report.py", title="Field report", icon="📝"),
-    st.Page("views/alerts.py", title="Alerts", icon="🚨"),
-    st.Page("views/model.py", title="Model & limitations", icon="📊"),
-]
+pages = {
+    "Monitor": [
+        st.Page("views/map.py", title="District Risk Map", icon=":material/map:", default=True),
+        st.Page("views/alerts.py", title="Alerts & Recommended Actions", icon=":material/notifications_active:"),
+    ],
+    "Report": [
+        st.Page("views/report.py", title="Submit Field Report", icon=":material/edit_note:"),
+        st.Page("views/ussd.py", title="USSD prototype", icon=":material/dialpad:"),
+    ],
+    "About": [
+        st.Page("views/model.py", title="Model & Data Quality", icon=":material/insights:"),
+    ],
+}
 
-with st.sidebar:
-    st.markdown("### 🌱 Season Pulse")
-    st.caption("In-season crop early warning · NISR Hackathon 2026")
-
+sidebar_brand()
 st.navigation(pages).run()
-
-st.sidebar.caption("Yields shown as **% vs typical district** (Relative Yield Index), never kg/ha. "
-                   "Data: NISR SAS 2020–2024, EICV 2020, Establishment Census; boundaries © geoBoundaries (CC BY 4.0).")
+sidebar_note()

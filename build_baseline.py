@@ -73,8 +73,8 @@ full["baseline_RYI"] = np.exp(full.baseline_logRYI * full.n_years / (full.n_year
 full["persistently_low"] = (full.baseline_RYI < 0.8) & (full.n_years >= 3)
 
 d.to_csv("data/out_sas_clean_ryi.csv", index=False)
-full.to_csv("data/out_district_baseline.csv", index=False)
-json.dump(results, open("data/out_backtest.json", "w"), indent=2)
+full.to_csv("app_data/out_district_baseline.csv", index=False)
+json.dump(results, open("app_data/out_backtest.json", "w"), indent=2)
 print(json.dumps(results, indent=2))
 print("\nPersistently low (>=3 yrs, RYI<0.8):")
 print(full[full.persistently_low].sort_values("baseline_RYI")[grp + ["baseline_RYI", "n_years"]].to_string(index=False))

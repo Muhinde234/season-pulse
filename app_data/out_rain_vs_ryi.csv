@@ -1,0 +1,1038 @@
+DistrictName,CropName,Season,Year,logRYI,ryi_dev,rain_mm,avg_mm,rain_anom_pct,rain_rel
+Bugesera,Beans,SeasonA,2020,-0.8719,-0.4997,406.9,402.0,1.2,-0.0197
+Bugesera,Irish potatoes,SeasonA,2020,-0.3064,-0.4849,406.9,402.0,1.2,-0.0197
+Gatsibo,Beans,SeasonA,2020,0.2969,0.124,474.8,451.2,5.2,0.0192
+Gatsibo,Irish potatoes,SeasonA,2020,-1.0272,-0.8635,474.8,451.2,5.2,0.0192
+Kayonza,Beans,SeasonA,2020,-0.604,-0.3512,453.3,433.6,4.5,0.0126
+Kayonza,Irish potatoes,SeasonA,2020,-0.8765,-0.7027,453.3,433.6,4.5,0.0126
+Kirehe,Beans,SeasonA,2020,0.8298,0.8999,435.8,427.7,1.9,-0.0131
+Kirehe,Cassava,SeasonA,2020,0.0765,0.0713,435.8,427.7,1.9,-0.0131
+Ngoma,Beans,SeasonA,2020,0.7237,0.3314,409.0,417.8,-2.1,-0.0531
+Nyagatare,Beans,SeasonA,2020,0.2879,0.2264,464.1,454.6,2.1,-0.0111
+Rwamagana,Beans,SeasonA,2020,0.3454,0.3499,386.5,401.8,-3.8,-0.0706
+Gasabo,Beans,SeasonA,2020,-0.7513,-0.4171,414.4,432.1,-4.1,-0.0736
+Gasabo,Cassava,SeasonA,2020,-0.1239,-0.1244,414.4,432.1,-4.1,-0.0736
+Gasabo,Irish potatoes,SeasonA,2020,-0.79,-0.5248,414.4,432.1,-4.1,-0.0736
+Kicukiro,Beans,SeasonA,2020,-0.0386,-0.0967,405.7,413.0,-1.8,-0.0497
+Kicukiro,Cassava,SeasonA,2020,-0.0793,-0.0927,405.7,413.0,-1.8,-0.0497
+Nyarugenge,Beans,SeasonA,2020,-0.0976,0.1564,422.8,429.7,-1.6,-0.048
+Burera,Beans,SeasonA,2020,0.0206,-0.5586,517.0,521.6,-0.9,-0.0407
+Gakenke,Beans,SeasonA,2020,0.4008,0.432,505.1,499.2,1.2,-0.0201
+Gakenke,Cassava,SeasonA,2020,0.0745,0.1705,505.1,499.2,1.2,-0.0201
+Gicumbi,Beans,SeasonA,2020,-0.3964,-0.9277,456.6,462.8,-1.3,-0.0453
+Musanze,Beans,SeasonA,2020,0.0295,-0.2837,609.3,609.0,0.1,-0.0313
+Rulindo,Beans,SeasonA,2020,-0.5704,-0.8083,460.3,470.3,-2.1,-0.0533
+Rulindo,Irish potatoes,SeasonA,2020,0.0,-0.1597,460.3,470.3,-2.1,-0.0533
+Gisagara,Cassava,SeasonA,2020,0.0,0.1315,521.8,528.3,-1.2,-0.0442
+Huye,Beans,SeasonA,2020,-0.0026,-0.0793,533.0,509.2,4.7,0.0139
+Huye,Cassava,SeasonA,2020,0.0411,0.0066,533.0,509.2,4.7,0.0139
+Kamonyi,Beans,SeasonA,2020,-0.1899,-0.0623,451.2,440.5,2.4,-0.0078
+Kamonyi,Cassava,SeasonA,2020,-0.34,0.0114,451.2,440.5,2.4,-0.0078
+Muhanga,Beans,SeasonA,2020,0.1356,-0.209,523.6,486.1,7.7,0.0425
+Muhanga,Cassava,SeasonA,2020,0.3501,0.4463,523.6,486.1,7.7,0.0425
+Nyamagabe,Beans,SeasonA,2020,-0.3088,-0.5291,607.1,538.4,12.8,0.0883
+Nyamagabe,Cassava,SeasonA,2020,-0.017,0.018,607.1,538.4,12.8,0.0883
+Nyanza,Beans,SeasonA,2020,0.6539,0.8326,494.1,474.9,4.0,0.0078
+Nyanza,Cassava,SeasonA,2020,0.0015,0.0387,494.1,474.9,4.0,0.0078
+Nyaruguru,Beans,SeasonA,2020,-0.4346,-0.4661,642.4,583.5,10.1,0.0643
+Nyaruguru,Cassava,SeasonA,2020,0.4037,0.3423,642.4,583.5,10.1,0.0643
+Nyaruguru,Irish potatoes,SeasonA,2020,0.2161,0.1994,642.4,583.5,10.1,0.0643
+Ruhango,Beans,SeasonA,2020,0.3422,0.3988,479.7,447.1,7.3,0.0386
+Ruhango,Cassava,SeasonA,2020,0.294,0.2601,479.7,447.1,7.3,0.0386
+Ruhango,Irish potatoes,SeasonA,2020,0.145,0.2833,479.7,447.1,7.3,0.0386
+Karongi,Beans,SeasonA,2020,0.0025,-0.2463,540.7,483.7,11.8,0.0796
+Karongi,Cassava,SeasonA,2020,0.3147,0.0445,540.7,483.7,11.8,0.0796
+Ngororero,Beans,SeasonA,2020,-0.2484,-0.4454,568.3,510.9,11.2,0.0747
+Ngororero,Cassava,SeasonA,2020,0.5089,0.5444,568.3,510.9,11.2,0.0747
+Nyabihu,Beans,SeasonA,2020,0.6137,-0.2069,590.1,558.7,5.6,0.0229
+Nyabihu,Irish potatoes,SeasonA,2020,0.2692,0.0434,590.1,558.7,5.6,0.0229
+Nyamasheke,Beans,SeasonA,2020,-0.7955,-0.583,596.3,552.2,8.0,0.045
+Nyamasheke,Cassava,SeasonA,2020,-0.1563,-0.1186,596.3,552.2,8.0,0.045
+Rubavu,Beans,SeasonA,2020,1.0839,-0.0023,517.7,496.9,4.2,0.0092
+Rusizi,Beans,SeasonA,2020,0.2653,0.4112,623.8,578.2,7.9,0.0441
+Rusizi,Cassava,SeasonA,2020,-0.0578,0.1559,623.8,578.2,7.9,0.0441
+Rutsiro,Beans,SeasonA,2020,-0.0441,-0.0092,526.6,479.8,9.8,0.0613
+Rutsiro,Cassava,SeasonA,2020,0.2265,-0.0129,526.6,479.8,9.8,0.0613
+Bugesera,Beans,SeasonB,2020,-0.2065,0.2363,346.7,365.9,-5.3,-0.0321
+Bugesera,Cassava,SeasonB,2020,-0.0022,-0.1309,346.7,365.9,-5.3,-0.0321
+Bugesera,Irish potatoes,SeasonB,2020,0.0583,0.186,346.7,365.9,-5.3,-0.0321
+Gatsibo,Beans,SeasonB,2020,-0.4821,-0.2217,432.1,406.3,6.3,0.0834
+Gatsibo,Irish potatoes,SeasonB,2020,-0.6194,-0.8095,432.1,406.3,6.3,0.0834
+Kayonza,Beans,SeasonB,2020,-0.2078,-0.0304,449.3,406.1,10.6,0.1229
+Kayonza,Cassava,SeasonB,2020,0.2134,0.0872,449.3,406.1,10.6,0.1229
+Kirehe,Beans,SeasonB,2020,-1.3424,-0.9445,409.4,408.1,0.3,0.025
+Kirehe,Cassava,SeasonB,2020,-0.5566,-0.4653,409.4,408.1,0.3,0.025
+Ngoma,Beans,SeasonB,2020,0.3034,0.7061,387.7,396.9,-2.3,-0.0016
+Ngoma,Cassava,SeasonB,2020,-0.4886,-0.8782,387.7,396.9,-2.3,-0.0016
+Nyagatare,Beans,SeasonB,2020,-0.1064,0.1182,379.3,362.5,4.6,0.0671
+Nyagatare,Cassava,SeasonB,2020,-0.6574,-0.6023,379.3,362.5,4.6,0.0671
+Rwamagana,Beans,SeasonB,2020,-2.0294,-1.0478,383.2,392.2,-2.3,-0.0014
+Rwamagana,Cassava,SeasonB,2020,0.0375,0.0095,383.2,392.2,-2.3,-0.0014
+Rwamagana,Irish potatoes,SeasonB,2020,-0.1816,-0.7035,383.2,392.2,-2.3,-0.0014
+Gasabo,Beans,SeasonB,2020,0.0281,0.1935,371.7,399.8,-7.0,-0.0511
+Gasabo,Cassava,SeasonB,2020,-1.1489,-0.9264,371.7,399.8,-7.0,-0.0511
+Gasabo,Irish potatoes,SeasonB,2020,0.5094,0.7739,371.7,399.8,-7.0,-0.0511
+Kicukiro,Cassava,SeasonB,2020,-0.3925,-0.2704,358.0,380.8,-6.0,-0.0399
+Nyarugenge,Beans,SeasonB,2020,-0.2356,0.08,357.9,394.3,-9.2,-0.075
+Burera,Beans,SeasonB,2020,0.1408,-0.1385,412.3,437.7,-5.8,-0.038
+Gakenke,Beans,SeasonB,2020,-0.008,-0.0806,410.1,451.2,-9.1,-0.0737
+Gakenke,Cassava,SeasonB,2020,0.3464,0.3482,410.1,451.2,-9.1,-0.0737
+Gicumbi,Beans,SeasonB,2020,0.1526,-0.417,404.2,438.5,-7.8,-0.0596
+Musanze,Beans,SeasonB,2020,0.1188,-0.0329,489.2,499.3,-2.0,0.0014
+Rulindo,Beans,SeasonB,2020,0.4667,0.3343,402.4,453.3,-11.2,-0.0973
+Gisagara,Beans,SeasonB,2020,-1.1164,-0.7899,467.3,473.4,-1.3,0.0089
+Gisagara,Cassava,SeasonB,2020,-0.6183,-0.1932,467.3,473.4,-1.3,0.0089
+Huye,Cassava,SeasonB,2020,-0.439,-0.1299,471.5,488.9,-3.6,-0.0144
+Kamonyi,Beans,SeasonB,2020,-0.573,-0.5386,366.5,399.0,-8.1,-0.0631
+Kamonyi,Cassava,SeasonB,2020,-0.2302,-0.1619,366.5,399.0,-8.1,-0.0631
+Muhanga,Beans,SeasonB,2020,0.054,-0.1031,406.5,431.4,-5.8,-0.0376
+Muhanga,Cassava,SeasonB,2020,0.0429,0.1973,406.5,431.4,-5.8,-0.0376
+Muhanga,Irish potatoes,SeasonB,2020,-0.1854,0.1788,406.5,431.4,-5.8,-0.0376
+Nyamagabe,Beans,SeasonB,2020,0.1997,-0.047,521.0,510.5,2.1,0.0422
+Nyamagabe,Cassava,SeasonB,2020,0.2537,0.2158,521.0,510.5,2.1,0.0422
+Nyanza,Beans,SeasonB,2020,-0.3642,-0.3108,422.7,444.2,-4.8,-0.0278
+Nyanza,Cassava,SeasonB,2020,-0.4724,-0.0096,422.7,444.2,-4.8,-0.0278
+Nyaruguru,Beans,SeasonB,2020,0.1773,-0.6624,566.9,536.6,5.6,0.0768
+Nyaruguru,Irish potatoes,SeasonB,2020,0.3584,-0.1713,566.9,536.6,5.6,0.0768
+Ruhango,Beans,SeasonB,2020,-0.919,-0.3035,405.2,418.9,-3.3,-0.0114
+Ruhango,Cassava,SeasonB,2020,0.109,-0.0104,405.2,418.9,-3.3,-0.0114
+Ruhango,Irish potatoes,SeasonB,2020,0.1544,0.283,405.2,418.9,-3.3,-0.0114
+Karongi,Beans,SeasonB,2020,0.2258,0.0026,435.1,423.1,2.8,0.0498
+Karongi,Cassava,SeasonB,2020,0.289,-0.0465,435.1,423.1,2.8,0.0498
+Ngororero,Beans,SeasonB,2020,-0.7345,-0.4955,448.6,452.9,-0.9,0.0123
+Ngororero,Cassava,SeasonB,2020,-0.0995,-0.2331,448.6,452.9,-0.9,0.0123
+Nyabihu,Beans,SeasonB,2020,0.6654,-0.1806,472.2,479.5,-1.5,0.0065
+Nyabihu,Cassava,SeasonB,2020,-0.5155,-0.1993,472.2,479.5,-1.5,0.0065
+Nyabihu,Irish potatoes,SeasonB,2020,1.3374,1.0092,472.2,479.5,-1.5,0.0065
+Nyamasheke,Beans,SeasonB,2020,0.4049,0.2842,496.4,478.9,3.6,0.0577
+Nyamasheke,Cassava,SeasonB,2020,-0.1149,-0.1262,496.4,478.9,3.6,0.0577
+Rubavu,Beans,SeasonB,2020,0.2066,-0.4226,406.0,399.8,1.6,0.0372
+Rusizi,Beans,SeasonB,2020,-0.2621,-0.1451,520.5,492.3,5.7,0.0775
+Rusizi,Cassava,SeasonB,2020,0.1833,0.3732,520.5,492.3,5.7,0.0775
+Rutsiro,Beans,SeasonB,2020,0.0079,-0.0917,418.7,407.3,2.8,0.0494
+Rutsiro,Cassava,SeasonB,2020,0.0022,0.1924,418.7,407.3,2.8,0.0494
+Bugesera,Beans,SeasonA,2021,-0.1799,0.1923,506.6,402.0,26.0,0.0744
+Bugesera,Irish potatoes,SeasonA,2021,0.6609,0.4824,506.6,402.0,26.0,0.0744
+Gatsibo,Beans,SeasonA,2021,0.1801,0.0072,529.4,451.2,17.3,0.003
+Kayonza,Beans,SeasonA,2021,-0.7283,-0.4755,529.6,433.6,22.1,0.0432
+Kirehe,Beans,SeasonA,2021,-0.1189,-0.0489,525.5,427.7,22.9,0.0491
+Ngoma,Beans,SeasonA,2021,0.9346,0.5423,536.2,417.8,28.3,0.0927
+Nyagatare,Beans,SeasonA,2021,0.9709,0.9095,526.3,454.6,15.8,-0.0104
+Rwamagana,Beans,SeasonA,2021,-0.2019,-0.1974,510.1,401.8,26.9,0.0818
+Gasabo,Beans,SeasonA,2021,-0.4943,-0.1601,514.4,432.1,19.0,0.0175
+Gasabo,Irish potatoes,SeasonA,2021,-0.5789,-0.3137,514.4,432.1,19.0,0.0175
+Kicukiro,Beans,SeasonA,2021,0.1247,0.0666,516.4,413.0,25.1,0.0666
+Nyarugenge,Beans,SeasonA,2021,-0.153,0.101,516.9,429.7,20.3,0.0279
+Burera,Beans,SeasonA,2021,-0.0028,-0.582,600.0,521.6,15.0,-0.0168
+Gakenke,Beans,SeasonA,2021,-0.0335,-0.0024,573.4,499.2,14.9,-0.0182
+Gakenke,Cassava,SeasonA,2021,0.6479,0.7438,573.4,499.2,14.9,-0.0182
+Gicumbi,Beans,SeasonA,2021,0.0947,-0.4366,552.6,462.8,19.4,0.0205
+Musanze,Beans,SeasonA,2021,0.0028,-0.3105,654.1,609.0,7.4,-0.0854
+Rulindo,Beans,SeasonA,2021,0.4606,0.2227,548.5,470.3,16.6,-0.003
+Rulindo,Irish potatoes,SeasonA,2021,0.1523,-0.0074,548.5,470.3,16.6,-0.003
+Gisagara,Beans,SeasonA,2021,-0.67,-0.2446,640.8,528.3,21.3,0.0362
+Gisagara,Cassava,SeasonA,2021,-0.3944,-0.2629,640.8,528.3,21.3,0.0362
+Huye,Beans,SeasonA,2021,1.6912,1.6145,610.1,509.2,19.8,0.024
+Huye,Cassava,SeasonA,2021,0.0363,0.0017,610.1,509.2,19.8,0.024
+Kamonyi,Beans,SeasonA,2021,0.7739,0.9015,521.5,440.5,18.4,0.012
+Kamonyi,Cassava,SeasonA,2021,-0.8444,-0.493,521.5,440.5,18.4,0.012
+Muhanga,Beans,SeasonA,2021,-0.1302,-0.4748,560.1,486.1,15.2,-0.0151
+Muhanga,Cassava,SeasonA,2021,0.6896,0.7857,560.1,486.1,15.2,-0.0151
+Muhanga,Irish potatoes,SeasonA,2021,-0.7495,-0.4357,560.1,486.1,15.2,-0.0151
+Nyamagabe,Beans,SeasonA,2021,-0.5059,-0.7262,576.2,538.4,7.0,-0.089
+Nyamagabe,Cassava,SeasonA,2021,0.4624,0.4975,576.2,538.4,7.0,-0.089
+Nyanza,Beans,SeasonA,2021,0.0168,0.1955,577.2,474.9,21.5,0.0383
+Nyaruguru,Beans,SeasonA,2021,-0.6454,-0.6769,637.2,583.5,9.2,-0.0688
+Nyaruguru,Cassava,SeasonA,2021,0.3686,0.3071,637.2,583.5,9.2,-0.0688
+Ruhango,Beans,SeasonA,2021,-0.6684,-0.6118,529.0,447.1,18.3,0.0114
+Ruhango,Cassava,SeasonA,2021,0.1722,0.1383,529.0,447.1,18.3,0.0114
+Ruhango,Irish potatoes,SeasonA,2021,0.1044,0.2427,529.0,447.1,18.3,0.0114
+Karongi,Beans,SeasonA,2021,0.7437,0.4949,509.7,483.7,5.4,-0.1045
+Karongi,Cassava,SeasonA,2021,1.0708,0.8006,509.7,483.7,5.4,-0.1045
+Ngororero,Beans,SeasonA,2021,0.2052,0.0082,550.2,510.9,7.7,-0.0827
+Ngororero,Cassava,SeasonA,2021,0.6549,0.6904,550.2,510.9,7.7,-0.0827
+Nyabihu,Beans,SeasonA,2021,0.7758,-0.0448,568.4,558.7,1.7,-0.1396
+Nyamasheke,Beans,SeasonA,2021,-0.2423,-0.0298,568.7,552.2,3.0,-0.1274
+Nyamasheke,Cassava,SeasonA,2021,-0.2225,-0.1848,568.7,552.2,3.0,-0.1274
+Rubavu,Beans,SeasonA,2021,1.3533,0.2671,478.2,496.9,-3.8,-0.1952
+Rusizi,Beans,SeasonA,2021,-0.522,-0.3761,596.2,578.2,3.1,-0.1262
+Rusizi,Cassava,SeasonA,2021,-0.0376,0.1761,596.2,578.2,3.1,-0.1262
+Rutsiro,Beans,SeasonA,2021,0.551,0.586,479.1,479.8,-0.2,-0.1583
+Rutsiro,Cassava,SeasonA,2021,1.0158,0.7764,479.1,479.8,-0.2,-0.1583
+Bugesera,Beans,SeasonB,2021,-0.1129,0.3299,400.4,365.9,9.4,0.0483
+Bugesera,Cassava,SeasonB,2021,0.5093,0.3805,400.4,365.9,9.4,0.0483
+Bugesera,Irish potatoes,SeasonB,2021,0.4527,0.5804,400.4,365.9,9.4,0.0483
+Gatsibo,Beans,SeasonB,2021,0.2089,0.4692,453.6,406.3,11.6,0.0683
+Kayonza,Beans,SeasonB,2021,-0.362,-0.1847,455.4,406.1,12.1,0.0728
+Kirehe,Beans,SeasonB,2021,-0.7256,-0.3276,459.3,408.1,12.5,0.0764
+Kirehe,Cassava,SeasonB,2021,-0.8341,-0.7428,459.3,408.1,12.5,0.0764
+Ngoma,Beans,SeasonB,2021,-0.3362,0.0664,447.0,396.9,12.6,0.0771
+Ngoma,Cassava,SeasonB,2021,-0.705,-1.0947,447.0,396.9,12.6,0.0771
+Nyagatare,Beans,SeasonB,2021,-0.1339,0.0908,378.5,362.5,4.4,0.0014
+Rwamagana,Beans,SeasonB,2021,-1.4722,-0.4906,450.1,392.2,14.8,0.0959
+Rwamagana,Irish potatoes,SeasonB,2021,1.1698,0.6479,450.1,392.2,14.8,0.0959
+Gasabo,Beans,SeasonB,2021,0.1865,0.352,458.5,399.8,14.7,0.0952
+Gasabo,Irish potatoes,SeasonB,2021,-0.9474,-0.6829,458.5,399.8,14.7,0.0952
+Kicukiro,Beans,SeasonB,2021,1.7015,1.0289,445.1,380.8,16.9,0.1142
+Kicukiro,Cassava,SeasonB,2021,-1.106,-0.9838,445.1,380.8,16.9,0.1142
+Nyarugenge,Beans,SeasonB,2021,0.0109,0.3264,446.2,394.3,13.1,0.0818
+Burera,Beans,SeasonB,2021,-0.5811,-0.8603,376.5,437.7,-14.0,-0.1924
+Gakenke,Beans,SeasonB,2021,-0.3224,-0.3951,417.3,451.2,-7.5,-0.1199
+Gakenke,Cassava,SeasonB,2021,-0.1601,-0.1583,417.3,451.2,-7.5,-0.1199
+Gicumbi,Beans,SeasonB,2021,0.0097,-0.5599,456.6,438.5,4.1,-0.0014
+Musanze,Beans,SeasonB,2021,-0.0972,-0.2489,399.0,499.3,-20.1,-0.2661
+Rulindo,Beans,SeasonB,2021,0.2176,0.0852,480.2,453.3,5.9,0.0158
+Gisagara,Beans,SeasonB,2021,0.1911,0.5177,507.3,473.4,7.2,0.0273
+Gisagara,Cassava,SeasonB,2021,-1.3031,-0.8779,507.3,473.4,7.2,0.0273
+Huye,Beans,SeasonB,2021,0.0535,0.0006,534.1,488.9,9.2,0.0466
+Huye,Cassava,SeasonB,2021,-0.776,-0.4669,534.1,488.9,9.2,0.0466
+Kamonyi,Beans,SeasonB,2021,1.1179,1.1524,423.3,399.0,6.1,0.0173
+Kamonyi,Cassava,SeasonB,2021,0.558,0.6263,423.3,399.0,6.1,0.0173
+Muhanga,Beans,SeasonB,2021,-0.4882,-0.6452,416.5,431.4,-3.5,-0.077
+Muhanga,Cassava,SeasonB,2021,0.3017,0.4562,416.5,431.4,-3.5,-0.077
+Nyamagabe,Beans,SeasonB,2021,-0.6825,-0.9292,465.5,510.5,-8.8,-0.1341
+Nyamagabe,Cassava,SeasonB,2021,0.4587,0.4209,465.5,510.5,-8.8,-0.1341
+Nyanza,Beans,SeasonB,2021,0.1548,0.2082,478.8,444.2,7.8,0.0332
+Nyanza,Cassava,SeasonB,2021,-1.3216,-0.8588,478.8,444.2,7.8,0.0332
+Nyaruguru,Beans,SeasonB,2021,0.1207,-0.719,507.6,536.6,-5.4,-0.0974
+Nyaruguru,Irish potatoes,SeasonB,2021,0.8636,0.3338,507.6,536.6,-5.4,-0.0974
+Ruhango,Beans,SeasonB,2021,-0.3276,0.2879,421.1,418.9,0.5,-0.0366
+Ruhango,Cassava,SeasonB,2021,-0.3303,-0.4497,421.1,418.9,0.5,-0.0366
+Ruhango,Irish potatoes,SeasonB,2021,0.1755,0.3041,421.1,418.9,0.5,-0.0366
+Karongi,Beans,SeasonB,2021,0.7338,0.5107,353.1,423.1,-16.6,-0.2227
+Karongi,Cassava,SeasonB,2021,1.3137,0.9782,353.1,423.1,-16.6,-0.2227
+Ngororero,Beans,SeasonB,2021,0.0874,0.3265,377.9,452.9,-16.6,-0.2229
+Nyabihu,Beans,SeasonB,2021,1.083,0.237,373.9,479.5,-22.0,-0.2906
+Nyabihu,Irish potatoes,SeasonB,2021,0.1568,-0.1714,373.9,479.5,-22.0,-0.2906
+Nyamasheke,Beans,SeasonB,2021,-0.1823,-0.303,397.0,478.9,-17.1,-0.2294
+Nyamasheke,Cassava,SeasonB,2021,0.0,-0.0114,397.0,478.9,-17.1,-0.2294
+Rubavu,Beans,SeasonB,2021,0.7425,0.1133,320.7,399.8,-19.8,-0.2623
+Rubavu,Irish potatoes,SeasonB,2021,-0.9642,-1.0463,320.7,399.8,-19.8,-0.2623
+Rusizi,Beans,SeasonB,2021,-0.0861,0.031,426.8,492.3,-13.3,-0.1846
+Rusizi,Cassava,SeasonB,2021,-0.1086,0.0813,426.8,492.3,-13.3,-0.1846
+Rutsiro,Beans,SeasonB,2021,-0.0098,-0.1094,331.8,407.3,-18.5,-0.2468
+Bugesera,Beans,SeasonA,2022,-0.4088,-0.0366,394.3,402.0,-1.9,0.0313
+Bugesera,Cassava,SeasonA,2022,0.2591,0.1638,394.3,402.0,-1.9,0.0313
+Bugesera,Irish potatoes,SeasonA,2022,0.181,0.0025,394.3,402.0,-1.9,0.0313
+Bugesera,Maize,SeasonA,2022,0.6803,0.4991,394.3,402.0,-1.9,0.0313
+Bugesera,Tomatoes,SeasonA,2022,-0.3279,0.1497,394.3,402.0,-1.9,0.0313
+Gatsibo,Beans,SeasonA,2022,0.2462,0.0733,414.1,451.2,-8.2,-0.0352
+Gatsibo,Cassava,SeasonA,2022,0.3802,0.0297,414.1,451.2,-8.2,-0.0352
+Gatsibo,Irish potatoes,SeasonA,2022,-0.2142,-0.0506,414.1,451.2,-8.2,-0.0352
+Gatsibo,Maize,SeasonA,2022,1.0347,0.0531,414.1,451.2,-8.2,-0.0352
+Gatsibo,Tomatoes,SeasonA,2022,0.8984,-0.5944,414.1,451.2,-8.2,-0.0352
+Kayonza,Beans,SeasonA,2022,0.1913,0.4442,382.9,433.6,-11.7,-0.0737
+Kayonza,Cassava,SeasonA,2022,0.2197,-0.0314,382.9,433.6,-11.7,-0.0737
+Kayonza,Irish potatoes,SeasonA,2022,0.0835,0.2572,382.9,433.6,-11.7,-0.0737
+Kayonza,Maize,SeasonA,2022,0.5252,-0.0658,382.9,433.6,-11.7,-0.0737
+Kayonza,Tomatoes,SeasonA,2022,0.8618,-0.5858,382.9,433.6,-11.7,-0.0737
+Kirehe,Beans,SeasonA,2022,-0.2872,-0.2172,388.8,427.7,-9.1,-0.0447
+Kirehe,Cassava,SeasonA,2022,-0.0176,-0.0229,388.8,427.7,-9.1,-0.0447
+Kirehe,Maize,SeasonA,2022,0.5083,-0.0384,388.8,427.7,-9.1,-0.0447
+Kirehe,Tomatoes,SeasonA,2022,0.2513,-0.1641,388.8,427.7,-9.1,-0.0447
+Ngoma,Beans,SeasonA,2022,-0.3008,-0.6931,397.9,417.8,-4.8,0.0018
+Ngoma,Cassava,SeasonA,2022,1.1519,0.4267,397.9,417.8,-4.8,0.0018
+Ngoma,Irish potatoes,SeasonA,2022,0.005,0.3717,397.9,417.8,-4.8,0.0018
+Ngoma,Maize,SeasonA,2022,1.1502,0.076,397.9,417.8,-4.8,0.0018
+Ngoma,Tomatoes,SeasonA,2022,1.4656,-0.5355,397.9,417.8,-4.8,0.0018
+Nyagatare,Beans,SeasonA,2022,-0.0996,-0.161,405.4,454.6,-10.8,-0.0639
+Nyagatare,Cassava,SeasonA,2022,0.3514,-0.0609,405.4,454.6,-10.8,-0.0639
+Nyagatare,Irish potatoes,SeasonA,2022,0.755,0.5274,405.4,454.6,-10.8,-0.0639
+Nyagatare,Maize,SeasonA,2022,0.5118,0.3222,405.4,454.6,-10.8,-0.0639
+Nyagatare,Tomatoes,SeasonA,2022,0.2261,-0.084,405.4,454.6,-10.8,-0.0639
+Rwamagana,Beans,SeasonA,2022,-0.1175,-0.113,388.5,401.8,-3.3,0.017
+Rwamagana,Cassava,SeasonA,2022,0.2861,0.234,388.5,401.8,-3.3,0.017
+Rwamagana,Maize,SeasonA,2022,-0.0475,0.2044,388.5,401.8,-3.3,0.017
+Rwamagana,Tomatoes,SeasonA,2022,-0.162,0.3618,388.5,401.8,-3.3,0.017
+Gasabo,Beans,SeasonA,2022,-0.1014,0.2329,449.3,432.1,4.0,0.0897
+Gasabo,Cassava,SeasonA,2022,-0.0026,-0.0032,449.3,432.1,4.0,0.0897
+Gasabo,Irish potatoes,SeasonA,2022,-0.0833,0.182,449.3,432.1,4.0,0.0897
+Gasabo,Maize,SeasonA,2022,0.0962,-0.0135,449.3,432.1,4.0,0.0897
+Gasabo,Tomatoes,SeasonA,2022,-0.0308,-0.1953,449.3,432.1,4.0,0.0897
+Kicukiro,Beans,SeasonA,2022,0.1359,0.0779,411.5,413.0,-0.3,0.047
+Kicukiro,Cassava,SeasonA,2022,0.7217,0.7083,411.5,413.0,-0.3,0.047
+Kicukiro,Maize,SeasonA,2022,-0.5638,-0.6855,411.5,413.0,-0.3,0.047
+Kicukiro,Tomatoes,SeasonA,2022,0.2086,-0.3582,411.5,413.0,-0.3,0.047
+Nyarugenge,Beans,SeasonA,2022,-0.3199,-0.0659,445.7,429.7,3.7,0.0872
+Nyarugenge,Cassava,SeasonA,2022,0.7281,0.5464,445.7,429.7,3.7,0.0872
+Nyarugenge,Maize,SeasonA,2022,-0.4818,0.0953,445.7,429.7,3.7,0.0872
+Burera,Beans,SeasonA,2022,1.1913,0.6121,472.7,521.6,-9.4,-0.0478
+Burera,Cassava,SeasonA,2022,-0.3102,-0.2651,472.7,521.6,-9.4,-0.0478
+Burera,Irish potatoes,SeasonA,2022,0.5563,0.1436,472.7,521.6,-9.4,-0.0478
+Burera,Maize,SeasonA,2022,0.0004,0.2448,472.7,521.6,-9.4,-0.0478
+Burera,Tomatoes,SeasonA,2022,-1.1847,-0.7959,472.7,521.6,-9.4,-0.0478
+Gakenke,Beans,SeasonA,2022,-0.1165,-0.0854,461.1,499.2,-7.6,-0.0288
+Gakenke,Cassava,SeasonA,2022,-0.2596,-0.1636,461.1,499.2,-7.6,-0.0288
+Gakenke,Irish potatoes,SeasonA,2022,0.1238,0.095,461.1,499.2,-7.6,-0.0288
+Gakenke,Maize,SeasonA,2022,-0.1445,-0.035,461.1,499.2,-7.6,-0.0288
+Gakenke,Tomatoes,SeasonA,2022,-0.3395,-0.0713,461.1,499.2,-7.6,-0.0288
+Gicumbi,Beans,SeasonA,2022,0.8929,0.3616,452.5,462.8,-2.2,0.0281
+Gicumbi,Cassava,SeasonA,2022,-0.1768,-0.3252,452.5,462.8,-2.2,0.0281
+Gicumbi,Irish potatoes,SeasonA,2022,0.4363,0.0591,452.5,462.8,-2.2,0.0281
+Gicumbi,Maize,SeasonA,2022,-0.0004,0.3405,452.5,462.8,-2.2,0.0281
+Musanze,Beans,SeasonA,2022,0.6713,0.3581,547.5,609.0,-10.1,-0.0558
+Musanze,Cassava,SeasonA,2022,0.0291,0.0581,547.5,609.0,-10.1,-0.0558
+Musanze,Irish potatoes,SeasonA,2022,0.1348,-0.2418,547.5,609.0,-10.1,-0.0558
+Musanze,Maize,SeasonA,2022,-0.0465,0.2876,547.5,609.0,-10.1,-0.0558
+Rulindo,Beans,SeasonA,2022,0.5405,0.3026,477.6,470.3,1.5,0.066
+Rulindo,Cassava,SeasonA,2022,0.0503,0.0129,477.6,470.3,1.5,0.066
+Rulindo,Irish potatoes,SeasonA,2022,0.1591,-0.0006,477.6,470.3,1.5,0.066
+Rulindo,Maize,SeasonA,2022,-0.4513,0.0623,477.6,470.3,1.5,0.066
+Gisagara,Beans,SeasonA,2022,-0.3893,0.0362,530.1,528.3,0.3,0.054
+Gisagara,Cassava,SeasonA,2022,-0.1247,0.0068,530.1,528.3,0.3,0.054
+Gisagara,Irish potatoes,SeasonA,2022,-0.2425,0.2951,530.1,528.3,0.3,0.054
+Gisagara,Maize,SeasonA,2022,0.8898,0.279,530.1,528.3,0.3,0.054
+Gisagara,Tomatoes,SeasonA,2022,-0.3713,-0.0522,530.1,528.3,0.3,0.054
+Huye,Beans,SeasonA,2022,-0.4032,-0.4799,499.2,509.2,-1.9,0.0308
+Huye,Cassava,SeasonA,2022,0.0381,0.0036,499.2,509.2,-1.9,0.0308
+Huye,Irish potatoes,SeasonA,2022,0.0027,0.3008,499.2,509.2,-1.9,0.0308
+Huye,Maize,SeasonA,2022,0.7302,0.2103,499.2,509.2,-1.9,0.0308
+Huye,Tomatoes,SeasonA,2022,0.0096,-0.3449,499.2,509.2,-1.9,0.0308
+Kamonyi,Beans,SeasonA,2022,-0.3663,-0.2387,453.1,440.5,2.9,0.0788
+Kamonyi,Cassava,SeasonA,2022,-0.1349,0.2164,453.1,440.5,2.9,0.0788
+Kamonyi,Irish potatoes,SeasonA,2022,-0.1742,0.4403,453.1,440.5,2.9,0.0788
+Kamonyi,Maize,SeasonA,2022,1.071,0.1529,453.1,440.5,2.9,0.0788
+Kamonyi,Tomatoes,SeasonA,2022,0.8779,-0.1386,453.1,440.5,2.9,0.0788
+Muhanga,Beans,SeasonA,2022,0.9276,0.583,470.4,486.1,-3.2,0.0178
+Muhanga,Cassava,SeasonA,2022,-0.2891,-0.1929,470.4,486.1,-3.2,0.0178
+Muhanga,Irish potatoes,SeasonA,2022,0.4846,0.7984,470.4,486.1,-3.2,0.0178
+Muhanga,Maize,SeasonA,2022,0.4789,0.2317,470.4,486.1,-3.2,0.0178
+Muhanga,Tomatoes,SeasonA,2022,-0.1848,0.1576,470.4,486.1,-3.2,0.0178
+Nyamagabe,Beans,SeasonA,2022,0.5217,0.3014,492.7,538.4,-8.5,-0.0381
+Nyamagabe,Cassava,SeasonA,2022,-0.3379,-0.3029,492.7,538.4,-8.5,-0.0381
+Nyamagabe,Irish potatoes,SeasonA,2022,-0.1609,-0.2569,492.7,538.4,-8.5,-0.0381
+Nyamagabe,Maize,SeasonA,2022,0.0451,0.0092,492.7,538.4,-8.5,-0.0381
+Nyamagabe,Tomatoes,SeasonA,2022,-0.1195,0.022,492.7,538.4,-8.5,-0.0381
+Nyanza,Beans,SeasonA,2022,0.0719,0.2506,478.6,474.9,0.8,0.0584
+Nyanza,Cassava,SeasonA,2022,0.2717,0.3088,478.6,474.9,0.8,0.0584
+Nyanza,Irish potatoes,SeasonA,2022,-0.3591,0.3606,478.6,474.9,0.8,0.0584
+Nyanza,Maize,SeasonA,2022,0.4081,0.2785,478.6,474.9,0.8,0.0584
+Nyanza,Tomatoes,SeasonA,2022,-0.7527,-0.3093,478.6,474.9,0.8,0.0584
+Nyaruguru,Beans,SeasonA,2022,0.5804,0.5488,534.0,583.5,-8.5,-0.038
+Nyaruguru,Cassava,SeasonA,2022,-0.0969,-0.1584,534.0,583.5,-8.5,-0.038
+Nyaruguru,Irish potatoes,SeasonA,2022,-0.1916,-0.2082,534.0,583.5,-8.5,-0.038
+Nyaruguru,Maize,SeasonA,2022,0.7716,0.0663,534.0,583.5,-8.5,-0.038
+Nyaruguru,Tomatoes,SeasonA,2022,-0.4091,-0.178,534.0,583.5,-8.5,-0.038
+Ruhango,Beans,SeasonA,2022,-0.0998,-0.0431,452.5,447.1,1.2,0.0626
+Ruhango,Cassava,SeasonA,2022,-0.1227,-0.1566,452.5,447.1,1.2,0.0626
+Ruhango,Irish potatoes,SeasonA,2022,-0.1712,-0.0328,452.5,447.1,1.2,0.0626
+Ruhango,Maize,SeasonA,2022,-0.1696,0.2519,452.5,447.1,1.2,0.0626
+Ruhango,Tomatoes,SeasonA,2022,-0.0818,-0.1728,452.5,447.1,1.2,0.0626
+Karongi,Beans,SeasonA,2022,0.1222,-0.1266,457.6,483.7,-5.4,-0.0048
+Karongi,Cassava,SeasonA,2022,0.0879,-0.1823,457.6,483.7,-5.4,-0.0048
+Karongi,Irish potatoes,SeasonA,2022,0.401,0.308,457.6,483.7,-5.4,-0.0048
+Karongi,Maize,SeasonA,2022,-0.2511,0.4189,457.6,483.7,-5.4,-0.0048
+Karongi,Tomatoes,SeasonA,2022,0.1063,-0.1184,457.6,483.7,-5.4,-0.0048
+Ngororero,Beans,SeasonA,2022,0.5531,0.3561,469.1,510.9,-8.2,-0.0347
+Ngororero,Cassava,SeasonA,2022,-0.4992,-0.4637,469.1,510.9,-8.2,-0.0347
+Ngororero,Irish potatoes,SeasonA,2022,0.1812,-0.0384,469.1,510.9,-8.2,-0.0347
+Ngororero,Maize,SeasonA,2022,-0.3472,0.4372,469.1,510.9,-8.2,-0.0347
+Ngororero,Tomatoes,SeasonA,2022,-0.0034,-0.1065,469.1,510.9,-8.2,-0.0347
+Nyabihu,Beans,SeasonA,2022,0.7561,-0.0646,502.9,558.7,-10.0,-0.0546
+Nyabihu,Cassava,SeasonA,2022,0.0299,-0.0159,502.9,558.7,-10.0,-0.0546
+Nyabihu,Irish potatoes,SeasonA,2022,-0.0071,-0.2329,502.9,558.7,-10.0,-0.0546
+Nyabihu,Maize,SeasonA,2022,-0.0004,-0.0633,502.9,558.7,-10.0,-0.0546
+Nyamasheke,Beans,SeasonA,2022,-0.206,0.0066,505.9,552.2,-8.4,-0.0369
+Nyamasheke,Cassava,SeasonA,2022,-0.0098,0.0278,505.9,552.2,-8.4,-0.0369
+Nyamasheke,Irish potatoes,SeasonA,2022,-0.3344,-0.198,505.9,552.2,-8.4,-0.0369
+Nyamasheke,Maize,SeasonA,2022,-0.0323,0.1317,505.9,552.2,-8.4,-0.0369
+Nyamasheke,Tomatoes,SeasonA,2022,0.5035,0.3178,505.9,552.2,-8.4,-0.0369
+Rubavu,Beans,SeasonA,2022,0.8966,-0.1896,471.5,496.9,-5.1,-0.0018
+Rubavu,Cassava,SeasonA,2022,-0.259,-0.1447,471.5,496.9,-5.1,-0.0018
+Rubavu,Irish potatoes,SeasonA,2022,0.0101,-0.3051,471.5,496.9,-5.1,-0.0018
+Rubavu,Maize,SeasonA,2022,-0.3293,0.0107,471.5,496.9,-5.1,-0.0018
+Rusizi,Beans,SeasonA,2022,-0.0775,0.0684,524.9,578.2,-9.2,-0.0461
+Rusizi,Cassava,SeasonA,2022,-0.3829,-0.1692,524.9,578.2,-9.2,-0.0461
+Rusizi,Irish potatoes,SeasonA,2022,-0.0027,0.0517,524.9,578.2,-9.2,-0.0461
+Rusizi,Maize,SeasonA,2022,-0.6855,0.38,524.9,578.2,-9.2,-0.0461
+Rusizi,Tomatoes,SeasonA,2022,-0.8178,-0.4097,524.9,578.2,-9.2,-0.0461
+Rutsiro,Beans,SeasonA,2022,-0.3014,-0.2664,460.4,479.8,-4.0,0.0094
+Rutsiro,Cassava,SeasonA,2022,0.0026,-0.2368,460.4,479.8,-4.0,0.0094
+Rutsiro,Irish potatoes,SeasonA,2022,0.0035,-0.021,460.4,479.8,-4.0,0.0094
+Rutsiro,Maize,SeasonA,2022,-0.2415,0.2145,460.4,479.8,-4.0,0.0094
+Rutsiro,Tomatoes,SeasonA,2022,0.1321,-0.0724,460.4,479.8,-4.0,0.0094
+Bugesera,Beans,SeasonB,2022,-0.9937,-0.5509,353.3,365.9,-3.4,0.0107
+Bugesera,Cassava,SeasonB,2022,0.0389,-0.0898,353.3,365.9,-3.4,0.0107
+Bugesera,Irish potatoes,SeasonB,2022,-0.2501,-0.1225,353.3,365.9,-3.4,0.0107
+Bugesera,Maize,SeasonB,2022,-0.056,-0.0548,353.3,365.9,-3.4,0.0107
+Bugesera,Tomatoes,SeasonB,2022,-0.5337,-0.1443,353.3,365.9,-3.4,0.0107
+Gatsibo,Beans,SeasonB,2022,-0.2331,0.0272,406.3,406.3,-0.0,0.0458
+Gatsibo,Cassava,SeasonB,2022,0.4918,0.1184,406.3,406.3,-0.0,0.0458
+Gatsibo,Irish potatoes,SeasonB,2022,0.711,0.5209,406.3,406.3,-0.0,0.0458
+Gatsibo,Maize,SeasonB,2022,0.8923,0.1994,406.3,406.3,-0.0,0.0458
+Gatsibo,Tomatoes,SeasonB,2022,0.7225,0.0359,406.3,406.3,-0.0,0.0458
+Kayonza,Beans,SeasonB,2022,-0.0871,0.0903,427.6,406.1,5.3,0.0973
+Kayonza,Cassava,SeasonB,2022,-0.107,-0.2332,427.6,406.1,5.3,0.0973
+Kayonza,Irish potatoes,SeasonB,2022,-0.3934,-0.3536,427.6,406.1,5.3,0.0973
+Kayonza,Maize,SeasonB,2022,0.4876,-0.0668,427.6,406.1,5.3,0.0973
+Kayonza,Tomatoes,SeasonB,2022,0.3834,-0.4771,427.6,406.1,5.3,0.0973
+Kirehe,Beans,SeasonB,2022,0.1834,0.5813,402.7,408.1,-1.3,0.0324
+Kirehe,Cassava,SeasonB,2022,-0.046,0.0453,402.7,408.1,-1.3,0.0324
+Kirehe,Maize,SeasonB,2022,1.363,0.0564,402.7,408.1,-1.3,0.0324
+Kirehe,Tomatoes,SeasonB,2022,1.0701,0.6559,402.7,408.1,-1.3,0.0324
+Ngoma,Beans,SeasonB,2022,-0.6938,-0.2911,386.0,396.9,-2.7,0.0179
+Ngoma,Cassava,SeasonB,2022,0.8204,0.4307,386.0,396.9,-2.7,0.0179
+Ngoma,Irish potatoes,SeasonB,2022,-0.3444,-0.2055,386.0,396.9,-2.7,0.0179
+Ngoma,Maize,SeasonB,2022,1.4316,-0.242,386.0,396.9,-2.7,0.0179
+Ngoma,Tomatoes,SeasonB,2022,0.0,-0.4982,386.0,396.9,-2.7,0.0179
+Nyagatare,Beans,SeasonB,2022,-0.2063,0.0184,343.6,362.5,-5.2,-0.0078
+Nyagatare,Cassava,SeasonB,2022,0.0222,0.0774,343.6,362.5,-5.2,-0.0078
+Nyagatare,Irish potatoes,SeasonB,2022,0.0031,-0.1684,343.6,362.5,-5.2,-0.0078
+Nyagatare,Maize,SeasonB,2022,0.8732,0.463,343.6,362.5,-5.2,-0.0078
+Nyagatare,Tomatoes,SeasonB,2022,-0.3681,0.0293,343.6,362.5,-5.2,-0.0078
+Rwamagana,Beans,SeasonB,2022,-0.5456,0.4359,388.8,392.2,-0.9,0.037
+Rwamagana,Cassava,SeasonB,2022,0.1512,0.1232,388.8,392.2,-0.9,0.037
+Rwamagana,Maize,SeasonB,2022,0.3019,0.3377,388.8,392.2,-0.9,0.037
+Rwamagana,Tomatoes,SeasonB,2022,-0.1668,0.1403,388.8,392.2,-0.9,0.037
+Gasabo,Beans,SeasonB,2022,-0.4216,-0.2561,384.0,399.8,-4.0,0.0054
+Gasabo,Cassava,SeasonB,2022,0.2464,0.4689,384.0,399.8,-4.0,0.0054
+Gasabo,Irish potatoes,SeasonB,2022,-0.6915,-0.427,384.0,399.8,-4.0,0.0054
+Gasabo,Maize,SeasonB,2022,-0.3796,-0.4195,384.0,399.8,-4.0,0.0054
+Gasabo,Tomatoes,SeasonB,2022,0.4985,0.3355,384.0,399.8,-4.0,0.0054
+Kicukiro,Beans,SeasonB,2022,0.2905,-0.382,375.4,380.8,-1.4,0.0315
+Kicukiro,Cassava,SeasonB,2022,0.0714,0.1935,375.4,380.8,-1.4,0.0315
+Kicukiro,Maize,SeasonB,2022,0.0923,0.4124,375.4,380.8,-1.4,0.0315
+Kicukiro,Tomatoes,SeasonB,2022,0.5883,0.384,375.4,380.8,-1.4,0.0315
+Nyarugenge,Beans,SeasonB,2022,-0.5415,-0.2259,387.7,394.3,-1.7,0.0289
+Nyarugenge,Cassava,SeasonB,2022,-0.0249,-0.1229,387.7,394.3,-1.7,0.0289
+Nyarugenge,Maize,SeasonB,2022,-0.5584,0.0976,387.7,394.3,-1.7,0.0289
+Burera,Beans,SeasonB,2022,-0.0686,-0.3478,436.2,437.7,-0.3,0.0423
+Burera,Cassava,SeasonB,2022,-0.3494,-0.3802,436.2,437.7,-0.3,0.0423
+Burera,Irish potatoes,SeasonB,2022,0.4491,-0.2189,436.2,437.7,-0.3,0.0423
+Burera,Maize,SeasonB,2022,-0.5551,-0.7784,436.2,437.7,-0.3,0.0423
+Burera,Tomatoes,SeasonB,2022,0.0652,0.003,436.2,437.7,-0.3,0.0423
+Gakenke,Beans,SeasonB,2022,0.2334,0.1607,421.1,451.2,-6.7,-0.0233
+Gakenke,Cassava,SeasonB,2022,0.0163,0.0181,421.1,451.2,-6.7,-0.0233
+Gakenke,Irish potatoes,SeasonB,2022,0.272,0.0476,421.1,451.2,-6.7,-0.0233
+Gakenke,Maize,SeasonB,2022,-0.3345,0.2001,421.1,451.2,-6.7,-0.0233
+Gakenke,Tomatoes,SeasonB,2022,-0.1224,-0.0655,421.1,451.2,-6.7,-0.0233
+Gicumbi,Beans,SeasonB,2022,0.4003,-0.1692,413.6,438.5,-5.7,-0.0127
+Gicumbi,Irish potatoes,SeasonB,2022,0.6359,-0.0335,413.6,438.5,-5.7,-0.0127
+Gicumbi,Maize,SeasonB,2022,-0.0606,0.0705,413.6,438.5,-5.7,-0.0127
+Musanze,Beans,SeasonB,2022,0.1981,0.0465,460.1,499.3,-7.8,-0.036
+Musanze,Irish potatoes,SeasonB,2022,0.4762,-0.0858,460.1,499.3,-7.8,-0.036
+Musanze,Maize,SeasonB,2022,-0.567,-0.2297,460.1,499.3,-7.8,-0.036
+Rulindo,Beans,SeasonB,2022,0.1124,-0.02,419.8,453.3,-7.4,-0.031
+Rulindo,Cassava,SeasonB,2022,0.0581,0.1053,419.8,453.3,-7.4,-0.031
+Rulindo,Irish potatoes,SeasonB,2022,0.3022,-0.0571,419.8,453.3,-7.4,-0.031
+Rulindo,Maize,SeasonB,2022,-0.356,0.1999,419.8,453.3,-7.4,-0.031
+Gisagara,Beans,SeasonB,2022,-0.4204,-0.0938,455.7,473.4,-3.7,0.0076
+Gisagara,Cassava,SeasonB,2022,-0.1872,0.2379,455.7,473.4,-3.7,0.0076
+Gisagara,Irish potatoes,SeasonB,2022,-0.0608,0.1125,455.7,473.4,-3.7,0.0076
+Gisagara,Maize,SeasonB,2022,1.0415,-0.0053,455.7,473.4,-3.7,0.0076
+Gisagara,Tomatoes,SeasonB,2022,0.8571,0.5524,455.7,473.4,-3.7,0.0076
+Huye,Beans,SeasonB,2022,0.0741,0.0213,472.9,488.9,-3.3,0.0125
+Huye,Cassava,SeasonB,2022,-0.2001,0.1089,472.9,488.9,-3.3,0.0125
+Huye,Irish potatoes,SeasonB,2022,-0.3241,-0.0249,472.9,488.9,-3.3,0.0125
+Huye,Maize,SeasonB,2022,-0.2574,-0.4166,472.9,488.9,-3.3,0.0125
+Huye,Tomatoes,SeasonB,2022,-0.2238,0.1148,472.9,488.9,-3.3,0.0125
+Kamonyi,Beans,SeasonB,2022,-0.4506,-0.4162,385.2,399.0,-3.5,0.0106
+Kamonyi,Cassava,SeasonB,2022,-0.3338,-0.2655,385.2,399.0,-3.5,0.0106
+Kamonyi,Irish potatoes,SeasonB,2022,-0.5514,0.0047,385.2,399.0,-3.5,0.0106
+Kamonyi,Maize,SeasonB,2022,0.8863,-0.0773,385.2,399.0,-3.5,0.0106
+Kamonyi,Tomatoes,SeasonB,2022,-0.0028,-0.0342,385.2,399.0,-3.5,0.0106
+Muhanga,Beans,SeasonB,2022,-0.2639,-0.4209,385.9,431.4,-10.5,-0.0657
+Muhanga,Cassava,SeasonB,2022,-0.3753,-0.2208,385.9,431.4,-10.5,-0.0657
+Muhanga,Irish potatoes,SeasonB,2022,-0.4838,-0.1196,385.9,431.4,-10.5,-0.0657
+Muhanga,Maize,SeasonB,2022,1.5141,1.4098,385.9,431.4,-10.5,-0.0657
+Muhanga,Tomatoes,SeasonB,2022,-0.1032,0.2379,385.9,431.4,-10.5,-0.0657
+Nyamagabe,Beans,SeasonB,2022,0.1936,-0.0531,453.1,510.5,-11.2,-0.0735
+Nyamagabe,Irish potatoes,SeasonB,2022,-0.5183,0.2147,453.1,510.5,-11.2,-0.0735
+Nyamagabe,Maize,SeasonB,2022,-1.0749,-1.2908,453.1,510.5,-11.2,-0.0735
+Nyamagabe,Tomatoes,SeasonB,2022,-0.1961,0.032,453.1,510.5,-11.2,-0.0735
+Nyanza,Beans,SeasonB,2022,0.2443,0.2977,426.0,444.2,-4.1,0.0039
+Nyanza,Cassava,SeasonB,2022,-0.3687,0.0942,426.0,444.2,-4.1,0.0039
+Nyanza,Irish potatoes,SeasonB,2022,-0.2962,0.0901,426.0,444.2,-4.1,0.0039
+Nyanza,Maize,SeasonB,2022,0.0356,0.2986,426.0,444.2,-4.1,0.0039
+Nyanza,Tomatoes,SeasonB,2022,-0.0498,0.0921,426.0,444.2,-4.1,0.0039
+Nyaruguru,Beans,SeasonB,2022,1.0155,0.1757,477.3,536.6,-11.0,-0.0714
+Nyaruguru,Cassava,SeasonB,2022,-0.3531,-0.2011,477.3,536.6,-11.0,-0.0714
+Nyaruguru,Irish potatoes,SeasonB,2022,0.7205,0.1907,477.3,536.6,-11.0,-0.0714
+Nyaruguru,Tomatoes,SeasonB,2022,-0.513,-0.8364,477.3,536.6,-11.0,-0.0714
+Ruhango,Beans,SeasonB,2022,-0.8759,-0.2604,398.6,418.9,-4.8,-0.0039
+Ruhango,Cassava,SeasonB,2022,0.0085,-0.1109,398.6,418.9,-4.8,-0.0039
+Ruhango,Irish potatoes,SeasonB,2022,-0.3021,-0.1735,398.6,418.9,-4.8,-0.0039
+Ruhango,Maize,SeasonB,2022,1.0303,0.204,398.6,418.9,-4.8,-0.0039
+Ruhango,Tomatoes,SeasonB,2022,0.3826,0.3079,398.6,418.9,-4.8,-0.0039
+Karongi,Beans,SeasonB,2022,0.0656,-0.1575,388.7,423.1,-8.1,-0.039
+Karongi,Cassava,SeasonB,2022,0.0761,-0.2593,388.7,423.1,-8.1,-0.039
+Karongi,Irish potatoes,SeasonB,2022,0.3462,0.1477,388.7,423.1,-8.1,-0.039
+Karongi,Maize,SeasonB,2022,0.0523,0.4123,388.7,423.1,-8.1,-0.039
+Karongi,Tomatoes,SeasonB,2022,-0.1334,0.0531,388.7,423.1,-8.1,-0.039
+Ngororero,Beans,SeasonB,2022,-0.3402,-0.1012,401.3,452.9,-11.4,-0.0752
+Ngororero,Cassava,SeasonB,2022,0.382,0.2485,401.3,452.9,-11.4,-0.0752
+Ngororero,Irish potatoes,SeasonB,2022,0.051,0.1534,401.3,452.9,-11.4,-0.0752
+Ngororero,Maize,SeasonB,2022,-0.0072,0.1232,401.3,452.9,-11.4,-0.0752
+Ngororero,Tomatoes,SeasonB,2022,-0.3849,-0.2142,401.3,452.9,-11.4,-0.0752
+Nyabihu,Beans,SeasonB,2022,0.6143,-0.2317,429.3,479.5,-10.5,-0.0648
+Nyabihu,Cassava,SeasonB,2022,-0.122,0.1943,429.3,479.5,-10.5,-0.0648
+Nyabihu,Irish potatoes,SeasonB,2022,-0.0061,-0.3343,429.3,479.5,-10.5,-0.0648
+Nyabihu,Maize,SeasonB,2022,0.2077,-0.3846,429.3,479.5,-10.5,-0.0648
+Nyamasheke,Beans,SeasonB,2022,0.0809,-0.0399,460.5,478.9,-3.8,0.0066
+Nyamasheke,Cassava,SeasonB,2022,-0.3326,-0.344,460.5,478.9,-3.8,0.0066
+Nyamasheke,Irish potatoes,SeasonB,2022,-0.0031,-0.0001,460.5,478.9,-3.8,0.0066
+Nyamasheke,Maize,SeasonB,2022,-0.2685,-0.1465,460.5,478.9,-3.8,0.0066
+Nyamasheke,Tomatoes,SeasonB,2022,0.1828,0.0388,460.5,478.9,-3.8,0.0066
+Rubavu,Beans,SeasonB,2022,0.6011,-0.0281,357.2,399.8,-10.7,-0.0669
+Rubavu,Irish potatoes,SeasonB,2022,0.4288,0.3468,357.2,399.8,-10.7,-0.0669
+Rubavu,Maize,SeasonB,2022,0.0071,0.0832,357.2,399.8,-10.7,-0.0669
+Rusizi,Beans,SeasonB,2022,-0.1613,-0.0443,449.2,492.3,-8.7,-0.0459
+Rusizi,Cassava,SeasonB,2022,-0.1803,0.0096,449.2,492.3,-8.7,-0.0459
+Rusizi,Irish potatoes,SeasonB,2022,0.26,0.216,449.2,492.3,-8.7,-0.0459
+Rusizi,Maize,SeasonB,2022,-0.1049,0.0959,449.2,492.3,-8.7,-0.0459
+Rusizi,Tomatoes,SeasonB,2022,-0.4394,-0.0871,449.2,492.3,-8.7,-0.0459
+Rutsiro,Beans,SeasonB,2022,0.0642,-0.0354,368.5,407.3,-9.5,-0.0544
+Rutsiro,Cassava,SeasonB,2022,-0.0086,0.1817,368.5,407.3,-9.5,-0.0544
+Rutsiro,Irish potatoes,SeasonB,2022,0.1236,-0.0319,368.5,407.3,-9.5,-0.0544
+Rutsiro,Maize,SeasonB,2022,-0.186,0.3043,368.5,407.3,-9.5,-0.0544
+Rutsiro,Tomatoes,SeasonB,2022,-0.2585,-0.1108,368.5,407.3,-9.5,-0.0544
+Bugesera,Beans,SeasonA,2023,-0.4282,-0.056,339.7,402.0,-15.5,-0.0712
+Bugesera,Cassava,SeasonA,2023,-0.2221,-0.3174,339.7,402.0,-15.5,-0.0712
+Bugesera,Maize,SeasonA,2023,-0.3131,-0.4943,339.7,402.0,-15.5,-0.0712
+Bugesera,Tomatoes,SeasonA,2023,-0.8566,-0.3791,339.7,402.0,-15.5,-0.0712
+Gatsibo,Beans,SeasonA,2023,0.2358,0.0629,374.9,451.2,-16.9,-0.088
+Gatsibo,Cassava,SeasonA,2023,0.3178,-0.0327,374.9,451.2,-16.9,-0.088
+Gatsibo,Irish potatoes,SeasonA,2023,0.1751,0.3387,374.9,451.2,-16.9,-0.088
+Gatsibo,Maize,SeasonA,2023,0.8917,-0.09,374.9,451.2,-16.9,-0.088
+Gatsibo,Tomatoes,SeasonA,2023,1.427,-0.0658,374.9,451.2,-16.9,-0.088
+Kayonza,Beans,SeasonA,2023,-0.0353,0.2176,357.1,433.6,-17.7,-0.0969
+Kayonza,Cassava,SeasonA,2023,0.2627,0.0116,357.1,433.6,-17.7,-0.0969
+Kayonza,Irish potatoes,SeasonA,2023,0.4426,0.6163,357.1,433.6,-17.7,-0.0969
+Kayonza,Maize,SeasonA,2023,0.7036,0.1126,357.1,433.6,-17.7,-0.0969
+Kayonza,Tomatoes,SeasonA,2023,1.3506,-0.0971,357.1,433.6,-17.7,-0.0969
+Kirehe,Beans,SeasonA,2023,-0.3802,-0.3102,372.4,427.7,-12.9,-0.0412
+Kirehe,Cassava,SeasonA,2023,0.1285,0.1233,372.4,427.7,-12.9,-0.0412
+Kirehe,Maize,SeasonA,2023,0.7362,0.1895,372.4,427.7,-12.9,-0.0412
+Kirehe,Tomatoes,SeasonA,2023,1.5294,1.1141,372.4,427.7,-12.9,-0.0412
+Ngoma,Beans,SeasonA,2023,0.7032,0.3108,357.3,417.8,-14.5,-0.0592
+Ngoma,Cassava,SeasonA,2023,0.4554,-0.2698,357.3,417.8,-14.5,-0.0592
+Ngoma,Irish potatoes,SeasonA,2023,-0.1784,0.1883,357.3,417.8,-14.5,-0.0592
+Ngoma,Maize,SeasonA,2023,1.0707,-0.0034,357.3,417.8,-14.5,-0.0592
+Ngoma,Tomatoes,SeasonA,2023,1.9065,-0.0946,357.3,417.8,-14.5,-0.0592
+Nyagatare,Beans,SeasonA,2023,-0.5191,-0.5806,399.9,454.6,-12.0,-0.031
+Nyagatare,Cassava,SeasonA,2023,0.3115,-0.1008,399.9,454.6,-12.0,-0.031
+Nyagatare,Irish potatoes,SeasonA,2023,0.2386,0.0111,399.9,454.6,-12.0,-0.031
+Nyagatare,Maize,SeasonA,2023,0.001,-0.1886,399.9,454.6,-12.0,-0.031
+Nyagatare,Tomatoes,SeasonA,2023,1.0742,0.7641,399.9,454.6,-12.0,-0.031
+Rwamagana,Beans,SeasonA,2023,0.0526,0.0571,333.5,401.8,-17.0,-0.0891
+Rwamagana,Cassava,SeasonA,2023,-0.3003,-0.3525,333.5,401.8,-17.0,-0.0891
+Rwamagana,Maize,SeasonA,2023,-0.4776,-0.2257,333.5,401.8,-17.0,-0.0891
+Rwamagana,Tomatoes,SeasonA,2023,-0.7649,-0.2411,333.5,401.8,-17.0,-0.0891
+Gasabo,Beans,SeasonA,2023,0.0329,0.3671,371.8,432.1,-14.0,-0.0531
+Gasabo,Cassava,SeasonA,2023,0.1511,0.1506,371.8,432.1,-14.0,-0.0531
+Gasabo,Irish potatoes,SeasonA,2023,0.17,0.4352,371.8,432.1,-14.0,-0.0531
+Gasabo,Maize,SeasonA,2023,0.1128,0.0031,371.8,432.1,-14.0,-0.0531
+Gasabo,Tomatoes,SeasonA,2023,0.7219,0.5574,371.8,432.1,-14.0,-0.0531
+Kicukiro,Beans,SeasonA,2023,0.0307,-0.0273,354.3,413.0,-14.2,-0.0561
+Kicukiro,Cassava,SeasonA,2023,-0.3201,-0.3335,354.3,413.0,-14.2,-0.0561
+Kicukiro,Maize,SeasonA,2023,0.7219,0.6002,354.3,413.0,-14.2,-0.0561
+Kicukiro,Tomatoes,SeasonA,2023,0.0471,-0.5197,354.3,413.0,-14.2,-0.0561
+Nyarugenge,Beans,SeasonA,2023,-0.4007,-0.1466,382.9,429.7,-10.9,-0.0181
+Nyarugenge,Cassava,SeasonA,2023,-0.3267,-0.5085,382.9,429.7,-10.9,-0.0181
+Nyarugenge,Maize,SeasonA,2023,-0.021,0.5562,382.9,429.7,-10.9,-0.0181
+Burera,Beans,SeasonA,2023,0.836,0.2568,526.6,521.6,0.9,0.1068
+Burera,Cassava,SeasonA,2023,-0.1873,-0.1422,526.6,521.6,0.9,0.1068
+Burera,Irish potatoes,SeasonA,2023,0.0624,-0.3503,526.6,521.6,0.9,0.1068
+Burera,Maize,SeasonA,2023,-0.2226,0.0218,526.6,521.6,0.9,0.1068
+Burera,Tomatoes,SeasonA,2023,-0.0557,0.3331,526.6,521.6,0.9,0.1068
+Gakenke,Beans,SeasonA,2023,-0.2669,-0.2358,494.1,499.2,-1.0,0.0869
+Gakenke,Cassava,SeasonA,2023,-0.156,-0.0601,494.1,499.2,-1.0,0.0869
+Gakenke,Irish potatoes,SeasonA,2023,-0.0981,-0.127,494.1,499.2,-1.0,0.0869
+Gakenke,Maize,SeasonA,2023,-0.4418,-0.3324,494.1,499.2,-1.0,0.0869
+Gakenke,Tomatoes,SeasonA,2023,-0.1419,0.1264,494.1,499.2,-1.0,0.0869
+Gicumbi,Beans,SeasonA,2023,0.9095,0.3782,417.9,462.8,-9.7,-0.0048
+Gicumbi,Cassava,SeasonA,2023,0.3648,0.2164,417.9,462.8,-9.7,-0.0048
+Gicumbi,Irish potatoes,SeasonA,2023,0.3156,-0.0617,417.9,462.8,-9.7,-0.0048
+Gicumbi,Maize,SeasonA,2023,-0.3007,0.0402,417.9,462.8,-9.7,-0.0048
+Musanze,Beans,SeasonA,2023,0.5331,0.2199,635.3,609.0,4.3,0.1395
+Musanze,Cassava,SeasonA,2023,0.4255,0.4546,635.3,609.0,4.3,0.1395
+Musanze,Irish potatoes,SeasonA,2023,0.58,0.2034,635.3,609.0,4.3,0.1395
+Musanze,Maize,SeasonA,2023,-0.2814,0.0528,635.3,609.0,4.3,0.1395
+Rulindo,Beans,SeasonA,2023,0.4123,0.1744,428.8,470.3,-8.8,0.0048
+Rulindo,Cassava,SeasonA,2023,0.04,0.0026,428.8,470.3,-8.8,0.0048
+Rulindo,Irish potatoes,SeasonA,2023,0.177,0.0173,428.8,470.3,-8.8,0.0048
+Rulindo,Maize,SeasonA,2023,-0.5965,-0.0829,428.8,470.3,-8.8,0.0048
+Gisagara,Beans,SeasonA,2023,-0.4707,-0.0453,450.8,528.3,-14.7,-0.0614
+Gisagara,Cassava,SeasonA,2023,-0.2074,-0.0759,450.8,528.3,-14.7,-0.0614
+Gisagara,Irish potatoes,SeasonA,2023,-0.2698,0.2677,450.8,528.3,-14.7,-0.0614
+Gisagara,Maize,SeasonA,2023,0.5042,-0.1066,450.8,528.3,-14.7,-0.0614
+Gisagara,Tomatoes,SeasonA,2023,-0.5073,-0.1881,450.8,528.3,-14.7,-0.0614
+Huye,Beans,SeasonA,2023,-0.6189,-0.6956,444.8,509.2,-12.6,-0.038
+Huye,Cassava,SeasonA,2023,-0.2303,-0.2648,444.8,509.2,-12.6,-0.038
+Huye,Irish potatoes,SeasonA,2023,-0.5644,-0.2663,444.8,509.2,-12.6,-0.038
+Huye,Maize,SeasonA,2023,0.4423,-0.0777,444.8,509.2,-12.6,-0.038
+Huye,Tomatoes,SeasonA,2023,0.8532,0.4987,444.8,509.2,-12.6,-0.038
+Kamonyi,Beans,SeasonA,2023,-0.4743,-0.3467,403.7,440.5,-8.4,0.01
+Kamonyi,Cassava,SeasonA,2023,-0.4919,-0.1406,403.7,440.5,-8.4,0.01
+Kamonyi,Irish potatoes,SeasonA,2023,-1.4103,-0.7957,403.7,440.5,-8.4,0.01
+Kamonyi,Maize,SeasonA,2023,0.8484,-0.0698,403.7,440.5,-8.4,0.01
+Kamonyi,Tomatoes,SeasonA,2023,-0.32,-1.3365,403.7,440.5,-8.4,0.01
+Muhanga,Beans,SeasonA,2023,-0.4488,-0.7935,466.5,486.1,-4.0,0.0561
+Muhanga,Cassava,SeasonA,2023,-0.4443,-0.3481,466.5,486.1,-4.0,0.0561
+Muhanga,Irish potatoes,SeasonA,2023,-0.473,-0.1593,466.5,486.1,-4.0,0.0561
+Muhanga,Maize,SeasonA,2023,0.0589,-0.1884,466.5,486.1,-4.0,0.0561
+Muhanga,Tomatoes,SeasonA,2023,-0.7646,-0.4221,466.5,486.1,-4.0,0.0561
+Nyamagabe,Beans,SeasonA,2023,0.046,-0.1743,543.5,538.4,1.0,0.1066
+Nyamagabe,Cassava,SeasonA,2023,0.0044,0.0395,543.5,538.4,1.0,0.1066
+Nyamagabe,Irish potatoes,SeasonA,2023,-0.0225,-0.1184,543.5,538.4,1.0,0.1066
+Nyamagabe,Maize,SeasonA,2023,-0.001,-0.0369,543.5,538.4,1.0,0.1066
+Nyamagabe,Tomatoes,SeasonA,2023,-0.5593,-0.4177,543.5,538.4,1.0,0.1066
+Nyanza,Beans,SeasonA,2023,-0.8202,-0.6415,414.0,474.9,-12.8,-0.04
+Nyanza,Cassava,SeasonA,2023,-0.2013,-0.1642,414.0,474.9,-12.8,-0.04
+Nyanza,Irish potatoes,SeasonA,2023,-0.7695,-0.0498,414.0,474.9,-12.8,-0.04
+Nyanza,Maize,SeasonA,2023,0.0401,-0.0896,414.0,474.9,-12.8,-0.04
+Nyanza,Tomatoes,SeasonA,2023,-0.2692,0.1742,414.0,474.9,-12.8,-0.04
+Nyaruguru,Beans,SeasonA,2023,0.2745,0.243,564.9,583.5,-3.2,0.0648
+Nyaruguru,Cassava,SeasonA,2023,-0.1885,-0.25,564.9,583.5,-3.2,0.0648
+Nyaruguru,Irish potatoes,SeasonA,2023,0.0,-0.0166,564.9,583.5,-3.2,0.0648
+Nyaruguru,Maize,SeasonA,2023,0.7908,0.0856,564.9,583.5,-3.2,0.0648
+Nyaruguru,Tomatoes,SeasonA,2023,-0.2841,-0.053,564.9,583.5,-3.2,0.0648
+Ruhango,Beans,SeasonA,2023,-0.0422,0.0145,401.3,447.1,-10.2,-0.0109
+Ruhango,Cassava,SeasonA,2023,0.0505,0.0166,401.3,447.1,-10.2,-0.0109
+Ruhango,Irish potatoes,SeasonA,2023,-0.6667,-0.5283,401.3,447.1,-10.2,-0.0109
+Ruhango,Maize,SeasonA,2023,-0.4307,-0.0092,401.3,447.1,-10.2,-0.0109
+Ruhango,Tomatoes,SeasonA,2023,0.06,-0.0311,401.3,447.1,-10.2,-0.0109
+Karongi,Beans,SeasonA,2023,0.0884,-0.1605,512.7,483.7,6.0,0.1554
+Karongi,Cassava,SeasonA,2023,0.045,-0.2252,512.7,483.7,6.0,0.1554
+Karongi,Irish potatoes,SeasonA,2023,0.0961,0.0031,512.7,483.7,6.0,0.1554
+Karongi,Maize,SeasonA,2023,-0.5927,0.0772,512.7,483.7,6.0,0.1554
+Karongi,Tomatoes,SeasonA,2023,0.3443,0.1196,512.7,483.7,6.0,0.1554
+Ngororero,Beans,SeasonA,2023,0.2193,0.0224,511.7,510.9,0.1,0.0988
+Ngororero,Cassava,SeasonA,2023,-0.223,-0.1875,511.7,510.9,0.1,0.0988
+Ngororero,Irish potatoes,SeasonA,2023,0.1794,-0.0403,511.7,510.9,0.1,0.0988
+Ngororero,Maize,SeasonA,2023,-0.6898,0.0946,511.7,510.9,0.1,0.0988
+Ngororero,Tomatoes,SeasonA,2023,-0.1122,-0.2153,511.7,510.9,0.1,0.0988
+Nyabihu,Beans,SeasonA,2023,0.616,-0.2046,585.0,558.7,4.7,0.1432
+Nyabihu,Cassava,SeasonA,2023,-0.0152,-0.061,585.0,558.7,4.7,0.1432
+Nyabihu,Irish potatoes,SeasonA,2023,0.3302,0.1044,585.0,558.7,4.7,0.1432
+Nyabihu,Maize,SeasonA,2023,0.6352,0.5724,585.0,558.7,4.7,0.1432
+Nyamasheke,Beans,SeasonA,2023,-0.0317,0.1808,609.0,552.2,10.3,0.1951
+Nyamasheke,Cassava,SeasonA,2023,0.1231,0.1608,609.0,552.2,10.3,0.1951
+Nyamasheke,Irish potatoes,SeasonA,2023,0.3442,0.4806,609.0,552.2,10.3,0.1951
+Nyamasheke,Maize,SeasonA,2023,-0.0501,0.1138,609.0,552.2,10.3,0.1951
+Nyamasheke,Tomatoes,SeasonA,2023,0.3693,0.1836,609.0,552.2,10.3,0.1951
+Rubavu,Beans,SeasonA,2023,0.8455,-0.2407,547.4,496.9,10.2,0.194
+Rubavu,Cassava,SeasonA,2023,0.2938,0.4081,547.4,496.9,10.2,0.194
+Rubavu,Irish potatoes,SeasonA,2023,0.6374,0.3222,547.4,496.9,10.2,0.194
+Rubavu,Maize,SeasonA,2023,0.311,0.651,547.4,496.9,10.2,0.194
+Rusizi,Beans,SeasonA,2023,-0.1106,0.0353,635.4,578.2,9.9,0.1916
+Rusizi,Cassava,SeasonA,2023,-0.0044,0.2093,635.4,578.2,9.9,0.1916
+Rusizi,Irish potatoes,SeasonA,2023,-0.0954,-0.041,635.4,578.2,9.9,0.1916
+Rusizi,Maize,SeasonA,2023,-0.6907,0.3749,635.4,578.2,9.9,0.1916
+Rusizi,Tomatoes,SeasonA,2023,-0.4774,-0.0693,635.4,578.2,9.9,0.1916
+Rutsiro,Beans,SeasonA,2023,-0.3516,-0.3166,523.6,479.8,9.1,0.1846
+Rutsiro,Cassava,SeasonA,2023,0.0933,-0.146,523.6,479.8,9.1,0.1846
+Rutsiro,Irish potatoes,SeasonA,2023,-0.0382,-0.0626,523.6,479.8,9.1,0.1846
+Rutsiro,Maize,SeasonA,2023,-0.4219,0.034,523.6,479.8,9.1,0.1846
+Rutsiro,Tomatoes,SeasonA,2023,0.0,-0.2045,523.6,479.8,9.1,0.1846
+Bugesera,Beans,SeasonB,2023,-0.2333,0.2095,406.7,365.9,11.2,-0.0714
+Bugesera,Cassava,SeasonB,2023,-0.1534,-0.2821,406.7,365.9,11.2,-0.0714
+Bugesera,Irish potatoes,SeasonB,2023,-0.166,-0.0383,406.7,365.9,11.2,-0.0714
+Bugesera,Maize,SeasonB,2023,0.0434,0.0446,406.7,365.9,11.2,-0.0714
+Bugesera,Tomatoes,SeasonB,2023,0.0,0.3893,406.7,365.9,11.2,-0.0714
+Gatsibo,Beans,SeasonB,2023,-0.5934,-0.3331,426.2,406.3,4.9,-0.1293
+Gatsibo,Cassava,SeasonB,2023,0.2843,-0.089,426.2,406.3,4.9,-0.1293
+Gatsibo,Irish potatoes,SeasonB,2023,0.1925,0.0024,426.2,406.3,4.9,-0.1293
+Gatsibo,Maize,SeasonB,2023,0.1333,-0.5596,426.2,406.3,4.9,-0.1293
+Gatsibo,Tomatoes,SeasonB,2023,-0.1423,-0.8288,426.2,406.3,4.9,-0.1293
+Kayonza,Beans,SeasonB,2023,0.1012,0.2786,384.8,406.1,-5.2,-0.231
+Kayonza,Cassava,SeasonB,2023,0.2655,0.1393,384.8,406.1,-5.2,-0.231
+Kayonza,Irish potatoes,SeasonB,2023,0.1022,0.1419,384.8,406.1,-5.2,-0.231
+Kayonza,Maize,SeasonB,2023,0.3503,-0.2042,384.8,406.1,-5.2,-0.231
+Kayonza,Tomatoes,SeasonB,2023,1.1707,0.3102,384.8,406.1,-5.2,-0.231
+Kirehe,Beans,SeasonB,2023,-0.0306,0.3673,412.1,408.1,1.0,-0.1674
+Kirehe,Cassava,SeasonB,2023,0.192,0.2833,412.1,408.1,1.0,-0.1674
+Kirehe,Maize,SeasonB,2023,0.8432,-0.4634,412.1,408.1,1.0,-0.1674
+Kirehe,Tomatoes,SeasonB,2023,-0.0242,-0.4384,412.1,408.1,1.0,-0.1674
+Ngoma,Beans,SeasonB,2023,-0.5951,-0.1925,427.5,396.9,7.7,-0.1029
+Ngoma,Cassava,SeasonB,2023,2.3243,1.9347,427.5,396.9,7.7,-0.1029
+Ngoma,Irish potatoes,SeasonB,2023,-0.0375,0.1014,427.5,396.9,7.7,-0.1029
+Ngoma,Maize,SeasonB,2023,1.4769,-0.1968,427.5,396.9,7.7,-0.1029
+Ngoma,Tomatoes,SeasonB,2023,-0.1944,-0.6926,427.5,396.9,7.7,-0.1029
+Nyagatare,Beans,SeasonB,2023,-0.257,-0.0324,424.2,362.5,17.0,-0.02
+Nyagatare,Cassava,SeasonB,2023,-0.0365,0.0186,424.2,362.5,17.0,-0.02
+Nyagatare,Irish potatoes,SeasonB,2023,0.2086,0.0371,424.2,362.5,17.0,-0.02
+Nyagatare,Maize,SeasonB,2023,0.4555,0.0453,424.2,362.5,17.0,-0.02
+Nyagatare,Tomatoes,SeasonB,2023,-0.6273,-0.2298,424.2,362.5,17.0,-0.02
+Rwamagana,Beans,SeasonB,2023,-0.2834,0.6982,411.3,392.2,4.9,-0.1296
+Rwamagana,Cassava,SeasonB,2023,0.055,0.027,411.3,392.2,4.9,-0.1296
+Rwamagana,Irish potatoes,SeasonB,2023,0.5775,0.0556,411.3,392.2,4.9,-0.1296
+Rwamagana,Maize,SeasonB,2023,-0.3999,-0.3642,411.3,392.2,4.9,-0.1296
+Rwamagana,Tomatoes,SeasonB,2023,-0.4948,-0.1877,411.3,392.2,4.9,-0.1296
+Gasabo,Beans,SeasonB,2023,-0.1193,0.0462,447.9,399.8,12.0,-0.0635
+Gasabo,Cassava,SeasonB,2023,0.1157,0.3381,447.9,399.8,12.0,-0.0635
+Gasabo,Irish potatoes,SeasonB,2023,-0.1225,0.1421,447.9,399.8,12.0,-0.0635
+Gasabo,Maize,SeasonB,2023,0.0361,-0.0038,447.9,399.8,12.0,-0.0635
+Gasabo,Tomatoes,SeasonB,2023,-0.146,-0.309,447.9,399.8,12.0,-0.0635
+Kicukiro,Beans,SeasonB,2023,0.0256,-0.6469,400.8,380.8,5.3,-0.126
+Kicukiro,Cassava,SeasonB,2023,0.1492,0.2713,400.8,380.8,5.3,-0.126
+Kicukiro,Maize,SeasonB,2023,-0.1034,0.2166,400.8,380.8,5.3,-0.126
+Kicukiro,Tomatoes,SeasonB,2023,-0.169,-0.3733,400.8,380.8,5.3,-0.126
+Nyarugenge,Beans,SeasonB,2023,-0.2255,0.09,437.0,394.3,10.8,-0.0743
+Nyarugenge,Cassava,SeasonB,2023,0.0027,-0.0953,437.0,394.3,10.8,-0.0743
+Nyarugenge,Maize,SeasonB,2023,-0.5366,0.1194,437.0,394.3,10.8,-0.0743
+Burera,Beans,SeasonB,2023,1.2249,0.9457,601.0,437.7,37.3,0.1399
+Burera,Cassava,SeasonB,2023,0.0056,-0.0252,601.0,437.7,37.3,0.1399
+Burera,Irish potatoes,SeasonB,2023,0.4489,-0.2191,601.0,437.7,37.3,0.1399
+Burera,Maize,SeasonB,2023,-0.0374,-0.2608,601.0,437.7,37.3,0.1399
+Burera,Tomatoes,SeasonB,2023,0.0161,-0.0461,601.0,437.7,37.3,0.1399
+Gakenke,Beans,SeasonB,2023,0.1658,0.0931,612.7,451.2,35.8,0.1288
+Gakenke,Cassava,SeasonB,2023,-0.0479,-0.046,612.7,451.2,35.8,0.1288
+Gakenke,Irish potatoes,SeasonB,2023,-0.037,-0.2614,612.7,451.2,35.8,0.1288
+Gakenke,Maize,SeasonB,2023,-0.445,0.0895,612.7,451.2,35.8,0.1288
+Gakenke,Tomatoes,SeasonB,2023,-0.0482,0.0086,612.7,451.2,35.8,0.1288
+Gicumbi,Beans,SeasonB,2023,0.6996,0.1301,561.3,438.5,28.0,0.0697
+Gicumbi,Irish potatoes,SeasonB,2023,0.5168,-0.1526,561.3,438.5,28.0,0.0697
+Gicumbi,Maize,SeasonB,2023,-0.2759,-0.1447,561.3,438.5,28.0,0.0697
+Musanze,Beans,SeasonB,2023,0.3313,0.1797,713.5,499.3,42.9,0.1798
+Musanze,Irish potatoes,SeasonB,2023,0.267,-0.295,713.5,499.3,42.9,0.1798
+Musanze,Maize,SeasonB,2023,-0.1417,0.1956,713.5,499.3,42.9,0.1798
+Rulindo,Beans,SeasonB,2023,-0.0526,-0.185,580.9,453.3,28.1,0.0709
+Rulindo,Cassava,SeasonB,2023,-0.2159,-0.1687,580.9,453.3,28.1,0.0709
+Rulindo,Irish potatoes,SeasonB,2023,0.1282,-0.231,580.9,453.3,28.1,0.0709
+Rulindo,Maize,SeasonB,2023,-0.4857,0.0703,580.9,453.3,28.1,0.0709
+Gisagara,Beans,SeasonB,2023,-0.0429,0.2837,501.0,473.4,5.8,-0.1205
+Gisagara,Cassava,SeasonB,2023,0.043,0.4681,501.0,473.4,5.8,-0.1205
+Gisagara,Irish potatoes,SeasonB,2023,0.0357,0.209,501.0,473.4,5.8,-0.1205
+Gisagara,Maize,SeasonB,2023,1.025,-0.0218,501.0,473.4,5.8,-0.1205
+Gisagara,Tomatoes,SeasonB,2023,-0.3204,-0.6252,501.0,473.4,5.8,-0.1205
+Huye,Beans,SeasonB,2023,-0.0135,-0.0663,514.5,488.9,5.2,-0.1261
+Huye,Cassava,SeasonB,2023,-0.1332,0.1759,514.5,488.9,5.2,-0.1261
+Huye,Irish potatoes,SeasonB,2023,-0.1638,0.1355,514.5,488.9,5.2,-0.1261
+Huye,Maize,SeasonB,2023,0.3118,0.1526,514.5,488.9,5.2,-0.1261
+Huye,Tomatoes,SeasonB,2023,-0.1259,0.2127,514.5,488.9,5.2,-0.1261
+Kamonyi,Beans,SeasonB,2023,-0.2229,-0.1885,471.7,399.0,18.2,-0.0098
+Kamonyi,Cassava,SeasonB,2023,-0.1099,-0.0416,471.7,399.0,18.2,-0.0098
+Kamonyi,Irish potatoes,SeasonB,2023,-0.4102,0.1459,471.7,399.0,18.2,-0.0098
+Kamonyi,Maize,SeasonB,2023,0.3648,-0.5987,471.7,399.0,18.2,-0.0098
+Kamonyi,Tomatoes,SeasonB,2023,0.2287,0.1973,471.7,399.0,18.2,-0.0098
+Muhanga,Beans,SeasonB,2023,0.4013,0.2443,570.7,431.4,32.3,0.1027
+Muhanga,Cassava,SeasonB,2023,-0.1817,-0.0272,570.7,431.4,32.3,0.1027
+Muhanga,Irish potatoes,SeasonB,2023,-0.4439,-0.0797,570.7,431.4,32.3,0.1027
+Muhanga,Maize,SeasonB,2023,-0.0954,-0.1997,570.7,431.4,32.3,0.1027
+Muhanga,Tomatoes,SeasonB,2023,-0.0553,0.2858,570.7,431.4,32.3,0.1027
+Nyamagabe,Beans,SeasonB,2023,0.7383,0.4916,651.1,510.5,27.5,0.0661
+Nyamagabe,Cassava,SeasonB,2023,-0.1309,-0.1687,651.1,510.5,27.5,0.0661
+Nyamagabe,Irish potatoes,SeasonB,2023,-0.457,0.2759,651.1,510.5,27.5,0.0661
+Nyamagabe,Maize,SeasonB,2023,0.6333,0.4173,651.1,510.5,27.5,0.0661
+Nyamagabe,Tomatoes,SeasonB,2023,0.028,0.2561,651.1,510.5,27.5,0.0661
+Nyanza,Beans,SeasonB,2023,0.1565,0.21,503.5,444.2,13.3,-0.0518
+Nyanza,Cassava,SeasonB,2023,-0.0308,0.4321,503.5,444.2,13.3,-0.0518
+Nyanza,Irish potatoes,SeasonB,2023,-0.2954,0.0908,503.5,444.2,13.3,-0.0518
+Nyanza,Maize,SeasonB,2023,0.1311,0.3941,503.5,444.2,13.3,-0.0518
+Nyanza,Tomatoes,SeasonB,2023,-0.1191,0.0228,503.5,444.2,13.3,-0.0518
+Nyaruguru,Beans,SeasonB,2023,1.0092,0.1695,614.9,536.6,14.6,-0.0409
+Nyaruguru,Cassava,SeasonB,2023,-0.2736,-0.1215,614.9,536.6,14.6,-0.0409
+Nyaruguru,Irish potatoes,SeasonB,2023,0.3914,-0.1383,614.9,536.6,14.6,-0.0409
+Nyaruguru,Tomatoes,SeasonB,2023,0.9248,0.6015,614.9,536.6,14.6,-0.0409
+Ruhango,Beans,SeasonB,2023,-0.6965,-0.081,505.0,418.9,20.6,0.0098
+Ruhango,Cassava,SeasonB,2023,0.2196,0.1002,505.0,418.9,20.6,0.0098
+Ruhango,Irish potatoes,SeasonB,2023,-0.3414,-0.2128,505.0,418.9,20.6,0.0098
+Ruhango,Maize,SeasonB,2023,0.269,-0.5573,505.0,418.9,20.6,0.0098
+Ruhango,Tomatoes,SeasonB,2023,-0.034,-0.1087,505.0,418.9,20.6,0.0098
+Karongi,Beans,SeasonB,2023,0.0487,-0.1744,574.6,423.1,35.8,0.1289
+Karongi,Cassava,SeasonB,2023,0.1197,-0.2158,574.6,423.1,35.8,0.1289
+Karongi,Irish potatoes,SeasonB,2023,0.2243,0.0258,574.6,423.1,35.8,0.1289
+Karongi,Maize,SeasonB,2023,-0.225,0.1349,574.6,423.1,35.8,0.1289
+Karongi,Tomatoes,SeasonB,2023,0.0667,0.2532,574.6,423.1,35.8,0.1289
+Ngororero,Beans,SeasonB,2023,-0.3987,-0.1597,630.7,452.9,39.3,0.154
+Ngororero,Cassava,SeasonB,2023,0.2639,0.1304,630.7,452.9,39.3,0.154
+Ngororero,Irish potatoes,SeasonB,2023,-0.3091,-0.2067,630.7,452.9,39.3,0.154
+Ngororero,Maize,SeasonB,2023,-0.1941,-0.0638,630.7,452.9,39.3,0.154
+Ngororero,Tomatoes,SeasonB,2023,0.0327,0.2033,630.7,452.9,39.3,0.154
+Nyabihu,Beans,SeasonB,2023,0.5697,-0.2763,697.3,479.5,45.4,0.1973
+Nyabihu,Cassava,SeasonB,2023,-0.2647,0.0516,697.3,479.5,45.4,0.1973
+Nyabihu,Irish potatoes,SeasonB,2023,-0.1733,-0.5015,697.3,479.5,45.4,0.1973
+Nyabihu,Maize,SeasonB,2023,0.5326,-0.0597,697.3,479.5,45.4,0.1973
+Nyamasheke,Beans,SeasonB,2023,-0.086,-0.2067,633.1,478.9,32.2,0.102
+Nyamasheke,Cassava,SeasonB,2023,-0.0027,-0.014,633.1,478.9,32.2,0.102
+Nyamasheke,Irish potatoes,SeasonB,2023,-0.1333,-0.1303,633.1,478.9,32.2,0.102
+Nyamasheke,Maize,SeasonB,2023,-0.5158,-0.3937,633.1,478.9,32.2,0.102
+Nyamasheke,Tomatoes,SeasonB,2023,0.1207,-0.0232,633.1,478.9,32.2,0.102
+Rubavu,Beans,SeasonB,2023,0.5327,-0.0965,564.6,399.8,41.2,0.168
+Rubavu,Irish potatoes,SeasonB,2023,0.3053,0.2232,564.6,399.8,41.2,0.168
+Rubavu,Maize,SeasonB,2023,-0.0521,0.024,564.6,399.8,41.2,0.168
+Rusizi,Beans,SeasonB,2023,0.0133,0.1303,631.3,492.3,28.2,0.0715
+Rusizi,Cassava,SeasonB,2023,-0.1577,0.0322,631.3,492.3,28.2,0.0715
+Rusizi,Irish potatoes,SeasonB,2023,0.1087,0.0648,631.3,492.3,28.2,0.0715
+Rusizi,Maize,SeasonB,2023,-0.1128,0.088,631.3,492.3,28.2,0.0715
+Rusizi,Tomatoes,SeasonB,2023,0.0239,0.3762,631.3,492.3,28.2,0.0715
+Rutsiro,Beans,SeasonB,2023,0.2217,0.1221,557.6,407.3,36.9,0.1369
+Rutsiro,Cassava,SeasonB,2023,-0.2435,-0.0533,557.6,407.3,36.9,0.1369
+Rutsiro,Irish potatoes,SeasonB,2023,0.141,-0.0145,557.6,407.3,36.9,0.1369
+Rutsiro,Maize,SeasonB,2023,-0.3199,0.1704,557.6,407.3,36.9,0.1369
+Rutsiro,Tomatoes,SeasonB,2023,-0.0989,0.0488,557.6,407.3,36.9,0.1369
+Bugesera,Beans,SeasonA,2024,0.0279,0.4,362.3,402.0,-9.9,-0.0255
+Bugesera,Cassava,SeasonA,2024,0.2489,0.1536,362.3,402.0,-9.9,-0.0255
+Bugesera,Maize,SeasonA,2024,0.1765,-0.0048,362.3,402.0,-9.9,-0.0255
+Bugesera,Tomatoes,SeasonA,2024,-0.2482,0.2294,362.3,402.0,-9.9,-0.0255
+Gatsibo,Beans,SeasonA,2024,-0.0945,-0.2673,462.7,451.2,2.5,0.1036
+Gatsibo,Cassava,SeasonA,2024,0.3534,0.003,462.7,451.2,2.5,0.1036
+Gatsibo,Irish potatoes,SeasonA,2024,0.4117,0.5753,462.7,451.2,2.5,0.1036
+Gatsibo,Maize,SeasonA,2024,1.0186,0.0369,462.7,451.2,2.5,0.1036
+Gatsibo,Tomatoes,SeasonA,2024,2.1529,0.6601,462.7,451.2,2.5,0.1036
+Kayonza,Beans,SeasonA,2024,-0.0881,0.1648,445.2,433.6,2.7,0.1049
+Kayonza,Cassava,SeasonA,2024,0.2708,0.0198,445.2,433.6,2.7,0.1049
+Kayonza,Irish potatoes,SeasonA,2024,-0.3445,-0.1708,445.2,433.6,2.7,0.1049
+Kayonza,Maize,SeasonA,2024,0.5442,-0.0468,445.2,433.6,2.7,0.1049
+Kayonza,Tomatoes,SeasonA,2024,2.1306,0.6829,445.2,433.6,2.7,0.1049
+Kirehe,Beans,SeasonA,2024,-0.3936,-0.3236,416.1,427.7,-2.7,0.051
+Kirehe,Cassava,SeasonA,2024,-0.1664,-0.1717,416.1,427.7,-2.7,0.051
+Kirehe,Maize,SeasonA,2024,0.3957,-0.1511,416.1,427.7,-2.7,0.051
+Kirehe,Tomatoes,SeasonA,2024,-0.5347,-0.95,416.1,427.7,-2.7,0.051
+Ngoma,Beans,SeasonA,2024,-0.099,-0.4913,388.4,417.8,-7.0,0.0055
+Ngoma,Cassava,SeasonA,2024,0.5683,-0.1569,388.4,417.8,-7.0,0.0055
+Ngoma,Irish potatoes,SeasonA,2024,-0.9268,-0.56,388.4,417.8,-7.0,0.0055
+Ngoma,Maize,SeasonA,2024,1.0016,-0.0726,388.4,417.8,-7.0,0.0055
+Ngoma,Tomatoes,SeasonA,2024,2.6313,0.6301,388.4,417.8,-7.0,0.0055
+Nyagatare,Beans,SeasonA,2024,-0.3328,-0.3943,477.4,454.6,5.0,0.1274
+Nyagatare,Cassava,SeasonA,2024,0.5739,0.1617,477.4,454.6,5.0,0.1274
+Nyagatare,Irish potatoes,SeasonA,2024,-0.3109,-0.5385,477.4,454.6,5.0,0.1274
+Nyagatare,Maize,SeasonA,2024,0.056,-0.1336,477.4,454.6,5.0,0.1274
+Nyagatare,Tomatoes,SeasonA,2024,-0.37,-0.6801,477.4,454.6,5.0,0.1274
+Rwamagana,Beans,SeasonA,2024,-0.1012,-0.0967,390.6,401.8,-2.8,0.0502
+Rwamagana,Cassava,SeasonA,2024,0.1707,0.1185,390.6,401.8,-2.8,0.0502
+Rwamagana,Maize,SeasonA,2024,-0.2307,0.0213,390.6,401.8,-2.8,0.0502
+Rwamagana,Tomatoes,SeasonA,2024,-0.6444,-0.1206,390.6,401.8,-2.8,0.0502
+Gasabo,Beans,SeasonA,2024,-0.3571,-0.0228,410.8,432.1,-4.9,0.0279
+Gasabo,Cassava,SeasonA,2024,-0.0224,-0.023,410.8,432.1,-4.9,0.0279
+Gasabo,Irish potatoes,SeasonA,2024,-0.0439,0.2213,410.8,432.1,-4.9,0.0279
+Gasabo,Maize,SeasonA,2024,0.1202,0.0104,410.8,432.1,-4.9,0.0279
+Gasabo,Tomatoes,SeasonA,2024,-0.1975,-0.362,410.8,432.1,-4.9,0.0279
+Kicukiro,Beans,SeasonA,2024,0.0376,-0.0204,376.9,413.0,-8.7,-0.013
+Kicukiro,Cassava,SeasonA,2024,-0.2688,-0.2822,376.9,413.0,-8.7,-0.013
+Kicukiro,Maize,SeasonA,2024,0.2071,0.0854,376.9,413.0,-8.7,-0.013
+Kicukiro,Tomatoes,SeasonA,2024,1.4447,0.8779,376.9,413.0,-8.7,-0.013
+Nyarugenge,Beans,SeasonA,2024,-0.2989,-0.0448,380.4,429.7,-11.5,-0.0434
+Nyarugenge,Cassava,SeasonA,2024,0.1438,-0.0379,380.4,429.7,-11.5,-0.0434
+Nyarugenge,Maize,SeasonA,2024,-1.2287,-0.6515,380.4,429.7,-11.5,-0.0434
+Burera,Beans,SeasonA,2024,0.851,0.2717,491.8,521.6,-5.7,0.0196
+Burera,Cassava,SeasonA,2024,0.3622,0.4073,491.8,521.6,-5.7,0.0196
+Burera,Irish potatoes,SeasonA,2024,0.6195,0.2068,491.8,521.6,-5.7,0.0196
+Burera,Maize,SeasonA,2024,-0.511,-0.2666,491.8,521.6,-5.7,0.0196
+Burera,Tomatoes,SeasonA,2024,0.074,0.4628,491.8,521.6,-5.7,0.0196
+Gakenke,Beans,SeasonA,2024,-0.1395,-0.1084,462.1,499.2,-7.4,0.0012
+Gakenke,Cassava,SeasonA,2024,-0.7867,-0.6907,462.1,499.2,-7.4,0.0012
+Gakenke,Irish potatoes,SeasonA,2024,0.0608,0.032,462.1,499.2,-7.4,0.0012
+Gakenke,Maize,SeasonA,2024,0.258,0.3674,462.1,499.2,-7.4,0.0012
+Gakenke,Tomatoes,SeasonA,2024,-0.3233,-0.0551,462.1,499.2,-7.4,0.0012
+Gicumbi,Beans,SeasonA,2024,1.1557,0.6244,434.2,462.8,-6.2,0.0147
+Gicumbi,Cassava,SeasonA,2024,0.2573,0.1088,434.2,462.8,-6.2,0.0147
+Gicumbi,Irish potatoes,SeasonA,2024,0.3798,0.0026,434.2,462.8,-6.2,0.0147
+Gicumbi,Maize,SeasonA,2024,-0.7216,-0.3807,434.2,462.8,-6.2,0.0147
+Musanze,Beans,SeasonA,2024,0.3294,0.0162,598.5,609.0,-1.7,0.0611
+Musanze,Cassava,SeasonA,2024,-0.5419,-0.5128,598.5,609.0,-1.7,0.0611
+Musanze,Irish potatoes,SeasonA,2024,0.415,0.0384,598.5,609.0,-1.7,0.0611
+Musanze,Maize,SeasonA,2024,-0.6745,-0.3404,598.5,609.0,-1.7,0.0611
+Rulindo,Beans,SeasonA,2024,0.3464,0.1085,436.3,470.3,-7.2,0.0034
+Rulindo,Cassava,SeasonA,2024,0.0219,-0.0155,436.3,470.3,-7.2,0.0034
+Rulindo,Irish potatoes,SeasonA,2024,0.31,0.1503,436.3,470.3,-7.2,0.0034
+Rulindo,Maize,SeasonA,2024,-0.493,0.0206,436.3,470.3,-7.2,0.0034
+Gisagara,Beans,SeasonA,2024,-0.1716,0.2538,498.1,528.3,-5.7,0.0196
+Gisagara,Cassava,SeasonA,2024,0.0691,0.2006,498.1,528.3,-5.7,0.0196
+Gisagara,Irish potatoes,SeasonA,2024,-1.1004,-0.5628,498.1,528.3,-5.7,0.0196
+Gisagara,Maize,SeasonA,2024,0.4385,-0.1723,498.1,528.3,-5.7,0.0196
+Gisagara,Tomatoes,SeasonA,2024,-0.0788,0.2403,498.1,528.3,-5.7,0.0196
+Huye,Beans,SeasonA,2024,-0.2829,-0.3597,458.6,509.2,-9.9,-0.0262
+Huye,Cassava,SeasonA,2024,0.2875,0.2529,458.6,509.2,-9.9,-0.0262
+Huye,Irish potatoes,SeasonA,2024,-0.3327,-0.0345,458.6,509.2,-9.9,-0.0262
+Huye,Maize,SeasonA,2024,0.3874,-0.1325,458.6,509.2,-9.9,-0.0262
+Huye,Tomatoes,SeasonA,2024,0.2006,-0.1538,458.6,509.2,-9.9,-0.0262
+Kamonyi,Beans,SeasonA,2024,-0.3814,-0.2538,373.1,440.5,-15.3,-0.0876
+Kamonyi,Cassava,SeasonA,2024,0.0545,0.4059,373.1,440.5,-15.3,-0.0876
+Kamonyi,Irish potatoes,SeasonA,2024,-0.2592,0.3554,373.1,440.5,-15.3,-0.0876
+Kamonyi,Maize,SeasonA,2024,0.835,-0.0831,373.1,440.5,-15.3,-0.0876
+Kamonyi,Tomatoes,SeasonA,2024,2.4916,1.4751,373.1,440.5,-15.3,-0.0876
+Muhanga,Beans,SeasonA,2024,1.2389,0.8943,409.9,486.1,-15.7,-0.092
+Muhanga,Cassava,SeasonA,2024,-0.7871,-0.691,409.9,486.1,-15.7,-0.092
+Muhanga,Irish potatoes,SeasonA,2024,-0.5172,-0.2034,409.9,486.1,-15.7,-0.092
+Muhanga,Maize,SeasonA,2024,0.204,-0.0433,409.9,486.1,-15.7,-0.092
+Muhanga,Tomatoes,SeasonA,2024,-0.078,0.2645,409.9,486.1,-15.7,-0.092
+Nyamagabe,Beans,SeasonA,2024,1.3486,1.1283,472.5,538.4,-12.2,-0.0521
+Nyamagabe,Cassava,SeasonA,2024,-0.2872,-0.2521,472.5,538.4,-12.2,-0.0521
+Nyamagabe,Irish potatoes,SeasonA,2024,0.4713,0.3753,472.5,538.4,-12.2,-0.0521
+Nyamagabe,Maize,SeasonA,2024,0.0637,0.0278,472.5,538.4,-12.2,-0.0521
+Nyamagabe,Tomatoes,SeasonA,2024,0.2541,0.3957,472.5,538.4,-12.2,-0.0521
+Nyanza,Beans,SeasonA,2024,-0.8159,-0.6372,410.4,474.9,-13.6,-0.0675
+Nyanza,Cassava,SeasonA,2024,-0.2205,-0.1833,410.4,474.9,-13.6,-0.0675
+Nyanza,Irish potatoes,SeasonA,2024,-1.0306,-0.3109,410.4,474.9,-13.6,-0.0675
+Nyanza,Maize,SeasonA,2024,-0.0593,-0.1889,410.4,474.9,-13.6,-0.0675
+Nyanza,Tomatoes,SeasonA,2024,-0.3082,0.1352,410.4,474.9,-13.6,-0.0675
+Nyaruguru,Beans,SeasonA,2024,0.3827,0.3511,538.8,583.5,-7.7,-0.0012
+Nyaruguru,Cassava,SeasonA,2024,-0.1795,-0.241,538.8,583.5,-7.7,-0.0012
+Nyaruguru,Irish potatoes,SeasonA,2024,0.0421,0.0254,538.8,583.5,-7.7,-0.0012
+Nyaruguru,Maize,SeasonA,2024,0.5533,-0.1519,538.8,583.5,-7.7,-0.0012
+Nyaruguru,Tomatoes,SeasonA,2024,0.0,0.2311,538.8,583.5,-7.7,-0.0012
+Ruhango,Beans,SeasonA,2024,0.1848,0.2415,373.1,447.1,-16.6,-0.1025
+Ruhango,Cassava,SeasonA,2024,-0.2245,-0.2584,373.1,447.1,-16.6,-0.1025
+Ruhango,Irish potatoes,SeasonA,2024,-0.1033,0.0351,373.1,447.1,-16.6,-0.1025
+Ruhango,Maize,SeasonA,2024,-0.6643,-0.2428,373.1,447.1,-16.6,-0.1025
+Ruhango,Tomatoes,SeasonA,2024,0.295,0.2039,373.1,447.1,-16.6,-0.1025
+Karongi,Beans,SeasonA,2024,0.2873,0.0384,397.7,483.7,-17.8,-0.1173
+Karongi,Cassava,SeasonA,2024,-0.1675,-0.4376,397.7,483.7,-17.8,-0.1173
+Karongi,Irish potatoes,SeasonA,2024,-0.2181,-0.3111,397.7,483.7,-17.8,-0.1173
+Karongi,Maize,SeasonA,2024,-1.1661,-0.4961,397.7,483.7,-17.8,-0.1173
+Karongi,Tomatoes,SeasonA,2024,0.2236,-0.0011,397.7,483.7,-17.8,-0.1173
+Ngororero,Beans,SeasonA,2024,0.2556,0.0586,455.3,510.9,-10.9,-0.0368
+Ngororero,Cassava,SeasonA,2024,-0.6192,-0.5837,455.3,510.9,-10.9,-0.0368
+Ngororero,Irish potatoes,SeasonA,2024,0.2983,0.0787,455.3,510.9,-10.9,-0.0368
+Ngororero,Maize,SeasonA,2024,-1.3163,-0.5319,455.3,510.9,-10.9,-0.0368
+Ngororero,Tomatoes,SeasonA,2024,0.4249,0.3218,455.3,510.9,-10.9,-0.0368
+Nyabihu,Beans,SeasonA,2024,1.3416,0.5209,547.1,558.7,-2.1,0.0575
+Nyabihu,Cassava,SeasonA,2024,0.1226,0.0769,547.1,558.7,-2.1,0.0575
+Nyabihu,Irish potatoes,SeasonA,2024,0.3109,0.0851,547.1,558.7,-2.1,0.0575
+Nyabihu,Maize,SeasonA,2024,-0.4462,-0.5091,547.1,558.7,-2.1,0.0575
+Nyamasheke,Beans,SeasonA,2024,0.2128,0.4254,481.1,552.2,-12.9,-0.0594
+Nyamasheke,Cassava,SeasonA,2024,0.0772,0.1148,481.1,552.2,-12.9,-0.0594
+Nyamasheke,Irish potatoes,SeasonA,2024,-0.419,-0.2826,481.1,552.2,-12.9,-0.0594
+Nyamasheke,Maize,SeasonA,2024,-0.4095,-0.2455,481.1,552.2,-12.9,-0.0594
+Nyamasheke,Tomatoes,SeasonA,2024,-0.3158,-0.5015,481.1,552.2,-12.9,-0.0594
+Rubavu,Beans,SeasonA,2024,1.2517,0.1655,469.6,496.9,-5.5,0.022
+Rubavu,Cassava,SeasonA,2024,-0.3777,-0.2634,469.6,496.9,-5.5,0.022
+Rubavu,Irish potatoes,SeasonA,2024,0.2982,-0.0171,469.6,496.9,-5.5,0.022
+Rubavu,Maize,SeasonA,2024,-1.0018,-0.6618,469.6,496.9,-5.5,0.022
+Rusizi,Beans,SeasonA,2024,-0.2848,-0.1388,510.7,578.2,-11.7,-0.0457
+Rusizi,Cassava,SeasonA,2024,-0.5858,-0.372,510.7,578.2,-11.7,-0.0457
+Rusizi,Irish potatoes,SeasonA,2024,-0.065,-0.0107,510.7,578.2,-11.7,-0.0457
+Rusizi,Maize,SeasonA,2024,-1.8205,-0.755,510.7,578.2,-11.7,-0.0457
+Rusizi,Tomatoes,SeasonA,2024,0.071,0.4791,510.7,578.2,-11.7,-0.0457
+Rutsiro,Beans,SeasonA,2024,-0.0287,0.0063,409.4,479.8,-14.7,-0.0802
+Rutsiro,Cassava,SeasonA,2024,-0.1413,-0.3807,409.4,479.8,-14.7,-0.0802
+Rutsiro,Irish potatoes,SeasonA,2024,0.108,0.0836,409.4,479.8,-14.7,-0.0802
+Rutsiro,Maize,SeasonA,2024,-0.7045,-0.2486,409.4,479.8,-14.7,-0.0802
+Rutsiro,Tomatoes,SeasonA,2024,0.4814,0.2769,409.4,479.8,-14.7,-0.0802
+Bugesera,Beans,SeasonB,2024,-0.6677,-0.2248,322.5,365.9,-11.9,0.0112
+Bugesera,Cassava,SeasonB,2024,0.251,0.1223,322.5,365.9,-11.9,0.0112
+Bugesera,Irish potatoes,SeasonB,2024,-0.7332,-0.6056,322.5,365.9,-11.9,0.0112
+Bugesera,Maize,SeasonB,2024,0.009,0.0102,322.5,365.9,-11.9,0.0112
+Bugesera,Tomatoes,SeasonB,2024,-0.6344,-0.245,322.5,365.9,-11.9,0.0112
+Gatsibo,Beans,SeasonB,2024,-0.202,0.0583,313.5,406.3,-22.9,-0.1218
+Gatsibo,Cassava,SeasonB,2024,0.344,-0.0294,313.5,406.3,-22.9,-0.1218
+Gatsibo,Irish potatoes,SeasonB,2024,0.4763,0.2862,313.5,406.3,-22.9,-0.1218
+Gatsibo,Maize,SeasonB,2024,1.0531,0.3602,313.5,406.3,-22.9,-0.1218
+Gatsibo,Tomatoes,SeasonB,2024,1.4795,0.7929,313.5,406.3,-22.9,-0.1218
+Kayonza,Beans,SeasonB,2024,-0.3312,-0.1538,313.3,406.1,-22.8,-0.122
+Kayonza,Cassava,SeasonB,2024,0.1328,0.0067,313.3,406.1,-22.8,-0.122
+Kayonza,Irish potatoes,SeasonB,2024,0.1719,0.2117,313.3,406.1,-22.8,-0.122
+Kayonza,Maize,SeasonB,2024,0.8254,0.271,313.3,406.1,-22.8,-0.122
+Kayonza,Tomatoes,SeasonB,2024,1.0273,0.1669,313.3,406.1,-22.8,-0.122
+Kirehe,Beans,SeasonB,2024,-0.0744,0.3235,356.8,408.1,-12.6,0.0031
+Kirehe,Cassava,SeasonB,2024,0.7882,0.8795,356.8,408.1,-12.6,0.0031
+Kirehe,Maize,SeasonB,2024,1.7137,0.4071,356.8,408.1,-12.6,0.0031
+Kirehe,Tomatoes,SeasonB,2024,0.1966,-0.2176,356.8,408.1,-12.6,0.0031
+Ngoma,Beans,SeasonB,2024,-0.6915,-0.2889,336.2,396.9,-15.3,-0.0285
+Ngoma,Cassava,SeasonB,2024,-0.0029,-0.3925,336.2,396.9,-15.3,-0.0285
+Ngoma,Irish potatoes,SeasonB,2024,-0.0348,0.1041,336.2,396.9,-15.3,-0.0285
+Ngoma,Maize,SeasonB,2024,2.1124,0.4388,336.2,396.9,-15.3,-0.0285
+Ngoma,Tomatoes,SeasonB,2024,1.6889,1.1907,336.2,396.9,-15.3,-0.0285
+Nyagatare,Beans,SeasonB,2024,-0.4197,-0.195,287.0,362.5,-20.8,-0.0961
+Nyagatare,Cassava,SeasonB,2024,0.4512,0.5063,287.0,362.5,-20.8,-0.0961
+Nyagatare,Irish potatoes,SeasonB,2024,0.3028,0.1313,287.0,362.5,-20.8,-0.0961
+Nyagatare,Maize,SeasonB,2024,-0.0981,-0.5083,287.0,362.5,-20.8,-0.0961
+Nyagatare,Tomatoes,SeasonB,2024,-0.1969,0.2006,287.0,362.5,-20.8,-0.0961
+Rwamagana,Beans,SeasonB,2024,-0.5772,0.4044,327.5,392.2,-16.5,-0.0428
+Rwamagana,Cassava,SeasonB,2024,-0.1315,-0.1596,327.5,392.2,-16.5,-0.0428
+Rwamagana,Maize,SeasonB,2024,-0.0091,0.0266,327.5,392.2,-16.5,-0.0428
+Rwamagana,Tomatoes,SeasonB,2024,-0.2598,0.0474,327.5,392.2,-16.5,-0.0428
+Gasabo,Beans,SeasonB,2024,-0.501,-0.3356,337.0,399.8,-15.7,-0.0334
+Gasabo,Cassava,SeasonB,2024,-0.103,0.1195,337.0,399.8,-15.7,-0.0334
+Gasabo,Irish potatoes,SeasonB,2024,-0.0707,0.1939,337.0,399.8,-15.7,-0.0334
+Gasabo,Maize,SeasonB,2024,0.4632,0.4233,337.0,399.8,-15.7,-0.0334
+Gasabo,Tomatoes,SeasonB,2024,0.1365,-0.0265,337.0,399.8,-15.7,-0.0334
+Kicukiro,Cassava,SeasonB,2024,0.6673,0.7894,324.5,380.8,-14.8,-0.0225
+Kicukiro,Maize,SeasonB,2024,-0.949,-0.629,324.5,380.8,-14.8,-0.0225
+Kicukiro,Tomatoes,SeasonB,2024,0.1935,-0.0108,324.5,380.8,-14.8,-0.0225
+Nyarugenge,Beans,SeasonB,2024,-0.5861,-0.2705,342.9,394.3,-13.1,-0.0022
+Nyarugenge,Cassava,SeasonB,2024,0.3163,0.2183,342.9,394.3,-13.1,-0.0022
+Nyarugenge,Maize,SeasonB,2024,-0.873,-0.217,342.9,394.3,-13.1,-0.0022
+Burera,Beans,SeasonB,2024,0.6801,0.4009,362.3,437.7,-17.2,-0.0516
+Burera,Cassava,SeasonB,2024,0.4363,0.4055,362.3,437.7,-17.2,-0.0516
+Burera,Irish potatoes,SeasonB,2024,1.106,0.438,362.3,437.7,-17.2,-0.0516
+Burera,Maize,SeasonB,2024,1.2626,1.0392,362.3,437.7,-17.2,-0.0516
+Burera,Tomatoes,SeasonB,2024,0.1053,0.0431,362.3,437.7,-17.2,-0.0516
+Gakenke,Beans,SeasonB,2024,0.2946,0.2219,394.9,451.2,-12.5,0.0042
+Gakenke,Cassava,SeasonB,2024,-0.1638,-0.162,394.9,451.2,-12.5,0.0042
+Gakenke,Irish potatoes,SeasonB,2024,0.4381,0.2138,394.9,451.2,-12.5,0.0042
+Gakenke,Maize,SeasonB,2024,-0.8242,-0.2896,394.9,451.2,-12.5,0.0042
+Gakenke,Tomatoes,SeasonB,2024,0.0,0.0569,394.9,451.2,-12.5,0.0042
+Gicumbi,Beans,SeasonB,2024,1.5855,1.016,356.7,438.5,-18.7,-0.069
+Gicumbi,Irish potatoes,SeasonB,2024,0.8555,0.1861,356.7,438.5,-18.7,-0.069
+Gicumbi,Maize,SeasonB,2024,-0.057,0.0742,356.7,438.5,-18.7,-0.069
+Musanze,Beans,SeasonB,2024,0.2073,0.0556,434.6,499.3,-13.0,-0.0013
+Musanze,Irish potatoes,SeasonB,2024,0.9428,0.3808,434.6,499.3,-13.0,-0.0013
+Musanze,Maize,SeasonB,2024,-0.3033,0.034,434.6,499.3,-13.0,-0.0013
+Rulindo,Beans,SeasonB,2024,-0.0822,-0.2146,383.2,453.3,-15.5,-0.0305
+Rulindo,Cassava,SeasonB,2024,0.0162,0.0634,383.2,453.3,-15.5,-0.0305
+Rulindo,Irish potatoes,SeasonB,2024,0.6474,0.2881,383.2,453.3,-15.5,-0.0305
+Rulindo,Maize,SeasonB,2024,-0.8262,-0.2702,383.2,453.3,-15.5,-0.0305
+Gisagara,Beans,SeasonB,2024,-0.2442,0.0823,435.8,473.4,-8.0,0.0547
+Gisagara,Cassava,SeasonB,2024,-0.06,0.3651,435.8,473.4,-8.0,0.0547
+Gisagara,Irish potatoes,SeasonB,2024,-0.4949,-0.3215,435.8,473.4,-8.0,0.0547
+Gisagara,Maize,SeasonB,2024,1.0739,0.0271,435.8,473.4,-8.0,0.0547
+Gisagara,Tomatoes,SeasonB,2024,0.3777,0.0729,435.8,473.4,-8.0,0.0547
+Huye,Beans,SeasonB,2024,0.0973,0.0444,451.6,488.9,-7.6,0.0581
+Huye,Cassava,SeasonB,2024,0.0029,0.3119,451.6,488.9,-7.6,0.0581
+Huye,Irish potatoes,SeasonB,2024,-0.4098,-0.1106,451.6,488.9,-7.6,0.0581
+Huye,Maize,SeasonB,2024,0.4231,0.2639,451.6,488.9,-7.6,0.0581
+Huye,Tomatoes,SeasonB,2024,-0.6662,-0.3276,451.6,488.9,-7.6,0.0581
+Kamonyi,Beans,SeasonB,2024,-0.0435,-0.0091,348.2,399.0,-12.7,0.0013
+Kamonyi,Cassava,SeasonB,2024,-0.2255,-0.1572,348.2,399.0,-12.7,0.0013
+Kamonyi,Irish potatoes,SeasonB,2024,-0.7067,-0.1506,348.2,399.0,-12.7,0.0013
+Kamonyi,Maize,SeasonB,2024,1.6396,0.676,348.2,399.0,-12.7,0.0013
+Kamonyi,Tomatoes,SeasonB,2024,-0.1316,-0.1631,348.2,399.0,-12.7,0.0013
+Muhanga,Beans,SeasonB,2024,1.082,0.925,377.3,431.4,-12.5,0.0035
+Muhanga,Cassava,SeasonB,2024,-0.56,-0.4055,377.3,431.4,-12.5,0.0035
+Muhanga,Irish potatoes,SeasonB,2024,-0.3437,0.0205,377.3,431.4,-12.5,0.0035
+Muhanga,Maize,SeasonB,2024,-1.1058,-1.2101,377.3,431.4,-12.5,0.0035
+Muhanga,Tomatoes,SeasonB,2024,-0.8647,-0.5236,377.3,431.4,-12.5,0.0035
+Nyamagabe,Beans,SeasonB,2024,0.7844,0.5377,461.6,510.5,-9.6,0.0368
+Nyamagabe,Cassava,SeasonB,2024,-0.4301,-0.4679,461.6,510.5,-9.6,0.0368
+Nyamagabe,Irish potatoes,SeasonB,2024,-1.2235,-0.4906,461.6,510.5,-9.6,0.0368
+Nyamagabe,Maize,SeasonB,2024,1.0894,0.8735,461.6,510.5,-9.6,0.0368
+Nyamagabe,Tomatoes,SeasonB,2024,-0.5161,-0.288,461.6,510.5,-9.6,0.0368
+Nyanza,Beans,SeasonB,2024,-0.4585,-0.4051,390.1,444.2,-12.2,0.0076
+Nyanza,Cassava,SeasonB,2024,-0.1208,0.3421,390.1,444.2,-12.2,0.0076
+Nyanza,Irish potatoes,SeasonB,2024,-0.5671,-0.1809,390.1,444.2,-12.2,0.0076
+Nyanza,Maize,SeasonB,2024,-0.9558,-0.6927,390.1,444.2,-12.2,0.0076
+Nyanza,Tomatoes,SeasonB,2024,-0.2568,-0.1149,390.1,444.2,-12.2,0.0076
+Nyaruguru,Beans,SeasonB,2024,1.876,1.0363,516.2,536.6,-3.8,0.0987
+Nyaruguru,Cassava,SeasonB,2024,0.1706,0.3226,516.2,536.6,-3.8,0.0987
+Nyaruguru,Irish potatoes,SeasonB,2024,0.3148,-0.2149,516.2,536.6,-3.8,0.0987
+Nyaruguru,Tomatoes,SeasonB,2024,0.5582,0.2349,516.2,536.6,-3.8,0.0987
+Ruhango,Beans,SeasonB,2024,-0.2584,0.3571,364.4,418.9,-13.0,-0.0019
+Ruhango,Cassava,SeasonB,2024,0.5901,0.4707,364.4,418.9,-13.0,-0.0019
+Ruhango,Irish potatoes,SeasonB,2024,-0.3294,-0.2008,364.4,418.9,-13.0,-0.0019
+Ruhango,Maize,SeasonB,2024,1.1797,0.3534,364.4,418.9,-13.0,-0.0019
+Ruhango,Tomatoes,SeasonB,2024,-0.1245,-0.1992,364.4,418.9,-13.0,-0.0019
+Karongi,Beans,SeasonB,2024,0.0417,-0.1814,364.2,423.1,-13.9,-0.0124
+Karongi,Cassava,SeasonB,2024,-0.1212,-0.4566,364.2,423.1,-13.9,-0.0124
+Karongi,Irish potatoes,SeasonB,2024,0.0249,-0.1735,364.2,423.1,-13.9,-0.0124
+Karongi,Maize,SeasonB,2024,-0.9071,-0.5472,364.2,423.1,-13.9,-0.0124
+Karongi,Tomatoes,SeasonB,2024,-0.4928,-0.3063,364.2,423.1,-13.9,-0.0124
+Ngororero,Beans,SeasonB,2024,0.1908,0.4298,406.1,452.9,-10.3,0.0284
+Ngororero,Cassava,SeasonB,2024,-0.0122,-0.1458,406.1,452.9,-10.3,0.0284
+Ngororero,Irish potatoes,SeasonB,2024,-0.049,0.0533,406.1,452.9,-10.3,0.0284
+Ngororero,Maize,SeasonB,2024,-0.1898,-0.0594,406.1,452.9,-10.3,0.0284
+Ngororero,Tomatoes,SeasonB,2024,-0.1597,0.0109,406.1,452.9,-10.3,0.0284
+Nyabihu,Beans,SeasonB,2024,1.2977,0.4517,424.6,479.5,-11.4,0.0159
+Nyabihu,Cassava,SeasonB,2024,-0.3629,-0.0466,424.6,479.5,-11.4,0.0159
+Nyabihu,Irish potatoes,SeasonB,2024,0.3261,-0.0021,424.6,479.5,-11.4,0.0159
+Nyabihu,Maize,SeasonB,2024,1.0366,0.4443,424.6,479.5,-11.4,0.0159
+Nyamasheke,Beans,SeasonB,2024,0.3863,0.2655,407.7,478.9,-14.9,-0.0235
+Nyamasheke,Cassava,SeasonB,2024,0.507,0.4956,407.7,478.9,-14.9,-0.0235
+Nyamasheke,Irish potatoes,SeasonB,2024,0.1274,0.1304,407.7,478.9,-14.9,-0.0235
+Nyamasheke,Maize,SeasonB,2024,0.4182,0.5402,407.7,478.9,-14.9,-0.0235
+Nyamasheke,Tomatoes,SeasonB,2024,0.1283,-0.0156,407.7,478.9,-14.9,-0.0235
+Rubavu,Beans,SeasonB,2024,1.063,0.4338,350.5,399.8,-12.3,0.0059
+Rubavu,Irish potatoes,SeasonB,2024,0.5583,0.4763,350.5,399.8,-12.3,0.0059
+Rubavu,Maize,SeasonB,2024,-0.1834,-0.1073,350.5,399.8,-12.3,0.0059
+Rusizi,Beans,SeasonB,2024,-0.0889,0.0281,433.5,492.3,-11.9,0.0103
+Rusizi,Cassava,SeasonB,2024,-0.6863,-0.4964,433.5,492.3,-11.9,0.0103
+Rusizi,Irish potatoes,SeasonB,2024,-0.2369,-0.2808,433.5,492.3,-11.9,0.0103
+Rusizi,Maize,SeasonB,2024,-0.3847,-0.1839,433.5,492.3,-11.9,0.0103
+Rusizi,Tomatoes,SeasonB,2024,-0.6414,-0.2891,433.5,492.3,-11.9,0.0103
+Rutsiro,Beans,SeasonB,2024,0.2141,0.1145,359.8,407.3,-11.6,0.0135
+Rutsiro,Cassava,SeasonB,2024,-0.5111,-0.3209,359.8,407.3,-11.6,0.0135
+Rutsiro,Irish potatoes,SeasonB,2024,0.2019,0.0464,359.8,407.3,-11.6,0.0135
+Rutsiro,Maize,SeasonB,2024,-0.9649,-0.4747,359.8,407.3,-11.6,0.0135
+Rutsiro,Tomatoes,SeasonB,2024,-0.0858,0.0619,359.8,407.3,-11.6,0.0135

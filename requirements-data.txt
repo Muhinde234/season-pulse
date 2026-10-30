@@ -1,0 +1,5 @@
+# Only for the offline data scripts (fetch_rainfall.py); the Streamlit app does not need these.
+-r requirements.txt
+requests==2.32.5
+rasterio==1.5.2
+rasterstats==0.21.0
