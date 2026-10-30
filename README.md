@@ -4,7 +4,7 @@
 *Imboni* (Kinyarwanda): the one who watches over.
 NISR Big Data Hackathon 2026 · Track 1: Agricultural Productivity
 
-🔗 **Live app:** [ADD STREAMLIT LINK]  
+🔗 **Live app:** [imboni.streamlit.app](https://imboni.streamlit.app/)  
 👥 **Team:** IGIRIMPUHWE Dositha, IRADUKUNDA HIRWA Nadia · AIMS Rwanda  
 🎬 **Demo video:** we uploaded our demo to the [`demo`](demo/) folder: [`demo/demo.mp4`](demo/demo.mp4). GitHub may not play it in the browser, so open the file and click **Download** (⬇) to watch it.
 
