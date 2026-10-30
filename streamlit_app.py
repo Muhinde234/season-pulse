@@ -1,6 +1,6 @@
 """Imboni - in-season crop early warning for Rwanda's 30 districts.
 
-Run locally:  streamlit run app.py
+Run locally:  streamlit run streamlit_app.py
 """
 from pathlib import Path
 

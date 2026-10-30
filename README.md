@@ -94,7 +94,7 @@ Rwanda has a Farmer Promoter in every village (14,000+). They can submit reports
 git clone https://github.com/Muhinde234/season-pulse.git
 cd season-pulse
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 The processed files in `app_data/` are committed, so the app runs straight away. To rebuild them from the raw data in `data/raw/`:
@@ -109,7 +109,7 @@ The 37 MB Establishment Census (`data/raw/establishment_census.csv`) is not comm
 
 ## 9. Project structure
 ```
-app.py               Streamlit app: navigation, theme
+streamlit_app.py     Streamlit app: navigation, theme
 views/               the pages: home · map · alerts · district · report · ussd · model
 core/                data loaders, risk + recommended actions, SQLite reports, Kinyarwanda/English labels, styling
 build_baseline.py    RYI baseline + 2024 backtest
