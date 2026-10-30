@@ -1,5 +1,7 @@
-# Season Pulse 🌱
-**In-season crop early warning for Rwanda's 30 districts**
+<img src="assets/imboni_logo.png" alt="Imboni" width="280">
+
+**In-season crop early warning for Rwanda's 30 districts**  
+*Imboni* (Kinyarwanda): the one who watches over.
 NISR Big Data Hackathon 2026 · Track 1: Agricultural Productivity
 
 🔗 **Live app:** [ADD STREAMLIT LINK]  
@@ -14,7 +16,7 @@ NISR's Seasonal Agricultural Survey (SAS) gives high-quality production estimate
 - Farmers and agronomists see problems (dry fields, pests, poor growth) weeks earlier, but nobody collects those observations for planners.
 
 ## 2. Our solution
-Season Pulse combines **NISR historical data** with **field reports during the season** to tell planners where productivity is at risk now, and what to do about it.
+Imboni combines **NISR historical data** with **field reports during the season** to tell planners where productivity is at risk now, and what to do about it.
 
 | User | What they get |
 |---|---|
@@ -23,6 +25,9 @@ Season Pulse combines **NISR historical data** with **field reports during the s
 | **Farmers** | A simple report form (Kinyarwanda / English) and how their district compares |
 
 ### App pages
+- **Overview**: national snapshot for the current season: alerts per district, top priorities, how Imboni works and key findings.
+- **District Profile**: one district at a glance: risk per crop, history by season, official 2026 yields, rainfall, irrigation, local partners and field reports.
+
 1. **District Risk Map**: districts coloured by yield vs the typical district (crop + season filter), including official 2026 Season A yields.
 2. **Submit Field Report**: mobile-friendly form: crop, condition (1–5), pests, rainfall problem.
 3. **Alerts & Recommended Actions**: baseline adjusted by field reports, ranked by risk and food dependence.
@@ -73,7 +78,7 @@ Any unit error that affects a whole year cancels out. RYI 0.7 = "30% below the t
 - It caught **10 of 21** districts that came in at least 20% below typical.
 - It overstates how far below typical a district will be, so we use it as a **risk ranking**, not an exact forecast.
 
-**What this means:** history shows *where* risk tends to be, but it misses many bad seasons. That's why Season Pulse adds **field reports during the season**.
+**What this means:** history shows *where* risk tends to be, but it misses many bad seasons. That's why Imboni adds **field reports during the season**.
 
 ## 6. Limitations
 - Absolute yields in the cleaned 2020–2024 files can't be trusted. Only relative comparisons are used.
@@ -105,13 +110,13 @@ The 37 MB Establishment Census (`data/raw/establishment_census.csv`) is not comm
 ## 9. Project structure
 ```
 app.py               Streamlit app: navigation, theme
-views/               the five pages: map · alerts · report · ussd · model
+views/               the pages: home · map · alerts · district · report · ussd · model
 core/                data loaders, risk + recommended actions, SQLite reports, Kinyarwanda/English labels, styling
 build_baseline.py    RYI baseline + 2024 backtest
 prep_data.py         Aggregates census + EICV, extracts SAS 2026 Season A Tables 13 and 32, builds the 2026 validation
 fetch_rainfall.py    CHIRPS rainfall per district and season (optional)
 app_data/            Small processed files used by the app (the only folder the app reads)
 data/raw/            Source datasets: SAS 2020–2024, EICV, Tables_2026_Season_A.xlsx (census not committed)
-assets/              Logo
+assets/              Imboni logo and icon
 .streamlit/          Theme
 ```

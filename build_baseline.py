@@ -1,4 +1,4 @@
-"""Season Pulse - build district baselines from NISR SAS (2020-2024) and backtest.
+"""Imboni - build district baselines from NISR SAS (2020-2024) and backtest.
 
 Unit consistency in the cleaned SAS file varies by year/crop (e.g. Irish potato
 yields ~13 t/ha in 2020-21 vs ~0.8 t/ha from 2022). We therefore never compare

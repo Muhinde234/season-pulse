@@ -38,8 +38,18 @@ SEASON = {
 TEXT = {
     "language": {"en": "Language", "rw": "Ururimi"},
     "title": {"en": "Submit Field Report", "rw": "Tanga raporo yo mu murima"},
-    "intro": {"en": "Tell us how the crop looks in your area. Five quick questions.",
-              "rw": "Tubwire uko igihingwa kimeze iwanyu. Ibibazo bitanu byihuse."},
+    "intro": {"en": "Five quick questions about the crop in your area.",
+              "rw": "Ibibazo bitanu byihuse ku gihingwa cyo iwanyu."},
+    "where": {"en": "Where and what", "rw": "Aho ari n'igihingwa"},
+    "looks": {"en": "How it looks", "rw": "Uko kimeze"},
+    "problems": {"en": "Problems seen", "rw": "Ibibazo byagaragaye"},
+    "summary": {"en": "Your report", "rw": "Raporo yawe"},
+    "answered": {"en": "{n} of 5", "rw": "{n} kuri 5"},
+    "five_q": {"en": "5 questions", "rw": "Ibibazo 5"},
+    "no_reports_here": {"en": "No field reports here yet this season", "rw": "Nta raporo iratangwa hano iki gihembwe"},
+    "history": {"en": "History here", "rw": "Amateka hano"},
+    "vs_typical": {"en": "vs typical district, 2020–2024", "rw": "ugereranyije n'akarere gasanzwe, 2020–2024"},
+    "reports_here": {"en": "Field reports this season: {n}", "rw": "Raporo z'iki gihembwe: {n}"},
     "district": {"en": "District", "rw": "Akarere"},
     "crop": {"en": "Crop", "rw": "Igihingwa"},
     "condition": {"en": "How does the crop look?", "rw": "Igihingwa kimeze gute?"},
@@ -62,9 +72,11 @@ def lang_toggle(default: str = "en") -> str:
     (Streamlit drops a widget's own state when you navigate away from its page)."""
     st.session_state.setdefault("lang", default)
     st.session_state["lang_widget"] = st.session_state.lang
-    st.radio(f"{TEXT['language']['en']} / {TEXT['language']['rw']}", list(LANGS), format_func=LANGS.get,
-             horizontal=True, key="lang_widget",
-             on_change=lambda: st.session_state.update(lang=st.session_state.lang_widget))
+    # A segmented control returns None when the active option is clicked again: keep the current language then
+    st.segmented_control(f"{TEXT['language']['en']} / {TEXT['language']['rw']}", list(LANGS), format_func=LANGS.get,
+                         key="lang_widget", label_visibility="collapsed",
+                         on_change=lambda: st.session_state.update(
+                             lang=st.session_state.lang_widget or st.session_state.lang))
     return st.session_state.lang
 
 

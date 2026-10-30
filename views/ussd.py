@@ -9,7 +9,7 @@ import streamlit as st
 from core.data import CROPS, PROVINCES, current_season
 from core.db import RAIN_OPTIONS, add_report, get_reports
 from core.i18n import CONDITION, CROP, RAIN, YES_NO, lang_toggle
-from core.ui import hero, section
+from core.ui import hero, icon, section
 
 CODE = "*XXX#"
 MAX_CHARS = 160  # typical USSD screen limit (182 on some networks)
@@ -23,8 +23,8 @@ PROVINCE = {  # short names that fit on a USSD line
     "Eastern Province": {"en": "East", "rw": "Iburasirazuba"},
 }
 UI = {
-    "welcome": {"en": "Season Pulse\n1. Report my crop\n2. Exit",
-                "rw": "Season Pulse\n1. Tanga raporo y'igihingwa\n2. Sohoka"},
+    "welcome": {"en": "Imboni\n1. Report my crop\n2. Exit",
+                "rw": "Imboni\n1. Tanga raporo y'igihingwa\n2. Sohoka"},
     "province": {"en": "Province:", "rw": "Intara:"},
     "district": {"en": "District:", "rw": "Akarere:"},
     "crop": {"en": "Crop:", "rw": "Igihingwa:"},
@@ -124,11 +124,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-hero("USSD prototype", "What a farmer without a smartphone sees after dialling a short code, one screen at a "
-     "time, in Kinyarwanda by default.", eyebrow="Report · Basic phones")
-st.warning(f"**PROTOTYPE, not a live service.** This page *simulates* what a farmer without a smartphone would see "
-           f"after dialling {CODE} (placeholder code). No phone network is involved. Reports sent here are saved "
-           f"with source **“{SOURCE}”** so they can be told apart from web-form reports.", icon="🧪")
+hero("USSD prototype", f"Reporting from any basic phone: dial {CODE}.", eyebrow="Report · Basic phones",
+     ic="dialpad")
+st.markdown(f'<div class="sp-note sp-note-warn">{icon("science")}<span><b>Prototype</b>: simulated, no phone '
+            f'network. Saved as “{SOURCE}”.</span></div>', unsafe_allow_html=True)
 
 lang = lang_toggle(default="rw")
 s = st.session_state.setdefault("ussd", new_session())
@@ -178,5 +177,4 @@ else:
                                   "season": "Season", "condition": "Condition", "pests": "Pests",
                                   "rain_problem": "Rain problem"}),
                  hide_index=True, width="stretch")
-st.caption("These reports feed the Map and Alerts pages like any other field report. In production, a USSD "
-           "gateway would forward each reply to a server running this same menu logic.")
+st.caption("Feeds the Map and Alerts like any field report. In production a USSD gateway runs this same menu.")

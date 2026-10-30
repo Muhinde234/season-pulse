@@ -1,4 +1,4 @@
-"""Season Pulse - CHIRPS seasonal rainfall per district, and its link with relative yields.
+"""Imboni - CHIRPS seasonal rainfall per district, and its link with relative yields.
 
 Run after build_baseline.py (needs data/out_sas_clean_ryi.csv):
     pip install -r requirements-data.txt

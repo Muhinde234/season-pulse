@@ -1,4 +1,4 @@
-"""Season Pulse - turn the large/raw NISR files into the small files in app_data/ that the app loads.
+"""Imboni - turn the large/raw NISR files into the small files in app_data/ that the app loads.
 
 Run after build_baseline.py (the 2026 validation needs app_data/out_district_baseline.csv):
     python prep_data.py
