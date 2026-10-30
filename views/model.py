@@ -135,7 +135,7 @@ with tabs[3]:
         x = 100 * (np.exp(rv.rain_rel) - 1)  # % wetter/drier than the typical district's anomaly
         y = 100 * (np.exp(rv.ryi_dev) - 1)   # % above/below this cell's own average RYI
         r_all = rv.ryi_dev.corr(rv.rain_rel)
-        rho = rv.ryi_dev.corr(rv.rain_rel, method="spearman")
+        rho = rv.ryi_dev.rank().corr(rv.rain_rel.rank())  # Spearman = Pearson on ranks (no scipy needed)
         dry = x <= -10
         bad = y <= -20
         c = st.columns(4)
