@@ -10,6 +10,16 @@ from core.db import get_reports
 from core.risk import adjusted_table
 from core.ui import LEVEL_STYLE, badge, hero, icon, nz, rank_list, section
 
+# Crop and action icons for the scorecard (names resolved to Lucide in core.ui.icon)
+CROP_IC = {"Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", "Maize": "grass",
+           "Tomatoes": "local_florist"}
+ACTION_TAG = {"Small-scale irrigation": ("water_drop", "#0284c7", "Irrigation"),
+              "Soil testing & fertility support": ("science", "#16a34a", "Soil fertility"),
+              "Post-harvest collection & storage": ("warehouse", "#b45309", "Storage"),
+              "Value addition / processing": ("factory", "#7c3aed", "Value addition"),
+              "Export opportunity": ("public", "#0f766e", "Export")}
+SCALE = 60  # scorecard bar spans -60% ... +60% vs typical
+
 hero("District Profile", "Everything Imboni knows about one district.", eyebrow="Monitor · District",
      ic="location_city")
 
@@ -34,7 +44,7 @@ rain_txt = (f"{rain.rain_anom_pct.iloc[0]:+.0f}%", f"rain vs average · {rain.ra
     else ("–", "no rainfall data")
 kpis = [
     ("crisis_alert", LEVEL_STYLE["High"] if at_risk else LEVEL_STYLE["Normal"],
-     f"{at_risk}/{len(d)}" if at_risk else "None", "Crops at risk",
+     f"{at_risk} of {len(d)}" if at_risk else "None", "Crops at risk",
      f"High or Watch · {SEASONS[season].split(' (')[0]}" if at_risk else "every crop near or above typical"),
     ("rainy", "#0284c7", rain_txt[0], "Rainfall", rain_txt[1]),
     ("water_drop", "#0891b2", f"{irr.traditional_pct:.0f}%" if pd.notna(irr.traditional_pct) else "–",
@@ -54,18 +64,35 @@ section(f"Crops this season", SEASONS[season])
 if d.empty:
     st.info("No reliable survey data for this district and season.", icon=":material/info:")
 else:
-    cards = []
+    def pos(ryi):  # % position of an RYI on the -SCALE..+SCALE bar
+        return (max(min(float(pct_vs_typical(ryi)), SCALE), -SCALE) + SCALE) / (2 * SCALE) * 100
+
+    rows = []
     for _, r in d.iterrows():
-        acts = [a.split(" ", 1)[1] for a in r.action.split(" · ") if " " in a] or ["Monitor"]
-        rep = f"{int(r.n_reports)} report{'s' if r.n_reports != 1 else ''}" if r.n_reports else ""
-        cards.append(
-            f'<div class="sp-crop" style="--c:{LEVEL_STYLE[r.level]}"><div class="sp-crop-top">{badge(r.level)}'
-            f'<small>{rep}</small></div><b>{html.escape(r.CropName)}</b>'
-            f'<div class="sp-crop-v">{fmt_pct(r.adjusted_RYI)}<small> expected</small></div>'
-            f'<div class="sp-crop-s">Baseline {fmt_pct(r.baseline_RYI)} · {int(r.n_years)} yr'
-            f'{" · persistently low" if r.persistently_low else ""}</div>'
-            f'<div class="sp-crop-a">{icon("task_alt")}<span>{html.escape(", ".join(acts))}</span></div></div>')
-    st.markdown(f'<div class="sp-crops">{"".join(cards)}</div>', unsafe_allow_html=True)
+        exp, base = pos(r.adjusted_RYI), pos(r.baseline_RYI)
+        fill = f"left:{min(exp, 50):.1f}%;width:{abs(exp - 50):.1f}%"
+        tags = "".join(
+            f'<span class="sp-tag" style="--c:{c}">{icon(ic)} {name}</span>'
+            for a in r.action.split(" · ") if " " in a and a.split(" ", 1)[1] in ACTION_TAG
+            for ic, c, name in [ACTION_TAG[a.split(" ", 1)[1]]]) \
+            or f'<span class="sp-tag" style="--c:#64748b">{icon("visibility")} Monitor</span>'
+        meta = f"{int(r.n_years)} yr history" + (" · persistently low" if r.persistently_low else "") \
+            + (f" · {int(r.n_reports)} report{'s' if r.n_reports != 1 else ''}" if r.n_reports else "")
+        tone = "#dc2626" if r.adjusted_RYI < 1 else "#16a34a"
+        rows.append(
+            f'<div class="sp-row" style="--c:{LEVEL_STYLE[r.level]};--t:{tone}">'
+            f'<div class="sp-row-crop"><span class="sp-row-ic">{icon(CROP_IC[r.CropName])}</span>'
+            f'<div><b>{html.escape(r.CropName)}</b><small>{meta}</small></div></div>'
+            f'<div>{badge(r.level)}</div>'
+            f'<div class="sp-scale" title="Bar: expected this season · tick: 2020–2024 baseline ({fmt_pct(r.baseline_RYI)})">'
+            f'<span class="sp-scale-0"></span><i style="{fill}"></i><em style="left:{base:.1f}%"></em></div>'
+            f'<div class="sp-row-v">{fmt_pct(r.adjusted_RYI)}</div>'
+            f'<div class="sp-tags">{tags}</div></div>')
+    st.markdown('<div class="sp-rows"><div class="sp-row sp-row-h"><span>Crop</span><span>Status</span>'
+                f'<span title="Bar: expected this season, from typical (centre line). Tick: 2020–2024 baseline. '
+                f'Scale −{SCALE}% to +{SCALE}%.">vs typical district</span>'
+                f'<span>Expected</span><span>Recommended action</span></div>{"".join(rows)}</div>',
+                unsafe_allow_html=True)
     st.page_link("views/alerts.py", label="Open in Alerts & Recommended Actions", icon=":material/arrow_forward:")
 
 # ---------- history + official 2026 ----------
