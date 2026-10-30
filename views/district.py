@@ -76,7 +76,7 @@ else:
             for a in r.action.split(" · ") if " " in a and a.split(" ", 1)[1] in ACTION_TAG
             for ic, c, name in [ACTION_TAG[a.split(" ", 1)[1]]]) \
             or f'<span class="sp-tag" style="--c:#64748b">{icon("visibility")} Monitor</span>'
-        meta = f"{int(r.n_years)} yr history" + (" · persistently low" if r.persistently_low else "") \
+        meta = f"{int(r.n_years)} yrs" + (" · persistently low" if r.persistently_low else "") \
             + (f" · {int(r.n_reports)} report{'s' if r.n_reports != 1 else ''}" if r.n_reports else "")
         tone = "#dc2626" if r.adjusted_RYI < 1 else "#16a34a"
         rows.append(
