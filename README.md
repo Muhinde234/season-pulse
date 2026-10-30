@@ -5,7 +5,8 @@
 NISR Big Data Hackathon 2026 · Track 1: Agricultural Productivity
 
 🔗 **Live app:** [ADD STREAMLIT LINK]  
-👥 **Team:** [NAMES, UNIVERSITY]
+👥 **Team:** [NAMES, UNIVERSITY]  
+🎬 **Demo video:** we uploaded our demo to the [`demo`](demo/) folder: [`demo/demo.mp4`](demo/demo.mp4). GitHub may not play it in the browser, so open the file and click **Download** (⬇) to watch it.
 
 ---
 
@@ -118,5 +119,6 @@ fetch_rainfall.py    CHIRPS rainfall per district and season (optional)
 app_data/            Small processed files used by the app (the only folder the app reads)
 data/raw/            Source datasets: SAS 2020–2024, EICV, Tables_2026_Season_A.xlsx (census not committed)
 assets/              Imboni logo and icon
+demo/                Demo video (demo.mp4): download to watch
 .streamlit/          Theme
 ```
