@@ -76,23 +76,39 @@ with st.container(key="atool"):
     has = {name: t.action.str.contains(label, regex=False) for name, label in SHORT.items()}
     acts = c5.multiselect("Recommended action", list(SHORT), key="af_acts", placeholder="All actions",
                           format_func=lambda a: f"{a} ({int(has[a].sum())})" if has[a].sum() else a)
+def guide_html() -> str:
+    """The "How to read" guide: four short sections built from the same thresholds and rules the page uses."""
+    def block(ic: str, title: str, body: str) -> str:
+        return (f'<div class="sp-g-block"><div class="sp-g-ic">{icon(ic)}</div><div><b>{title}</b>{body}</div></div>')
+
+    levels = "".join(
+        f'<div class="sp-g-level">{badge(lvl)}<span>{rule}</span></div>'
+        for lvl, rule in [("High", f"expected ≥{round((1 - HIGH) * 100)}% below typical"),
+                          ("Watch", f"≥{round((1 - WATCH) * 100)}% below typical"),
+                          ("Normal", "near or above typical")])
+    actions = "".join(
+        f'<div class="sp-g-act" style="--c:{c}"><span class="sp-g-act-ic">{icon(ic)}</span>'
+        f'<div><b>{html.escape(name)}</b><small>{html.escape(rule)}</small></div></div>'
+        for ic, c, name, _, rule in ACTIONS.values())
+    return (
+        '<div class="sp-guide"><div class="sp-g-title">How to read this page</div>'
+        + block("insights", "Expected yield",
+                '<p>Shown as <strong>% vs the typical district</strong>: the median district for the same crop '
+                'and season. It starts from 2020–2024 history and moves with this season\'s field reports.</p>'
+                '<div class="sp-g-scale"><span>below typical</span><span>typical</span><span>above</span></div>')
+        + block("crisis_alert", "Risk level", f'<div class="sp-g-levels">{levels}</div>')
+        + block("trending_down", "Priority",
+                '<p>Ranks alerts within the same level.</p><div class="sp-g-formula">shortfall '
+                '<i>×</i> food dependence</div><p class="sp-g-note">Food dependence = how much households in the '
+                'district eat the crop (EICV 2020).</p>')
+        + block("task_alt", "Recommended actions", f'<div class="sp-g-acts">{actions}</div>')
+        + '<div class="sp-g-foot">Local partner counts: NISR Establishment Census · Rainfall: CHIRPS · '
+          'Irrigation: SAS 2026 Season A</div></div>')
+
+
 with h2:
     with st.popover("How to read", icon=":material/help:", width="stretch"):
-        st.markdown(f"""
-**Expected yield** is shown as % vs the *typical district* (the median district for that crop and season).
-It starts from the 2020–2024 history and moves with this season's field reports.
-
-**Risk level**
-- **High**: expected ≥{round((1 - HIGH) * 100)}% below typical
-- **Watch**: ≥{round((1 - WATCH) * 100)}% below
-- **Normal**: anything else
-
-**Priority** ranks alerts at the same level: shortfall × how much households in the district eat the crop
-(EICV 2020). The bigger the shortfall and the food dependence, the higher it ranks.
-
-**Actions** are simple, transparent rules (hover an action in the detail panel to see its rule).
-Local partner counts come from the NISR Establishment Census.
-""")
+        st.markdown(guide_html(), unsafe_allow_html=True)
         st.toggle("Include simulated reports", value=True, key="al_sim")
 
 # ---------- status + tiles (after crop/province filters, before level/action filters) ----------
