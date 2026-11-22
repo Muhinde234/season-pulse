@@ -11,11 +11,13 @@ CROP_ICON = {"Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", 
              "Tomatoes": "local_florist"}
 CONDITION_COLOR = {1: "#dc2626", 2: "#ea580c", 3: "#ca8a04", 4: "#16a34a", 5: "#15803d"}
 
+# The banner comes first (flush with the top), so it reads the language chosen on the previous run
+lang = st.session_state.get("lang", "en")
+hero(t("title", lang), t("intro", lang), eyebrow="Report · Web form", ic="edit_note",
+     meta=[("clock", "≈1 min"), ("languages", "Kinyarwanda · English")])
 _, lc = st.columns([3, 1])
 with lc:
     lang = lang_toggle()
-hero(t("title", lang), t("intro", lang), eyebrow="Report · Web form", ic="edit_note",
-     meta=[("clock", "≈1 min"), ("languages", "Kinyarwanda · English")])
 
 # Each successful submit bumps the generation so every widget starts empty again
 gen = st.session_state.setdefault("rep_gen", 0)

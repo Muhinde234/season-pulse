@@ -6,7 +6,7 @@ from core.data import (CROPS, DISTRICTS, SEASONS, current_season, fmt_pct, load_
                        pct_vs_typical)
 from core.db import get_reports
 from core.risk import adjusted_table
-from core.ui import hero, nz, rank_list, section
+from core.ui import filter_head, hero, nz, rank_list, section
 
 # Diverging: red (below typical) <-> neutral gray <-> blue (above typical)
 DIVERGING = [[0.0, "#a32626"], [0.25, "#e34948"], [0.5, "#f0efec"], [0.75, "#5598e7"], [1.0, "#1c5cab"]]
@@ -20,6 +20,7 @@ hero("District Risk Map", "Yield vs the typical district. **Red** = below, **blu
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
+    st.markdown(filter_head(hint="Pick a crop, a season and what to show"), unsafe_allow_html=True)
     c1, c2 = st.columns([1.15, 1])
     # segmented controls return None when the active option is clicked again: fall back to the default
     crop = c1.segmented_control("Crop", CROPS, default=CROPS[0], key="map_crop") or CROPS[0]

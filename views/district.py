@@ -8,7 +8,7 @@ from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fm
                        load_cooperatives, load_irrigation, load_official_2026, pct_vs_typical)
 from core.db import get_reports
 from core.risk import adjusted_table
-from core.ui import LEVEL_STYLE, badge, hero, icon, nz, rank_list, section
+from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz, rank_list, section
 
 # Crop and action icons for the scorecard (names resolved to Lucide in core.ui.icon)
 CROP_IC = {"Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", "Maize": "grass",
@@ -25,6 +25,7 @@ hero("District Profile", "Everything Imboni knows about one district.", eyebrow=
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
+    st.markdown(filter_head(hint="Choose a district and season"), unsafe_allow_html=True)
     c1, c2 = st.columns([1, 1.3], vertical_alignment="bottom")
     district = c1.selectbox("District", DISTRICTS, index=DISTRICTS.index("Bugesera"), key="dp_district")
     season = c2.segmented_control("Season", seasons, default=current_season(), key="dp_season",

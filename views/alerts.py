@@ -6,7 +6,7 @@ import streamlit as st
 from core.data import CROPS, PROVINCES, SEASONS, current_season, fmt_pct, pct_vs_typical
 from core.db import get_reports
 from core.risk import DRY_PCT, HIGH, LEVELS, SURPLUS, TRADITIONAL_PCT, WATCH, adjusted_table
-from core.ui import LEVEL_STYLE, badge, hero, icon, nz
+from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz
 
 # Recommended actions, keyed by the labels core.risk.recommended_actions produces:
 # (material icon, colour, short name, what it means, when the rule fires)
@@ -39,7 +39,29 @@ hero("Alerts & Recommended Actions", "Where yields are at risk this season, and 
 
 # ---------- filters ----------
 seasons = list(SEASONS)
+FILTER_DEFAULTS = {"al_season": current_season(), "al_levels": ["High", "Watch"], "al_crops": CROPS,
+                   "al_prov": [], "al_acts": [], "al_sim": True}
+
+
+def is_default(key: str, value) -> bool:
+    if value is None or (key == "al_crops" and value == []):
+        return True  # a cleared segmented control / crop list falls back to the default
+    d = FILTER_DEFAULTS[key]
+    return sorted(value) == sorted(d) if isinstance(d, list) else value == d
+
+
+def reset_filters() -> None:
+    for k in FILTER_DEFAULTS:  # dropping the stored value lets every widget start from its default again
+        st.session_state.pop(k, None)
+
+
+n_active = sum(not is_default(k, st.session_state[k]) for k in FILTER_DEFAULTS if k in st.session_state)
 with st.container(key="atool"):
+    h1, h2 = st.columns([5, 1], vertical_alignment="center")
+    h1.markdown(filter_head(n_active, "Showing High and Watch alerts" if not n_active else ""),
+                unsafe_allow_html=True)
+    h2.button("Reset", icon=":material/restart_alt:", type="tertiary", on_click=reset_filters,
+              disabled=not n_active, width="stretch", key="al_reset")
     c1, c2, c3 = st.columns([1.15, 1, 1], vertical_alignment="bottom")
     season = c1.segmented_control("Season", seasons, default=current_season(), key="al_season",
                                   format_func=lambda s: SEASONS[s].split(" (")[0]) or current_season()

@@ -22,7 +22,16 @@ LEVEL_STYLE = {  # accent colour per alert level; icon + text always accompany t
 CSS = """
 <style>
 /* ---------- layout ---------- */
-.block-container { padding: 2.2rem 2.75rem 4rem; max-width: 100%; }
+.block-container { padding: 0 2.75rem 4rem !important; max-width: 100%; }
+/* Streamlit's top controls (menu, Deploy, run status) float in a small pill over the banner */
+[data-testid="stHeader"] { background: transparent !important; pointer-events: none; }
+[data-testid="stHeader"] * { pointer-events: auto; }
+[data-testid="stStatusWidget"], [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] {
+    background: rgba(255,255,255,.94); border: 1px solid var(--line); border-radius: 999px;
+    box-shadow: 0 2px 8px -4px rgba(14,59,34,.3); margin-left: .3rem; }
+/* the zero-height blocks that load the app's CSS would otherwise add a 16px gap above the banner */
+.block-container [data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] style) { display: none; }
+[data-testid="stExpandSidebarButton"] { background: rgba(255,255,255,.92); border-radius: 10px; }
 h1, h2, h3 { letter-spacing: -0.02em; }
 [data-testid="stHeader"] { background: transparent; }
 
@@ -32,7 +41,8 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 
 /* ---------- page header (light) ---------- */
 .sp-hero { position: relative; overflow: hidden; display: flex; align-items: center; flex-wrap: wrap;
-           gap: 1rem 1.1rem; margin-bottom: 1.3rem; padding: 1.35rem 1.5rem 1.25rem; border-radius: 20px;
+           gap: 1rem 1.1rem; margin-bottom: 1.3rem; padding: 3.1rem 1.5rem 1.25rem; border-radius: 0 0 20px 20px;
+           border-top: none !important;
            background: var(--surface); border: 1px solid var(--line);
            box-shadow: 0 1px 2px rgba(14,59,34,.05), 0 14px 34px -26px rgba(14,59,34,.45); }
 .sp-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
@@ -62,7 +72,7 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .sp-hero.feature { border: none; gap: 1.2rem 1.3rem; background: #17602F; border-radius: 0;
                    box-shadow: 0 1px 3px rgba(14,59,34,.18);
                    /* full bleed: cancel the page side padding so the banner touches both edges */
-                   margin-left: -2.75rem; margin-right: -2.75rem; padding: 1.9rem 2.75rem 1.6rem; }
+                   margin-left: -2.75rem; margin-right: -2.75rem; padding: 3.4rem 2.75rem 1.6rem; }
 .sp-hero.feature::before, .sp-hero.feature::after { display: none; }
 .sp-hero.feature .sp-hero-ic { width: 4.2rem; height: 4.2rem; border-radius: 20px; color: var(--gold);
                                background: rgba(245,183,0,.12); border-color: rgba(245,183,0,.35); }
@@ -160,6 +170,53 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 [data-baseweb="tab-list"] { gap: .3rem; border-bottom: 1px solid rgba(128,128,128,.18); }
 [data-baseweb="tab"] { font-weight: 600; padding: .55rem .9rem !important; border-radius: 10px 10px 0 0; }
 [data-baseweb="tab"][aria-selected="true"] { background: rgba(22,163,74,.08); }
+
+/* ---------- filters (pro) ---------- */
+:is(.st-key-toolbar, .st-key-atool, .st-key-toolbar2) { padding: .85rem 1.2rem .55rem !important;
+    border-color: var(--line) !important; box-shadow: 0 1px 2px rgba(14,59,34,.04); }
+.sp-fhead { display: flex; align-items: center; gap: .55rem; font-size: .95rem; color: var(--forest); }
+.sp-fhead b { font-weight: 750; }
+.sp-fhead .mi { font-size: 1.05rem; color: var(--leaf); }
+.sp-fcount { font-size: .72rem; font-weight: 700; color: var(--forest); background: var(--mint);
+             border: 1px solid rgba(31,138,67,.22); border-radius: 999px; padding: .12rem .55rem; }
+.sp-fhint { font-size: .78rem; color: var(--muted); }
+.st-key-toolbar .sp-fhead { padding-bottom: .55rem; margin-bottom: .15rem;
+                                                border-bottom: 1px solid var(--line); }
+/* small uppercase labels */
+:is(.st-key-toolbar, .st-key-atool, .st-key-toolbar2) [data-testid="stWidgetLabel"] p {
+    font-size: .68rem !important; font-weight: 750 !important; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--muted) !important; }
+/* segmented control: grey track, the active option is a raised white tab */
+[data-baseweb="button-group"]:has(> button[kind^="segmented_control"]) {
+    background: #EDF1EE; padding: 3px; border-radius: 12px; gap: 2px !important; width: fit-content; max-width: 100%;
+    flex-wrap: wrap; }
+button[kind="segmented_control"], button[kind="segmented_controlActive"] {
+    border: none !important; border-radius: 9px !important; min-height: 2.15rem; padding: 0 .95rem !important;
+    box-shadow: none !important; font-weight: 600; }
+button[kind="segmented_control"] { background: transparent !important; color: var(--muted) !important; }
+button[kind="segmented_control"]:hover { color: var(--forest) !important; background: rgba(255,255,255,.55) !important; }
+button[kind="segmented_controlActive"] { background: #ffffff !important; color: var(--forest) !important;
+    box-shadow: 0 1px 3px rgba(14,59,34,.16), 0 0 0 1px rgba(14,59,34,.06) !important; }
+button[kind^="segmented_control"] * { color: inherit !important; font-weight: 650; }
+/* pills: soft grey off, solid forest on */
+button[kind="pills"], button[kind="pillsActive"] { border-radius: 999px !important; min-height: 2.1rem;
+    padding: 0 .9rem !important; font-weight: 600; transition: background .15s, border-color .15s, color .15s; }
+button[kind="pills"] { background: #F2F5F2 !important; border: 1px solid transparent !important; color: var(--ink) !important; }
+button[kind="pills"]:hover { background: #EAF4ED !important; border-color: rgba(31,138,67,.35) !important; }
+button[kind="pillsActive"] { background: var(--forest) !important; border: 1px solid var(--forest) !important;
+    color: #ffffff !important; box-shadow: 0 1px 2px rgba(14,59,34,.25); }
+button[kind^="pills"] * { color: inherit !important; }
+/* dropdowns */
+.block-container [data-baseweb="select"] > div { background: #F6F8F5 !important; border-radius: 12px !important;
+    border-color: var(--line) !important; min-height: 2.5rem; }
+.block-container [data-baseweb="select"] > div:hover { border-color: rgba(31,138,67,.45) !important; }
+.block-container [data-baseweb="tag"] { background: var(--forest) !important; border-radius: 999px !important; }
+.block-container [data-baseweb="tag"] * { color: #fff !important; }
+/* reset + popover buttons in the filter bar */
+:is(.st-key-atool, .st-key-toolbar) button[kind="tertiary"] { color: var(--leaf) !important; font-weight: 650; }
+:is(.st-key-atool, .st-key-toolbar) button[kind="tertiary"]:disabled { color: var(--muted) !important; opacity: .5; }
+[data-testid="stPopoverButton"] { border-radius: 12px !important; border-color: var(--line) !important;
+    background: #F6F8F5 !important; color: var(--forest) !important; font-weight: 650; }
 
 /* ---------- surfaces ---------- */
 .sp-rows, .sp-tile, .sp-alert, .sp-stepcard, .sp-sum, .sp-plan, .sp-crop { background-color: var(--surface); }
@@ -409,16 +466,16 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
   .sp-row > .sp-scale { grid-column: 1 / -1; }
   .sp-row-h { display: none; }
   .sp-kpi b { font-size: 1.4rem; }
-  .block-container { padding: 3.6rem 1rem 3rem; }
+  .block-container { padding: 0 1rem 3rem !important; }
   /* KPI rows: two cards per line instead of one tall stack */
   [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) {
       flex-wrap: wrap !important; flex-direction: row !important; gap: .6rem !important; }
   [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) > [data-testid="stColumn"] {
       width: calc(50% - .3rem) !important; flex: 1 1 calc(50% - .3rem) !important; min-width: calc(50% - .3rem) !important; }
   [data-testid="stMetricValue"] { font-size: 1.5rem; }
-  .sp-hero { padding: 1.1rem 1.05rem; border-radius: 16px; }
+  .sp-hero { padding: 3.6rem 1.05rem 1.1rem; border-radius: 0 0 16px 16px; }
   .sp-hero h1 { font-size: 1.45rem; }
-  .sp-hero.feature { margin-left: -1rem; margin-right: -1rem; padding: 1.4rem 1rem; }
+  .sp-hero.feature { margin-left: -1rem; margin-right: -1rem; padding: 3.8rem 1rem 1.4rem; }
   .sp-hero.feature h1 { font-size: 1.75rem; }
   .sp-hero-ic { width: 2.9rem; height: 2.9rem; }
 }
@@ -447,7 +504,7 @@ LUCIDE = {
     "warehouse": "warehouse", "monitor_heart": "activity", "bug_report": "bug", "grain": "bean",
     "nutrition": "carrot", "egg": "egg", "grass": "wheat", "local_florist": "cherry",
     "calendar": "calendar-days", "database": "database", "clock": "clock", "languages": "languages",
-    "offline": "wifi-off", "layers": "layers",
+    "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal",
 }
 
 
@@ -487,6 +544,13 @@ def section(title: str, note: str = "") -> None:
 def nz(n, empty: str = "None"):
     """A count for display: never show a bare 0 in the design, use a word instead."""
     return empty if not n else n
+
+
+def filter_head(n_active: int = 0, hint: str = "") -> str:
+    """Header row for a filter panel: icon, title, active-filter badge, optional hint."""
+    badge_html = f'<span class="sp-fcount">{n_active} active</span>' if n_active else ""
+    hint_html = f'<span class="sp-fhint">{html.escape(hint)}</span>' if hint else ""
+    return f'<div class="sp-fhead">{icon("filters")}<b>Filters</b>{badge_html}{hint_html}</div>'
 
 
 def badge(level: str) -> str:
