@@ -499,7 +499,7 @@ LUCIDE = {
     "warehouse": "warehouse", "monitor_heart": "activity", "bug_report": "bug", "grain": "bean",
     "nutrition": "carrot", "egg": "egg", "grass": "wheat", "local_florist": "cherry",
     "calendar": "calendar-days", "database": "database", "clock": "clock", "languages": "languages",
-    "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal",
+    "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal", "dashboard": "layout-dashboard",
 }
 
 
