@@ -169,7 +169,7 @@ body:has([data-testid="stSidebar"][aria-expanded="false"]) .sp-hero { padding-le
 .sp-fhead .mi { font-size: 1.05rem; color: var(--leaf); }
 .sp-fcount { font-size: .72rem; font-weight: 700; color: var(--forest); background: var(--mint);
              border: 1px solid rgba(31,138,67,.22); border-radius: 999px; padding: .12rem .55rem; }
-.sp-fhint { font-size: .78rem; color: var(--muted); }
+.sp-fhint { font-size: .85rem; color: var(--muted); font-weight: 500; }
 .st-key-toolbar .sp-fhead { padding-bottom: .55rem; margin-bottom: .15rem;
                                                 border-bottom: 1px solid var(--line); }
 /* small uppercase labels */
@@ -200,7 +200,8 @@ button[kind^="pills"] * { color: inherit !important; }
 .block-container [data-baseweb="select"] > div { background: #F6F8F5 !important; border-radius: 12px !important;
     border-color: var(--line) !important; min-height: 2.5rem; }
 .block-container [data-baseweb="select"] > div:hover { border-color: rgba(31,138,67,.45) !important; }
-.block-container [data-baseweb="tag"] { background: var(--forest) !important; border-radius: 999px !important; }
+.block-container [data-baseweb="tag"] { background: var(--forest) !important; border-radius: 999px !important;
+    margin-top: 2px !important; margin-bottom: 2px !important; height: 1.6rem !important; font-size: .82rem !important; }
 .block-container [data-baseweb="tag"] * { color: #fff !important; }
 /* reset + popover buttons in the filter bar */
 :is(.st-key-atool, .st-key-toolbar) button[kind="tertiary"] { color: var(--leaf) !important; font-weight: 650; }
@@ -342,7 +343,7 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
 .st-key-toolbar2 { background: var(--surface); border: 1px solid rgba(128,128,128,0.18) !important;
                    border-radius: 16px !important; padding: .8rem 1.1rem .5rem !important; margin-bottom: .2rem; }
 .st-key-atool { background: var(--surface); border: 1px solid rgba(128,128,128,0.18) !important;
-                border-radius: 16px 16px 0 0 !important; padding: .9rem 1.1rem .4rem !important; }
+                border-radius: 16px !important; padding: .9rem 1.1rem .4rem !important; margin-bottom: .8rem; }
 .st-key-toolbar2 { border-top: none !important; border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; margin-top: -1rem; margin-bottom: .8rem; }
 .sp-list-h { font-size: 1rem; margin: .2rem 0 .5rem; }
 .sp-list-h b { font-size: 1.15rem; }
@@ -542,10 +543,10 @@ def nz(n, empty: str = "None"):
 
 
 def filter_head(n_active: int = 0, hint: str = "") -> str:
-    """Header row for a filter panel: icon, title, active-filter badge, optional hint."""
+    """Header row for a filter panel: icon, optional hint, active-filter badge."""
     badge_html = f'<span class="sp-fcount">{n_active} active</span>' if n_active else ""
     hint_html = f'<span class="sp-fhint">{html.escape(hint)}</span>' if hint else ""
-    return f'<div class="sp-fhead">{icon("filters")}<b>Filters</b>{badge_html}{hint_html}</div>'
+    return f'<div class="sp-fhead">{icon("filters")}{hint_html}{badge_html}</div>'
 
 
 def badge(level: str) -> str:

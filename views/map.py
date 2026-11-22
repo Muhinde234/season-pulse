@@ -21,12 +21,11 @@ hero("District Risk Map", "Yield vs the typical district. **Red** = below, **blu
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
     st.markdown(filter_head(hint="Pick a crop, a season and what to show"), unsafe_allow_html=True)
-    c1, c2 = st.columns([1.15, 1])
-    # segmented controls return None when the active option is clicked again: fall back to the default
-    crop = c1.segmented_control("Crop", CROPS, default=CROPS[0], key="map_crop") or CROPS[0]
-    season = c2.segmented_control("Season", seasons, default=current_season(), key="map_season",
-                                  format_func=lambda s: SEASONS[s].split(" (")[0]) or current_season()
-    view = st.segmented_control("Show", list(VIEWS), default=list(VIEWS)[0], key="map_view") or list(VIEWS)[0]
+    c1, c2, c3 = st.columns([1, 1, 1.4])
+    crop = c1.selectbox("Crop", CROPS, key="m_crop")
+    season = c2.selectbox("Season", seasons, index=seasons.index(current_season()), key="m_season",
+                          format_func=lambda s: SEASONS[s].split(" (")[0])
+    view = c3.selectbox("Show", list(VIEWS), key="m_view")
 
 t = adjusted_table(season, get_reports(season))
 t = t[t.CropName == crop]

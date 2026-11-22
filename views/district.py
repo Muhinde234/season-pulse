@@ -26,10 +26,10 @@ hero("District Profile", "Everything Imboni knows about one district.", eyebrow=
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
     st.markdown(filter_head(hint="Choose a district and season"), unsafe_allow_html=True)
-    c1, c2 = st.columns([1, 1.3], vertical_alignment="bottom")
+    c1, c2, _ = st.columns([1, 1, 1.2], vertical_alignment="bottom")
     district = c1.selectbox("District", DISTRICTS, index=DISTRICTS.index("Bugesera"), key="dp_district")
-    season = c2.segmented_control("Season", seasons, default=current_season(), key="dp_season",
-                                  format_func=lambda s: SEASONS[s].split(" (")[0]) or current_season()
+    season = c2.selectbox("Season", seasons, index=seasons.index(current_season()), key="dp_season2",
+                          format_func=lambda s: SEASONS[s].split(" (")[0])
 
 province = DISTRICT_PROVINCE[district]
 reports = get_reports(season)

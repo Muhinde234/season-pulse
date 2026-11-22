@@ -37,17 +37,15 @@ hero("Alerts & Recommended Actions", "Where yields are at risk this season, and 
      eyebrow="Monitor · Alerts", ic="notifications_active",
      meta=[("calendar", SEASONS[current_season()].split(" (")[0]), ("edit_note", "Updates with every report")])
 
-# ---------- filters ----------
+# ---------- filters (dropdowns; an empty dropdown means "all") ----------
 seasons = list(SEASONS)
-FILTER_DEFAULTS = {"al_season": current_season(), "al_levels": ["High", "Watch"], "al_crops": CROPS,
-                   "al_prov": [], "al_acts": [], "al_sim": True}
+FILTER_DEFAULTS = {"af_season": current_season(), "af_levels": ["High", "Watch"], "af_crops": [],
+                   "af_prov": [], "af_acts": [], "al_sim": True}
 
 
 def is_default(key: str, value) -> bool:
-    if value is None or (key == "al_crops" and value == []):
-        return True  # a cleared segmented control / crop list falls back to the default
     d = FILTER_DEFAULTS[key]
-    return sorted(value) == sorted(d) if isinstance(d, list) else value == d
+    return sorted(value or []) == sorted(d) if isinstance(d, list) else value == d
 
 
 def reset_filters() -> None:
@@ -57,32 +55,28 @@ def reset_filters() -> None:
 
 n_active = sum(not is_default(k, st.session_state[k]) for k in FILTER_DEFAULTS if k in st.session_state)
 with st.container(key="atool"):
-    h1, h2 = st.columns([5, 1], vertical_alignment="center")
+    h1, h2, h3 = st.columns([4.2, 1.1, .8], vertical_alignment="center")
     h1.markdown(filter_head(n_active, "Showing High and Watch alerts" if not n_active else ""),
                 unsafe_allow_html=True)
-    h2.button("Reset", icon=":material/restart_alt:", type="tertiary", on_click=reset_filters,
+    h3.button("Reset", icon=":material/restart_alt:", type="tertiary", on_click=reset_filters,
               disabled=not n_active, width="stretch", key="al_reset")
-    c1, c2, c3 = st.columns([1.15, 1, 1], vertical_alignment="bottom")
-    season = c1.segmented_control("Season", seasons, default=current_season(), key="al_season",
-                                  format_func=lambda s: SEASONS[s].split(" (")[0]) or current_season()
-    levels = c2.pills("Risk level", list(LEVELS), default=["High", "Watch"], selection_mode="multi",
-                      key="al_levels") or list(LEVELS)
-    provinces = c3.multiselect("Province", list(PROVINCES), placeholder="All provinces", key="al_prov",
+    c1, c2, c3, c4, c5 = st.columns([.8, 1.4, 1.05, 1.05, 1.3], vertical_alignment="bottom")
+    season = c1.selectbox("Season", seasons, index=seasons.index(current_season()), key="af_season",
+                          format_func=lambda s: SEASONS[s].split(" (")[0])
+    levels = c2.multiselect("Risk level", list(LEVELS), default=["High", "Watch"], key="af_levels",
+                            placeholder="All levels") or list(LEVELS)
+    crops = c3.multiselect("Crop", CROPS, key="af_crops", placeholder="All crops") or CROPS
+    provinces = c4.multiselect("Province", list(PROVINCES), placeholder="All provinces", key="af_prov",
                                format_func=lambda p: p.replace(" Province", ""))
-    c4, c6 = st.columns([3, 1], vertical_alignment="bottom")
-    crops = c4.pills("Crop", CROPS, default=CROPS, selection_mode="multi", key="al_crops") or CROPS
 
-reports = get_reports(season, include_simulated=st.session_state.get("al_sim", True))
-t = adjusted_table(season, reports)
-t = t[t.CropName.isin(crops) & (t.Province.isin(provinces) if provinces else True)]
-n_sim = int(reports.is_simulated.sum())
-has = {name: t.action.str.contains(label, regex=False) for name, label in SHORT.items()}
-
-with st.container(key="toolbar2"):
-    acts = st.pills("Recommended action", list(SHORT), selection_mode="multi", key="al_acts",
-                    format_func=lambda a: f":material/{ACTIONS[SHORT[a]][0]}: {a}"
-                                          + (f" · {int(has[a].sum())}" if has[a].sum() else ""))
-with c6:
+    reports = get_reports(season, include_simulated=st.session_state.get("al_sim", True))
+    t = adjusted_table(season, reports)
+    t = t[t.CropName.isin(crops) & (t.Province.isin(provinces) if provinces else True)]
+    n_sim = int(reports.is_simulated.sum())
+    has = {name: t.action.str.contains(label, regex=False) for name, label in SHORT.items()}
+    acts = c5.multiselect("Recommended action", list(SHORT), key="af_acts", placeholder="All actions",
+                          format_func=lambda a: f"{a} ({int(has[a].sum())})" if has[a].sum() else a)
+with h2:
     with st.popover("How to read", icon=":material/help:", width="stretch"):
         st.markdown(f"""
 **Expected yield** is shown as % vs the *typical district* (the median district for that crop and season).
