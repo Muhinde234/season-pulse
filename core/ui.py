@@ -22,7 +22,7 @@ LEVEL_STYLE = {  # accent colour per alert level; icon + text always accompany t
 CSS = """
 <style>
 /* ---------- layout ---------- */
-.block-container { padding-top: 2.2rem; padding-bottom: 4rem; max-width: 1280px; }
+.block-container { padding: 2.2rem 2.75rem 4rem; max-width: 100%; }
 h1, h2, h3 { letter-spacing: -0.02em; }
 [data-testid="stHeader"] { background: transparent; }
 
@@ -36,10 +36,10 @@ h1, h2, h3 { letter-spacing: -0.02em; }
            background: var(--surface); border: 1px solid var(--line);
            box-shadow: 0 1px 2px rgba(14,59,34,.05), 0 14px 34px -26px rgba(14,59,34,.45); }
 .sp-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
-                   background: linear-gradient(90deg, var(--forest), var(--leaf) 55%, var(--gold)); }
+                   background: linear-gradient(90deg, var(--forest), var(--leaf)); }
 .sp-hero::after { content: ""; position: absolute; right: -90px; top: -110px; width: 320px; height: 320px;
                   border-radius: 50%; pointer-events: none;
-                  background: radial-gradient(circle, rgba(245,183,0,.14), transparent 65%); }
+                  background: radial-gradient(circle, rgba(31,138,67,.10), transparent 65%); }
 .sp-hero-ic { flex: none; width: 3.4rem; height: 3.4rem; border-radius: 16px; display: grid; place-items: center;
               background: var(--mint); color: var(--forest); border: 1px solid rgba(31,138,67,.18);
               position: relative; z-index: 1; }
@@ -59,16 +59,11 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .sp-meta .mi { color: var(--leaf); font-size: 1rem; }
 
 /* ---------- feature banner (Overview) ---------- */
-.sp-hero.feature { border: none; padding: 1.9rem 1.9rem 1.6rem; gap: 1.2rem 1.3rem;
-                   background: radial-gradient(80% 160% at 100% 0%, rgba(245,183,0,.24), transparent 55%),
-                               linear-gradient(135deg, #0A2F1A 0%, var(--forest) 45%, #17602F 100%);
-                   box-shadow: 0 22px 44px -26px rgba(14,59,34,.8); }
-.sp-hero.feature::before { background: linear-gradient(90deg, var(--gold), rgba(245,183,0,.15) 70%, transparent); }
-.sp-hero.feature::after { width: 380px; height: 380px; right: -60px; top: -90px; background: none;
-                          background-image: radial-gradient(rgba(255,255,255,.10) 1.2px, transparent 1.2px);
-                          background-size: 15px 15px;
-                          -webkit-mask: radial-gradient(circle, #000 35%, transparent 70%);
-                          mask: radial-gradient(circle, #000 35%, transparent 70%); }
+.sp-hero.feature { border: none; gap: 1.2rem 1.3rem; background: #17602F; border-radius: 0;
+                   box-shadow: 0 1px 3px rgba(14,59,34,.18);
+                   /* full bleed: cancel the page side padding so the banner touches both edges */
+                   margin-left: -2.75rem; margin-right: -2.75rem; padding: 1.9rem 2.75rem 1.6rem; }
+.sp-hero.feature::before, .sp-hero.feature::after { display: none; }
 .sp-hero.feature .sp-hero-ic { width: 4.2rem; height: 4.2rem; border-radius: 20px; color: var(--gold);
                                background: rgba(245,183,0,.12); border-color: rgba(245,183,0,.35); }
 .sp-hero.feature .sp-hero-ic .mi { font-size: 2.1rem; }
@@ -414,7 +409,7 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
   .sp-row > .sp-scale { grid-column: 1 / -1; }
   .sp-row-h { display: none; }
   .sp-kpi b { font-size: 1.4rem; }
-  .block-container { padding-top: 3.6rem; }
+  .block-container { padding: 3.6rem 1rem 3rem; }
   /* KPI rows: two cards per line instead of one tall stack */
   [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) {
       flex-wrap: wrap !important; flex-direction: row !important; gap: .6rem !important; }
@@ -423,7 +418,7 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
   [data-testid="stMetricValue"] { font-size: 1.5rem; }
   .sp-hero { padding: 1.1rem 1.05rem; border-radius: 16px; }
   .sp-hero h1 { font-size: 1.45rem; }
-  .sp-hero.feature { padding: 1.4rem 1.2rem; }
+  .sp-hero.feature { margin-left: -1rem; margin-right: -1rem; padding: 1.4rem 1rem; }
   .sp-hero.feature h1 { font-size: 1.75rem; }
   .sp-hero-ic { width: 2.9rem; height: 2.9rem; }
 }
