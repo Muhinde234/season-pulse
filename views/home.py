@@ -15,8 +15,7 @@ t = adjusted_table(season, reports)
 v = load_validation()
 bt = load_backtest()
 
-hero("Imboni", "In-season crop early warning for Rwanda: **where** yields are at risk this season, "
-     "and **what to do** about it.", eyebrow="Overview", ic="visibility", feature=True,
+hero("Imboni", "Where crops are at risk this season, and **what to do**.", eyebrow="Overview", ic="visibility",
      meta=[("calendar", SEASONS[season]), ("location_on", "30 districts"), ("eco", "5 crops"),
            ("database", "NISR SAS 2020–2026 + field reports")])
 

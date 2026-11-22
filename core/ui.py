@@ -26,9 +26,8 @@ CSS = """
 /* Streamlit's top controls (menu, Deploy, run status) float in a small pill over the banner */
 [data-testid="stHeader"] { background: transparent !important; pointer-events: none; }
 [data-testid="stHeader"] * { pointer-events: auto; }
-[data-testid="stStatusWidget"], [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] {
-    background: rgba(255,255,255,.94); border: 1px solid var(--line); border-radius: 999px;
-    box-shadow: 0 2px 8px -4px rgba(14,59,34,.3); margin-left: .3rem; }
+[data-testid="stStatusWidget"], [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] { display: none !important; }
+[data-testid="stHeader"] { z-index: 70 !important; }
 /* the zero-height blocks that load the app's CSS would otherwise add a 16px gap above the banner */
 .block-container [data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] style) { display: none; }
 [data-testid="stExpandSidebarButton"] { background: rgba(255,255,255,.92); border-radius: 10px; }
@@ -41,10 +40,14 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 
 /* ---------- page header (light) ---------- */
 .sp-hero { position: relative; overflow: hidden; display: flex; align-items: center; flex-wrap: wrap;
-           gap: 1rem 1.1rem; margin-bottom: 1.3rem; padding: 3.1rem 1.5rem 1.25rem; border-radius: 0 0 20px 20px;
-           border-top: none !important;
-           background: var(--surface); border: 1px solid var(--line);
-           box-shadow: 0 1px 2px rgba(14,59,34,.05), 0 14px 34px -26px rgba(14,59,34,.45); }
+           gap: .8rem 1.1rem; margin: 0 -2.75rem 1.3rem; padding: 1.15rem 2.75rem 1.05rem; border-radius: 0;
+           background: var(--surface); border: none; border-bottom: 1px solid var(--line);
+           box-shadow: 0 8px 20px -16px rgba(14,59,34,.35); }
+/* the banner stays at the top while the page scrolls */
+.block-container [data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] .sp-hero) {
+    position: sticky; top: 0; z-index: 60; }
+/* sidebar closed: Streamlit shows the logo and the "»" button in the top-left corner, so make room for them */
+body:has([data-testid="stSidebar"][aria-expanded="false"]) .sp-hero { padding-left: 7.2rem; }
 .sp-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
                    background: linear-gradient(90deg, var(--forest), var(--leaf)); }
 .sp-hero::after { content: ""; position: absolute; right: -90px; top: -110px; width: 320px; height: 320px;
@@ -69,21 +72,8 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .sp-meta .mi { color: var(--leaf); font-size: 1rem; }
 
 /* ---------- feature banner (Overview) ---------- */
-.sp-hero.feature { border: none; gap: 1.2rem 1.3rem; background: #17602F; border-radius: 0;
-                   box-shadow: 0 1px 3px rgba(14,59,34,.18);
-                   /* full bleed: cancel the page side padding so the banner touches both edges */
-                   margin-left: -2.75rem; margin-right: -2.75rem; padding: 3.4rem 2.75rem 1.6rem; }
-.sp-hero.feature::before, .sp-hero.feature::after { display: none; }
-.sp-hero.feature .sp-hero-ic { width: 4.2rem; height: 4.2rem; border-radius: 20px; color: var(--gold);
+.sp-hero.feature { /* unused: kept so hero(feature=True) still renders like the light header */ }
                                background: rgba(245,183,0,.12); border-color: rgba(245,183,0,.35); }
-.sp-hero.feature .sp-hero-ic .mi { font-size: 2.1rem; }
-.sp-hero.feature .sp-eyebrow { color: var(--gold); }
-.sp-hero.feature h1 { color: #ffffff; font-size: 2.3rem; }
-.sp-hero.feature p { color: rgba(236,246,239,.86); font-size: 1.05rem; }
-.sp-hero.feature p strong { color: #fff; }
-.sp-hero.feature .sp-hero-meta { flex-basis: 100%; padding-top: .3rem; }
-.sp-hero.feature .sp-meta { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); color: #EAF5EE; }
-.sp-hero.feature .sp-meta .mi { color: var(--gold); }
 
 /* ---------- section headings ---------- */
 .sp-section { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; margin: 1.6rem 0 .6rem; }
@@ -473,9 +463,14 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
   [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) > [data-testid="stColumn"] {
       width: calc(50% - .3rem) !important; flex: 1 1 calc(50% - .3rem) !important; min-width: calc(50% - .3rem) !important; }
   [data-testid="stMetricValue"] { font-size: 1.5rem; }
-  .sp-hero { padding: 3.6rem 1.05rem 1.1rem; border-radius: 0 0 16px 16px; }
+  .sp-hero { margin: 0 -1rem 1rem; padding: .9rem 1rem .9rem 1rem; }
+  body:has([data-testid="stSidebar"][aria-expanded="false"]) .sp-hero { padding-left: 6.6rem; }
+  .sp-hero-meta { display: none; }
+  /* slim sticky bar on phones: label + title only */
+  .sp-hero p, .sp-hero-ic { display: none; }
+  .sp-hero h1 { font-size: 1.2rem !important; margin: .15rem 0 0; }
   .sp-hero h1 { font-size: 1.45rem; }
-  .sp-hero.feature { margin-left: -1rem; margin-right: -1rem; padding: 3.8rem 1rem 1.4rem; }
+
   .sp-hero.feature h1 { font-size: 1.75rem; }
   .sp-hero-ic { width: 2.9rem; height: 2.9rem; }
 }
