@@ -21,7 +21,7 @@ ACTION_TAG = {"Small-scale irrigation": ("water_drop", "#0284c7", "Irrigation"),
 SCALE = 60  # scorecard bar spans -60% ... +60% vs typical
 
 hero("District Profile", "Everything Imboni knows about one district.", eyebrow="Monitor · District",
-     ic="location_city")
+     ic="location_city", meta=[("location_on", "30 districts"), ("history", "2020–2026")])
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
@@ -97,7 +97,7 @@ else:
 
 # ---------- history + official 2026 ----------
 left, right = st.columns([1.5, 1], gap="medium")
-with left.container(border=True):
+with left.container(border=True, key="card_district_1"):
     section("History by season", "2020–2024 baseline, % vs typical district")
     b = load_baseline()
     b = b[b.DistrictName == district]
@@ -112,7 +112,7 @@ with left.container(border=True):
                       paper_bgcolor="rgba(0,0,0,0)",
                       yaxis=dict(ticksuffix="%", gridcolor="rgba(128,128,128,.15)", zeroline=False))
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-with right.container(border=True):
+with right.container(border=True, key="card_district_2"):
     o = load_official_2026()
     o = o.assign(med_kg=o.groupby("CropName").yield_kg_ha.transform("median"))
     od = o[o.DistrictName == district]

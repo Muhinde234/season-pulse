@@ -26,34 +26,67 @@ CSS = """
 h1, h2, h3 { letter-spacing: -0.02em; }
 [data-testid="stHeader"] { background: transparent; }
 
-/* ---------- hero header ---------- */
-.sp-hero { position: relative; overflow: hidden; border-radius: 18px; padding: 1.3rem 1.6rem;
-           display: flex; align-items: center; gap: 1.1rem;
-           margin-bottom: 1.4rem; color: #f2fbf5;
-           background: radial-gradient(120% 140% at 100% 0%, #22c55e55 0%, transparent 55%),
-                       linear-gradient(135deg, #0c2a1e 0%, #14532d 60%, #166534 100%);
-           box-shadow: 0 10px 30px -12px rgba(12, 42, 30, 0.55); }
-.sp-hero::after { content: ""; position: absolute; right: -40px; bottom: -60px; width: 220px; height: 220px;
-                  border-radius: 50%; border: 36px solid rgba(255,255,255,0.05); }
-.sp-hero .sp-eyebrow { display: inline-flex; align-items: center; gap: .4rem; font-size: .72rem; font-weight: 700;
-                       letter-spacing: .12em; text-transform: uppercase; color: #86efac;
-                       background: rgba(134,239,172,.12); border: 1px solid rgba(134,239,172,.25);
-                       padding: .22rem .6rem; border-radius: 999px; }
-.sp-hero h1 { color: #ffffff; font-size: 1.85rem; font-weight: 800; margin: .35rem 0 .15rem; padding: 0;
-              line-height: 1.15; }
-.sp-hero-ic { flex: none; width: 3.6rem; height: 3.6rem; border-radius: 16px; display: grid; place-items: center;
-              background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); color: #86efac; }
-.sp-hero-ic .mi { font-size: 2rem; }
-.sp-hero p { color: rgba(242,251,245,.82); font-size: 1rem; margin: 0; max-width: 820px; line-height: 1.5; }
-.sp-hero p strong { color: #fff; }
+/* ---------- palette (from the Imboni logo) ---------- */
+:root { --forest: #0E3B22; --leaf: #1F8A43; --gold: #F5B700; --gold-ink: #8A6400; --mint: #E9F5ED;
+        --ink: #13261C; --muted: #5E6E65; --line: rgba(14,59,34,.12); --surface: #ffffff; }
+
+/* ---------- page header (light) ---------- */
+.sp-hero { position: relative; overflow: hidden; display: flex; align-items: center; flex-wrap: wrap;
+           gap: 1rem 1.1rem; margin-bottom: 1.3rem; padding: 1.35rem 1.5rem 1.25rem; border-radius: 20px;
+           background: var(--surface); border: 1px solid var(--line);
+           box-shadow: 0 1px 2px rgba(14,59,34,.05), 0 14px 34px -26px rgba(14,59,34,.45); }
+.sp-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+                   background: linear-gradient(90deg, var(--forest), var(--leaf) 55%, var(--gold)); }
+.sp-hero::after { content: ""; position: absolute; right: -90px; top: -110px; width: 320px; height: 320px;
+                  border-radius: 50%; pointer-events: none;
+                  background: radial-gradient(circle, rgba(245,183,0,.14), transparent 65%); }
+.sp-hero-ic { flex: none; width: 3.4rem; height: 3.4rem; border-radius: 16px; display: grid; place-items: center;
+              background: var(--mint); color: var(--forest); border: 1px solid rgba(31,138,67,.18);
+              position: relative; z-index: 1; }
+.sp-hero-ic .mi { font-size: 1.7rem; }
+.sp-hero-txt { flex: 1 1 340px; min-width: 0; position: relative; z-index: 1; }
+.sp-eyebrow { display: inline-flex; align-items: center; gap: .45rem; font-size: .7rem; font-weight: 750;
+              letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); }
+.sp-eyebrow::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--gold); }
+.sp-hero h1 { color: var(--forest); font-size: 1.75rem; font-weight: 800; margin: .3rem 0 .15rem; padding: 0;
+              line-height: 1.15; letter-spacing: -.025em; }
+.sp-hero p { color: var(--muted); font-size: .98rem; margin: 0; line-height: 1.5; }
+.sp-hero p strong { color: var(--ink); }
+.sp-hero-meta { display: flex; flex-wrap: wrap; gap: .45rem; position: relative; z-index: 1; }
+.sp-meta { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: 600;
+           color: var(--ink); background: #F6F8F5; border: 1px solid var(--line); padding: .4rem .75rem;
+           border-radius: 999px; white-space: nowrap; }
+.sp-meta .mi { color: var(--leaf); font-size: 1rem; }
+
+/* ---------- feature banner (Overview) ---------- */
+.sp-hero.feature { border: none; padding: 1.9rem 1.9rem 1.6rem; gap: 1.2rem 1.3rem;
+                   background: radial-gradient(80% 160% at 100% 0%, rgba(245,183,0,.24), transparent 55%),
+                               linear-gradient(135deg, #0A2F1A 0%, var(--forest) 45%, #17602F 100%);
+                   box-shadow: 0 22px 44px -26px rgba(14,59,34,.8); }
+.sp-hero.feature::before { background: linear-gradient(90deg, var(--gold), rgba(245,183,0,.15) 70%, transparent); }
+.sp-hero.feature::after { width: 380px; height: 380px; right: -60px; top: -90px; background: none;
+                          background-image: radial-gradient(rgba(255,255,255,.10) 1.2px, transparent 1.2px);
+                          background-size: 15px 15px;
+                          -webkit-mask: radial-gradient(circle, #000 35%, transparent 70%);
+                          mask: radial-gradient(circle, #000 35%, transparent 70%); }
+.sp-hero.feature .sp-hero-ic { width: 4.2rem; height: 4.2rem; border-radius: 20px; color: var(--gold);
+                               background: rgba(245,183,0,.12); border-color: rgba(245,183,0,.35); }
+.sp-hero.feature .sp-hero-ic .mi { font-size: 2.1rem; }
+.sp-hero.feature .sp-eyebrow { color: var(--gold); }
+.sp-hero.feature h1 { color: #ffffff; font-size: 2.3rem; }
+.sp-hero.feature p { color: rgba(236,246,239,.86); font-size: 1.05rem; }
+.sp-hero.feature p strong { color: #fff; }
+.sp-hero.feature .sp-hero-meta { flex-basis: 100%; padding-top: .3rem; }
+.sp-hero.feature .sp-meta { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); color: #EAF5EE; }
+.sp-hero.feature .sp-meta .mi { color: var(--gold); }
 
 /* ---------- section headings ---------- */
 .sp-section { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; margin: 1.6rem 0 .6rem; }
-.sp-section .sp-h { font-size: 1.3rem; font-weight: 750; letter-spacing: -0.02em; line-height: 1.3; }
+.sp-section .sp-h { font-size: 1.3rem; font-weight: 750; letter-spacing: -0.02em; line-height: 1.3; color: var(--forest); }
 .sp-section span { font-size: .85rem; opacity: .6; }
 
 /* ---------- metrics as cards ---------- */
-[data-testid="stMetric"] { background: rgba(22,163,74,0.04); border: 1px solid rgba(128,128,128,0.18);
+[data-testid="stMetric"] { background: var(--surface); border: 1px solid rgba(128,128,128,0.18);
                            border-radius: 14px; padding: .9rem 1.1rem; height: 100%;
                            transition: transform .15s ease, box-shadow .15s ease; }
 [data-testid="stMetric"]:hover { transform: translateY(-2px); box-shadow: 0 8px 22px -14px rgba(0,0,0,.45); }
@@ -110,7 +143,7 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .sp-side-note b { color: #dcefe4; }
 
 /* ---------- toolbar (filters) ---------- */
-.st-key-toolbar { background: rgba(22,163,74,0.035); border: 1px solid rgba(128,128,128,0.18) !important;
+.st-key-toolbar { background: var(--surface); border: 1px solid rgba(128,128,128,0.18) !important;
                   border-radius: 16px !important; padding: .9rem 1.1rem .4rem !important; margin-bottom: .4rem; }
 [data-testid="stButtonGroup"] button { font-weight: 600; }
 
@@ -132,6 +165,13 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 [data-baseweb="tab-list"] { gap: .3rem; border-bottom: 1px solid rgba(128,128,128,.18); }
 [data-baseweb="tab"] { font-weight: 600; padding: .55rem .9rem !important; border-radius: 10px 10px 0 0; }
 [data-baseweb="tab"][aria-selected="true"] { background: rgba(22,163,74,.08); }
+
+/* ---------- surfaces ---------- */
+.sp-rows, .sp-tile, .sp-alert, .sp-stepcard, .sp-sum, .sp-plan, .sp-crop { background-color: var(--surface); }
+.st-key-rep_card { background: var(--surface); }
+[data-testid="stExpander"] details { background: var(--surface); }
+[class*="st-key-card_"] { background: var(--surface); border-color: var(--line) !important; border-radius: 18px !important;
+                         box-shadow: 0 1px 2px rgba(14,59,34,.04); }
 
 /* ---------- footer ---------- */
 .sp-footer { margin-top: 3.5rem; padding: 1.1rem 0 .4rem; border-top: 1px solid rgba(128,128,128,.18);
@@ -257,9 +297,9 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
 .sp-alert .sp-tags { margin-bottom: 1rem; }
 
 /* ---------- alerts page: list + detail ---------- */
-.st-key-toolbar2 { background: rgba(22,163,74,0.035); border: 1px solid rgba(128,128,128,0.18) !important;
+.st-key-toolbar2 { background: var(--surface); border: 1px solid rgba(128,128,128,0.18) !important;
                    border-radius: 16px !important; padding: .8rem 1.1rem .5rem !important; margin-bottom: .2rem; }
-.st-key-atool { background: rgba(22,163,74,0.035); border: 1px solid rgba(128,128,128,0.18) !important;
+.st-key-atool { background: var(--surface); border: 1px solid rgba(128,128,128,0.18) !important;
                 border-radius: 16px 16px 0 0 !important; padding: .9rem 1.1rem .4rem !important; }
 .st-key-toolbar2 { border-top: none !important; border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; margin-top: -1rem; margin-bottom: .8rem; }
 .sp-list-h { font-size: 1rem; margin: .2rem 0 .5rem; }
@@ -282,7 +322,7 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
 /* ---------- overview + district profile ---------- */
 /* ---------- stat strip (overview + district) ---------- */
 .sp-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-bottom: 1.1rem;
-           border: 1px solid rgba(128,128,128,.18); border-radius: 16px; overflow: hidden; background: rgba(255,255,255,.6); }
+           border: 1px solid rgba(128,128,128,.18); border-radius: 16px; overflow: hidden; background: var(--surface); }
 .sp-kpi { display: flex; gap: .85rem; align-items: center; padding: 1rem 1.2rem;
           border-right: 1px solid rgba(128,128,128,.14); }
 .sp-kpi:last-child { border-right: none; }
@@ -381,8 +421,11 @@ svg.mi { font-size: 1.15em; width: 1em; height: 1em; display: inline-block; vert
   [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) > [data-testid="stColumn"] {
       width: calc(50% - .3rem) !important; flex: 1 1 calc(50% - .3rem) !important; min-width: calc(50% - .3rem) !important; }
   [data-testid="stMetricValue"] { font-size: 1.5rem; }
-  .sp-hero { padding: 1.2rem 1.1rem; border-radius: 14px; }
-  .sp-hero h1 { font-size: 1.55rem; }
+  .sp-hero { padding: 1.1rem 1.05rem; border-radius: 16px; }
+  .sp-hero h1 { font-size: 1.45rem; }
+  .sp-hero.feature { padding: 1.4rem 1.2rem; }
+  .sp-hero.feature h1 { font-size: 1.75rem; }
+  .sp-hero-ic { width: 2.9rem; height: 2.9rem; }
 }
 </style>
 """
@@ -408,6 +451,8 @@ LUCIDE = {
     "info": "info", "groups": "users", "check_circle": "circle-check", "factory": "factory", "public": "globe",
     "warehouse": "warehouse", "monitor_heart": "activity", "bug_report": "bug", "grain": "bean",
     "nutrition": "carrot", "egg": "egg", "grass": "wheat", "local_florist": "cherry",
+    "calendar": "calendar-days", "database": "database", "clock": "clock", "languages": "languages",
+    "offline": "wifi-off", "layers": "layers",
 }
 
 
@@ -425,14 +470,18 @@ def icon(name: str, color: str = "", size: str = "") -> str:
     return _svg(name).replace('class="lucide', f'style="{style}" class="mi lucide', 1)
 
 
-def hero(title: str, subtitle: str, eyebrow: str = "Imboni", ic: str = "eco") -> None:
-    """Gradient page header with an icon tile. `subtitle` may contain **bold** (converted) but no other markup."""
+def hero(title: str, subtitle: str, eyebrow: str = "Imboni", ic: str = "eco",
+         meta: list[tuple[str, str]] | None = None, feature: bool = False) -> None:
+    """Page header. `meta` = (icon, text) chips; `feature=True` = the dark forest banner used on the Overview.
+    `subtitle` may contain **bold** (converted) but no other markup."""
     sub = html.escape(subtitle)
     while "**" in sub:
         sub = sub.replace("**", "<strong>", 1).replace("**", "</strong>", 1)
-    st.markdown(f'<div class="sp-hero"><div class="sp-hero-ic">{icon(ic)}</div><div>'
-                f'<span class="sp-eyebrow">{html.escape(eyebrow)}</span>'
-                f'<h1>{html.escape(title)}</h1><p>{sub}</p></div></div>', unsafe_allow_html=True)
+    chips = "".join(f'<span class="sp-meta">{icon(i)}{html.escape(t)}</span>' for i, t in meta or [])
+    st.markdown(f'<div class="sp-hero{" feature" if feature else ""}"><div class="sp-hero-ic">{icon(ic)}</div>'
+                f'<div class="sp-hero-txt"><span class="sp-eyebrow">{html.escape(eyebrow)}</span>'
+                f'<h1>{html.escape(title)}</h1><p>{sub}</p></div>'
+                + (f'<div class="sp-hero-meta">{chips}</div>' if chips else "") + "</div>", unsafe_allow_html=True)
 
 
 def section(title: str, note: str = "") -> None:

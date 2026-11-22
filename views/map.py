@@ -16,7 +16,7 @@ OFFICIAL = "Official 2026 Season A"
 VIEWS = {"Historical baseline": "baseline_RYI", "Adjusted by field reports": "adjusted_RYI", OFFICIAL: "official_RYI"}
 
 hero("District Risk Map", "Yield vs the typical district. **Red** = below, **blue** = above.",
-     eyebrow="Monitor · Map", ic="map")
+     eyebrow="Monitor · Map", ic="map", meta=[("location_on", "30 districts"), ("layers", "3 views")])
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
@@ -80,10 +80,10 @@ m3.metric("Persistently low", nz(int(t.persistently_low.sum())), help="Below typ
 m4.metric("Field reports", nz(int(t.n_reports.sum()), "None yet"), help="Reports for this crop and season")
 
 left, right = st.columns([2.3, 1])
-with left.container(border=True):
+with left.container(border=True, key="card_map_1"):
     section(f"{crop} · {SEASONS[season]}", view)
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-with right.container(border=True):
+with right.container(border=True, key="card_map_2"):
     ranked = t.sort_values(col)
     rows = lambda d: [(r.DistrictName, r.Province, pct_vs_typical(r[col])) for _, r in d.iterrows()]
     rank_list(rows(ranked.head(6)), "Most at risk")

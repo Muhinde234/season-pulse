@@ -15,8 +15,10 @@ t = adjusted_table(season, reports)
 v = load_validation()
 bt = load_backtest()
 
-hero("Imboni", f"In-season crop early warning for Rwanda's 30 districts · {SEASONS[season]}",
-     eyebrow="Overview", ic="visibility")
+hero("Imboni", "In-season crop early warning for Rwanda: **where** yields are at risk this season, "
+     "and **what to do** about it.", eyebrow="Overview", ic="visibility", feature=True,
+     meta=[("calendar", SEASONS[season]), ("location_on", "30 districts"), ("eco", "5 crops"),
+           ("database", "NISR SAS 2020–2026 + field reports")])
 
 # ---------- headline numbers ----------
 high, watch = t[t.level == "High"], t[t.level == "Watch"]
@@ -38,7 +40,7 @@ st.markdown('<div class="sp-kpis">' + "".join(
 
 # ---------- map of alerts per district + top alerts ----------
 left, right = st.columns([1.6, 1], gap="medium")
-with left.container(border=True):
+with left.container(border=True, key="card_home_1"):
     section(f"Alerts per district · {season_name}", "High + Watch crops")
     counts = t[t.level != "Normal"].groupby("DistrictName").size().reindex(DISTRICTS, fill_value=0)
     hover = [f"<b>{d}</b><br>" + (f"{n} crop{'s' if n > 1 else ''} at High or Watch" if n else "no crop at risk")
@@ -55,7 +57,7 @@ with left.container(border=True):
     fig.update_layout(height=430, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)",
                       geo_bgcolor="rgba(0,0,0,0)", dragmode=False)
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-with right.container(border=True):
+with right.container(border=True, key="card_home_2"):
     top = t[t.level != "Normal"].head(7)
     rank_list([(f"{r.DistrictName} · {r.CropName}", r.Province, pct_vs_typical(r.adjusted_RYI))
                for _, r in top.iterrows()], "Top priority alerts")
@@ -101,5 +103,5 @@ links = [("views/map.py", "District Risk Map", ":material/map:"),
          ("views/report.py", "Submit a field report", ":material/edit_note:"),
          ("views/model.py", "Model & Data Quality", ":material/insights:")]
 for col, (page, label, ic) in zip(st.columns(4), links):
-    with col.container(border=True):
+    with col.container(border=True, key=f"card_link_{page}"):
         st.page_link(page, label=label, icon=ic, width="stretch")

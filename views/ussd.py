@@ -125,6 +125,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 hero("USSD prototype", f"Reporting from any basic phone: dial {CODE}.", eyebrow="Report · Basic phones",
+     meta=[("offline", "No internet needed")],
      ic="dialpad")
 st.markdown(f'<div class="sp-note sp-note-warn">{icon("science")}<span><b>Prototype</b>: simulated, no phone '
             f'network. Saved as “{SOURCE}”.</span></div>', unsafe_allow_html=True)

@@ -1,16 +1,19 @@
 [theme]
-primaryColor = "#16a34a"
+primaryColor = "#1F8A43"
+backgroundColor = "#F5F7F4"
+secondaryBackgroundColor = "#EDF2EE"
+textColor = "#13261C"
 font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 baseRadius = "0.7rem"
 showWidgetBorder = true
 
 [theme.sidebar]
-backgroundColor = "#0c2a1e"
-secondaryBackgroundColor = "#123a2a"
+backgroundColor = "#0E3B22"
+secondaryBackgroundColor = "#17502F"
 textColor = "#dcefe4"
-primaryColor = "#4ade80"
-borderColor = "#1d4a37"
+primaryColor = "#F5B700"
+borderColor = "#1F5537"
 
 [server]
 headless = true

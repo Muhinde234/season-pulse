@@ -11,6 +11,7 @@ bt = load_backtest()
 flags = bt["low_district_flags"]
 
 hero("Model & Data Quality", "How it works, how well it predicts, and its limits.",
+     meta=[("verified", "Validated on NISR 2026 A")],
      eyebrow="About · Methodology", ic="insights")
 
 tabs = st.tabs(["How it works", "Backtest 2024", "Validation 2026 A", "Rainfall vs yield", "Data limitations"])

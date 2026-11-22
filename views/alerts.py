@@ -34,7 +34,8 @@ TINY = {"Irrigation": "Irrigation", "Soil fertility": "Soil", "Post-harvest stor
 METER = 60  # risk meter spans -60% ... +60% vs typical
 
 hero("Alerts & Recommended Actions", "Where yields are at risk this season, and what to do.",
-     eyebrow="Monitor · Alerts", ic="notifications_active")
+     eyebrow="Monitor · Alerts", ic="notifications_active",
+     meta=[("calendar", SEASONS[current_season()].split(" (")[0]), ("edit_note", "Updates with every report")])
 
 # ---------- filters ----------
 seasons = list(SEASONS)
