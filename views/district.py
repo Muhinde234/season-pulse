@@ -7,6 +7,8 @@ import streamlit as st
 from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fmt_pct, load_baseline,
                        load_cooperatives, load_irrigation, load_official_2026, pct_vs_typical)
 from core.db import get_reports
+from core.official import (MAJOR, district_trend, district_vs_national_practices, latest_official_season,
+                           load_district_crops)
 from core.risk import adjusted_table
 from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz, rank_list, section
 
@@ -113,16 +115,72 @@ with left.container(border=True, key="card_district_1"):
                       paper_bgcolor="rgba(0,0,0,0)",
                       yaxis=dict(ticksuffix="%", gridcolor="rgba(128,128,128,.15)", zeroline=False))
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
+off_season = latest_official_season(season)
 with right.container(border=True, key="card_district_2"):
-    o = load_official_2026()
-    o = o.assign(med_kg=o.groupby("CropName").yield_kg_ha.transform("median"))
-    od = o[o.DistrictName == district]
-    if od.empty:
-        st.caption("No official 2026 Season A yields for this district.")
+    if off_season is None:
+        st.caption("NISR does not publish Season C yields per crop.")
     else:
-        rank_list([(r.CropName, f"{r.yield_kg_ha:,.0f} kg/ha · median {r.med_kg:,.0f}", pct_vs_typical(r.official_RYI))
-                   for _, r in od.sort_values("official_RYI").iterrows()], "Official 2026 Season A yields")
-        st.caption("NISR SAS 2026 Season A, Table 13.")
+        o = load_district_crops().query("season == @off_season and crop in @MAJOR").dropna(subset=["yield_kgha"])
+        o = o.assign(med=o.groupby("crop").yield_kgha.transform("median"))
+        od = o[o.DistrictName == district].assign(ryi=lambda x: x.yield_kgha / x.med)
+        off_name = f"{off_season[:4]} Season {off_season[-1]}"
+        if od.empty:
+            st.caption(f"No official {off_name} yields for this district.")
+        else:
+            rank_list([(r.crop, f"{r.yield_kgha:,.0f} kg/ha · median {r.med:,.0f}", pct_vs_typical(r.ryi))
+                       for _, r in od.sort_values("ryi").iterrows()], f"Official {off_name} yields")
+            st.caption(f"NISR SAS {off_name}, official tables: yield by crop and district.")
+
+# ---------- official trend + practices ----------
+if off_season is not None:
+    letter = off_season[-1]
+    left2, right2 = st.columns([1.5, 1], gap="medium")
+    with left2.container(border=True, key="card_district_3"):
+        section("Official yield trend", f"Season {letter}, 2024–2026 · kg/ha vs the median district")
+        tr = district_trend(district, letter)
+        crops_here = [c for c in MAJOR if c in set(tr.crop)]
+        crop_pick = st.selectbox("Crop", crops_here, key="dp_trend_crop") if crops_here else None
+        if crop_pick:
+            g = tr[tr.crop == crop_pick].sort_values("year")
+            figt = go.Figure()
+            figt.add_scatter(x=g.year, y=g.median_kgha, mode="lines", name="Median district",
+                             line=dict(color="#5E6E65", width=2, dash="dash"),
+                             hovertemplate="%{x}: %{y:,.0f} kg/ha<extra>median district</extra>")
+            figt.add_scatter(x=g.year, y=g.yield_kgha, mode="lines+markers+text", name=district,
+                             line=dict(color="#1F8A43", width=2), text=[f"{v:,.0f}" for v in g.yield_kgha],
+                             textposition="top center", marker=dict(size=9, line=dict(color="white", width=2)),
+                             hovertemplate="%{x}: %{y:,.0f} kg/ha<extra>" + district + "</extra>")
+            figt.update_layout(height=280, margin=dict(l=0, r=10, t=20, b=0), plot_bgcolor="rgba(0,0,0,0)",
+                               paper_bgcolor="rgba(0,0,0,0)", legend=dict(orientation="h", y=-0.2, x=0),
+                               xaxis=dict(tickvals=sorted(g.year.unique()), gridcolor="rgba(14,59,34,.08)"),
+                               yaxis=dict(title="kg/ha", rangemode="tozero", gridcolor="rgba(14,59,34,.08)"))
+            st.plotly_chart(figt, width="stretch", config={"displayModeBar": False})
+    with right2.container(border=True, key="card_district_4"):
+        pv = district_vs_national_practices(district, off_season)
+        section("Farming practices", f"{district} vs national · {off_season[:4]} Season {letter}")
+        figp = go.Figure()
+        for _, r in pv.iterrows():
+            figp.add_shape(type="line", x0=r.national, x1=r.district, y0=r.label, y1=r.label,
+                           line=dict(color="#C9D3CC", width=2))
+        figp.add_scatter(x=pv.national, y=pv.label, mode="markers", name="National average",
+                         marker=dict(color="#5E6E65", size=10, symbol="line-ns-open", line=dict(width=3)),
+                         hovertemplate="<b>%{y}</b><br>National: %{x:.0f}%<extra></extra>")
+        figp.add_scatter(x=pv.district, y=pv.label, mode="markers+text", name=district,
+                         marker=dict(color=["#1F8A43" if a >= b else "#E0A100" for a, b in zip(pv.district, pv.national)],
+                                     size=11, line=dict(color="white", width=2)),
+                         text=[f"{v:.0f}%" for v in pv.district],
+                         textposition=["middle right" if a >= b else "middle left"
+                                       for a, b in zip(pv.district, pv.national)],
+                         textfont=dict(color="#5E6E65", size=11),
+                         hovertemplate="<b>%{y}</b><br>" + district + ": %{x:.0f}%<extra></extra>")
+        figp.update_layout(height=320, margin=dict(l=120, r=10, t=10, b=0), plot_bgcolor="rgba(0,0,0,0)",
+                           paper_bgcolor="rgba(0,0,0,0)", legend=dict(orientation="h", y=-0.14, x=-0.4),
+                           xaxis=dict(range=[0, 112], ticksuffix="%", gridcolor="rgba(14,59,34,.08)"),
+                           yaxis=dict(showgrid=False))
+        st.plotly_chart(figp, width="stretch", config={"displayModeBar": False})
+        below = pv[pv.district < pv.national - 5].sort_values("national", ascending=False).label.tolist()
+        st.caption(("Below the national average: " + ", ".join(below).lower() + ".") if below
+                   else "At or above the national average on every practice.")
 
 # ---------- recent reports ----------
 r = get_reports()

@@ -246,6 +246,13 @@ button[kind^="pills"] * { color: inherit !important; }
 .sp-g-foot { font-size: .72rem; color: var(--muted); border-top: 1px solid var(--line); padding: .55rem 0 .1rem; }
 @media (max-width: 640px) { .sp-g-acts { grid-template-columns: 1fr; } .sp-g-levels { grid-template-columns: 1fr; } }
 
+/* ---------- production at stake (alert detail) ---------- */
+.sp-stake { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .85rem; }
+.sp-stake div { background: #F6F8F5; border: 1px solid var(--line); border-radius: 10px; padding: .5rem .6rem; }
+.sp-stake b { display: block; font-size: .95rem; color: var(--ink); }
+.sp-stake span { display: block; font-size: .7rem; color: var(--muted); line-height: 1.3; }
+.sp-stake div:first-child b { color: var(--c); }
+
 /* ---------- surfaces ---------- */
 .sp-rows, .sp-tile, .sp-alert, .sp-stepcard, .sp-sum, .sp-plan, .sp-crop { background-color: var(--surface); }
 .st-key-rep_card { background: var(--surface); }
@@ -537,7 +544,7 @@ LUCIDE = {
     "warehouse": "warehouse", "monitor_heart": "activity", "bug_report": "bug", "grain": "bean",
     "nutrition": "carrot", "egg": "egg", "grass": "wheat", "local_florist": "cherry",
     "calendar": "calendar-days", "database": "database", "clock": "clock", "languages": "languages",
-    "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal", "dashboard": "layout-dashboard",
+    "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal", "dashboard": "layout-dashboard", "target": "target", "scale": "scale",
 }
 
 

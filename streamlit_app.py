@@ -19,6 +19,10 @@ pages = {
         st.Page("views/alerts.py", title="Alerts & Recommended Actions", icon=":material/notifications_active:"),
         st.Page("views/district.py", title="District Profile", icon=":material/location_city:"),
     ],
+    "Plan": [
+        st.Page("views/target.py", title="Road to +50%", icon=":material/flag:"),
+        st.Page("views/practices.py", title="Farming Practices", icon=":material/agriculture:"),
+    ],
     "Report": [
         st.Page("views/report.py", title="Submit Field Report", icon=":material/edit_note:"),
         st.Page("views/ussd.py", title="USSD prototype", icon=":material/dialpad:"),

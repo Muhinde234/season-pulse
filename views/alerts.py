@@ -5,6 +5,7 @@ import streamlit as st
 
 from core.data import CROPS, PROVINCES, SEASONS, current_season, fmt_pct, pct_vs_typical
 from core.db import get_reports
+from core.official import attach_official
 from core.risk import DRY_PCT, HIGH, LEVELS, SURPLUS, TRADITIONAL_PCT, WATCH, adjusted_table
 from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz
 
@@ -72,6 +73,7 @@ with st.container(key="atool"):
     reports = get_reports(season, include_simulated=st.session_state.get("al_sim", True))
     t = adjusted_table(season, reports)
     t = t[t.CropName.isin(crops) & (t.Province.isin(provinces) if provinces else True)]
+    t = attach_official(t, season)  # official yield, area and tonnes below typical (NISR SAS tables)
     n_sim = int(reports.is_simulated.sum())
     has = {name: t.action.str.contains(label, regex=False) for name, label in SHORT.items()}
     acts = c5.multiselect("Recommended action", list(SHORT), key="af_acts", placeholder="All actions",
@@ -126,9 +128,16 @@ total = max(len(t), 1)
 level_help = {"High": f"≥{round((1 - HIGH) * 100)}% below typical", "Watch": f"≥{round((1 - WATCH) * 100)}% below",
               "Normal": "near or above typical"}
 covered = int((t.n_reports > 0).sum())
+
+
+def tonnes_note(lvl: str) -> str:
+    tons = t.loc[t.level == lvl, "tonnes_below"].sum()
+    return f" · ≈{tons:,.0f} t below typical" if lvl != "Normal" and tons >= 1 else ""
+
+
 tiles = "".join(
     f'<div class="sp-tile" style="--c:{LEVEL_STYLE[lvl]}"><div class="sp-tile-h">{badge(lvl)}'
-    f'<span>{level_help[lvl]}</span></div><div class="sp-tile-n">{nz(int((t.level == lvl).sum()))}</div>'
+    f'<span>{level_help[lvl]}{tonnes_note(lvl)}</span></div><div class="sp-tile-n">{nz(int((t.level == lvl).sum()))}</div>'
     f'<div class="sp-tile-bar"><i style="width:{100 * (t.level == lvl).sum() / total:.0f}%"></i></div></div>'
     for lvl in LEVELS)
 tiles += (f'<div class="sp-tile" style="--c:#475569"><div class="sp-tile-h"><span class="sp-badge" '
@@ -172,6 +181,18 @@ def why(r) -> list[tuple[str, str]]:
     return out
 
 
+def stake(r) -> str:
+    """Production at stake, from NISR's latest official season (absent for tomatoes and Season C)."""
+    if pd.isna(r.off_yield_kgha):
+        return ""
+    tons = f"≈{r.tonnes_below:,.0f} t" if r.tonnes_below >= 1 else "No shortfall"
+    season_name = f"{r.off_season[:4]} Season {r.off_season[-1]}"
+    return (f'<div class="sp-stake"><div><b>{tons}</b><span>below a typical district\'s harvest</span></div>'
+            f'<div><b>{r.off_yield_kgha:,.0f} kg/ha</b><span>official {season_name} · median district '
+            f'{r.off_median_kgha:,.0f}</span></div><div><b>{r.off_harvested_ha:,.0f} ha</b>'
+            f'<span>harvested · NISR SAS</span></div></div>')
+
+
 def detail(r) -> str:
     p = float(pct_vs_typical(r.adjusted_RYI))
     pos = (max(min(p, METER), -METER) + METER) / (2 * METER) * 100
@@ -197,6 +218,7 @@ def detail(r) -> str:
             f'<div class="sp-alert-v">{fmt_pct(r.adjusted_RYI)}<small>expected vs typical district · {sub}</small></div>'
             f'<div class="sp-meter"><span class="sp-meter-0"></span><i style="left:{pos:.1f}%"></i></div>'
             f'<div class="sp-meter-l"><span>−{METER}%</span><span>typical</span><span>+{METER}%</span></div>'
+            f'{stake(r)}'
             f'<div class="sp-alert-h">Why this alert</div><ul class="sp-why">{reasons}</ul>'
             f'<div class="sp-alert-h">What to do</div><div class="sp-acts">{steps}</div>'
             f'<div class="sp-alert-h">Local partners in {html.escape(r.DistrictName)}</div>'
@@ -213,12 +235,13 @@ with left:
         sel = None
     else:
         table = view.assign(Expected=pct_vs_typical(view.adjusted_RYI),
+                            tonnes_below=view.tonnes_below.map(lambda v: f"{v:,.0f} t" if v == v and v >= 1 else "–"),
                             Actions=view.action.map(lambda a: " · ".join(TINY[n] for n in short_actions(a).split(", ")
                                                                            if n in TINY) or "Monitor"))
         event = st.dataframe(
             table, hide_index=True, width="stretch", height=560, on_select="rerun", selection_mode="single-row",
             key=f"al_table_{season}",
-            column_order=["level", "DistrictName", "CropName", "Expected", "priority", "Actions"],
+            column_order=["level", "DistrictName", "CropName", "Expected", "priority", "tonnes_below", "Actions"],
             column_config={
                 "level": st.column_config.TextColumn("Level", width=58),
                 "DistrictName": st.column_config.TextColumn("District", width=100),
@@ -229,6 +252,9 @@ with left:
                     "Priority", format="%.2f", min_value=0, max_value=max(float(t.priority.max()), 0.01), width=95,
                     help="Shortfall × food dependence: orders alerts within a level"),
                 "Actions": st.column_config.TextColumn("Actions", width="medium"),
+                "tonnes_below": st.column_config.TextColumn(
+                    "At stake", width=80,
+                    help="Tonnes below a typical district's harvest: official harvested area × median district yield × expected shortfall (NISR SAS, latest season)"),
             })
         rows = event.selection.rows
         sel = view.iloc[rows[0] if rows and rows[0] < len(view) else 0]

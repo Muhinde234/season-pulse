@@ -13,7 +13,6 @@ Outputs (app_data/, committed so Streamlit Cloud never needs the raw files):
     district_consumption_2020.csv    EICV 2020 household consumption per district & crop
     official_yield_2026A.csv         Table 13 yields (kg/ha) per district & crop, plus RYI vs the median district
     irrigation_2026A.csv             Table 32 irrigation methods per district (% of irrigated plots)
-    out_validation_2026A.csv         historical Season A baseline vs official 2026 Season A RYI
 """
 from pathlib import Path
 
@@ -93,20 +92,9 @@ irr = irr.assign(modern_pct=irr[["surface", "flood", "drip", "sprinkler", "pivot
 irr[["DistrictName", "modern_pct", "traditional_pct", "surface", "flood", "drip", "sprinkler", "pivot"]].to_csv(
     OUT / "irrigation_2026A.csv", index=False)
 
-# Validation: the Season A baseline (built from 2020-2024 only) vs what NISR actually measured in 2026 A
-base = pd.read_csv(OUT / "out_district_baseline.csv")
-base = base[base.Season == "SeasonA"][["DistrictName", "CropName", "baseline_RYI", "n_years"]]
-val = official.merge(base, on=["DistrictName", "CropName"], how="inner").rename(columns={"baseline_RYI": "predicted_RYI"})
-val["error_log"] = (np.log(val.predicted_RYI) - np.log(val.official_RYI)).round(3)
-val["actual_low"] = val.official_RYI <= LOW
-val["flagged"] = val.predicted_RYI <= FLAG
-val.sort_values(["CropName", "DistrictName"]).to_csv(OUT / "out_validation_2026A.csv", index=False)
+# The 2026 A and B validation files are written by prep_official.py (official tables, all seasons).
 
 print(f"Cooperatives: {len(coops)} districts, {coops.cooperatives.sum()} cooperatives, "
       f"{coops.food_processors.sum()} food processors, {coops.exporters.sum()} goods exporters")
 print(f"EICV 2020: {len(cons)} district-crop rows across {cons.DistrictName.nunique()} districts")
 print(f"2026 A official yields: {len(official)} district-crop rows · irrigation: {len(irr)} districts")
-print(f"2026 A validation: {len(val)} cells, caught {int((val.actual_low & val.flagged).sum())} of "
-      f"{int(val.actual_low.sum())} bad cells")
-for crop, g in val.groupby("CropName"):
-    print(f"  {crop:15s} r = {np.log(g.official_RYI).corr(np.log(g.predicted_RYI)):+.2f}  (n = {len(g)})")

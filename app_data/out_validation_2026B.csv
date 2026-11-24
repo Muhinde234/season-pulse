@@ -1,0 +1,116 @@
+DistrictName,yield_kgha,CropName,official_RYI,predicted_RYI,n_years,error_log,actual_low,flagged
+Bugesera,635.863,Beans,0.913,0.691,5,-0.279,False,True
+Burera,1214.955,Beans,1.745,1.262,5,-0.324,False,False
+Gakenke,918.716,Beans,1.319,1.062,5,-0.217,False,False
+Gasabo,649.172,Beans,0.932,0.871,5,-0.068,False,False
+Gatsibo,680.603,Beans,0.977,0.805,5,-0.194,False,True
+Gicumbi,856.231,Beans,1.229,1.607,5,0.268,False,False
+Gisagara,656.605,Beans,0.943,0.762,5,-0.213,False,True
+Huye,647.082,Beans,0.929,1.043,4,0.116,False,False
+Kamonyi,595.443,Beans,0.855,0.972,5,0.128,False,False
+Karongi,1016.642,Beans,1.46,1.204,5,-0.193,False,False
+Kayonza,503.093,Beans,0.722,0.863,5,0.178,True,False
+Kicukiro,622.905,Beans,0.894,1.656,3,0.616,False,False
+Kirehe,691.524,Beans,0.993,0.718,5,-0.324,False,True
+Muhanga,578.821,Beans,0.831,1.14,5,0.316,False,False
+Musanze,1078.534,Beans,1.549,1.135,5,-0.311,False,False
+Ngoma,701.341,Beans,1.007,0.715,5,-0.342,False,True
+Ngororero,824.362,Beans,1.184,0.819,5,-0.368,False,True
+Nyabihu,1047.241,Beans,1.504,2.024,5,0.297,False,False
+Nyagatare,778.535,Beans,1.118,0.829,5,-0.299,False,True
+Nyamagabe,685.636,Beans,0.984,1.228,5,0.221,False,False
+Nyamasheke,759.549,Beans,1.091,1.106,5,0.014,False,False
+Nyanza,626.396,Beans,0.899,0.956,5,0.061,False,False
+Nyarugenge,605.145,Beans,0.869,0.769,5,-0.122,False,True
+Nyaruguru,798.044,Beans,1.146,2.013,5,0.563,False,False
+Rubavu,874.298,Beans,1.255,1.689,5,0.297,False,False
+Ruhango,635.941,Beans,0.913,0.599,5,-0.422,False,True
+Rulindo,811.42,Beans,1.165,1.117,5,-0.042,False,False
+Rusizi,784.103,Beans,1.126,0.907,5,-0.216,False,False
+Rutsiro,806.306,Beans,1.158,1.087,5,-0.063,False,False
+Rwamagana,542.084,Beans,0.778,0.441,5,-0.568,True,True
+Bugesera,13404.258,Cassava,0.968,1.113,5,0.14,False,False
+Burera,11640.43,Cassava,0.84,1.023,3,0.197,False,False
+Gakenke,14119.567,Cassava,1.019,0.998,5,-0.021,False,False
+Gasabo,11834.525,Cassava,0.854,0.837,4,-0.021,False,True
+Gatsibo,17970.228,Cassava,1.297,1.323,3,0.02,False,False
+Gicumbi,14777.21,Cassava,1.067,1.052,2,-0.014,False,False
+Gisagara,13873.878,Cassava,1.002,0.702,5,-0.355,False,True
+Huye,17514.871,Cassava,1.264,0.773,5,-0.492,False,True
+Kamonyi,13458.29,Cassava,0.972,0.945,5,-0.028,False,False
+Karongi,13828.661,Cassava,0.998,1.323,5,0.282,False,False
+Kayonza,16060.048,Cassava,1.159,1.106,4,-0.047,False,False
+Kicukiro,13329.175,Cassava,0.962,0.903,5,-0.064,False,False
+Kirehe,14711.234,Cassava,1.062,0.927,5,-0.136,False,False
+Muhanga,15818.255,Cassava,1.142,0.879,5,-0.262,False,False
+Musanze,11550.56,Cassava,0.834,0.934,2,0.113,False,False
+Ngoma,15701.187,Cassava,1.134,1.384,5,0.2,False,False
+Ngororero,9552.255,Cassava,0.69,1.113,4,0.479,True,False
+Nyabihu,9440.537,Cassava,0.682,0.776,4,0.13,True,True
+Nyagatare,18848.91,Cassava,1.361,0.957,4,-0.352,False,False
+Nyamagabe,13474.478,Cassava,0.973,1.031,4,0.058,False,False
+Nyamasheke,11882.31,Cassava,0.858,1.01,5,0.163,False,False
+Nyanza,14779.382,Cassava,1.067,0.68,5,-0.451,False,True
+Nyarugenge,11617.16,Cassava,0.839,1.076,3,0.249,False,False
+Nyaruguru,12699.434,Cassava,0.917,0.892,3,-0.027,False,False
+Ruhango,17974.462,Cassava,1.298,1.105,5,-0.161,False,False
+Rulindo,14114.09,Cassava,1.019,0.965,3,-0.054,False,False
+Rusizi,10265.65,Cassava,0.741,0.854,5,0.142,True,False
+Rutsiro,14060.32,Cassava,1.015,0.859,4,-0.167,False,False
+Rwamagana,17773.888,Cassava,1.283,1.023,4,-0.227,False,False
+Bugesera,2843.349,Irish potatoes,0.62,0.899,5,0.371,True,False
+Burera,7238.018,Irish potatoes,1.579,1.65,3,0.044,False,False
+Gakenke,5485.246,Irish potatoes,1.197,1.183,3,-0.012,False,False
+Gasabo,3570.241,Irish potatoes,0.779,0.802,5,0.029,True,True
+Gatsibo,4593.06,Irish potatoes,1.002,1.164,4,0.15,False,False
+Gicumbi,6325.526,Irish potatoes,1.38,1.652,3,0.18,False,False
+Gisagara,3889.863,Irish potatoes,0.849,0.878,3,0.034,False,False
+Huye,3982.889,Irish potatoes,0.869,0.799,3,-0.084,False,True
+Kamonyi,5647.189,Irish potatoes,1.232,0.659,3,-0.626,False,True
+Karongi,3589.823,Irish potatoes,0.783,1.16,3,0.393,True,False
+Kayonza,4211.575,Irish potatoes,0.919,0.971,3,0.055,False,False
+Muhanga,4292.406,Irish potatoes,0.937,0.747,4,-0.226,False,True
+Musanze,9459.181,Irish potatoes,2.064,1.524,3,-0.303,False,False
+Ngoma,4857.717,Irish potatoes,1.06,0.901,3,-0.162,False,False
+Ngororero,5388.621,Irish potatoes,1.176,0.926,3,-0.239,False,False
+Nyabihu,8290.441,Irish potatoes,1.809,1.315,5,-0.319,False,False
+Nyagatare,4367.031,Irish potatoes,0.953,1.137,3,0.177,False,False
+Nyamagabe,7939.4,Irish potatoes,1.732,0.577,3,-1.099,False,True
+Nyamasheke,4583.106,Irish potatoes,1.0,0.998,3,-0.002,False,False
+Nyanza,4208.871,Irish potatoes,0.918,0.748,3,-0.205,False,True
+Nyaruguru,8176.025,Irish potatoes,1.784,1.555,5,-0.137,False,False
+Rubavu,8557.996,Irish potatoes,1.867,1.068,4,-0.559,False,False
+Ruhango,2991.315,Irish potatoes,0.653,0.898,5,0.319,True,False
+Rulindo,4243.809,Irish potatoes,0.926,1.309,3,0.346,False,False
+Rusizi,6866.784,Irish potatoes,1.498,1.034,3,-0.371,False,False
+Rutsiro,5028.098,Irish potatoes,1.097,1.124,3,0.024,False,False
+Rwamagana,3874.151,Irish potatoes,0.845,1.479,3,0.559,False,False
+Bugesera,952.152,Maize,0.821,0.999,3,0.196,False,False
+Burera,1365.903,Maize,1.178,1.182,3,0.003,False,False
+Gakenke,1078.81,Maize,0.931,0.67,3,-0.329,False,True
+Gasabo,1319.365,Maize,1.138,1.03,3,-0.1,False,False
+Gatsibo,1266.898,Maize,1.093,1.682,3,0.431,False,False
+Gicumbi,1069.868,Maize,0.923,0.906,3,-0.019,False,False
+Gisagara,1033.872,Maize,0.892,2.193,3,0.9,False,False
+Huye,1197.708,Maize,1.033,1.127,3,0.087,False,False
+Kamonyi,1155.731,Maize,0.997,2.06,3,0.726,False,False
+Karongi,1162.558,Maize,1.003,0.763,3,-0.273,False,True
+Kayonza,1185.631,Maize,1.023,1.516,3,0.393,False,False
+Kicukiro,746.925,Maize,0.644,0.787,3,0.2,True,True
+Kirehe,2091.655,Maize,1.804,2.664,3,0.39,False,False
+Muhanga,1035.091,Maize,0.893,1.081,3,0.191,False,False
+Musanze,1584.287,Maize,1.367,0.776,3,-0.566,False,True
+Ngoma,856.244,Maize,0.739,3.509,3,1.558,True,False
+Ngororero,1183.538,Maize,1.021,0.907,3,-0.118,False,False
+Nyabihu,1403.467,Maize,1.211,1.559,3,0.253,False,False
+Nyagatare,1555.431,Maize,1.342,1.36,3,0.013,False,False
+Nyamagabe,1259.565,Maize,1.087,1.176,3,0.079,False,False
+Nyamasheke,990.522,Maize,0.855,0.913,3,0.066,False,False
+Nyanza,1317.037,Maize,1.136,0.821,3,-0.325,False,True
+Nyarugenge,1193.549,Maize,1.03,0.611,3,-0.522,False,True
+Rubavu,1446.172,Maize,1.248,0.945,3,-0.278,False,False
+Ruhango,703.796,Maize,0.607,1.859,3,1.119,True,False
+Rulindo,1086.52,Maize,0.937,0.659,3,-0.352,False,True
+Rusizi,1010.428,Maize,0.872,0.86,3,-0.014,False,False
+Rutsiro,1063.939,Maize,0.918,0.692,3,-0.282,False,True
+Rwamagana,894.109,Maize,0.771,0.974,3,0.233,True,False

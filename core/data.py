@@ -76,9 +76,9 @@ def load_irrigation() -> pd.DataFrame:
 
 
 @st.cache_data
-def load_validation() -> pd.DataFrame:
+def load_validation(season: str = "2026A") -> pd.DataFrame:
     """Historical Season A baseline vs official 2026 Season A RYI (prep_data.py)."""
-    return pd.read_csv(DATA / "out_validation_2026A.csv")
+    return pd.read_csv(DATA / f"out_validation_{season}.csv")
 
 
 @st.cache_data
