@@ -1,7 +1,0 @@
-season,method,cells,mae_pct,bad_cells,caught,flagged
-A,Every district typical,197,16.1,27,0,0
-A,Last season (2025),197,3.7,27,27,37
-A,Average of 2024 and 2025,197,4.3,27,26,37
-B,Every district typical,199,15.8,20,0,0
-B,Last season (2025),199,5.9,20,20,43
-B,Average of 2024 and 2025,199,6.2,20,17,36

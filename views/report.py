@@ -2,13 +2,11 @@ import html
 
 import streamlit as st
 
-from core.data import CROPS, DISTRICTS, SEASONS, current_season, fmt_pct, load_baseline
+from core.data import CROPS, DISTRICTS, SEASONS, current_season, fmt_pct
 from core.db import RAIN_OPTIONS, SIM_COUNT, add_report, delete_simulated, get_reports, load_simulated
 from core.i18n import CONDITION, CROP, RAIN, SEASON, YES_NO, lang_toggle, t
-from core.ui import hero, icon
-
-CROP_ICON = {"Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", "Maize": "grass",
-             "Tomatoes": "local_florist"}
+from core.risk import season_baseline
+from core.ui import CROP_IC as CROP_ICON, hero, icon
 CONDITION_COLOR = {1: "#dc2626", 2: "#ea580c", 3: "#ca8a04", 4: "#16a34a", 5: "#15803d"}
 
 # The banner comes first (flush with the top), so it reads the language chosen on the previous run
@@ -80,8 +78,8 @@ body = "".join(
     f'<b>{html.escape(str(v)) if v is not None else "—"}</b></div>' for ic, k, v in rows)
 ctx = ""
 if district and crop:
-    b = load_baseline()
-    cell = b[(b.DistrictName == district) & (b.CropName == crop) & (b.Season == season)]
+    b = season_baseline(season)
+    cell = b[(b.DistrictName == district) & (b.CropName == crop)]
     n_here = len(get_reports(season).query("district == @district and crop == @crop"))
     if len(cell):
         ryi = float(cell.baseline_RYI.iloc[0])
@@ -110,10 +108,16 @@ with st.expander("Organisers: demo data and recent reports", icon=":material/adm
     r = get_reports()
     real, sim = int((r.is_simulated == 0).sum()), int(r.is_simulated.sum())
     st.markdown(f"**Recent reports** · {real} real · {sim} simulated")
+    st.warning("Prototype storage: reports are saved in a SQLite file on the app server. On Streamlit Community "
+               "Cloud that file is wiped whenever the app restarts, so download real reports regularly. A real "
+               "deployment needs a hosted database.", icon=":material/database:")
     if not r.empty:
         st.dataframe(
             r.assign(source=r.source.where(r.is_simulated == 0, "SIMULATED"),
-                     pests=r.pests.map({0: "No", 1: "Yes"}), season=r.season.map(lambda s: SEASONS[s].split(" (")[0]))
+                     pests=r.pests.map({0: "No", 1: "Yes"}),
+                     season=r.season.map(lambda s: SEASONS.get(s, s).split(" (")[0]))
              [["source", "created_at", "district", "crop", "season", "condition", "pests", "rain_problem", "notes"]]
              .rename(columns=str.capitalize).rename(columns={"Created_at": "Submitted", "Rain_problem": "Rain problem"}),
             hide_index=True, width="stretch", height=320)
+        st.download_button("Download all reports (CSV)", r.to_csv(index=False), file_name="imboni_field_reports.csv",
+                           mime="text/csv", icon=":material/download:")

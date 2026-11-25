@@ -1,0 +1,25 @@
+season,year,method,cells,mae_pct,rank_r,bad_cells,caught,flagged,moved
+A,2023,Every district typical,198,22.4,,41,0,0,69
+A,2023,Last season,198,12.0,0.762,41,28,42,69
+A,2023,Average of last two seasons,198,12.0,0.762,41,28,42,69
+A,2024,Every district typical,198,16.1,,28,0,0,80
+A,2024,Last season,198,11.3,0.825,28,25,50,80
+A,2024,Average of last two seasons,198,9.4,0.825,28,25,48,80
+A,2025,Every district typical,197,15.9,,29,0,0,30
+A,2025,Last season,197,6.3,0.873,29,25,38,30
+A,2025,Average of last two seasons,197,8.5,0.856,29,24,44,30
+A,2026,Every district typical,199,16.1,,27,0,0,9
+A,2026,Last season,199,3.8,0.947,27,27,38,9
+A,2026,Average of last two seasons,199,4.3,0.941,27,26,38,9
+B,2023,Every district typical,198,18.2,,26,0,0,68
+B,2023,Last season,198,9.1,0.866,26,23,59,68
+B,2023,Average of last two seasons,198,9.1,0.866,26,23,59,68
+B,2024,Every district typical,198,16.5,,22,0,0,52
+B,2024,Last season,198,7.5,0.891,22,18,41,52
+B,2024,Average of last two seasons,198,7.9,0.893,22,19,46,52
+B,2025,Every district typical,199,16.6,,26,0,0,22
+B,2025,Last season,199,5.6,0.934,26,23,37,22
+B,2025,Average of last two seasons,199,6.5,0.905,26,23,41,22
+B,2026,Every district typical,199,15.8,,20,0,0,31
+B,2026,Last season,199,5.9,0.917,20,20,43,31
+B,2026,Average of last two seasons,199,6.2,0.916,20,17,36,31

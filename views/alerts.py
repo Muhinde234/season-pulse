@@ -96,13 +96,14 @@ def guide_html() -> str:
         '<div class="sp-guide"><div class="sp-g-title">How to read this page</div>'
         + block("insights", "Expected yield",
                 '<p>Shown as <strong>% vs the typical district</strong>: the median district for the same crop '
-                'and season. It starts from 2020–2024 history and moves with this season\'s field reports.</p>'
+                'and season. It starts from the district\'s latest official NISR result for the same season '
+                '(tomatoes: 2020–2024 cleaned files) and moves with this season\'s field reports.</p>'
                 '<div class="sp-g-scale"><span>below typical</span><span>typical</span><span>above</span></div>')
         + block("crisis_alert", "Risk level", f'<div class="sp-g-levels">{levels}</div>')
         + block("trending_down", "Priority",
                 '<p>Ranks alerts within the same level.</p><div class="sp-g-formula">shortfall '
-                '<i>×</i> food dependence</div><p class="sp-g-note">Food dependence = how much households in the '
-                'district eat the crop (EICV 2020).</p>')
+                '<i>×</i> food dependence</div><p class="sp-g-note">Food dependence = the crop\'s share of household '
+                'food spending in the district, compared with other districts (EICV 2020).</p>')
         + block("task_alt", "Recommended actions", f'<div class="sp-g-acts">{actions}</div>')
         + '<div class="sp-g-foot">Local partner counts: NISR Establishment Census · Rainfall: CHIRPS · '
           'Irrigation: SAS 2026 Season A</div></div>')
@@ -117,7 +118,7 @@ with h2:
 if n_sim:
     note = ("science", f"<b>{n_sim} of {len(reports)}</b> reports are simulated demo data", "warn")
 elif reports.empty:
-    note = ("info", "No field reports yet this season: estimates use the historical baseline only", "info")
+    note = ("info", "No field reports yet this season: estimates are the baseline only", "info")
 else:
     note = None  # the Reports tile already says it
 if note:
@@ -159,8 +160,14 @@ def short_actions(a: str) -> str:
 
 
 def why(r) -> list[tuple[str, str]]:
-    out = [("history", f"Historically <b>{fmt_pct(r.baseline_RYI)}</b> vs typical over {int(r.n_years)} years"
-                       + (", <b>persistently low</b>" if r.persistently_low else ""))]
+    if pd.notna(r.source_season):
+        prev = f" (a year earlier: {fmt_pct(r.prev_RYI)})" if pd.notna(r.prev_RYI) else ""
+        out = [("history", f"<b>{fmt_pct(r.baseline_RYI)}</b> vs typical in {html.escape(r.baseline_source)}{prev}"
+                           + (", <b>below 0.8 in each of the last 3 years</b>" if r.persistently_low else ""))]
+    else:
+        out = [("history", f"<b>{fmt_pct(r.baseline_RYI)}</b> vs typical over {int(r.n_years)} years of the "
+                           "cleaned 2020–2024 files (NISR doesn't publish tomatoes separately, so this is not "
+                           "validated)" + (", <b>persistently low</b>" if r.persistently_low else ""))]
     if r.n_reports:
         bits = [f"avg condition {r.mean_condition:.1f}/5"]
         if r.rain_share:
@@ -170,19 +177,22 @@ def why(r) -> list[tuple[str, str]]:
         sim = f" ({int(r.n_simulated)} simulated)" if r.n_simulated else ""
         out.append(("edit_note", f"<b>{int(r.n_reports)} field reports</b>{sim}: " + ", ".join(bits)))
     else:
-        out.append(("edit_note", "No field reports yet: the estimate is the historical baseline"))
+        out.append(("edit_note", "No field reports yet: the estimate is the baseline"))
     if pd.notna(r.rain_anom_pct):
         out.append(("rainy", f"Rain <b>{r.rain_anom_pct:+.0f}%</b> vs the district average "
                              f"({html.escape(r.rain_period)}{', partial season' if r.rain_partial else ''})"))
     if pd.notna(r.traditional_pct):
         out.append(("water_drop", f"<b>{r.traditional_pct:.0f}%</b> of irrigated plots use traditional methods"))
-    out.append(("restaurant", f"<b>{r.food_level}</b> food dependence: household consumption of {r.CropName.lower()} "
-                              "compared with other districts"))
+    if r.food_level == "No data":
+        out.append(("restaurant", f"Food dependence unknown: EICV 2020 doesn't cover {r.CropName.lower()}"))
+    else:
+        out.append(("restaurant", f"<b>{r.food_level}</b> food dependence: {r.CropName.lower()}'s share of household "
+                                  "food spending, compared with other districts"))
     return out
 
 
 def stake(r) -> str:
-    """Production at stake, from NISR's latest official season (absent for tomatoes and Season C)."""
+    """Production at stake, from NISR's latest official season (absent for tomatoes)."""
     if pd.isna(r.off_yield_kgha):
         return ""
     tons = f"≈{r.tonnes_below:,.0f} t" if r.tonnes_below >= 1 else "No shortfall"
@@ -197,7 +207,7 @@ def detail(r) -> str:
     p = float(pct_vs_typical(r.adjusted_RYI))
     pos = (max(min(p, METER), -METER) + METER) / (2 * METER) * 100
     shift = p - float(pct_vs_typical(r.baseline_RYI))
-    sub = f"{shift:+.0f} pts from field reports" if r.n_reports else "historical baseline"
+    sub = f"{shift:+.0f} pts from field reports" if r.n_reports else "baseline, no reports yet"
     reasons = "".join(f'<li>{icon(ic)}<span>{txt}</span></li>' for ic, txt in why(r))
     todo = [a for a in r.action.split(" · ") if a in ACTIONS]
     steps = "".join(
@@ -258,7 +268,7 @@ with left:
             })
         rows = event.selection.rows
         sel = view.iloc[rows[0] if rows and rows[0] < len(view) else 0]
-    export = t.assign(actions=t.action.map(short_actions)).drop(columns=["baseline_logRYI", "baseline_log", "action"])
+    export = t.assign(actions=t.action.map(short_actions)).drop(columns=["baseline_log", "action"])
     st.download_button("Download full ranking (CSV)", export.to_csv(index=False), icon=":material/download:",
                        file_name=f"imboni_alerts_{season}.csv", mime="text/csv")
 with right:

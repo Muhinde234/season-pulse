@@ -177,11 +177,12 @@ def practice_signals(metric: str) -> pd.DataFrame:
 
 # ---------- official numbers next to the early-warning alerts ----------
 # app crop name (cleaned SAS) -> crop name in NISR's official tables; tomatoes are only published as "vegetables"
-APP_TO_OFFICIAL = {"Beans": "Beans", "Cassava": "Cassava", "Irish potatoes": "Irish potato", "Maize": "Maize"}
+APP_TO_OFFICIAL = {"Banana": "Banana", "Beans": "Beans", "Cassava": "Cassava", "Irish potatoes": "Irish potato",
+                   "Maize": "Maize", "Paddy rice": "Paddy rice", "Sweet potato": "Sweet potato"}
 
 
 def latest_official_season(app_season: str) -> str | None:
-    """Most recent published season of the same letter: 'SeasonA' -> '2026A'; Season C is not published."""
+    """Most recent published season of the same letter: 'SeasonA' -> '2026A'."""
     letter = app_season[-1]
     have = sorted(s for s in load_district_crops().season.unique() if s.endswith(letter))
     return have[-1] if have else None

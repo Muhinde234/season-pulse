@@ -152,7 +152,7 @@ with st.expander("Method and sources", icon=":material/menu_book:"):
   ([NISR SAS releases]({SOURCE_URL})). District tables add up exactly to NISR's national totals.
 - **Target:** PSTA 5 / NST2 aims to raise the productivity of priority food crops by more than 50% by {TARGET_YEAR}
   ([PSTA 5]({PSTA5_URL})). Baseline = {BASE_YEAR} (Seasons A + B), the agricultural year before PSTA 5 began.
-- **Yield** = (Season A + Season B production) ÷ (A + B harvested area). Season C is not published per crop.
+- **Yield** = (Season A + Season B production) ÷ (A + B harvested area). Season C (a short season in swamps and the volcanic highlands) is left out: NISR publishes it only in the annual tables.
 - **Districts catch up:** each district below the top-quarter yield of that season and crop closes the chosen share
   of its gap; extra tonnes = gap × harvested area.
 - **Small-scale catch up:** small-scale farmers' share of harvested area is solved from NISR's national, small-scale

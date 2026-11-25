@@ -1,34 +1,27 @@
 """Imboni - turn the large/raw NISR files into the small files in app_data/ that the app loads.
 
-Run after build_baseline.py (the 2026 validation needs app_data/out_district_baseline.csv):
-    python prep_data.py
+Run:  python prep_data.py   (official yields, validation and the alert baseline come from prep_official.py)
 
 Inputs (data/raw/):
-    establishment_census.csv     37 MB, not committed; without it the committed aggregate is kept
-    eicv_historical.csv          EICV household consumption
-    Tables_2026_Season_A.xlsx    NISR SAS 2026 Season A official tables (13: yield, 32: irrigation)
+    establishment_census.csv       37 MB, not committed; without it the committed aggregate is kept
+    eicv_historical.csv            EICV household consumption
+    sas_tables/SAS_2026A.xlsx      NISR SAS 2026 Season A official tables (Table 32: irrigation methods)
 
 Outputs (app_data/, committed so Streamlit Cloud never needs the raw files):
     district_cooperatives.csv        cooperatives, food processors + goods exporters per district
     district_consumption_2020.csv    EICV 2020 household consumption per district & crop
-    official_yield_2026A.csv         Table 13 yields (kg/ha) per district & crop, plus RYI vs the median district
     irrigation_2026A.csv             Table 32 irrigation methods per district (% of irrigated plots)
 """
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 RAW = Path("data/raw")
 OUT = Path("app_data")
 CENSUS = RAW / "establishment_census.csv"
 EICV = RAW / "eicv_historical.csv"
-SAS2026 = RAW / "Tables_2026_Season_A.xlsx"
+SAS2026 = RAW / "sas_tables" / "SAS_2026A.xlsx"
 SUMMARY_ROWS = {"National", "SSF", "LSF"}  # national total, small- and large-scale farmers
-
-# Table 13 column -> crop name used everywhere else (Tomatoes are only published inside "vegetables")
-TABLE13_CROPS = {"Bean": "Beans", "Cassava": "Cassava", "Irish potato": "Irish potatoes", "Maize": "Maize"}
-LOW, FLAG = 0.80, 0.85  # official RYI <= LOW counts as a bad season; baseline <= FLAG = flagged in advance
 
 # ---------- Establishment census: cooperatives, food processors and goods exporters only ----------
 if CENSUS.exists():
@@ -72,16 +65,6 @@ def district_rows(df: pd.DataFrame) -> pd.DataFrame:
     return df[df.DistrictName.isin(cons.DistrictName.unique()) & ~df.DistrictName.isin(SUMMARY_ROWS)]
 
 
-# Table 13: average yield (kg/ha). Row 3 holds the headers; column A is empty. 0 = crop not grown there.
-t13 = district_rows(pd.read_excel(SAS2026, sheet_name="Table 13", header=2).iloc[:, 1:])
-official = (t13.melt(id_vars="DistrictName", value_vars=list(TABLE13_CROPS), var_name="col", value_name="yield_kg_ha")
-               .assign(CropName=lambda d: d.col.map(TABLE13_CROPS)).drop(columns="col"))
-official["yield_kg_ha"] = pd.to_numeric(official.yield_kg_ha, errors="coerce")
-official = official[official.yield_kg_ha > 0].copy()
-official["official_RYI"] = official.yield_kg_ha / official.groupby("CropName").yield_kg_ha.transform("median")
-official = official.round({"yield_kg_ha": 0, "official_RYI": 3})
-official.to_csv(OUT / "official_yield_2026A.csv", index=False)
-
 # Table 32: % of irrigated plots by irrigation type (two header rows: modern types, then traditional)
 t32 = pd.read_excel(SAS2026, sheet_name="Table 32", header=None).iloc[:, 1:]
 t32.columns = ["DistrictName", "surface", "flood", "drip", "sprinkler", "pivot", "traditional"]
@@ -92,9 +75,7 @@ irr = irr.assign(modern_pct=irr[["surface", "flood", "drip", "sprinkler", "pivot
 irr[["DistrictName", "modern_pct", "traditional_pct", "surface", "flood", "drip", "sprinkler", "pivot"]].to_csv(
     OUT / "irrigation_2026A.csv", index=False)
 
-# The 2026 A and B validation files are written by prep_official.py (official tables, all seasons).
-
 print(f"Cooperatives: {len(coops)} districts, {coops.cooperatives.sum()} cooperatives, "
       f"{coops.food_processors.sum()} food processors, {coops.exporters.sum()} goods exporters")
 print(f"EICV 2020: {len(cons)} district-crop rows across {cons.DistrictName.nunique()} districts")
-print(f"2026 A official yields: {len(official)} district-crop rows · irrigation: {len(irr)} districts")
+print(f"Irrigation (SAS 2026 A Table 32): {len(irr)} districts")

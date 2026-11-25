@@ -1,0 +1,992 @@
+DistrictName,CropName,Season,Year,ryi_prev,ryi_now,ryi_dev,rain_mm,rain_anom_pct,rain_rel
+Bugesera,Banana,SeasonA,2023,1.0,1.0467,0.0456,339.7,-15.5,-0.0712
+Burera,Banana,SeasonA,2023,0.9922,0.9683,-0.0244,526.6,0.9,0.1068
+Gakenke,Banana,SeasonA,2023,1.0378,1.0472,0.009,494.1,-1.0,0.0869
+Gasabo,Banana,SeasonA,2023,1.0512,1.031,-0.0193,371.8,-14.0,-0.0531
+Gatsibo,Banana,SeasonA,2023,1.1139,1.1802,0.0578,374.9,-16.9,-0.088
+Gicumbi,Banana,SeasonA,2023,1.04,1.0507,0.0102,417.9,-9.7,-0.0048
+Gisagara,Banana,SeasonA,2023,0.7617,0.7958,0.0438,450.8,-14.7,-0.0614
+Huye,Banana,SeasonA,2023,0.9737,0.943,-0.032,444.8,-12.6,-0.038
+Kamonyi,Banana,SeasonA,2023,0.9164,0.9698,0.0566,403.7,-8.4,0.01
+Karongi,Banana,SeasonA,2023,1.1172,1.1455,0.025,512.7,6.0,0.1554
+Kayonza,Banana,SeasonA,2023,1.1901,1.203,0.0108,357.1,-17.7,-0.0969
+Kirehe,Banana,SeasonA,2023,1.2896,1.3278,0.0292,372.4,-12.9,-0.0412
+Muhanga,Banana,SeasonA,2023,0.8992,0.9147,0.0171,466.5,-4.0,0.0561
+Musanze,Banana,SeasonA,2023,1.0738,1.046,-0.0262,635.3,4.3,0.1395
+Ngoma,Banana,SeasonA,2023,1.2117,1.2824,0.0567,357.3,-14.5,-0.0592
+Ngororero,Banana,SeasonA,2023,0.7209,0.7052,-0.0221,511.7,0.1,0.0988
+Nyabihu,Banana,SeasonA,2023,0.7303,0.7667,0.0486,585.0,4.7,0.1432
+Nyagatare,Banana,SeasonA,2023,1.3703,1.3998,0.0213,399.9,-12.0,-0.031
+Nyamagabe,Banana,SeasonA,2023,0.7913,0.7998,0.0106,543.5,1.0,0.1066
+Nyamasheke,Banana,SeasonA,2023,0.7341,0.7652,0.0416,609.0,10.3,0.1951
+Nyanza,Banana,SeasonA,2023,0.7547,0.7929,0.0494,414.0,-12.8,-0.04
+Nyarugenge,Banana,SeasonA,2023,1.0023,1.0513,0.0477,382.9,-10.9,-0.0181
+Nyaruguru,Banana,SeasonA,2023,0.9863,0.977,-0.0094,564.9,-3.2,0.0648
+Rubavu,Banana,SeasonA,2023,1.0172,1.0189,0.0017,547.4,10.2,0.194
+Ruhango,Banana,SeasonA,2023,0.8278,0.8058,-0.027,401.3,-10.2,-0.0109
+Rulindo,Banana,SeasonA,2023,0.9217,0.9169,-0.0053,428.8,-8.8,0.0048
+Rusizi,Banana,SeasonA,2023,0.8666,0.9785,0.1215,635.4,9.9,0.1916
+Rutsiro,Banana,SeasonA,2023,1.0519,1.0969,0.0419,523.6,9.1,0.1846
+Rwamagana,Banana,SeasonA,2023,1.2457,1.337,0.0707,333.5,-17.0,-0.0891
+Bugesera,Beans,SeasonA,2023,0.8912,0.4689,-0.6423,339.7,-15.5,-0.0712
+Burera,Beans,SeasonA,2023,1.2603,2.0705,0.4965,526.6,0.9,0.1068
+Gakenke,Beans,SeasonA,2023,1.3076,1.0049,-0.2633,494.1,-1.0,0.0869
+Gasabo,Beans,SeasonA,2023,0.9362,0.9492,0.0138,371.8,-14.0,-0.0531
+Gatsibo,Beans,SeasonA,2023,0.9196,1.0721,0.1534,374.9,-16.9,-0.088
+Gicumbi,Beans,SeasonA,2023,1.2506,1.259,0.0067,417.9,-9.7,-0.0048
+Gisagara,Beans,SeasonA,2023,0.8764,0.8131,-0.0749,450.8,-14.7,-0.0614
+Huye,Beans,SeasonA,2023,1.0044,0.6131,-0.4935,444.8,-12.6,-0.038
+Kamonyi,Beans,SeasonA,2023,0.9143,0.382,-0.8728,403.7,-8.4,0.01
+Karongi,Beans,SeasonA,2023,1.4131,1.4525,0.0275,512.7,6.0,0.1554
+Kayonza,Beans,SeasonA,2023,0.8399,0.9557,0.1292,357.1,-17.7,-0.0969
+Kicukiro,Beans,SeasonA,2023,1.0361,0.6311,-0.4957,354.3,-14.2,-0.0561
+Kirehe,Beans,SeasonA,2023,0.8497,1.177,0.3259,372.4,-12.9,-0.0412
+Muhanga,Beans,SeasonA,2023,0.7888,0.4967,-0.4624,466.5,-4.0,0.0561
+Musanze,Beans,SeasonA,2023,1.6655,1.582,-0.0515,635.3,4.3,0.1395
+Ngoma,Beans,SeasonA,2023,0.8637,1.1246,0.264,357.3,-14.5,-0.0592
+Ngororero,Beans,SeasonA,2023,1.2073,1.218,0.0088,511.7,0.1,0.0988
+Nyabihu,Beans,SeasonA,2023,0.9956,1.8754,0.6332,585.0,4.7,0.1432
+Nyagatare,Beans,SeasonA,2023,1.0149,1.3,0.2476,399.9,-12.0,-0.031
+Nyamagabe,Beans,SeasonA,2023,0.8833,0.8705,-0.0146,543.5,1.0,0.1066
+Nyamasheke,Beans,SeasonA,2023,1.2167,1.1836,-0.0276,609.0,10.3,0.1951
+Nyanza,Beans,SeasonA,2023,0.9744,0.7525,-0.2585,414.0,-12.8,-0.04
+Nyarugenge,Beans,SeasonA,2023,1.1301,0.4787,-0.859,382.9,-10.9,-0.0181
+Nyaruguru,Beans,SeasonA,2023,0.915,0.9951,0.0839,564.9,-3.2,0.0648
+Rubavu,Beans,SeasonA,2023,1.2015,1.6,0.2865,547.4,10.2,0.194
+Ruhango,Beans,SeasonA,2023,1.0331,0.5607,-0.6112,401.3,-10.2,-0.0109
+Rulindo,Beans,SeasonA,2023,0.8715,0.9869,0.1244,428.8,-8.8,0.0048
+Rusizi,Beans,SeasonA,2023,1.0333,1.1361,0.0948,635.4,9.9,0.1916
+Rutsiro,Beans,SeasonA,2023,1.4604,1.4098,-0.0352,523.6,9.1,0.1846
+Rwamagana,Beans,SeasonA,2023,0.9147,0.5656,-0.4808,333.5,-17.0,-0.0891
+Bugesera,Cassava,SeasonA,2023,1.3131,1.2118,-0.0803,339.7,-15.5,-0.0712
+Burera,Cassava,SeasonA,2023,0.9436,0.9859,0.0439,526.6,0.9,0.1068
+Gakenke,Cassava,SeasonA,2023,1.0,1.0,0.0,494.1,-1.0,0.0869
+Gasabo,Cassava,SeasonA,2023,0.8545,0.9175,0.0712,371.8,-14.0,-0.0531
+Gatsibo,Cassava,SeasonA,2023,1.0823,1.1073,0.0229,374.9,-16.9,-0.088
+Gicumbi,Cassava,SeasonA,2023,1.0236,1.1213,0.0912,417.9,-9.7,-0.0048
+Gisagara,Cassava,SeasonA,2023,1.259,1.3164,0.0446,450.8,-14.7,-0.0614
+Huye,Cassava,SeasonA,2023,1.4047,1.4371,0.0228,444.8,-12.6,-0.038
+Kamonyi,Cassava,SeasonA,2023,1.0844,1.0395,-0.0423,403.7,-8.4,0.01
+Karongi,Cassava,SeasonA,2023,0.5835,0.685,0.1604,512.7,6.0,0.1554
+Kayonza,Cassava,SeasonA,2023,1.0141,0.9466,-0.0689,357.1,-17.7,-0.0969
+Kicukiro,Cassava,SeasonA,2023,0.7658,0.8093,0.0552,354.3,-14.2,-0.0561
+Kirehe,Cassava,SeasonA,2023,1.1142,1.1949,0.0699,372.4,-12.9,-0.0412
+Muhanga,Cassava,SeasonA,2023,1.0718,1.0738,0.0019,466.5,-4.0,0.0561
+Musanze,Cassava,SeasonA,2023,0.4433,0.4854,0.0908,635.3,4.3,0.1395
+Ngoma,Cassava,SeasonA,2023,0.9945,0.9895,-0.0051,357.3,-14.5,-0.0592
+Ngororero,Cassava,SeasonA,2023,1.2272,1.1696,-0.0481,511.7,0.1,0.0988
+Nyabihu,Cassava,SeasonA,2023,0.8019,0.847,0.0548,585.0,4.7,0.1432
+Nyagatare,Cassava,SeasonA,2023,1.1553,1.1316,-0.0208,399.9,-12.0,-0.031
+Nyamagabe,Cassava,SeasonA,2023,0.7221,0.7927,0.0932,543.5,1.0,0.1066
+Nyamasheke,Cassava,SeasonA,2023,0.7849,0.7765,-0.0107,609.0,10.3,0.1951
+Nyanza,Cassava,SeasonA,2023,1.1817,1.2611,0.0651,414.0,-12.8,-0.04
+Nyarugenge,Cassava,SeasonA,2023,0.7332,0.7907,0.0756,382.9,-10.9,-0.0181
+Nyaruguru,Cassava,SeasonA,2023,0.8203,0.8573,0.0441,564.9,-3.2,0.0648
+Ruhango,Cassava,SeasonA,2023,1.6525,1.6003,-0.0321,401.3,-10.2,-0.0109
+Rulindo,Cassava,SeasonA,2023,0.9636,1.0865,0.1201,428.8,-8.8,0.0048
+Rusizi,Cassava,SeasonA,2023,0.8718,0.9366,0.0717,635.4,9.9,0.1916
+Rutsiro,Cassava,SeasonA,2023,0.9514,0.9638,0.013,523.6,9.1,0.1846
+Rwamagana,Cassava,SeasonA,2023,1.4672,1.3943,-0.0509,333.5,-17.0,-0.0891
+Bugesera,Irish potatoes,SeasonA,2023,0.5405,0.4452,-0.1939,339.7,-15.5,-0.0712
+Burera,Irish potatoes,SeasonA,2023,2.2637,2.3134,0.0217,526.6,0.9,0.1068
+Gakenke,Irish potatoes,SeasonA,2023,1.1874,1.1146,-0.0633,494.1,-1.0,0.0869
+Gasabo,Irish potatoes,SeasonA,2023,0.8574,0.9182,0.0685,371.8,-14.0,-0.0531
+Gatsibo,Irish potatoes,SeasonA,2023,1.0829,0.9414,-0.14,374.9,-16.9,-0.088
+Gicumbi,Irish potatoes,SeasonA,2023,1.851,1.9418,0.0479,417.9,-9.7,-0.0048
+Gisagara,Irish potatoes,SeasonA,2023,0.6207,0.5998,-0.0342,450.8,-14.7,-0.0614
+Huye,Irish potatoes,SeasonA,2023,0.7976,0.7418,-0.0725,444.8,-12.6,-0.038
+Kamonyi,Irish potatoes,SeasonA,2023,0.718,0.6524,-0.0958,403.7,-8.4,0.01
+Karongi,Irish potatoes,SeasonA,2023,1.7617,1.6472,-0.0672,512.7,6.0,0.1554
+Kayonza,Irish potatoes,SeasonA,2023,0.6355,0.6573,0.0338,357.1,-17.7,-0.0969
+Kicukiro,Irish potatoes,SeasonA,2023,0.6726,0.8053,0.1801,354.3,-14.2,-0.0561
+Kirehe,Irish potatoes,SeasonA,2023,0.8752,0.9832,0.1163,372.4,-12.9,-0.0412
+Muhanga,Irish potatoes,SeasonA,2023,0.7332,0.8996,0.2046,466.5,-4.0,0.0561
+Musanze,Irish potatoes,SeasonA,2023,2.611,2.4999,-0.0435,635.3,4.3,0.1395
+Ngoma,Irish potatoes,SeasonA,2023,1.0466,0.9645,-0.0818,357.3,-14.5,-0.0592
+Ngororero,Irish potatoes,SeasonA,2023,0.906,1.0334,0.1316,511.7,0.1,0.0988
+Nyabihu,Irish potatoes,SeasonA,2023,2.5114,2.4982,-0.0053,585.0,4.7,0.1432
+Nyagatare,Irish potatoes,SeasonA,2023,1.2077,1.3939,0.1434,399.9,-12.0,-0.031
+Nyamagabe,Irish potatoes,SeasonA,2023,1.1404,1.2867,0.1206,543.5,1.0,0.1066
+Nyamasheke,Irish potatoes,SeasonA,2023,1.0665,1.0168,-0.0477,609.0,10.3,0.1951
+Nyanza,Irish potatoes,SeasonA,2023,0.753,0.7172,-0.0487,414.0,-12.8,-0.04
+Nyarugenge,Irish potatoes,SeasonA,2023,0.5077,0.4756,-0.0654,382.9,-10.9,-0.0181
+Nyaruguru,Irish potatoes,SeasonA,2023,1.1044,1.0506,-0.0499,564.9,-3.2,0.0648
+Rubavu,Irish potatoes,SeasonA,2023,2.5217,2.5285,0.0027,547.4,10.2,0.194
+Ruhango,Irish potatoes,SeasonA,2023,0.6995,0.63,-0.1047,401.3,-10.2,-0.0109
+Rulindo,Irish potatoes,SeasonA,2023,0.9534,0.9343,-0.0202,428.8,-8.8,0.0048
+Rusizi,Irish potatoes,SeasonA,2023,0.8127,1.0185,0.2258,635.4,9.9,0.1916
+Rutsiro,Irish potatoes,SeasonA,2023,1.9082,1.8581,-0.0266,523.6,9.1,0.1846
+Rwamagana,Irish potatoes,SeasonA,2023,1.2539,1.1286,-0.1053,333.5,-17.0,-0.0891
+Bugesera,Maize,SeasonA,2023,0.9902,0.6319,-0.4491,339.7,-15.5,-0.0712
+Burera,Maize,SeasonA,2023,1.3251,1.124,-0.1645,526.6,0.9,0.1068
+Gakenke,Maize,SeasonA,2023,1.0783,0.999,-0.0764,494.1,-1.0,0.0869
+Gasabo,Maize,SeasonA,2023,0.7821,0.6907,-0.1242,371.8,-14.0,-0.0531
+Gatsibo,Maize,SeasonA,2023,1.0216,1.001,-0.0204,374.9,-16.9,-0.088
+Gicumbi,Maize,SeasonA,2023,0.8785,1.2578,0.3589,417.9,-9.7,-0.0048
+Gisagara,Maize,SeasonA,2023,1.4136,1.1802,-0.1804,450.8,-14.7,-0.0614
+Huye,Maize,SeasonA,2023,0.9278,0.9194,-0.0091,444.8,-12.6,-0.038
+Kamonyi,Maize,SeasonA,2023,1.0672,0.9549,-0.1112,403.7,-8.4,0.01
+Karongi,Maize,SeasonA,2023,1.0408,1.0458,0.0048,512.7,6.0,0.1554
+Kayonza,Maize,SeasonA,2023,0.8786,0.9535,0.0819,357.1,-17.7,-0.0969
+Kicukiro,Maize,SeasonA,2023,0.8022,0.9094,0.1255,354.3,-14.2,-0.0561
+Kirehe,Maize,SeasonA,2023,0.902,1.4845,0.4982,372.4,-12.9,-0.0412
+Muhanga,Maize,SeasonA,2023,1.0334,0.8238,-0.2266,466.5,-4.0,0.0561
+Musanze,Maize,SeasonA,2023,1.1982,1.0726,-0.1108,635.3,4.3,0.1395
+Ngoma,Maize,SeasonA,2023,1.0905,1.215,0.1081,357.3,-14.5,-0.0592
+Ngororero,Maize,SeasonA,2023,0.6898,0.8111,0.162,511.7,0.1,0.0988
+Nyabihu,Maize,SeasonA,2023,0.8643,1.2009,0.329,585.0,4.7,0.1432
+Nyagatare,Maize,SeasonA,2023,1.275,2.0421,0.471,399.9,-12.0,-0.031
+Nyamagabe,Maize,SeasonA,2023,0.9685,1.0505,0.0813,543.5,1.0,0.1066
+Nyamasheke,Maize,SeasonA,2023,1.0984,0.874,-0.2285,609.0,10.3,0.1951
+Nyanza,Maize,SeasonA,2023,1.0934,0.9509,-0.1397,414.0,-12.8,-0.04
+Nyarugenge,Maize,SeasonA,2023,0.6103,0.6747,0.1003,382.9,-10.9,-0.0181
+Nyaruguru,Maize,SeasonA,2023,1.2592,1.0779,-0.1555,564.9,-3.2,0.0648
+Rubavu,Maize,SeasonA,2023,1.091,1.3654,0.2243,547.4,10.2,0.194
+Ruhango,Maize,SeasonA,2023,0.8838,0.791,-0.1108,401.3,-10.2,-0.0109
+Rulindo,Maize,SeasonA,2023,0.9412,1.0485,0.1079,428.8,-8.8,0.0048
+Rusizi,Maize,SeasonA,2023,1.0098,1.0371,0.0267,635.4,9.9,0.1916
+Rutsiro,Maize,SeasonA,2023,0.9709,0.8586,-0.1229,523.6,9.1,0.1846
+Rwamagana,Maize,SeasonA,2023,0.9353,0.7877,-0.1717,333.5,-17.0,-0.0891
+Bugesera,Paddy rice,SeasonA,2023,1.4686,1.0772,-0.31,339.7,-15.5,-0.0712
+Gakenke,Paddy rice,SeasonA,2023,0.3806,0.615,0.4799,494.1,-1.0,0.0869
+Gasabo,Paddy rice,SeasonA,2023,0.8963,1.2042,0.2953,371.8,-14.0,-0.0531
+Gatsibo,Paddy rice,SeasonA,2023,0.8077,1.4279,0.5697,374.9,-16.9,-0.088
+Gisagara,Paddy rice,SeasonA,2023,1.1609,0.93,-0.2217,450.8,-14.7,-0.0614
+Huye,Paddy rice,SeasonA,2023,1.0322,1.1019,0.0654,444.8,-12.6,-0.038
+Kamonyi,Paddy rice,SeasonA,2023,0.8503,0.9201,0.0789,403.7,-8.4,0.01
+Kayonza,Paddy rice,SeasonA,2023,1.0806,1.0249,-0.053,357.1,-17.7,-0.0969
+Kicukiro,Paddy rice,SeasonA,2023,0.7978,1.0403,0.2654,354.3,-14.2,-0.0561
+Kirehe,Paddy rice,SeasonA,2023,1.2777,1.0653,-0.1818,372.4,-12.9,-0.0412
+Muhanga,Paddy rice,SeasonA,2023,0.6727,0.6349,-0.058,466.5,-4.0,0.0561
+Ngoma,Paddy rice,SeasonA,2023,0.92,0.9751,0.0582,357.3,-14.5,-0.0592
+Nyagatare,Paddy rice,SeasonA,2023,1.049,1.1165,0.0624,399.9,-12.0,-0.031
+Nyamagabe,Paddy rice,SeasonA,2023,0.5002,0.4693,-0.0639,543.5,1.0,0.1066
+Nyamasheke,Paddy rice,SeasonA,2023,1.007,0.9482,-0.0602,609.0,10.3,0.1951
+Nyanza,Paddy rice,SeasonA,2023,1.1589,0.7204,-0.4754,414.0,-12.8,-0.04
+Ruhango,Paddy rice,SeasonA,2023,1.2732,1.1247,-0.124,401.3,-10.2,-0.0109
+Rulindo,Paddy rice,SeasonA,2023,0.993,0.861,-0.1427,428.8,-8.8,0.0048
+Rusizi,Paddy rice,SeasonA,2023,1.1114,1.361,0.2027,635.4,9.9,0.1916
+Rwamagana,Paddy rice,SeasonA,2023,0.9172,0.9253,0.0089,333.5,-17.0,-0.0891
+Bugesera,Sweet potato,SeasonA,2023,1.0772,0.9334,-0.1434,339.7,-15.5,-0.0712
+Burera,Sweet potato,SeasonA,2023,1.5061,1.3792,-0.0881,526.6,0.9,0.1068
+Gakenke,Sweet potato,SeasonA,2023,0.9722,0.9959,0.0241,494.1,-1.0,0.0869
+Gasabo,Sweet potato,SeasonA,2023,1.0536,1.0848,0.0291,371.8,-14.0,-0.0531
+Gatsibo,Sweet potato,SeasonA,2023,1.2053,1.1914,-0.0116,374.9,-16.9,-0.088
+Gicumbi,Sweet potato,SeasonA,2023,1.3827,1.3505,-0.0235,417.9,-9.7,-0.0048
+Gisagara,Sweet potato,SeasonA,2023,0.9097,0.858,-0.0586,450.8,-14.7,-0.0614
+Huye,Sweet potato,SeasonA,2023,0.8554,0.8856,0.0348,444.8,-12.6,-0.038
+Kamonyi,Sweet potato,SeasonA,2023,0.7428,0.6923,-0.0704,403.7,-8.4,0.01
+Karongi,Sweet potato,SeasonA,2023,1.1044,1.1412,0.0328,512.7,6.0,0.1554
+Kayonza,Sweet potato,SeasonA,2023,0.9618,0.8994,-0.0671,357.1,-17.7,-0.0969
+Kicukiro,Sweet potato,SeasonA,2023,1.1276,1.0474,-0.0738,354.3,-14.2,-0.0561
+Kirehe,Sweet potato,SeasonA,2023,0.913,0.7834,-0.1531,372.4,-12.9,-0.0412
+Muhanga,Sweet potato,SeasonA,2023,0.9455,0.881,-0.0706,466.5,-4.0,0.0561
+Musanze,Sweet potato,SeasonA,2023,1.1,1.1126,0.0113,635.3,4.3,0.1395
+Ngoma,Sweet potato,SeasonA,2023,0.9948,0.9906,-0.0042,357.3,-14.5,-0.0592
+Ngororero,Sweet potato,SeasonA,2023,0.9013,0.9127,0.0126,511.7,0.1,0.0988
+Nyabihu,Sweet potato,SeasonA,2023,1.0073,1.0394,0.0314,585.0,4.7,0.1432
+Nyagatare,Sweet potato,SeasonA,2023,0.695,0.6763,-0.0274,399.9,-12.0,-0.031
+Nyamagabe,Sweet potato,SeasonA,2023,1.0716,1.1176,0.042,543.5,1.0,0.1066
+Nyamasheke,Sweet potato,SeasonA,2023,0.6504,0.6719,0.0325,609.0,10.3,0.1951
+Nyanza,Sweet potato,SeasonA,2023,0.8868,0.8075,-0.0938,414.0,-12.8,-0.04
+Nyarugenge,Sweet potato,SeasonA,2023,0.8406,0.8217,-0.0227,382.9,-10.9,-0.0181
+Nyaruguru,Sweet potato,SeasonA,2023,1.4744,1.4258,-0.0335,564.9,-3.2,0.0648
+Rubavu,Sweet potato,SeasonA,2023,1.1787,1.1522,-0.0227,547.4,10.2,0.194
+Ruhango,Sweet potato,SeasonA,2023,1.0052,1.0041,-0.0011,401.3,-10.2,-0.0109
+Rulindo,Sweet potato,SeasonA,2023,0.9773,1.0082,0.0311,428.8,-8.8,0.0048
+Rusizi,Sweet potato,SeasonA,2023,0.9545,0.9437,-0.0114,635.4,9.9,0.1916
+Rutsiro,Sweet potato,SeasonA,2023,1.1271,1.0905,-0.033,523.6,9.1,0.1846
+Rwamagana,Sweet potato,SeasonA,2023,1.0182,1.011,-0.0072,333.5,-17.0,-0.0891
+Bugesera,Banana,SeasonA,2024,1.0467,1.0882,0.0389,362.3,-9.9,-0.0255
+Burera,Banana,SeasonA,2024,0.9683,0.9614,-0.0072,491.8,-5.7,0.0196
+Gakenke,Banana,SeasonA,2024,1.0472,1.014,-0.0322,462.1,-7.4,0.0012
+Gasabo,Banana,SeasonA,2024,1.031,1.0024,-0.0281,410.8,-4.9,0.0279
+Gatsibo,Banana,SeasonA,2024,1.1802,1.2205,0.0336,462.7,2.5,0.1036
+Gicumbi,Banana,SeasonA,2024,1.0507,0.9958,-0.0537,434.2,-6.2,0.0147
+Gisagara,Banana,SeasonA,2024,0.7958,0.84,0.0541,498.1,-5.7,0.0196
+Huye,Banana,SeasonA,2024,0.943,0.9699,0.0282,458.6,-9.9,-0.0262
+Kamonyi,Banana,SeasonA,2024,0.9698,0.9252,-0.0471,373.1,-15.3,-0.0876
+Karongi,Banana,SeasonA,2024,1.1455,1.0876,-0.0518,397.7,-17.8,-0.1173
+Kayonza,Banana,SeasonA,2024,1.203,1.2486,0.0372,445.2,2.7,0.1049
+Kirehe,Banana,SeasonA,2024,1.3278,1.2427,-0.0662,416.1,-2.7,0.051
+Muhanga,Banana,SeasonA,2024,0.9147,0.9813,0.0703,409.9,-15.7,-0.092
+Musanze,Banana,SeasonA,2024,1.046,0.9684,-0.0771,598.5,-1.7,0.0611
+Ngoma,Banana,SeasonA,2024,1.2824,1.2581,-0.0191,388.4,-7.0,0.0055
+Ngororero,Banana,SeasonA,2024,0.7052,0.7722,0.0908,455.3,-10.9,-0.0368
+Nyabihu,Banana,SeasonA,2024,0.7667,0.843,0.0949,547.1,-2.1,0.0575
+Nyagatare,Banana,SeasonA,2024,1.3998,1.2892,-0.0823,477.4,5.0,0.1274
+Nyamagabe,Banana,SeasonA,2024,0.7998,0.8813,0.097,472.5,-12.2,-0.0521
+Nyamasheke,Banana,SeasonA,2024,0.7652,0.8421,0.0957,481.1,-12.9,-0.0594
+Nyanza,Banana,SeasonA,2024,0.7929,0.8115,0.0231,410.4,-13.6,-0.0675
+Nyarugenge,Banana,SeasonA,2024,1.0513,1.0755,0.0227,380.4,-11.5,-0.0434
+Nyaruguru,Banana,SeasonA,2024,0.977,1.0508,0.0728,538.8,-7.7,-0.0012
+Rubavu,Banana,SeasonA,2024,1.0189,1.0211,0.0021,469.6,-5.5,0.022
+Ruhango,Banana,SeasonA,2024,0.8058,0.8923,0.102,373.1,-16.6,-0.1025
+Rulindo,Banana,SeasonA,2024,0.9169,0.9178,0.001,436.3,-7.2,0.0034
+Rusizi,Banana,SeasonA,2024,0.9785,1.0033,0.025,510.7,-11.7,-0.0457
+Rutsiro,Banana,SeasonA,2024,1.0969,1.085,-0.0109,409.4,-14.7,-0.0802
+Rwamagana,Banana,SeasonA,2024,1.337,1.338,0.0007,390.6,-2.8,0.0502
+Bugesera,Beans,SeasonA,2024,0.4689,0.6719,0.3598,362.3,-9.9,-0.0255
+Burera,Beans,SeasonA,2024,2.0705,1.1502,-0.5878,491.8,-5.7,0.0196
+Gakenke,Beans,SeasonA,2024,1.0049,0.9975,-0.0074,462.1,-7.4,0.0012
+Gasabo,Beans,SeasonA,2024,0.9492,0.8942,-0.0597,410.8,-4.9,0.0279
+Gatsibo,Beans,SeasonA,2024,1.0721,0.9843,-0.0854,462.7,2.5,0.1036
+Gicumbi,Beans,SeasonA,2024,1.259,1.0363,-0.1947,434.2,-6.2,0.0147
+Gisagara,Beans,SeasonA,2024,0.8131,0.7954,-0.022,498.1,-5.7,0.0196
+Huye,Beans,SeasonA,2024,0.6131,0.8434,0.3189,458.6,-9.9,-0.0262
+Kamonyi,Beans,SeasonA,2024,0.382,0.6088,0.4662,373.1,-15.3,-0.0876
+Karongi,Beans,SeasonA,2024,1.4525,1.3791,-0.0518,397.7,-17.8,-0.1173
+Kayonza,Beans,SeasonA,2024,0.9557,1.0083,0.0536,445.2,2.7,0.1049
+Kicukiro,Beans,SeasonA,2024,0.6311,0.805,0.2433,376.9,-8.7,-0.013
+Kirehe,Beans,SeasonA,2024,1.177,1.0025,-0.1605,416.1,-2.7,0.051
+Muhanga,Beans,SeasonA,2024,0.4967,0.7087,0.3555,409.9,-15.7,-0.092
+Musanze,Beans,SeasonA,2024,1.582,1.3848,-0.1331,598.5,-1.7,0.0611
+Ngoma,Beans,SeasonA,2024,1.1246,1.0551,-0.0638,388.4,-7.0,0.0055
+Ngororero,Beans,SeasonA,2024,1.218,1.1006,-0.1014,455.3,-10.9,-0.0368
+Nyabihu,Beans,SeasonA,2024,1.8754,1.368,-0.3155,547.1,-2.1,0.0575
+Nyagatare,Beans,SeasonA,2024,1.3,1.2143,-0.0682,477.4,5.0,0.1274
+Nyamagabe,Beans,SeasonA,2024,0.8705,0.8592,-0.013,472.5,-12.2,-0.0521
+Nyamasheke,Beans,SeasonA,2024,1.1836,1.1045,-0.0692,481.1,-12.9,-0.0594
+Nyanza,Beans,SeasonA,2024,0.7525,0.7684,0.0209,410.4,-13.6,-0.0675
+Nyarugenge,Beans,SeasonA,2024,0.4787,0.7542,0.4546,380.4,-11.5,-0.0434
+Nyaruguru,Beans,SeasonA,2024,0.9951,1.0045,0.0094,538.8,-7.7,-0.0012
+Rubavu,Beans,SeasonA,2024,1.6,1.0354,-0.4352,469.6,-5.5,0.022
+Ruhango,Beans,SeasonA,2024,0.5607,0.672,0.1811,373.1,-16.6,-0.1025
+Rulindo,Beans,SeasonA,2024,0.9869,0.9752,-0.0119,436.3,-7.2,0.0034
+Rusizi,Beans,SeasonA,2024,1.1361,1.065,-0.0646,510.7,-11.7,-0.0457
+Rutsiro,Beans,SeasonA,2024,1.4098,1.1653,-0.1905,409.4,-14.7,-0.0802
+Rwamagana,Beans,SeasonA,2024,0.5656,0.8315,0.3854,390.6,-2.8,0.0502
+Bugesera,Cassava,SeasonA,2024,1.2118,1.1684,-0.0365,362.3,-9.9,-0.0255
+Burera,Cassava,SeasonA,2024,0.9859,0.9962,0.0103,491.8,-5.7,0.0196
+Gakenke,Cassava,SeasonA,2024,1.0,1.0282,0.0278,462.1,-7.4,0.0012
+Gasabo,Cassava,SeasonA,2024,0.9175,0.9294,0.0128,410.8,-4.9,0.0279
+Gatsibo,Cassava,SeasonA,2024,1.1073,0.9875,-0.1145,462.7,2.5,0.1036
+Gicumbi,Cassava,SeasonA,2024,1.1213,0.989,-0.1256,434.2,-6.2,0.0147
+Gisagara,Cassava,SeasonA,2024,1.3164,1.0087,-0.2662,498.1,-5.7,0.0196
+Huye,Cassava,SeasonA,2024,1.4371,1.0914,-0.2752,458.6,-9.9,-0.0262
+Kamonyi,Cassava,SeasonA,2024,1.0395,1.0743,0.033,373.1,-15.3,-0.0876
+Karongi,Cassava,SeasonA,2024,0.685,0.6832,-0.0026,397.7,-17.8,-0.1173
+Kayonza,Cassava,SeasonA,2024,0.9466,0.9605,0.0146,445.2,2.7,0.1049
+Kicukiro,Cassava,SeasonA,2024,0.8093,0.9324,0.1416,376.9,-8.7,-0.013
+Kirehe,Cassava,SeasonA,2024,1.1949,1.116,-0.0683,416.1,-2.7,0.051
+Muhanga,Cassava,SeasonA,2024,1.0738,1.1301,0.051,409.9,-15.7,-0.092
+Musanze,Cassava,SeasonA,2024,0.4854,0.3144,-0.4344,598.5,-1.7,0.0611
+Ngoma,Cassava,SeasonA,2024,0.9895,0.9759,-0.0138,388.4,-7.0,0.0055
+Ngororero,Cassava,SeasonA,2024,1.1696,1.1283,-0.0359,455.3,-10.9,-0.0368
+Nyabihu,Cassava,SeasonA,2024,0.847,0.729,-0.1501,547.1,-2.1,0.0575
+Nyagatare,Cassava,SeasonA,2024,1.1316,1.0,-0.1236,477.4,5.0,0.1274
+Nyamagabe,Cassava,SeasonA,2024,0.7927,1.0168,0.2489,472.5,-12.2,-0.0521
+Nyamasheke,Cassava,SeasonA,2024,0.7765,0.8992,0.1467,481.1,-12.9,-0.0594
+Nyanza,Cassava,SeasonA,2024,1.2611,1.0709,-0.1635,410.4,-13.6,-0.0675
+Nyarugenge,Cassava,SeasonA,2024,0.7907,0.9797,0.2143,380.4,-11.5,-0.0434
+Nyaruguru,Cassava,SeasonA,2024,0.8573,0.9979,0.1519,538.8,-7.7,-0.0012
+Ruhango,Cassava,SeasonA,2024,1.6003,1.1489,-0.3314,373.1,-16.6,-0.1025
+Rulindo,Cassava,SeasonA,2024,1.0865,0.9523,-0.1319,436.3,-7.2,0.0034
+Rusizi,Cassava,SeasonA,2024,0.9366,1.0074,0.0729,510.7,-11.7,-0.0457
+Rutsiro,Cassava,SeasonA,2024,0.9638,1.0545,0.0899,409.4,-14.7,-0.0802
+Rwamagana,Cassava,SeasonA,2024,1.3943,1.121,-0.2182,390.6,-2.8,0.0502
+Bugesera,Irish potatoes,SeasonA,2024,0.4452,0.5334,0.1808,362.3,-9.9,-0.0255
+Burera,Irish potatoes,SeasonA,2024,2.3134,1.8983,-0.1977,491.8,-5.7,0.0196
+Gakenke,Irish potatoes,SeasonA,2024,1.1146,1.1079,-0.006,462.1,-7.4,0.0012
+Gasabo,Irish potatoes,SeasonA,2024,0.9182,1.0,0.0854,410.8,-4.9,0.0279
+Gatsibo,Irish potatoes,SeasonA,2024,0.9414,0.9613,0.0209,462.7,2.5,0.1036
+Gicumbi,Irish potatoes,SeasonA,2024,1.9418,1.6299,-0.1751,434.2,-6.2,0.0147
+Gisagara,Irish potatoes,SeasonA,2024,0.5998,0.5202,-0.1425,498.1,-5.7,0.0196
+Huye,Irish potatoes,SeasonA,2024,0.7418,0.7444,0.0036,458.6,-9.9,-0.0262
+Kamonyi,Irish potatoes,SeasonA,2024,0.6524,0.7244,0.1046,373.1,-15.3,-0.0876
+Karongi,Irish potatoes,SeasonA,2024,1.6472,1.319,-0.2222,397.7,-17.8,-0.1173
+Kayonza,Irish potatoes,SeasonA,2024,0.6573,0.6021,-0.0878,445.2,2.7,0.1049
+Kicukiro,Irish potatoes,SeasonA,2024,0.8053,0.8771,0.0854,376.9,-8.7,-0.013
+Kirehe,Irish potatoes,SeasonA,2024,0.9832,0.8948,-0.0942,416.1,-2.7,0.051
+Muhanga,Irish potatoes,SeasonA,2024,0.8996,0.773,-0.1518,409.9,-15.7,-0.092
+Musanze,Irish potatoes,SeasonA,2024,2.4999,2.3293,-0.0707,598.5,-1.7,0.0611
+Ngoma,Irish potatoes,SeasonA,2024,0.9645,0.7612,-0.2367,388.4,-7.0,0.0055
+Ngororero,Irish potatoes,SeasonA,2024,1.0334,1.0281,-0.0051,455.3,-10.9,-0.0368
+Nyabihu,Irish potatoes,SeasonA,2024,2.4982,2.2946,-0.085,547.1,-2.1,0.0575
+Nyagatare,Irish potatoes,SeasonA,2024,1.3939,1.0213,-0.3111,477.4,5.0,0.1274
+Nyamagabe,Irish potatoes,SeasonA,2024,1.2867,1.256,-0.0242,472.5,-12.2,-0.0521
+Nyanza,Irish potatoes,SeasonA,2024,0.7172,0.9923,0.3246,410.4,-13.6,-0.0675
+Nyarugenge,Irish potatoes,SeasonA,2024,0.4756,0.4901,0.03,380.4,-11.5,-0.0434
+Nyaruguru,Irish potatoes,SeasonA,2024,1.0506,0.9432,-0.1079,538.8,-7.7,-0.0012
+Rubavu,Irish potatoes,SeasonA,2024,2.5285,2.4135,-0.0466,469.6,-5.5,0.022
+Ruhango,Irish potatoes,SeasonA,2024,0.63,0.6275,-0.0039,373.1,-16.6,-0.1025
+Rulindo,Irish potatoes,SeasonA,2024,0.9343,1.0755,0.1407,436.3,-7.2,0.0034
+Rusizi,Irish potatoes,SeasonA,2024,1.0185,1.1025,0.0792,510.7,-11.7,-0.0457
+Rutsiro,Irish potatoes,SeasonA,2024,1.8581,1.378,-0.2989,409.4,-14.7,-0.0802
+Rwamagana,Irish potatoes,SeasonA,2024,1.1286,1.2474,0.1001,390.6,-2.8,0.0502
+Bugesera,Maize,SeasonA,2024,0.6319,0.8276,0.2698,362.3,-9.9,-0.0255
+Burera,Maize,SeasonA,2024,1.124,1.0578,-0.0607,491.8,-5.7,0.0196
+Gakenke,Maize,SeasonA,2024,0.999,0.998,-0.001,462.1,-7.4,0.0012
+Gasabo,Maize,SeasonA,2024,0.6907,0.9147,0.2808,410.8,-4.9,0.0279
+Gatsibo,Maize,SeasonA,2024,1.001,1.0684,0.0652,462.7,2.5,0.1036
+Gicumbi,Maize,SeasonA,2024,1.2578,0.9197,-0.3131,434.2,-6.2,0.0147
+Gisagara,Maize,SeasonA,2024,1.1802,1.2037,0.0197,498.1,-5.7,0.0196
+Huye,Maize,SeasonA,2024,0.9194,1.0103,0.0942,458.6,-9.9,-0.0262
+Kamonyi,Maize,SeasonA,2024,0.9549,1.025,0.0708,373.1,-15.3,-0.0876
+Karongi,Maize,SeasonA,2024,1.0458,0.9426,-0.1039,397.7,-17.8,-0.1173
+Kayonza,Maize,SeasonA,2024,0.9535,1.0542,0.1004,445.2,2.7,0.1049
+Kicukiro,Maize,SeasonA,2024,0.9094,0.8617,-0.0539,376.9,-8.7,-0.013
+Kirehe,Maize,SeasonA,2024,1.4845,1.2876,-0.1423,416.1,-2.7,0.051
+Muhanga,Maize,SeasonA,2024,0.8238,1.1042,0.2929,409.9,-15.7,-0.092
+Musanze,Maize,SeasonA,2024,1.0726,0.9558,-0.1153,598.5,-1.7,0.0611
+Ngoma,Maize,SeasonA,2024,1.215,1.0848,-0.1133,388.4,-7.0,0.0055
+Ngororero,Maize,SeasonA,2024,0.8111,0.8413,0.0366,455.3,-10.9,-0.0368
+Nyabihu,Maize,SeasonA,2024,1.2009,0.9937,-0.1894,547.1,-2.1,0.0575
+Nyagatare,Maize,SeasonA,2024,2.0421,1.6171,-0.2334,477.4,5.0,0.1274
+Nyamagabe,Maize,SeasonA,2024,1.0505,0.9297,-0.1221,472.5,-12.2,-0.0521
+Nyamasheke,Maize,SeasonA,2024,0.874,0.8901,0.0182,481.1,-12.9,-0.0594
+Nyanza,Maize,SeasonA,2024,0.9509,1.0269,0.0769,410.4,-13.6,-0.0675
+Nyarugenge,Maize,SeasonA,2024,0.6747,0.7534,0.1103,380.4,-11.5,-0.0434
+Nyaruguru,Maize,SeasonA,2024,1.0779,1.0109,-0.0642,538.8,-7.7,-0.0012
+Rubavu,Maize,SeasonA,2024,1.3654,1.033,-0.279,469.6,-5.5,0.022
+Ruhango,Maize,SeasonA,2024,0.791,0.8776,0.1039,373.1,-16.6,-0.1025
+Rulindo,Maize,SeasonA,2024,1.0485,1.0354,-0.0125,436.3,-7.2,0.0034
+Rusizi,Maize,SeasonA,2024,1.0371,1.002,-0.0344,510.7,-11.7,-0.0457
+Rutsiro,Maize,SeasonA,2024,0.8586,0.7464,-0.14,409.4,-14.7,-0.0802
+Rwamagana,Maize,SeasonA,2024,0.7877,0.9471,0.1843,390.6,-2.8,0.0502
+Bugesera,Paddy rice,SeasonA,2024,1.0772,1.1911,0.1005,362.3,-9.9,-0.0255
+Gakenke,Paddy rice,SeasonA,2024,0.615,1.2512,0.7101,462.1,-7.4,0.0012
+Gasabo,Paddy rice,SeasonA,2024,1.2042,0.9921,-0.1938,410.8,-4.9,0.0279
+Gatsibo,Paddy rice,SeasonA,2024,1.4279,1.1026,-0.2585,462.7,2.5,0.1036
+Gisagara,Paddy rice,SeasonA,2024,0.93,0.9402,0.011,498.1,-5.7,0.0196
+Huye,Paddy rice,SeasonA,2024,1.1019,0.9067,-0.195,458.6,-9.9,-0.0262
+Kamonyi,Paddy rice,SeasonA,2024,0.9201,0.8984,-0.0239,373.1,-15.3,-0.0876
+Kayonza,Paddy rice,SeasonA,2024,1.0249,0.8141,-0.2303,445.2,2.7,0.1049
+Kicukiro,Paddy rice,SeasonA,2024,1.0403,0.9928,-0.0468,376.9,-8.7,-0.013
+Kirehe,Paddy rice,SeasonA,2024,1.0653,1.2572,0.1656,416.1,-2.7,0.051
+Muhanga,Paddy rice,SeasonA,2024,0.6349,0.5118,-0.2155,409.9,-15.7,-0.092
+Ngoma,Paddy rice,SeasonA,2024,0.9751,1.1445,0.1602,388.4,-7.0,0.0055
+Nyagatare,Paddy rice,SeasonA,2024,1.1165,1.092,-0.0222,477.4,5.0,0.1274
+Nyamagabe,Paddy rice,SeasonA,2024,0.4693,0.4376,-0.0698,472.5,-12.2,-0.0521
+Nyamasheke,Paddy rice,SeasonA,2024,0.9482,1.0072,0.0605,481.1,-12.9,-0.0594
+Nyanza,Paddy rice,SeasonA,2024,0.7204,1.1204,0.4417,410.4,-13.6,-0.0675
+Ruhango,Paddy rice,SeasonA,2024,1.1247,1.1659,0.0359,373.1,-16.6,-0.1025
+Rulindo,Paddy rice,SeasonA,2024,0.861,0.8637,0.0032,436.3,-7.2,0.0034
+Rusizi,Paddy rice,SeasonA,2024,1.361,1.1872,-0.1366,510.7,-11.7,-0.0457
+Rwamagana,Paddy rice,SeasonA,2024,0.9253,0.954,0.0305,390.6,-2.8,0.0502
+Bugesera,Sweet potato,SeasonA,2024,0.9334,0.9372,0.0041,362.3,-9.9,-0.0255
+Burera,Sweet potato,SeasonA,2024,1.3792,1.181,-0.1551,491.8,-5.7,0.0196
+Gakenke,Sweet potato,SeasonA,2024,0.9959,1.0183,0.0223,462.1,-7.4,0.0012
+Gasabo,Sweet potato,SeasonA,2024,1.0848,1.069,-0.0147,410.8,-4.9,0.0279
+Gatsibo,Sweet potato,SeasonA,2024,1.1914,1.1844,-0.0059,462.7,2.5,0.1036
+Gicumbi,Sweet potato,SeasonA,2024,1.3505,1.2682,-0.0629,434.2,-6.2,0.0147
+Gisagara,Sweet potato,SeasonA,2024,0.858,0.8789,0.0241,498.1,-5.7,0.0196
+Huye,Sweet potato,SeasonA,2024,0.8856,0.9731,0.0942,458.6,-9.9,-0.0262
+Kamonyi,Sweet potato,SeasonA,2024,0.6923,0.7337,0.0581,373.1,-15.3,-0.0876
+Karongi,Sweet potato,SeasonA,2024,1.1412,1.1425,0.0012,397.7,-17.8,-0.1173
+Kayonza,Sweet potato,SeasonA,2024,0.8994,0.8658,-0.0381,445.2,2.7,0.1049
+Kicukiro,Sweet potato,SeasonA,2024,1.0474,1.0864,0.0365,376.9,-8.7,-0.013
+Kirehe,Sweet potato,SeasonA,2024,0.7834,0.7972,0.0174,416.1,-2.7,0.051
+Muhanga,Sweet potato,SeasonA,2024,0.881,0.9817,0.1082,409.9,-15.7,-0.092
+Musanze,Sweet potato,SeasonA,2024,1.1126,1.0961,-0.0149,598.5,-1.7,0.0611
+Ngoma,Sweet potato,SeasonA,2024,0.9906,1.0658,0.0732,388.4,-7.0,0.0055
+Ngororero,Sweet potato,SeasonA,2024,0.9127,0.9538,0.044,455.3,-10.9,-0.0368
+Nyabihu,Sweet potato,SeasonA,2024,1.0394,0.9387,-0.1019,547.1,-2.1,0.0575
+Nyagatare,Sweet potato,SeasonA,2024,0.6763,0.7646,0.1227,477.4,5.0,0.1274
+Nyamagabe,Sweet potato,SeasonA,2024,1.1176,1.1505,0.029,472.5,-12.2,-0.0521
+Nyamasheke,Sweet potato,SeasonA,2024,0.6719,0.6635,-0.0127,481.1,-12.9,-0.0594
+Nyanza,Sweet potato,SeasonA,2024,0.8075,0.8695,0.0741,410.4,-13.6,-0.0675
+Nyarugenge,Sweet potato,SeasonA,2024,0.8217,0.8523,0.0366,380.4,-11.5,-0.0434
+Nyaruguru,Sweet potato,SeasonA,2024,1.4258,1.3609,-0.0466,538.8,-7.7,-0.0012
+Rubavu,Sweet potato,SeasonA,2024,1.1522,1.0346,-0.1077,469.6,-5.5,0.022
+Ruhango,Sweet potato,SeasonA,2024,1.0041,1.0973,0.0887,373.1,-16.6,-0.1025
+Rulindo,Sweet potato,SeasonA,2024,1.0082,0.9793,-0.0291,436.3,-7.2,0.0034
+Rusizi,Sweet potato,SeasonA,2024,0.9437,0.974,0.0317,510.7,-11.7,-0.0457
+Rutsiro,Sweet potato,SeasonA,2024,1.0905,1.1215,0.028,409.4,-14.7,-0.0802
+Rwamagana,Sweet potato,SeasonA,2024,1.011,1.0973,0.082,390.6,-2.8,0.0502
+Kicukiro,Banana,SeasonA,2024,0.9811,0.9976,0.0167,376.9,-8.7,-0.013
+Bugesera,Banana,SeasonB,2023,0.8478,0.9421,0.1055,406.7,11.2,-0.0714
+Burera,Banana,SeasonB,2023,1.1013,1.119,0.016,601.0,37.3,0.1399
+Gakenke,Banana,SeasonB,2023,0.9783,0.9881,0.01,612.7,35.8,0.1288
+Gasabo,Banana,SeasonB,2023,1.1274,1.1483,0.0184,447.9,12.0,-0.0635
+Gatsibo,Banana,SeasonB,2023,1.1805,1.2035,0.0193,426.2,4.9,-0.1293
+Gicumbi,Banana,SeasonB,2023,1.0217,1.0119,-0.0097,561.3,28.0,0.0697
+Gisagara,Banana,SeasonB,2023,0.9589,0.944,-0.0156,501.0,5.8,-0.1205
+Huye,Banana,SeasonB,2023,0.8273,0.8975,0.0814,514.5,5.2,-0.1261
+Kamonyi,Banana,SeasonB,2023,0.8,0.8032,0.004,471.7,18.2,-0.0098
+Karongi,Banana,SeasonB,2023,0.8793,0.949,0.0762,574.6,35.8,0.1289
+Kayonza,Banana,SeasonB,2023,1.4178,1.3569,-0.0439,384.8,-5.2,-0.231
+Kicukiro,Banana,SeasonB,2023,1.1399,1.1238,-0.0142,400.8,5.3,-0.126
+Kirehe,Banana,SeasonB,2023,1.394,1.3944,0.0003,412.1,1.0,-0.1674
+Muhanga,Banana,SeasonB,2023,0.7594,0.8192,0.0758,570.7,32.3,0.1027
+Musanze,Banana,SeasonB,2023,0.844,0.9406,0.1084,713.5,42.9,0.1798
+Ngoma,Banana,SeasonB,2023,1.3419,1.3356,-0.0047,427.5,7.7,-0.1029
+Ngororero,Banana,SeasonB,2023,0.8977,0.9524,0.0591,630.7,39.3,0.154
+Nyabihu,Banana,SeasonB,2023,0.8132,0.8696,0.067,697.3,45.4,0.1973
+Nyagatare,Banana,SeasonB,2023,1.2004,1.2853,0.0683,424.2,17.0,-0.02
+Nyamagabe,Banana,SeasonB,2023,0.6234,0.6054,-0.0293,651.1,27.5,0.0661
+Nyamasheke,Banana,SeasonB,2023,1.0231,1.0143,-0.0086,633.1,32.2,0.102
+Nyanza,Banana,SeasonB,2023,0.8241,0.8607,0.0434,503.5,13.3,-0.0518
+Nyarugenge,Banana,SeasonB,2023,0.8933,0.9564,0.0683,437.0,10.8,-0.0743
+Nyaruguru,Banana,SeasonB,2023,0.8562,0.8833,0.0311,614.9,14.6,-0.0409
+Rubavu,Banana,SeasonB,2023,1.0741,1.09,0.0147,564.6,41.2,0.168
+Ruhango,Banana,SeasonB,2023,0.7681,0.7822,0.0181,505.0,20.6,0.0098
+Rulindo,Banana,SeasonB,2023,1.07,1.0521,-0.0169,580.9,28.1,0.0709
+Rusizi,Banana,SeasonB,2023,1.1091,1.1135,0.004,631.3,28.2,0.0715
+Rutsiro,Banana,SeasonB,2023,1.1008,1.0485,-0.0487,557.6,36.9,0.1369
+Rwamagana,Banana,SeasonB,2023,1.2391,1.2541,0.0121,411.3,4.9,-0.1296
+Bugesera,Beans,SeasonB,2023,0.8424,0.8972,0.0631,406.7,11.2,-0.0714
+Burera,Beans,SeasonB,2023,1.5592,1.4339,-0.0837,601.0,37.3,0.1399
+Gakenke,Beans,SeasonB,2023,1.321,1.1256,-0.1601,612.7,35.8,0.1288
+Gasabo,Beans,SeasonB,2023,1.0132,1.0019,-0.0112,447.9,12.0,-0.0635
+Gatsibo,Beans,SeasonB,2023,0.7976,0.9105,0.1324,426.2,4.9,-0.1293
+Gicumbi,Beans,SeasonB,2023,1.2516,1.2083,-0.0352,561.3,28.0,0.0697
+Gisagara,Beans,SeasonB,2023,0.8353,0.9264,0.1035,501.0,5.8,-0.1205
+Huye,Beans,SeasonB,2023,0.7532,0.8398,0.1088,514.5,5.2,-0.1261
+Kamonyi,Beans,SeasonB,2023,0.69,0.7814,0.1243,471.7,18.2,-0.0098
+Karongi,Beans,SeasonB,2023,1.3221,1.4167,0.0691,574.6,35.8,0.1289
+Kayonza,Beans,SeasonB,2023,0.8401,0.9485,0.1214,384.8,-5.2,-0.231
+Kicukiro,Beans,SeasonB,2023,1.0179,1.0497,0.0307,400.8,5.3,-0.126
+Kirehe,Beans,SeasonB,2023,0.7463,0.9646,0.2565,412.1,1.0,-0.1674
+Muhanga,Beans,SeasonB,2023,0.6923,0.7969,0.1407,570.7,32.3,0.1027
+Musanze,Beans,SeasonB,2023,1.6294,1.6593,0.0181,713.5,42.9,0.1798
+Ngoma,Beans,SeasonB,2023,1.0676,1.1107,0.0395,427.5,7.7,-0.1029
+Ngororero,Beans,SeasonB,2023,1.1286,1.1453,0.0147,630.7,39.3,0.154
+Nyabihu,Beans,SeasonB,2023,1.7397,1.5742,-0.1,697.3,45.4,0.1973
+Nyagatare,Beans,SeasonB,2023,1.0234,1.1503,0.1169,424.2,17.0,-0.02
+Nyamagabe,Beans,SeasonB,2023,0.6575,0.7988,0.1946,651.1,27.5,0.0661
+Nyamasheke,Beans,SeasonB,2023,0.9868,1.1046,0.1128,633.1,32.2,0.102
+Nyanza,Beans,SeasonB,2023,0.7761,0.8182,0.0528,503.5,13.3,-0.0518
+Nyarugenge,Beans,SeasonB,2023,0.9251,0.9243,-0.0009,437.0,10.8,-0.0743
+Nyaruguru,Beans,SeasonB,2023,0.8219,0.9959,0.1921,614.9,14.6,-0.0409
+Rubavu,Beans,SeasonB,2023,1.0144,0.9981,-0.0162,564.6,41.2,0.168
+Ruhango,Beans,SeasonB,2023,0.8218,0.909,0.1009,505.0,20.6,0.0098
+Rulindo,Beans,SeasonB,2023,1.1324,1.0994,-0.0296,580.9,28.1,0.0709
+Rusizi,Beans,SeasonB,2023,1.0741,1.0515,-0.0212,631.3,28.2,0.0715
+Rutsiro,Beans,SeasonB,2023,1.0479,1.0454,-0.0023,557.6,36.9,0.1369
+Rwamagana,Beans,SeasonB,2023,0.7771,0.8294,0.0651,411.3,4.9,-0.1296
+Bugesera,Cassava,SeasonB,2023,1.042,0.937,-0.1062,406.7,11.2,-0.0714
+Burera,Cassava,SeasonB,2023,0.7531,0.7491,-0.0053,601.0,37.3,0.1399
+Gakenke,Cassava,SeasonB,2023,1.1759,1.0795,-0.0855,612.7,35.8,0.1288
+Gasabo,Cassava,SeasonB,2023,0.8509,0.8281,-0.0272,447.9,12.0,-0.0635
+Gatsibo,Cassava,SeasonB,2023,1.0665,1.2131,0.1288,426.2,4.9,-0.1293
+Gicumbi,Cassava,SeasonB,2023,0.9874,1.0033,0.016,561.3,28.0,0.0697
+Gisagara,Cassava,SeasonB,2023,1.1471,1.212,0.055,501.0,5.8,-0.1205
+Huye,Cassava,SeasonB,2023,1.2062,1.3064,0.0798,514.5,5.2,-0.1261
+Kamonyi,Cassava,SeasonB,2023,1.0531,1.086,0.0308,471.7,18.2,-0.0098
+Karongi,Cassava,SeasonB,2023,1.0051,0.9967,-0.0084,574.6,35.8,0.1289
+Kayonza,Cassava,SeasonB,2023,1.1345,1.0497,-0.0777,384.8,-5.2,-0.231
+Kicukiro,Cassava,SeasonB,2023,0.9103,0.8134,-0.1125,400.8,5.3,-0.126
+Kirehe,Cassava,SeasonB,2023,1.1607,1.1079,-0.0466,412.1,1.0,-0.1674
+Muhanga,Cassava,SeasonB,2023,1.0734,1.0398,-0.0318,570.7,32.3,0.1027
+Musanze,Cassava,SeasonB,2023,0.8317,0.8114,-0.0247,713.5,42.9,0.1798
+Ngoma,Cassava,SeasonB,2023,1.0979,1.015,-0.0785,427.5,7.7,-0.1029
+Ngororero,Cassava,SeasonB,2023,0.8147,0.8085,-0.0077,630.7,39.3,0.154
+Nyabihu,Cassava,SeasonB,2023,0.6191,0.6683,0.0765,697.3,45.4,0.1973
+Nyagatare,Cassava,SeasonB,2023,1.2549,1.3613,0.0813,424.2,17.0,-0.02
+Nyamagabe,Cassava,SeasonB,2023,0.899,0.862,-0.0421,651.1,27.5,0.0661
+Nyamasheke,Cassava,SeasonB,2023,0.791,0.8559,0.0789,633.1,32.2,0.102
+Nyanza,Cassava,SeasonB,2023,1.0897,1.0757,-0.0129,503.5,13.3,-0.0518
+Nyarugenge,Cassava,SeasonB,2023,0.7993,0.7821,-0.0217,437.0,10.8,-0.0743
+Nyaruguru,Cassava,SeasonB,2023,0.9708,0.9141,-0.0601,614.9,14.6,-0.0409
+Rubavu,Cassava,SeasonB,2023,0.8095,0.8043,-0.0064,564.6,41.2,0.168
+Ruhango,Cassava,SeasonB,2023,1.1167,1.2502,0.1129,505.0,20.6,0.0098
+Rulindo,Cassava,SeasonB,2023,0.9949,1.0592,0.0626,580.9,28.1,0.0709
+Rusizi,Cassava,SeasonB,2023,0.6058,0.6809,0.1169,631.3,28.2,0.0715
+Rutsiro,Cassava,SeasonB,2023,0.9491,0.9806,0.0327,557.6,36.9,0.1369
+Rwamagana,Cassava,SeasonB,2023,1.1407,1.1591,0.016,411.3,4.9,-0.1296
+Bugesera,Irish potatoes,SeasonB,2023,0.5023,0.6728,0.2922,406.7,11.2,-0.0714
+Burera,Irish potatoes,SeasonB,2023,1.9442,1.9552,0.0056,601.0,37.3,0.1399
+Gakenke,Irish potatoes,SeasonB,2023,1.11,1.1657,0.049,612.7,35.8,0.1288
+Gasabo,Irish potatoes,SeasonB,2023,0.8142,0.8933,0.0927,447.9,12.0,-0.0635
+Gatsibo,Irish potatoes,SeasonB,2023,1.0904,1.1476,0.0511,426.2,4.9,-0.1293
+Gicumbi,Irish potatoes,SeasonB,2023,1.5998,1.5274,-0.0463,561.3,28.0,0.0697
+Gisagara,Irish potatoes,SeasonB,2023,0.5161,0.8937,0.5491,501.0,5.8,-0.1205
+Huye,Irish potatoes,SeasonB,2023,0.7168,0.8148,0.1281,514.5,5.2,-0.1261
+Kamonyi,Irish potatoes,SeasonB,2023,0.8007,0.8673,0.0798,471.7,18.2,-0.0098
+Karongi,Irish potatoes,SeasonB,2023,0.8692,0.8907,0.0244,574.6,35.8,0.1289
+Kayonza,Irish potatoes,SeasonB,2023,0.786,0.9636,0.2037,384.8,-5.2,-0.231
+Kirehe,Irish potatoes,SeasonB,2023,0.7776,0.9122,0.1597,412.1,1.0,-0.1674
+Muhanga,Irish potatoes,SeasonB,2023,0.8297,0.9884,0.175,570.7,32.3,0.1027
+Musanze,Irish potatoes,SeasonB,2023,2.1982,2.3322,0.0592,713.5,42.9,0.1798
+Ngoma,Irish potatoes,SeasonB,2023,1.3442,1.3163,-0.021,427.5,7.7,-0.1029
+Ngororero,Irish potatoes,SeasonB,2023,1.1235,1.3403,0.1765,630.7,39.3,0.154
+Nyabihu,Irish potatoes,SeasonB,2023,2.2567,2.3228,0.0289,697.3,45.4,0.1973
+Nyagatare,Irish potatoes,SeasonB,2023,1.0551,1.0,-0.0537,424.2,17.0,-0.02
+Nyamagabe,Irish potatoes,SeasonB,2023,1.7485,1.9146,0.0908,651.1,27.5,0.0661
+Nyamasheke,Irish potatoes,SeasonB,2023,0.63,0.6683,0.0591,633.1,32.2,0.102
+Nyanza,Irish potatoes,SeasonB,2023,0.7912,0.903,0.1322,503.5,13.3,-0.0518
+Nyarugenge,Irish potatoes,SeasonB,2023,0.7594,0.7552,-0.0055,437.0,10.8,-0.0743
+Nyaruguru,Irish potatoes,SeasonB,2023,1.459,1.6789,0.1404,614.9,14.6,-0.0409
+Rubavu,Irish potatoes,SeasonB,2023,2.0282,2.12,0.0442,564.6,41.2,0.168
+Ruhango,Irish potatoes,SeasonB,2023,0.746,0.712,-0.0467,505.0,20.6,0.0098
+Rulindo,Irish potatoes,SeasonB,2023,1.214,1.1761,-0.0317,580.9,28.1,0.0709
+Rusizi,Irish potatoes,SeasonB,2023,1.6396,1.6578,0.011,631.3,28.2,0.0715
+Rutsiro,Irish potatoes,SeasonB,2023,1.0299,1.1986,0.1517,557.6,36.9,0.1369
+Rwamagana,Irish potatoes,SeasonB,2023,0.9701,0.9045,-0.07,411.3,4.9,-0.1296
+Bugesera,Maize,SeasonB,2023,1.0507,0.8346,-0.2303,406.7,11.2,-0.0714
+Burera,Maize,SeasonB,2023,0.9583,1.1498,0.1822,601.0,37.3,0.1399
+Gakenke,Maize,SeasonB,2023,0.7865,0.782,-0.0058,612.7,35.8,0.1288
+Gasabo,Maize,SeasonB,2023,1.1442,1.1615,0.0151,447.9,12.0,-0.0635
+Gatsibo,Maize,SeasonB,2023,1.295,1.2407,-0.0428,426.2,4.9,-0.1293
+Gicumbi,Maize,SeasonB,2023,0.8702,0.964,0.1023,561.3,28.0,0.0697
+Gisagara,Maize,SeasonB,2023,0.945,0.974,0.0302,501.0,5.8,-0.1205
+Huye,Maize,SeasonB,2023,0.8822,0.8737,-0.0097,514.5,5.2,-0.1261
+Kamonyi,Maize,SeasonB,2023,0.8677,1.046,0.1868,471.7,18.2,-0.0098
+Karongi,Maize,SeasonB,2023,1.1508,1.108,-0.0378,574.6,35.8,0.1289
+Kayonza,Maize,SeasonB,2023,1.0525,1.132,0.0728,384.8,-5.2,-0.231
+Kicukiro,Maize,SeasonB,2023,0.7853,0.6682,-0.1615,400.8,5.3,-0.126
+Kirehe,Maize,SeasonB,2023,1.8405,2.0828,0.1237,412.1,1.0,-0.1674
+Muhanga,Maize,SeasonB,2023,1.0812,0.992,-0.0862,570.7,32.3,0.1027
+Musanze,Maize,SeasonB,2023,1.2683,1.3982,0.0975,713.5,42.9,0.1798
+Ngoma,Maize,SeasonB,2023,0.7997,0.7034,-0.1283,427.5,7.7,-0.1029
+Ngororero,Maize,SeasonB,2023,0.9996,1.0254,0.0255,630.7,39.3,0.154
+Nyabihu,Maize,SeasonB,2023,1.2339,1.1503,-0.0701,697.3,45.4,0.1973
+Nyagatare,Maize,SeasonB,2023,1.4221,1.3742,-0.0343,424.2,17.0,-0.02
+Nyamagabe,Maize,SeasonB,2023,0.9226,1.008,0.0886,651.1,27.5,0.0661
+Nyamasheke,Maize,SeasonB,2023,0.7277,0.8136,0.1116,633.1,32.2,0.102
+Nyanza,Maize,SeasonB,2023,0.9018,1.0955,0.1945,503.5,13.3,-0.0518
+Nyarugenge,Maize,SeasonB,2023,0.8606,0.8999,0.0446,437.0,10.8,-0.0743
+Nyaruguru,Maize,SeasonB,2023,1.394,0.9111,-0.4253,614.9,14.6,-0.0409
+Rubavu,Maize,SeasonB,2023,1.4106,1.1955,-0.1654,564.6,41.2,0.168
+Ruhango,Maize,SeasonB,2023,1.0909,0.9659,-0.1217,505.0,20.6,0.0098
+Rulindo,Maize,SeasonB,2023,1.0004,0.9391,-0.0632,580.9,28.1,0.0709
+Rusizi,Maize,SeasonB,2023,0.9297,0.925,-0.0051,631.3,28.2,0.0715
+Rutsiro,Maize,SeasonB,2023,1.2474,1.1158,-0.1115,557.6,36.9,0.1369
+Rwamagana,Maize,SeasonB,2023,0.7437,0.7882,0.0581,411.3,4.9,-0.1296
+Bugesera,Paddy rice,SeasonB,2023,1.4962,1.0783,-0.3275,406.7,11.2,-0.0714
+Gasabo,Paddy rice,SeasonB,2023,1.2022,1.1652,-0.0313,447.9,12.0,-0.0635
+Gatsibo,Paddy rice,SeasonB,2023,0.8999,1.1845,0.2748,426.2,4.9,-0.1293
+Gisagara,Paddy rice,SeasonB,2023,1.0168,0.7964,-0.2444,501.0,5.8,-0.1205
+Huye,Paddy rice,SeasonB,2023,0.8787,0.7556,-0.1509,514.5,5.2,-0.1261
+Kamonyi,Paddy rice,SeasonB,2023,0.6903,0.9276,0.2955,471.7,18.2,-0.0098
+Kayonza,Paddy rice,SeasonB,2023,1.0065,1.0,-0.0065,384.8,-5.2,-0.231
+Kicukiro,Paddy rice,SeasonB,2023,1.2056,0.8134,-0.3934,400.8,5.3,-0.126
+Kirehe,Paddy rice,SeasonB,2023,1.1285,1.1174,-0.0098,412.1,1.0,-0.1674
+Muhanga,Paddy rice,SeasonB,2023,0.5145,0.4964,-0.0358,570.7,32.3,0.1027
+Ngoma,Paddy rice,SeasonB,2023,0.9136,0.8563,-0.0647,427.5,7.7,-0.1029
+Nyagatare,Paddy rice,SeasonB,2023,0.9988,1.041,0.0414,424.2,17.0,-0.02
+Nyamagabe,Paddy rice,SeasonB,2023,0.5789,0.4166,-0.3291,651.1,27.5,0.0661
+Nyamasheke,Paddy rice,SeasonB,2023,1.0012,1.1079,0.1013,633.1,32.2,0.102
+Nyanza,Paddy rice,SeasonB,2023,0.9295,0.6268,-0.394,503.5,13.3,-0.0518
+Ruhango,Paddy rice,SeasonB,2023,0.9013,1.1116,0.2098,505.0,20.6,0.0098
+Rulindo,Paddy rice,SeasonB,2023,0.9919,0.8614,-0.1411,580.9,28.1,0.0709
+Rusizi,Paddy rice,SeasonB,2023,1.3317,1.209,-0.0966,631.3,28.2,0.0715
+Rwamagana,Paddy rice,SeasonB,2023,1.2449,1.2679,0.0183,411.3,4.9,-0.1296
+Bugesera,Sweet potato,SeasonB,2023,0.5957,0.7503,0.2307,406.7,11.2,-0.0714
+Burera,Sweet potato,SeasonB,2023,1.1471,1.2472,0.0836,601.0,37.3,0.1399
+Gakenke,Sweet potato,SeasonB,2023,1.5943,1.3882,-0.1385,612.7,35.8,0.1288
+Gasabo,Sweet potato,SeasonB,2023,0.8232,0.9579,0.1515,447.9,12.0,-0.0635
+Gatsibo,Sweet potato,SeasonB,2023,1.2815,1.3331,0.0394,426.2,4.9,-0.1293
+Gicumbi,Sweet potato,SeasonB,2023,1.0298,1.1292,0.0921,561.3,28.0,0.0697
+Gisagara,Sweet potato,SeasonB,2023,0.8187,0.9644,0.1638,501.0,5.8,-0.1205
+Huye,Sweet potato,SeasonB,2023,1.2214,1.0027,-0.1972,514.5,5.2,-0.1261
+Kamonyi,Sweet potato,SeasonB,2023,0.9012,0.8976,-0.004,471.7,18.2,-0.0098
+Karongi,Sweet potato,SeasonB,2023,1.5036,1.2691,-0.1696,574.6,35.8,0.1289
+Kayonza,Sweet potato,SeasonB,2023,0.7918,0.8187,0.0334,384.8,-5.2,-0.231
+Kicukiro,Sweet potato,SeasonB,2023,1.5018,1.0741,-0.3352,400.8,5.3,-0.126
+Kirehe,Sweet potato,SeasonB,2023,0.8478,0.9389,0.102,412.1,1.0,-0.1674
+Muhanga,Sweet potato,SeasonB,2023,1.0953,0.9653,-0.1264,570.7,32.3,0.1027
+Musanze,Sweet potato,SeasonB,2023,1.3285,1.3757,0.0349,713.5,42.9,0.1798
+Ngoma,Sweet potato,SeasonB,2023,0.9611,0.8757,-0.093,427.5,7.7,-0.1029
+Ngororero,Sweet potato,SeasonB,2023,0.9865,0.9155,-0.0748,630.7,39.3,0.154
+Nyabihu,Sweet potato,SeasonB,2023,0.8778,0.8813,0.004,697.3,45.4,0.1973
+Nyagatare,Sweet potato,SeasonB,2023,0.6936,0.6503,-0.0643,424.2,17.0,-0.02
+Nyamagabe,Sweet potato,SeasonB,2023,0.9206,1.0068,0.0895,651.1,27.5,0.0661
+Nyamasheke,Sweet potato,SeasonB,2023,1.2273,1.0509,-0.1552,633.1,32.2,0.102
+Nyanza,Sweet potato,SeasonB,2023,1.3602,1.0068,-0.3009,503.5,13.3,-0.0518
+Nyarugenge,Sweet potato,SeasonB,2023,0.6982,0.7319,0.0471,437.0,10.8,-0.0743
+Nyaruguru,Sweet potato,SeasonB,2023,1.1592,1.2973,0.1125,614.9,14.6,-0.0409
+Rubavu,Sweet potato,SeasonB,2023,0.935,0.9973,0.0645,564.6,41.2,0.168
+Ruhango,Sweet potato,SeasonB,2023,0.5945,0.645,0.0816,505.0,20.6,0.0098
+Rulindo,Sweet potato,SeasonB,2023,1.0314,1.1199,0.0823,580.9,28.1,0.0709
+Rusizi,Sweet potato,SeasonB,2023,1.2552,1.1148,-0.1185,631.3,28.2,0.0715
+Rutsiro,Sweet potato,SeasonB,2023,1.0135,0.9603,-0.0539,557.6,36.9,0.1369
+Rwamagana,Sweet potato,SeasonB,2023,0.7078,1.0317,0.3768,411.3,4.9,-0.1296
+Bugesera,Banana,SeasonB,2024,0.9421,1.0016,0.0613,322.5,-11.9,0.0112
+Burera,Banana,SeasonB,2024,1.119,1.1003,-0.0169,362.3,-17.2,-0.0516
+Gakenke,Banana,SeasonB,2024,0.9881,0.9984,0.0104,394.9,-12.5,0.0042
+Gasabo,Banana,SeasonB,2024,1.1483,1.1001,-0.0429,337.0,-15.7,-0.0334
+Gatsibo,Banana,SeasonB,2024,1.2035,1.2091,0.0047,313.5,-22.9,-0.1218
+Gicumbi,Banana,SeasonB,2024,1.0119,1.0361,0.0236,356.7,-18.7,-0.069
+Gisagara,Banana,SeasonB,2024,0.944,0.9194,-0.0264,435.8,-8.0,0.0547
+Huye,Banana,SeasonB,2024,0.8975,0.8792,-0.0206,451.6,-7.6,0.0581
+Kamonyi,Banana,SeasonB,2024,0.8032,0.8571,0.065,348.2,-12.7,0.0013
+Karongi,Banana,SeasonB,2024,0.949,0.9641,0.0158,364.2,-13.9,-0.0124
+Kayonza,Banana,SeasonB,2024,1.3569,1.336,-0.0155,313.3,-22.8,-0.122
+Kicukiro,Banana,SeasonB,2024,1.1238,1.085,-0.0351,324.5,-14.8,-0.0225
+Kirehe,Banana,SeasonB,2024,1.3944,1.307,-0.0648,356.8,-12.6,0.0031
+Muhanga,Banana,SeasonB,2024,0.8192,0.8567,0.0447,377.3,-12.5,0.0035
+Musanze,Banana,SeasonB,2024,0.9406,0.8525,-0.0983,434.6,-13.0,-0.0013
+Ngoma,Banana,SeasonB,2024,1.3356,1.2759,-0.0457,336.2,-15.3,-0.0285
+Ngororero,Banana,SeasonB,2024,0.9524,0.9549,0.0026,406.1,-10.3,0.0284
+Nyabihu,Banana,SeasonB,2024,0.8696,0.8706,0.0011,424.6,-11.4,0.0159
+Nyagatare,Banana,SeasonB,2024,1.2853,1.2318,-0.0425,287.0,-20.8,-0.0961
+Nyamagabe,Banana,SeasonB,2024,0.6054,0.575,-0.0516,461.6,-9.6,0.0368
+Nyamasheke,Banana,SeasonB,2024,1.0143,0.9753,-0.0392,407.7,-14.9,-0.0235
+Nyanza,Banana,SeasonB,2024,0.8607,0.8371,-0.0278,390.1,-12.2,0.0076
+Nyarugenge,Banana,SeasonB,2024,0.9564,0.9522,-0.0044,342.9,-13.1,-0.0022
+Nyaruguru,Banana,SeasonB,2024,0.8833,0.8538,-0.0339,516.2,-3.8,0.0987
+Rubavu,Banana,SeasonB,2024,1.09,1.0575,-0.0303,350.5,-12.3,0.0059
+Ruhango,Banana,SeasonB,2024,0.7822,0.8273,0.0561,364.4,-13.0,-0.0019
+Rulindo,Banana,SeasonB,2024,1.0521,1.049,-0.003,383.2,-15.5,-0.0305
+Rusizi,Banana,SeasonB,2024,1.1135,1.1117,-0.0017,433.5,-11.9,0.0103
+Rutsiro,Banana,SeasonB,2024,1.0485,1.0173,-0.0302,359.8,-11.6,0.0135
+Rwamagana,Banana,SeasonB,2024,1.2541,1.2503,-0.003,327.5,-16.5,-0.0428
+Bugesera,Beans,SeasonB,2024,0.8972,0.9011,0.0042,322.5,-11.9,0.0112
+Burera,Beans,SeasonB,2024,1.4339,1.4887,0.0375,362.3,-17.2,-0.0516
+Gakenke,Beans,SeasonB,2024,1.1256,1.1319,0.0056,394.9,-12.5,0.0042
+Gasabo,Beans,SeasonB,2024,1.0019,0.9146,-0.0912,337.0,-15.7,-0.0334
+Gatsibo,Beans,SeasonB,2024,0.9105,0.9243,0.015,313.5,-22.9,-0.1218
+Gicumbi,Beans,SeasonB,2024,1.2083,1.1654,-0.0362,356.7,-18.7,-0.069
+Gisagara,Beans,SeasonB,2024,0.9264,0.9149,-0.0125,435.8,-8.0,0.0547
+Huye,Beans,SeasonB,2024,0.8398,0.8657,0.0304,451.6,-7.6,0.0581
+Kamonyi,Beans,SeasonB,2024,0.7814,0.7712,-0.0131,348.2,-12.7,0.0013
+Karongi,Beans,SeasonB,2024,1.4167,1.2508,-0.1245,364.2,-13.9,-0.0124
+Kayonza,Beans,SeasonB,2024,0.9485,0.8984,-0.0543,313.3,-22.8,-0.122
+Kicukiro,Beans,SeasonB,2024,1.0497,0.9741,-0.0747,324.5,-14.8,-0.0225
+Kirehe,Beans,SeasonB,2024,0.9646,0.9752,0.011,356.8,-12.6,0.0031
+Muhanga,Beans,SeasonB,2024,0.7969,0.8819,0.1014,377.3,-12.5,0.0035
+Musanze,Beans,SeasonB,2024,1.6593,1.4758,-0.1171,434.6,-13.0,-0.0013
+Ngoma,Beans,SeasonB,2024,1.1107,1.0601,-0.0466,336.2,-15.3,-0.0285
+Ngororero,Beans,SeasonB,2024,1.1453,1.3508,0.165,406.1,-10.3,0.0284
+Nyabihu,Beans,SeasonB,2024,1.5742,1.3708,-0.1384,424.6,-11.4,0.0159
+Nyagatare,Beans,SeasonB,2024,1.1503,1.0248,-0.1156,287.0,-20.8,-0.0961
+Nyamagabe,Beans,SeasonB,2024,0.7988,0.8692,0.0845,461.6,-9.6,0.0368
+Nyamasheke,Beans,SeasonB,2024,1.1046,1.063,-0.0383,407.7,-14.9,-0.0235
+Nyanza,Beans,SeasonB,2024,0.8182,0.806,-0.015,390.1,-12.2,0.0076
+Nyarugenge,Beans,SeasonB,2024,0.9243,0.8455,-0.0891,342.9,-13.1,-0.0022
+Nyaruguru,Beans,SeasonB,2024,0.9959,1.0402,0.0435,516.2,-3.8,0.0987
+Rubavu,Beans,SeasonB,2024,0.9981,1.0259,0.0275,350.5,-12.3,0.0059
+Ruhango,Beans,SeasonB,2024,0.909,0.871,-0.0427,364.4,-13.0,-0.0019
+Rulindo,Beans,SeasonB,2024,1.0994,1.2127,0.0981,383.2,-15.5,-0.0305
+Rusizi,Beans,SeasonB,2024,1.0515,1.0409,-0.0101,433.5,-11.9,0.0103
+Rutsiro,Beans,SeasonB,2024,1.0454,1.0987,0.0497,359.8,-11.6,0.0135
+Rwamagana,Beans,SeasonB,2024,0.8294,0.8191,-0.0125,327.5,-16.5,-0.0428
+Bugesera,Cassava,SeasonB,2024,0.937,0.9137,-0.0252,322.5,-11.9,0.0112
+Burera,Cassava,SeasonB,2024,0.7491,0.8628,0.1413,362.3,-17.2,-0.0516
+Gakenke,Cassava,SeasonB,2024,1.0795,1.0832,0.0034,394.9,-12.5,0.0042
+Gasabo,Cassava,SeasonB,2024,0.8281,0.8019,-0.0322,337.0,-15.7,-0.0334
+Gatsibo,Cassava,SeasonB,2024,1.2131,1.2416,0.0232,313.5,-22.9,-0.1218
+Gicumbi,Cassava,SeasonB,2024,1.0033,1.0118,0.0085,356.7,-18.7,-0.069
+Gisagara,Cassava,SeasonB,2024,1.212,1.1599,-0.0439,435.8,-8.0,0.0547
+Huye,Cassava,SeasonB,2024,1.3064,1.2478,-0.0459,451.6,-7.6,0.0581
+Kamonyi,Cassava,SeasonB,2024,1.086,0.9895,-0.0931,348.2,-12.7,0.0013
+Karongi,Cassava,SeasonB,2024,0.9967,1.0051,0.0084,364.2,-13.9,-0.0124
+Kayonza,Cassava,SeasonB,2024,1.0497,1.0848,0.033,313.3,-22.8,-0.122
+Kicukiro,Cassava,SeasonB,2024,0.8134,0.8448,0.0379,324.5,-14.8,-0.0225
+Kirehe,Cassava,SeasonB,2024,1.1079,1.0713,-0.0335,356.8,-12.6,0.0031
+Muhanga,Cassava,SeasonB,2024,1.0398,1.0474,0.0073,377.3,-12.5,0.0035
+Musanze,Cassava,SeasonB,2024,0.8114,0.8039,-0.0093,434.6,-13.0,-0.0013
+Ngoma,Cassava,SeasonB,2024,1.015,1.0585,0.042,336.2,-15.3,-0.0285
+Ngororero,Cassava,SeasonB,2024,0.8085,0.8073,-0.0015,406.1,-10.3,0.0284
+Nyabihu,Cassava,SeasonB,2024,0.6683,0.714,0.0661,424.6,-11.4,0.0159
+Nyagatare,Cassava,SeasonB,2024,1.3613,1.3153,-0.0344,287.0,-20.8,-0.0961
+Nyamagabe,Cassava,SeasonB,2024,0.862,0.8936,0.0361,461.6,-9.6,0.0368
+Nyamasheke,Cassava,SeasonB,2024,0.8559,0.8491,-0.0081,407.7,-14.9,-0.0235
+Nyanza,Cassava,SeasonB,2024,1.0757,0.9949,-0.0781,390.1,-12.2,0.0076
+Nyarugenge,Cassava,SeasonB,2024,0.7821,0.7641,-0.0233,342.9,-13.1,-0.0022
+Nyaruguru,Cassava,SeasonB,2024,0.9141,0.932,0.0193,516.2,-3.8,0.0987
+Rubavu,Cassava,SeasonB,2024,0.8043,0.8499,0.0551,350.5,-12.3,0.0059
+Ruhango,Cassava,SeasonB,2024,1.2502,1.2536,0.0028,364.4,-13.0,-0.0019
+Rulindo,Cassava,SeasonB,2024,1.0592,1.0907,0.0293,383.2,-15.5,-0.0305
+Rusizi,Cassava,SeasonB,2024,0.6809,0.7328,0.0735,433.5,-11.9,0.0103
+Rutsiro,Cassava,SeasonB,2024,0.9806,1.009,0.0286,359.8,-11.6,0.0135
+Rwamagana,Cassava,SeasonB,2024,1.1591,1.1508,-0.0072,327.5,-16.5,-0.0428
+Bugesera,Irish potatoes,SeasonB,2024,0.6728,0.5862,-0.1378,322.5,-11.9,0.0112
+Burera,Irish potatoes,SeasonB,2024,1.9552,1.5779,-0.2144,362.3,-17.2,-0.0516
+Gakenke,Irish potatoes,SeasonB,2024,1.1657,1.1184,-0.0415,394.9,-12.5,0.0042
+Gasabo,Irish potatoes,SeasonB,2024,0.8933,0.7647,-0.1554,337.0,-15.7,-0.0334
+Gatsibo,Irish potatoes,SeasonB,2024,1.1476,1.0289,-0.1092,313.5,-22.9,-0.1218
+Gicumbi,Irish potatoes,SeasonB,2024,1.5274,1.3899,-0.0944,356.7,-18.7,-0.069
+Gisagara,Irish potatoes,SeasonB,2024,0.8937,0.8163,-0.0906,435.8,-8.0,0.0547
+Huye,Irish potatoes,SeasonB,2024,0.8148,0.7941,-0.0257,451.6,-7.6,0.0581
+Kamonyi,Irish potatoes,SeasonB,2024,0.8673,1.1242,0.2594,348.2,-12.7,0.0013
+Karongi,Irish potatoes,SeasonB,2024,0.8907,0.7106,-0.2259,364.2,-13.9,-0.0124
+Kayonza,Irish potatoes,SeasonB,2024,0.9636,0.911,-0.0561,313.3,-22.8,-0.122
+Kirehe,Irish potatoes,SeasonB,2024,0.9122,0.8592,-0.0598,356.8,-12.6,0.0031
+Muhanga,Irish potatoes,SeasonB,2024,0.9884,0.8313,-0.1731,377.3,-12.5,0.0035
+Musanze,Irish potatoes,SeasonB,2024,2.3322,1.941,-0.1836,434.6,-13.0,-0.0013
+Ngoma,Irish potatoes,SeasonB,2024,1.3163,1.1175,-0.1637,336.2,-15.3,-0.0285
+Ngororero,Irish potatoes,SeasonB,2024,1.3403,1.131,-0.1698,406.1,-10.3,0.0284
+Nyabihu,Irish potatoes,SeasonB,2024,2.3228,1.927,-0.1868,424.6,-11.4,0.0159
+Nyagatare,Irish potatoes,SeasonB,2024,1.0,1.0214,0.0212,287.0,-20.8,-0.0961
+Nyamagabe,Irish potatoes,SeasonB,2024,1.9146,1.5314,-0.2233,461.6,-9.6,0.0368
+Nyamasheke,Irish potatoes,SeasonB,2024,0.6683,0.5993,-0.1091,407.7,-14.9,-0.0235
+Nyanza,Irish potatoes,SeasonB,2024,0.903,0.789,-0.1349,390.1,-12.2,0.0076
+Nyarugenge,Irish potatoes,SeasonB,2024,0.7552,0.6713,-0.1179,342.9,-13.1,-0.0022
+Nyaruguru,Irish potatoes,SeasonB,2024,1.6789,1.7304,0.0302,516.2,-3.8,0.0987
+Rubavu,Irish potatoes,SeasonB,2024,2.12,1.8979,-0.1106,350.5,-12.3,0.0059
+Ruhango,Irish potatoes,SeasonB,2024,0.712,0.5508,-0.2566,364.4,-13.0,-0.0019
+Rulindo,Irish potatoes,SeasonB,2024,1.1761,1.0,-0.1622,383.2,-15.5,-0.0305
+Rusizi,Irish potatoes,SeasonB,2024,1.6578,1.3508,-0.2047,433.5,-11.9,0.0103
+Rutsiro,Irish potatoes,SeasonB,2024,1.1986,0.9681,-0.2136,359.8,-11.6,0.0135
+Rwamagana,Irish potatoes,SeasonB,2024,0.9045,0.7644,-0.1683,327.5,-16.5,-0.0428
+Bugesera,Maize,SeasonB,2024,0.8346,0.8716,0.0435,322.5,-11.9,0.0112
+Burera,Maize,SeasonB,2024,1.1498,1.2108,0.0517,362.3,-17.2,-0.0516
+Gakenke,Maize,SeasonB,2024,0.782,0.8723,0.1094,394.9,-12.5,0.0042
+Gasabo,Maize,SeasonB,2024,1.1615,1.2239,0.0523,337.0,-15.7,-0.0334
+Gatsibo,Maize,SeasonB,2024,1.2407,1.2066,-0.0279,313.5,-22.9,-0.1218
+Gicumbi,Maize,SeasonB,2024,0.964,0.9914,0.028,356.7,-18.7,-0.069
+Gisagara,Maize,SeasonB,2024,0.974,0.9873,0.0136,435.8,-8.0,0.0547
+Huye,Maize,SeasonB,2024,0.8737,0.929,0.0614,451.6,-7.6,0.0581
+Kamonyi,Maize,SeasonB,2024,1.046,1.1149,0.0638,348.2,-12.7,0.0013
+Karongi,Maize,SeasonB,2024,1.108,0.9594,-0.144,364.2,-13.9,-0.0124
+Kayonza,Maize,SeasonB,2024,1.132,1.1042,-0.0248,313.3,-22.8,-0.122
+Kicukiro,Maize,SeasonB,2024,0.6682,0.746,0.1102,324.5,-14.8,-0.0225
+Kirehe,Maize,SeasonB,2024,2.0828,2.0531,-0.0144,356.8,-12.6,0.0031
+Muhanga,Maize,SeasonB,2024,0.992,0.8861,-0.1128,377.3,-12.5,0.0035
+Musanze,Maize,SeasonB,2024,1.3982,1.4348,0.0258,434.6,-13.0,-0.0013
+Ngoma,Maize,SeasonB,2024,0.7034,0.7877,0.1132,336.2,-15.3,-0.0285
+Ngororero,Maize,SeasonB,2024,1.0254,1.0644,0.0373,406.1,-10.3,0.0284
+Nyabihu,Maize,SeasonB,2024,1.1503,1.1369,-0.0117,424.6,-11.4,0.0159
+Nyagatare,Maize,SeasonB,2024,1.3742,1.4962,0.0851,287.0,-20.8,-0.0961
+Nyamagabe,Maize,SeasonB,2024,1.008,1.0878,0.0761,461.6,-9.6,0.0368
+Nyamasheke,Maize,SeasonB,2024,0.8136,0.9071,0.1088,407.7,-14.9,-0.0235
+Nyanza,Maize,SeasonB,2024,1.0955,1.1706,0.0663,390.1,-12.2,0.0076
+Nyarugenge,Maize,SeasonB,2024,0.8999,0.8667,-0.0376,342.9,-13.1,-0.0022
+Nyaruguru,Maize,SeasonB,2024,0.9111,0.9931,0.0862,516.2,-3.8,0.0987
+Rubavu,Maize,SeasonB,2024,1.1955,1.3005,0.0842,350.5,-12.3,0.0059
+Ruhango,Maize,SeasonB,2024,0.9659,1.016,0.0505,364.4,-13.0,-0.0019
+Rulindo,Maize,SeasonB,2024,0.9391,0.9972,0.0599,383.2,-15.5,-0.0305
+Rusizi,Maize,SeasonB,2024,0.925,0.9208,-0.0046,433.5,-11.9,0.0103
+Rutsiro,Maize,SeasonB,2024,1.1158,1.0028,-0.1068,359.8,-11.6,0.0135
+Rwamagana,Maize,SeasonB,2024,0.7882,0.8094,0.0266,327.5,-16.5,-0.0428
+Bugesera,Paddy rice,SeasonB,2024,1.0783,1.3405,0.2176,322.5,-11.9,0.0112
+Gasabo,Paddy rice,SeasonB,2024,1.1652,1.034,-0.1195,337.0,-15.7,-0.0334
+Gatsibo,Paddy rice,SeasonB,2024,1.1845,0.9665,-0.2034,313.5,-22.9,-0.1218
+Gisagara,Paddy rice,SeasonB,2024,0.7964,0.9832,0.2107,435.8,-8.0,0.0547
+Huye,Paddy rice,SeasonB,2024,0.7556,0.9319,0.2096,451.6,-7.6,0.0581
+Kamonyi,Paddy rice,SeasonB,2024,0.9276,0.9543,0.0284,348.2,-12.7,0.0013
+Kayonza,Paddy rice,SeasonB,2024,1.0,0.8632,-0.1471,313.3,-22.8,-0.122
+Kicukiro,Paddy rice,SeasonB,2024,0.8134,1.3727,0.5232,324.5,-14.8,-0.0225
+Kirehe,Paddy rice,SeasonB,2024,1.1174,1.1848,0.0586,356.8,-12.6,0.0031
+Muhanga,Paddy rice,SeasonB,2024,0.4964,0.7858,0.4593,377.3,-12.5,0.0035
+Ngoma,Paddy rice,SeasonB,2024,0.8563,1.1438,0.2894,336.2,-15.3,-0.0285
+Nyagatare,Paddy rice,SeasonB,2024,1.041,1.2149,0.1545,287.0,-20.8,-0.0961
+Nyamagabe,Paddy rice,SeasonB,2024,0.4166,0.5948,0.3561,461.6,-9.6,0.0368
+Nyamasheke,Paddy rice,SeasonB,2024,1.1079,1.1587,0.0448,407.7,-14.9,-0.0235
+Nyanza,Paddy rice,SeasonB,2024,0.6268,0.8871,0.3474,390.1,-12.2,0.0076
+Ruhango,Paddy rice,SeasonB,2024,1.1116,1.1182,0.0059,364.4,-13.0,-0.0019
+Rulindo,Paddy rice,SeasonB,2024,0.8614,0.94,0.0873,383.2,-15.5,-0.0305
+Rusizi,Paddy rice,SeasonB,2024,1.209,1.3482,0.109,433.5,-11.9,0.0103
+Rwamagana,Paddy rice,SeasonB,2024,1.2679,1.1746,-0.0764,327.5,-16.5,-0.0428
+Bugesera,Sweet potato,SeasonB,2024,0.7503,0.7751,0.0325,322.5,-11.9,0.0112
+Burera,Sweet potato,SeasonB,2024,1.2472,1.0722,-0.1512,362.3,-17.2,-0.0516
+Gakenke,Sweet potato,SeasonB,2024,1.3882,1.3286,-0.0439,394.9,-12.5,0.0042
+Gasabo,Sweet potato,SeasonB,2024,0.9579,0.8838,-0.0805,337.0,-15.7,-0.0334
+Gatsibo,Sweet potato,SeasonB,2024,1.3331,1.2138,-0.0938,313.5,-22.9,-0.1218
+Gicumbi,Sweet potato,SeasonB,2024,1.1292,1.0417,-0.0807,356.7,-18.7,-0.069
+Gisagara,Sweet potato,SeasonB,2024,0.9644,0.9145,-0.0531,435.8,-8.0,0.0547
+Huye,Sweet potato,SeasonB,2024,1.0027,1.0067,0.0039,451.6,-7.6,0.0581
+Kamonyi,Sweet potato,SeasonB,2024,0.8976,0.8405,-0.0658,348.2,-12.7,0.0013
+Karongi,Sweet potato,SeasonB,2024,1.2691,1.0933,-0.1491,364.2,-13.9,-0.0124
+Kayonza,Sweet potato,SeasonB,2024,0.8187,0.8517,0.0395,313.3,-22.8,-0.122
+Kicukiro,Sweet potato,SeasonB,2024,1.0741,1.0132,-0.0583,324.5,-14.8,-0.0225
+Kirehe,Sweet potato,SeasonB,2024,0.9389,0.8716,-0.0744,356.8,-12.6,0.0031
+Muhanga,Sweet potato,SeasonB,2024,0.9653,0.9969,0.0323,377.3,-12.5,0.0035
+Musanze,Sweet potato,SeasonB,2024,1.3757,1.2747,-0.0762,434.6,-13.0,-0.0013
+Ngoma,Sweet potato,SeasonB,2024,0.8757,0.869,-0.0077,336.2,-15.3,-0.0285
+Ngororero,Sweet potato,SeasonB,2024,0.9155,0.9244,0.0097,406.1,-10.3,0.0284
+Nyabihu,Sweet potato,SeasonB,2024,0.8813,0.9418,0.0664,424.6,-11.4,0.0159
+Nyagatare,Sweet potato,SeasonB,2024,0.6503,0.7253,0.1091,287.0,-20.8,-0.0961
+Nyamagabe,Sweet potato,SeasonB,2024,1.0068,1.0431,0.0354,461.6,-9.6,0.0368
+Nyamasheke,Sweet potato,SeasonB,2024,1.0509,1.0503,-0.0006,407.7,-14.9,-0.0235
+Nyanza,Sweet potato,SeasonB,2024,1.0068,1.0031,-0.0037,390.1,-12.2,0.0076
+Nyarugenge,Sweet potato,SeasonB,2024,0.7319,0.7569,0.0336,342.9,-13.1,-0.0022
+Nyaruguru,Sweet potato,SeasonB,2024,1.2973,1.2453,-0.0408,516.2,-3.8,0.0987
+Rubavu,Sweet potato,SeasonB,2024,0.9973,1.0261,0.0285,350.5,-12.3,0.0059
+Ruhango,Sweet potato,SeasonB,2024,0.645,0.7089,0.0945,364.4,-13.0,-0.0019
+Rulindo,Sweet potato,SeasonB,2024,1.1199,1.1688,0.0428,383.2,-15.5,-0.0305
+Rusizi,Sweet potato,SeasonB,2024,1.1148,1.0889,-0.0235,433.5,-11.9,0.0103
+Rutsiro,Sweet potato,SeasonB,2024,0.9603,0.9501,-0.0106,359.8,-11.6,0.0135
+Rwamagana,Sweet potato,SeasonB,2024,1.0317,0.9267,-0.1073,327.5,-16.5,-0.0428
+Bugesera,Banana,SeasonB,2026,1.0269,1.0086,-0.018,310.7,-15.1,0.0229
+Burera,Banana,SeasonB,2026,1.086,1.1173,0.0285,364.6,-16.7,0.0037
+Gakenke,Banana,SeasonB,2026,0.9699,0.9787,0.0091,366.6,-18.8,-0.0212
+Gasabo,Banana,SeasonB,2026,1.0507,1.0482,-0.0024,335.0,-16.2,0.0096
+Gatsibo,Banana,SeasonB,2026,1.2013,1.209,0.0064,341.1,-16.0,0.0115
+Gicumbi,Banana,SeasonB,2026,1.0139,1.0484,0.0335,372.1,-15.1,0.0222
+Gisagara,Banana,SeasonB,2026,0.9124,0.9682,0.0594,363.3,-23.3,-0.0783
+Huye,Banana,SeasonB,2026,0.8257,0.8023,-0.0288,361.1,-26.1,-0.1166
+Kamonyi,Banana,SeasonB,2026,0.8855,0.8749,-0.012,333.3,-16.5,0.0065
+Karongi,Banana,SeasonB,2026,0.9934,0.9949,0.0015,334.6,-20.9,-0.0483
+Kayonza,Banana,SeasonB,2026,1.3429,1.3302,-0.0095,333.6,-17.9,-0.0102
+Kicukiro,Banana,SeasonB,2026,1.0594,1.0565,-0.0028,319.2,-16.2,0.01
+Kirehe,Banana,SeasonB,2026,1.2826,1.2591,-0.0184,332.7,-18.5,-0.0179
+Muhanga,Banana,SeasonB,2026,0.864,0.8569,-0.0082,353.5,-18.1,-0.0127
+Musanze,Banana,SeasonB,2026,0.831,0.815,-0.0194,416.1,-16.7,0.0041
+Ngoma,Banana,SeasonB,2026,1.204,1.1953,-0.0073,332.9,-16.1,0.0106
+Ngororero,Banana,SeasonB,2026,0.9175,0.9819,0.0678,379.4,-16.2,0.0093
+Nyabihu,Banana,SeasonB,2026,0.8385,0.7838,-0.0674,395.0,-17.6,-0.0074
+Nyagatare,Banana,SeasonB,2026,1.2446,1.184,-0.05,290.7,-19.8,-0.0343
+Nyamagabe,Banana,SeasonB,2026,0.5621,0.5847,0.0394,392.0,-23.2,-0.0777
+Nyamasheke,Banana,SeasonB,2026,0.9289,0.914,-0.0162,404.8,-15.5,0.0183
+Nyanza,Banana,SeasonB,2026,0.7938,0.8244,0.0378,332.8,-25.1,-0.1023
+Nyarugenge,Banana,SeasonB,2026,0.9716,0.9919,0.0206,332.4,-15.7,0.0156
+Nyaruguru,Banana,SeasonB,2026,0.7954,0.8687,0.0881,442.3,-17.6,-0.0068
+Rubavu,Banana,SeasonB,2026,1.0199,1.0908,0.0673,344.4,-13.9,0.0373
+Ruhango,Banana,SeasonB,2026,0.7844,0.8114,0.0339,330.0,-21.2,-0.0521
+Rulindo,Banana,SeasonB,2026,1.015,1.0607,0.0441,373.2,-17.7,-0.008
+Rusizi,Banana,SeasonB,2026,1.0578,1.0411,-0.0159,444.0,-9.8,0.0832
+Rutsiro,Banana,SeasonB,2026,1.0066,1.0051,-0.0015,341.8,-16.1,0.0111
+Rwamagana,Banana,SeasonB,2026,1.2517,1.223,-0.0232,324.3,-17.3,-0.0037
+Bugesera,Beans,SeasonB,2026,0.8579,0.913,0.0623,310.7,-15.1,0.0229
+Burera,Beans,SeasonB,2026,1.599,1.7445,0.0871,364.6,-16.7,0.0037
+Gakenke,Beans,SeasonB,2026,1.2476,1.3192,0.0558,366.6,-18.8,-0.0212
+Gasabo,Beans,SeasonB,2026,0.9452,0.9321,-0.0139,335.0,-16.2,0.0096
+Gatsibo,Beans,SeasonB,2026,0.9341,0.9773,0.0452,341.1,-16.0,0.0115
+Gicumbi,Beans,SeasonB,2026,1.2455,1.2295,-0.013,372.1,-15.1,0.0222
+Gisagara,Beans,SeasonB,2026,0.9124,0.9428,0.0327,363.3,-23.3,-0.0783
+Huye,Beans,SeasonB,2026,0.8761,0.9291,0.0588,361.1,-26.1,-0.1166
+Kamonyi,Beans,SeasonB,2026,0.7766,0.855,0.0961,333.3,-16.5,0.0065
+Karongi,Beans,SeasonB,2026,1.3629,1.4598,0.0687,334.6,-20.9,-0.0483
+Kayonza,Beans,SeasonB,2026,0.8265,0.7224,-0.1347,333.6,-17.9,-0.0102
+Kicukiro,Beans,SeasonB,2026,0.9009,0.8944,-0.0072,319.2,-16.2,0.01
+Kirehe,Beans,SeasonB,2026,0.9433,0.993,0.0513,332.7,-18.5,-0.0179
+Muhanga,Beans,SeasonB,2026,0.9343,0.8311,-0.117,353.5,-18.1,-0.0127
+Musanze,Beans,SeasonB,2026,1.5544,1.5487,-0.0037,416.1,-16.7,0.0041
+Ngoma,Beans,SeasonB,2026,1.0548,1.007,-0.0463,332.9,-16.1,0.0106
+Ngororero,Beans,SeasonB,2026,1.3882,1.1837,-0.1593,379.4,-16.2,0.0093
+Nyabihu,Beans,SeasonB,2026,1.471,1.5037,0.022,395.0,-17.6,-0.0074
+Nyagatare,Beans,SeasonB,2026,1.0734,1.1179,0.0406,290.7,-19.8,-0.0343
+Nyamagabe,Beans,SeasonB,2026,0.9204,0.9845,0.0674,392.0,-23.2,-0.0777
+Nyamasheke,Beans,SeasonB,2026,1.1268,1.0906,-0.0326,404.8,-15.5,0.0183
+Nyanza,Beans,SeasonB,2026,0.854,0.8994,0.0518,332.8,-25.1,-0.1023
+Nyarugenge,Beans,SeasonB,2026,0.839,0.8689,0.0351,332.4,-15.7,0.0156
+Nyaruguru,Beans,SeasonB,2026,1.0997,1.1459,0.0411,442.3,-17.6,-0.0068
+Rubavu,Beans,SeasonB,2026,1.1294,1.2554,0.1057,344.4,-13.9,0.0373
+Ruhango,Beans,SeasonB,2026,0.8336,0.9131,0.0912,330.0,-21.2,-0.0521
+Rulindo,Beans,SeasonB,2026,1.2307,1.1651,-0.0548,373.2,-17.7,-0.008
+Rusizi,Beans,SeasonB,2026,1.1213,1.1259,0.0041,444.0,-9.8,0.0832
+Rutsiro,Beans,SeasonB,2026,1.2176,1.1578,-0.0504,341.8,-16.1,0.0111
+Rwamagana,Beans,SeasonB,2026,0.7827,0.7784,-0.0056,324.3,-17.3,-0.0037
+Bugesera,Cassava,SeasonB,2026,1.0059,0.9677,-0.0387,310.7,-15.1,0.0229
+Burera,Cassava,SeasonB,2026,0.845,0.8404,-0.0054,364.6,-16.7,0.0037
+Gakenke,Cassava,SeasonB,2026,1.0552,1.0194,-0.0345,366.6,-18.8,-0.0212
+Gasabo,Cassava,SeasonB,2026,0.7752,0.8544,0.0973,335.0,-16.2,0.0096
+Gatsibo,Cassava,SeasonB,2026,1.1375,1.2974,0.1315,341.1,-16.0,0.0115
+Gicumbi,Cassava,SeasonB,2026,1.0004,1.0668,0.0643,372.1,-15.1,0.0222
+Gisagara,Cassava,SeasonB,2026,1.0034,1.0016,-0.0018,363.3,-23.3,-0.0783
+Huye,Cassava,SeasonB,2026,1.1433,1.2645,0.1008,361.1,-26.1,-0.1166
+Kamonyi,Cassava,SeasonB,2026,0.9734,0.9716,-0.0018,333.3,-16.5,0.0065
+Karongi,Cassava,SeasonB,2026,0.9897,0.9984,0.0087,334.6,-20.9,-0.0483
+Kayonza,Cassava,SeasonB,2026,1.0837,1.1595,0.0676,333.6,-17.9,-0.0102
+Kicukiro,Cassava,SeasonB,2026,0.7973,0.9623,0.1881,319.2,-16.2,0.01
+Kirehe,Cassava,SeasonB,2026,0.9996,1.0621,0.0607,332.7,-18.5,-0.0179
+Muhanga,Cassava,SeasonB,2026,1.1191,1.142,0.0203,353.5,-18.1,-0.0127
+Musanze,Cassava,SeasonB,2026,0.8062,0.8339,0.0337,416.1,-16.7,0.0041
+Ngoma,Cassava,SeasonB,2026,1.029,1.1336,0.0968,332.9,-16.1,0.0106
+Ngororero,Cassava,SeasonB,2026,0.6964,0.6896,-0.0098,379.4,-16.2,0.0093
+Nyabihu,Cassava,SeasonB,2026,0.6794,0.6816,0.0032,395.0,-17.6,-0.0074
+Nyagatare,Cassava,SeasonB,2026,1.1866,1.3608,0.137,290.7,-19.8,-0.0343
+Nyamagabe,Cassava,SeasonB,2026,0.887,0.9728,0.0923,392.0,-23.2,-0.0777
+Nyamasheke,Cassava,SeasonB,2026,0.8776,0.8578,-0.0227,404.8,-15.5,0.0183
+Nyanza,Cassava,SeasonB,2026,1.025,1.067,0.0401,332.8,-25.1,-0.1023
+Nyarugenge,Cassava,SeasonB,2026,0.7555,0.8387,0.1045,332.4,-15.7,0.0156
+Nyaruguru,Cassava,SeasonB,2026,0.893,0.9168,0.0264,442.3,-17.6,-0.0068
+Rubavu,Cassava,SeasonB,2026,0.8606,0.8459,-0.0173,344.4,-13.9,0.0373
+Ruhango,Cassava,SeasonB,2026,1.1956,1.2977,0.082,330.0,-21.2,-0.0521
+Rulindo,Cassava,SeasonB,2026,1.1027,1.019,-0.079,373.2,-17.7,-0.008
+Rusizi,Cassava,SeasonB,2026,0.7609,0.7411,-0.0264,444.0,-9.8,0.0832
+Rutsiro,Cassava,SeasonB,2026,1.0094,1.0151,0.0056,341.8,-16.1,0.0111
+Rwamagana,Cassava,SeasonB,2026,1.1342,1.2832,0.1234,324.3,-17.3,-0.0037
+Bugesera,Irish potatoes,SeasonB,2026,0.5984,0.6204,0.0362,310.7,-15.1,0.0229
+Burera,Irish potatoes,SeasonB,2026,1.5548,1.5793,0.0156,364.6,-16.7,0.0037
+Gakenke,Irish potatoes,SeasonB,2026,1.2043,1.1968,-0.0062,366.6,-18.8,-0.0212
+Gasabo,Irish potatoes,SeasonB,2026,0.7723,0.779,0.0086,335.0,-16.2,0.0096
+Gatsibo,Irish potatoes,SeasonB,2026,1.0335,1.0022,-0.0308,341.1,-16.0,0.0115
+Gicumbi,Irish potatoes,SeasonB,2026,1.3259,1.3802,0.0401,372.1,-15.1,0.0222
+Gisagara,Irish potatoes,SeasonB,2026,0.8161,0.8487,0.0393,363.3,-23.3,-0.0783
+Huye,Irish potatoes,SeasonB,2026,0.8455,0.869,0.0274,361.1,-26.1,-0.1166
+Kamonyi,Irish potatoes,SeasonB,2026,1.1921,1.2322,0.033,333.3,-16.5,0.0065
+Karongi,Irish potatoes,SeasonB,2026,0.7581,0.7833,0.0326,334.6,-20.9,-0.0483
+Kayonza,Irish potatoes,SeasonB,2026,0.8913,0.9189,0.0305,333.6,-17.9,-0.0102
+Kirehe,Irish potatoes,SeasonB,2026,0.8535,0.9769,0.1349,332.7,-18.5,-0.0179
+Muhanga,Irish potatoes,SeasonB,2026,0.871,0.9366,0.0726,353.5,-18.1,-0.0127
+Musanze,Irish potatoes,SeasonB,2026,1.9382,2.0639,0.0628,416.1,-16.7,0.0041
+Ngoma,Irish potatoes,SeasonB,2026,1.0164,1.0599,0.0419,332.9,-16.1,0.0106
+Ngororero,Irish potatoes,SeasonB,2026,1.1307,1.1758,0.039,379.4,-16.2,0.0093
+Nyabihu,Irish potatoes,SeasonB,2026,1.8349,1.8089,-0.0143,395.0,-17.6,-0.0074
+Nyagatare,Irish potatoes,SeasonB,2026,0.9836,0.9529,-0.0317,290.7,-19.8,-0.0343
+Nyamagabe,Irish potatoes,SeasonB,2026,1.6647,1.7323,0.0398,392.0,-23.2,-0.0777
+Nyamasheke,Irish potatoes,SeasonB,2026,0.9709,1.0,0.0295,404.8,-15.5,0.0183
+Nyanza,Irish potatoes,SeasonB,2026,0.8488,0.9183,0.0788,332.8,-25.1,-0.1023
+Nyaruguru,Irish potatoes,SeasonB,2026,1.6079,1.7839,0.1039,442.3,-17.6,-0.0068
+Rubavu,Irish potatoes,SeasonB,2026,1.8431,1.8673,0.013,344.4,-13.9,0.0373
+Ruhango,Irish potatoes,SeasonB,2026,0.634,0.6527,0.029,330.0,-21.2,-0.0521
+Rulindo,Irish potatoes,SeasonB,2026,0.949,0.926,-0.0245,373.2,-17.7,-0.008
+Rusizi,Irish potatoes,SeasonB,2026,1.5445,1.4983,-0.0304,444.0,-9.8,0.0832
+Rutsiro,Irish potatoes,SeasonB,2026,1.0311,1.0971,0.062,341.8,-16.1,0.0111
+Rwamagana,Irish potatoes,SeasonB,2026,0.8277,0.8453,0.0211,324.3,-17.3,-0.0037
+Bugesera,Maize,SeasonB,2026,0.9226,0.8214,-0.1162,310.7,-15.1,0.0229
+Burera,Maize,SeasonB,2026,1.1951,1.1784,-0.0141,364.6,-16.7,0.0037
+Gakenke,Maize,SeasonB,2026,0.8866,0.9307,0.0485,366.6,-18.8,-0.0212
+Gasabo,Maize,SeasonB,2026,1.1541,1.1382,-0.0138,335.0,-16.2,0.0096
+Gatsibo,Maize,SeasonB,2026,1.112,1.093,-0.0173,341.1,-16.0,0.0115
+Gicumbi,Maize,SeasonB,2026,0.9746,0.923,-0.0544,372.1,-15.1,0.0222
+Gisagara,Maize,SeasonB,2026,0.895,0.8919,-0.0034,363.3,-23.3,-0.0783
+Huye,Maize,SeasonB,2026,0.99,1.0333,0.0427,361.1,-26.1,-0.1166
+Kamonyi,Maize,SeasonB,2026,1.0681,0.9971,-0.0688,333.3,-16.5,0.0065
+Karongi,Maize,SeasonB,2026,0.9846,1.0029,0.0185,334.6,-20.9,-0.0483
+Kayonza,Maize,SeasonB,2026,1.01,1.0229,0.0127,333.6,-17.9,-0.0102
+Kicukiro,Maize,SeasonB,2026,0.6866,0.6444,-0.0634,319.2,-16.2,0.01
+Kirehe,Maize,SeasonB,2026,2.1334,1.8045,-0.1674,332.7,-18.5,-0.0179
+Muhanga,Maize,SeasonB,2026,0.9467,0.893,-0.0584,353.5,-18.1,-0.0127
+Musanze,Maize,SeasonB,2026,1.3762,1.3668,-0.0069,416.1,-16.7,0.0041
+Ngoma,Maize,SeasonB,2026,0.738,0.7387,0.0009,332.9,-16.1,0.0106
+Ngororero,Maize,SeasonB,2026,1.0634,1.021,-0.0407,379.4,-16.2,0.0093
+Nyabihu,Maize,SeasonB,2026,1.2229,1.2108,-0.01,395.0,-17.6,-0.0074
+Nyagatare,Maize,SeasonB,2026,1.4012,1.3419,-0.0433,290.7,-19.8,-0.0343
+Nyamagabe,Maize,SeasonB,2026,1.0646,1.0866,0.0204,392.0,-23.2,-0.0777
+Nyamasheke,Maize,SeasonB,2026,0.959,0.8545,-0.1154,404.8,-15.5,0.0183
+Nyanza,Maize,SeasonB,2026,1.1528,1.1362,-0.0145,332.8,-25.1,-0.1023
+Nyarugenge,Maize,SeasonB,2026,0.8598,1.0297,0.1803,332.4,-15.7,0.0156
+Nyaruguru,Maize,SeasonB,2026,1.0395,0.9819,-0.057,442.3,-17.6,-0.0068
+Rubavu,Maize,SeasonB,2026,1.2943,1.2476,-0.0367,344.4,-13.9,0.0373
+Ruhango,Maize,SeasonB,2026,0.8033,0.6072,-0.2799,330.0,-21.2,-0.0521
+Rulindo,Maize,SeasonB,2026,0.9262,0.9373,0.0119,373.2,-17.7,-0.008
+Rusizi,Maize,SeasonB,2026,0.9002,0.8717,-0.0322,444.0,-9.8,0.0832
+Rutsiro,Maize,SeasonB,2026,1.0246,0.9179,-0.11,341.8,-16.1,0.0111
+Rwamagana,Maize,SeasonB,2026,0.7532,0.7714,0.0239,324.3,-17.3,-0.0037
+Bugesera,Paddy rice,SeasonB,2026,1.2624,1.1955,-0.0545,310.7,-15.1,0.0229
+Gakenke,Paddy rice,SeasonB,2026,1.0409,1.1684,0.1155,366.6,-18.8,-0.0212
+Gasabo,Paddy rice,SeasonB,2026,0.9361,0.9474,0.0121,335.0,-16.2,0.0096
+Gatsibo,Paddy rice,SeasonB,2026,0.9602,1.2167,0.2367,341.1,-16.0,0.0115
+Gisagara,Paddy rice,SeasonB,2026,0.8632,1.0019,0.149,363.3,-23.3,-0.0783
+Huye,Paddy rice,SeasonB,2026,1.0842,0.838,-0.2575,361.1,-26.1,-0.1166
+Kamonyi,Paddy rice,SeasonB,2026,0.7938,0.9317,0.1603,333.3,-16.5,0.0065
+Kayonza,Paddy rice,SeasonB,2026,0.7385,0.9897,0.2928,333.6,-17.9,-0.0102
+Kicukiro,Paddy rice,SeasonB,2026,1.3061,1.2786,-0.0213,319.2,-16.2,0.01
+Kirehe,Paddy rice,SeasonB,2026,1.2703,1.165,-0.0865,332.7,-18.5,-0.0179
+Muhanga,Paddy rice,SeasonB,2026,0.6625,0.7524,0.1272,353.5,-18.1,-0.0127
+Ngoma,Paddy rice,SeasonB,2026,0.886,0.9237,0.0417,332.9,-16.1,0.0106
+Nyagatare,Paddy rice,SeasonB,2026,1.0587,0.9981,-0.059,290.7,-19.8,-0.0343
+Nyamagabe,Paddy rice,SeasonB,2026,0.3552,0.7739,0.7788,392.0,-23.2,-0.0777
+Nyamasheke,Paddy rice,SeasonB,2026,1.0886,1.0177,-0.0673,404.8,-15.5,0.0183
+Nyanza,Paddy rice,SeasonB,2026,0.9699,1.0646,0.0931,332.8,-25.1,-0.1023
+Ruhango,Paddy rice,SeasonB,2026,1.1099,1.1226,0.0113,330.0,-21.2,-0.0521
+Rulindo,Paddy rice,SeasonB,2026,1.1136,0.8454,-0.2754,373.2,-17.7,-0.008
+Rusizi,Paddy rice,SeasonB,2026,1.1998,1.0798,-0.1054,444.0,-9.8,0.0832
+Rwamagana,Paddy rice,SeasonB,2026,1.0,1.0563,0.0548,324.3,-17.3,-0.0037
+Bugesera,Sweet potato,SeasonB,2026,0.7035,0.7311,0.0385,310.7,-15.1,0.0229
+Burera,Sweet potato,SeasonB,2026,1.0349,1.147,0.1028,364.6,-16.7,0.0037
+Gakenke,Sweet potato,SeasonB,2026,1.2966,1.2871,-0.0073,366.6,-18.8,-0.0212
+Gasabo,Sweet potato,SeasonB,2026,0.8481,0.8635,0.018,335.0,-16.2,0.0096
+Gatsibo,Sweet potato,SeasonB,2026,1.1689,1.1957,0.0226,341.1,-16.0,0.0115
+Gicumbi,Sweet potato,SeasonB,2026,1.0548,1.0996,0.0415,372.1,-15.1,0.0222
+Gisagara,Sweet potato,SeasonB,2026,0.9856,0.953,-0.0336,363.3,-23.3,-0.0783
+Huye,Sweet potato,SeasonB,2026,1.0617,1.003,-0.0569,361.1,-26.1,-0.1166
+Kamonyi,Sweet potato,SeasonB,2026,0.892,0.8841,-0.0089,333.3,-16.5,0.0065
+Karongi,Sweet potato,SeasonB,2026,1.0478,1.0522,0.0042,334.6,-20.9,-0.0483
+Kayonza,Sweet potato,SeasonB,2026,0.8659,0.9108,0.0505,333.6,-17.9,-0.0102
+Kicukiro,Sweet potato,SeasonB,2026,0.9247,0.8544,-0.0791,319.2,-16.2,0.01
+Kirehe,Sweet potato,SeasonB,2026,0.8499,0.9161,0.075,332.7,-18.5,-0.0179
+Muhanga,Sweet potato,SeasonB,2026,1.0449,1.0195,-0.0246,353.5,-18.1,-0.0127
+Musanze,Sweet potato,SeasonB,2026,1.123,1.215,0.0787,416.1,-16.7,0.0041
+Ngoma,Sweet potato,SeasonB,2026,0.8856,0.9869,0.1084,332.9,-16.1,0.0106
+Ngororero,Sweet potato,SeasonB,2026,0.9238,0.8754,-0.0538,379.4,-16.2,0.0093
+Nyabihu,Sweet potato,SeasonB,2026,0.9621,0.9156,-0.0495,395.0,-17.6,-0.0074
+Nyagatare,Sweet potato,SeasonB,2026,0.7203,0.758,0.051,290.7,-19.8,-0.0343
+Nyamagabe,Sweet potato,SeasonB,2026,1.0434,1.035,-0.0081,392.0,-23.2,-0.0777
+Nyamasheke,Sweet potato,SeasonB,2026,1.0737,0.9976,-0.0735,404.8,-15.5,0.0183
+Nyanza,Sweet potato,SeasonB,2026,1.0221,1.1196,0.091,332.8,-25.1,-0.1023
+Nyarugenge,Sweet potato,SeasonB,2026,0.8034,0.8801,0.0912,332.4,-15.7,0.0156
+Nyaruguru,Sweet potato,SeasonB,2026,1.1746,1.1887,0.0119,442.3,-17.6,-0.0068
+Rubavu,Sweet potato,SeasonB,2026,1.0144,1.0876,0.0697,344.4,-13.9,0.0373
+Ruhango,Sweet potato,SeasonB,2026,0.8303,0.7977,-0.0401,330.0,-21.2,-0.0521
+Rulindo,Sweet potato,SeasonB,2026,1.1436,1.2323,0.0747,373.2,-17.7,-0.008
+Rusizi,Sweet potato,SeasonB,2026,1.1013,1.0205,-0.0761,444.0,-9.8,0.0832
+Rutsiro,Sweet potato,SeasonB,2026,0.9795,1.0024,0.0232,341.8,-16.1,0.0111
+Rwamagana,Sweet potato,SeasonB,2026,0.8991,0.9693,0.0751,324.3,-17.3,-0.0037
+Nyaruguru,Paddy rice,SeasonB,2026,0.6764,0.8069,0.1764,442.3,-17.6,-0.0068

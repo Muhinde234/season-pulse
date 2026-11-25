@@ -9,10 +9,13 @@ import streamlit as st
 LANGS = {"en": "English", "rw": "Kinyarwanda"}
 
 CROP = {
+    "Banana": {"en": "Banana", "rw": "Urutoki"},
     "Beans": {"en": "Beans", "rw": "Ibishyimbo"},
     "Cassava": {"en": "Cassava", "rw": "Imyumbati"},
     "Irish potatoes": {"en": "Irish potatoes", "rw": "Ibirayi"},
     "Maize": {"en": "Maize", "rw": "Ibigori"},
+    "Paddy rice": {"en": "Paddy rice", "rw": "Umuceri"},
+    "Sweet potato": {"en": "Sweet potato", "rw": "Ibijumba"},
     "Tomatoes": {"en": "Tomatoes", "rw": "Inyanya"},
 }
 CONDITION = {
@@ -32,7 +35,6 @@ YES_NO = {True: {"en": "Yes", "rw": "Yego"}, False: {"en": "No", "rw": "Oya"}}
 SEASON = {
     "SeasonA": {"en": "Season A (Sep–Feb)", "rw": "Igihembwe A (Nzeri–Gashyantare)"},
     "SeasonB": {"en": "Season B (Mar–Jun)", "rw": "Igihembwe B (Werurwe–Kamena)"},
-    "SeasonC": {"en": "Season C (Jul–Aug)", "rw": "Igihembwe C (Nyakanga–Kanama)"},
 }
 
 TEXT = {

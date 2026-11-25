@@ -3,270 +3,244 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from core.data import DATA, load_backtest, load_baseline, load_rain_vs_ryi, load_validation
+from core.data import (DATA, load_backtest, load_baseline, load_official_backtest, load_rain_vs_official,
+                       load_validation)
+from core.official import SOURCE_URL
 from core.risk import K_REPORTS
 from core.ui import hero, section
 
-bt = load_backtest()
-flags = bt["low_district_flags"]
+obt = load_official_backtest()
+last = obt[obt.method == "Last season"]
+years = f"{last.year.min()}–{last.year.max()}"
+
+
+def pooled(m: pd.DataFrame) -> pd.Series:
+    """Totals over every season-year of one method; error weighted by cells."""
+    return pd.Series({"cells": m.cells.sum(), "mae_pct": (m.mae_pct * m.cells).sum() / m.cells.sum(),
+                      "bad_cells": m.bad_cells.sum(), "caught": m.caught.sum(), "flagged": m.flagged.sum()})
+
+
+summary = obt.groupby("method").apply(pooled, include_groups=False)
+best, naive = summary.loc["Last season"], summary.loc["Every district typical"]
 
 hero("Model & Data Quality", "How it works, how well it predicts, and its limits.",
-     meta=[("verified", "Validated on NISR 2026 A")],
-     eyebrow="About · Methodology", ic="insights")
+     meta=[("verified", f"Backtested on NISR {years}")], eyebrow="About · Methodology", ic="insights")
 
-tabs = st.tabs(["How it works", "Backtest 2024", "Validation 2026", "Forecast (official data)", "Rainfall vs yield", "Data limitations"])
+tabs = st.tabs(["How it works", "Backtest (official tables)", "Rainfall vs yield", "Cleaned 2020–2024 files",
+                "Data limitations"])
 with tabs[0]:
     section("How it works")
-    st.markdown("""
+    st.markdown(f"""
     1. **Relative Yield Index (RYI).** For every crop × season × year, each district's yield is divided by the
-       *median district* that same season: `RYI = district yield / median district yield`. Because SAS yield units
-       differ across years, absolute kg/ha are never compared or shown, and any year-wide unit factor cancels out.
-       RYI 0.73 is shown as **−27% vs typical district**.
-    2. **Baseline.** The mean log-RYI over 2020–2024 for each district × crop × season, shrunk toward "typical"
-       by `n_years / (n_years + 1)` so districts with little history aren't over-confident. Cells with fewer than
-       10 farm observations are excluded.
+       *median district* that same season: `RYI = district yield / median district yield`. RYI 0.73 is shown as
+       **−27% vs typical district**.
+    2. **Baseline = the last official result.** For the seven priority crops (banana, beans, cassava, Irish potato,
+       maize, paddy rice, sweet potato), the baseline is the district's RYI in NISR's latest official tables for the
+       same season (Season A from Season A, B from B). The *Backtest* tab shows why: on every season {years} it beat
+       both "every district typical" and the average of the last two seasons.
+       **Tomatoes** are only published by NISR inside "vegetables", so they keep the 2020–2024 baseline from the
+       cleaned SAS files. That baseline is not validated and is labelled as such everywhere.
     3. **In-season adjustment.** Field reports (condition 1–5, pests, rain problems) shift the baseline in log space,
-       weighted by `n / (n + {k:g})` so a single report moves it only a little.
-    4. **Alert levels.** 🔴 High: expected RYI ≤ 0.75 · 🟠 Watch: ≤ 0.85 (the backtest flag threshold) · 🟢 Normal.
-    """.format(k=K_REPORTS))
+       weighted by `n / (n + {K_REPORTS:g})` so a single report moves it only a little.
+    4. **Alert levels.** 🔴 High: expected RYI ≤ 0.75 · 🟠 Watch: ≤ 0.85 · 🟢 Normal.
+    """)
+    st.warning("**The field-report weights are assumptions, not estimates.** Each condition step moves the estimate "
+               "by 10%, pests by −10% and a rain problem by −10% (in log RYI). There are no past field reports to fit "
+               "these on. Once real reports exist, they should be re-fitted against the next official NISR results.",
+               icon=":material/science:")
 
 with tabs[1]:
-    section("Backtest: predict 2024 from 2020–2023")
-    st.caption("Trained on 2020–2023, scored on unseen 2024 results. Benchmark: every district typical.")
+    section("Backtest: predict each season from NISR's earlier official tables")
+    st.caption(f"Every Season A and B from {years}, seven priority crops, all districts with data in both years. "
+               f"Source: [NISR SAS official tables]({SOURCE_URL}), 2022–2026.")
     c = st.columns(4)
-    c[0].metric("2024 test cells", bt["test_cells_2024"])
-    c[1].metric("Error reduction vs naive", f"{bt['error_reduction_pct']}%",
-                help=f"Mean absolute error in log-RYI: model {bt['mae_log_model']} vs naive {bt['mae_log_naive']}")
-    c[2].metric("Precision of low flags", f"{flags['precision']:.0%}",
-                help=f"{flags['flagged']} cells flagged (predicted RYI ≤ 0.85); share that really ended ≥25% below typical")
-    c[3].metric("Recall of low districts", f"{flags['recall']:.0%}",
-                help=f"Of {flags['actual_low']} cells that ended ≥25% below typical, share flagged in advance")
+    c[0].metric("Cell-seasons tested", f"{int(best.cells):,}")
+    c[1].metric("Average error", f"{best.mae_pct:.1f}%",
+                help=f"Mean absolute error in log RYI ×100, last season's official result. "
+                     f"Every district typical: {naive.mae_pct:.1f}%")
+    c[2].metric("Bad cells caught", f"{int(best.caught)} of {int(best.bad_cells)}",
+                help="Cells ≥20% below the median district, flagged in advance (last season ≤ 0.85)")
+    c[3].metric("Precision of flags", f"{best.caught / best.flagged:.0%}",
+                help=f"{int(best.flagged)} cells flagged; share that really came in ≥20% below the median")
 
-    crop = pd.DataFrame(bt["by_crop_mae"]).T.rename_axis("Crop").reset_index()
+    obt["label"] = obt.year.astype(str) + obt.season
     fig = go.Figure()
-    for col, name, color in [("naive", "Naive (every district typical)", "#eb6834"),
-                             ("model", "Imboni baseline", "#2a78d6")]:
-        fig.add_bar(x=crop.Crop, y=crop[col], name=name, marker_color=color, marker_line_width=0,
-                    text=crop[col].round(2), textposition="outside", textfont_color="gray",
-                    hovertemplate="%{x}<br>" + name + ": %{y:.3f}<extra></extra>")
-    fig.update_layout(barmode="group", bargap=0.35, bargroupgap=0.08, height=360,
-                      margin=dict(l=0, r=0, t=30, b=0), legend=dict(orientation="h", y=1.12, x=0),
-                      yaxis=dict(title="Mean abs. error (log RYI) · lower is better", gridcolor="rgba(128,128,128,0.15)",
-                                 zeroline=False),
-                      plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
+    for name, color in [("Every district typical", "#eb6834"), ("Average of last two seasons", "#9b59b6"),
+                        ("Last season", "#2a78d6")]:
+        g = obt[obt.method == name].sort_values(["year", "season"])
+        fig.add_scatter(x=g.label, y=g.mae_pct, mode="lines+markers", name=name, line=dict(color=color, width=2),
+                        hovertemplate="%{x}: %{y:.1f}% error<extra>" + name + "</extra>")
+    fig.update_layout(height=340, margin=dict(l=0, r=0, t=30, b=0), legend=dict(orientation="h", y=1.12, x=0),
+                      yaxis=dict(title="Average error (%) · lower is better", rangemode="tozero",
+                                 gridcolor="rgba(128,128,128,0.15)"),
+                      xaxis=dict(title="Season predicted"), plot_bgcolor="rgba(0,0,0,0)",
+                      paper_bgcolor="rgba(0,0,0,0)")
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-    worse = crop[crop.model > crop.naive].Crop.tolist()
-    if worse:
-        st.warning(f"**{', '.join(worse)}**: history does worse than the benchmark. Rely on field reports.",
-                   icon=":material/warning:")
-    with st.expander("Table view"):
-        st.dataframe(crop.rename(columns={"naive": "Naive MAE", "model": "Model MAE"}), hide_index=True)
 
-    st.markdown(f"""
-    **Reading the results honestly:** history alone explains part of next season. The baseline cuts error by
-    {bt['error_reduction_pct']}%, but only about {flags['recall']:.0%} of the districts that ended badly were flagged
-    from history alone, and {flags['precision']:.0%} of flags were correct. That gap is why Imboni
-    collects in-season field reports: the baseline says *where to look*, reports say *what is happening now*.
+    table = last.assign(**{"Season": last.year.astype(str) + last.season,
+                           "Bad cells caught": last.caught.astype(str) + " of " + last.bad_cells.astype(str),
+                           "Moved >10%": last.moved.astype(str) + " of " + last.cells.astype(str)})
+    first_year = int(last.year.min())
+    first_err = (lambda m: (m.mae_pct * m.cells).sum() / m.cells.sum())(last[last.year == first_year])
+    recent = last[last.year >= last.year.max() - 1]
+    recent_err = (recent.mae_pct * recent.cells).sum() / recent.cells.sum()
+    recent_years = f"{recent.year.min()}–{recent.year.max()}"
+    t1, t2 = st.columns([1.3, 1])
+    t1.dataframe(table[["Season", "cells", "mae_pct", "rank_r", "Bad cells caught", "flagged", "Moved >10%"]]
+                 .rename(columns={"cells": "Cells", "mae_pct": "Error (%)", "rank_r": "Rank r", "flagged": "Flagged"}),
+                 hide_index=True, width="stretch")
+    t2.markdown(f"""
+    **Reading it honestly**
+
+    - A district's last official result for the same season is the best predictor we found: **{best.mae_pct:.1f}%**
+      average error vs {naive.mae_pct:.1f}% for "every district typical", catching
+      **{best.caught / best.bad_cells:.0%}** of bad cells.
+    - Its error fell from **{first_err:.0f}%** in {first_year} to **{recent_err:.1f}%** on average in
+      {recent_years}, because district positions became much steadier: the cells that moved more than 10% from
+      the year before dropped sharply (last column).
+    - That stability is a feature of the survey results, not forecasting skill. NISR's district figures are
+      **direct survey estimates** (25–68 sampled segments per district, GPS-measured areas, farmer-reported
+      production), so we can't tell how much of it comes from the farms and how much from the sample.
+    - Last season **cannot see a district that breaks its pattern**, and rainfall did not explain the ones that did
+      (next tab). That is the gap field reports are for.
     """)
 
-with tabs[2]:
-    section("Validation: official NISR 2026 yields")
-    vs = st.segmented_control("Season", ["2026A", "2026B"], default="2026A", key="val_season",
-                              format_func=lambda s: f"Season {s[-1]} 2026") or "2026A"
-    sname = f"2026 {vs[-1]}"
-    v = load_validation(vs)
-    caught = int((v.actual_low & v.flagged).sum())
-    st.caption(f"2020–2024 baseline vs official NISR {sname} yields: a season the model never saw.")
-    r_by_crop = (v.groupby("CropName")
-                   .apply(lambda g: pd.Series({"r": np.log(g.official_RYI).corr(np.log(g.predicted_RYI)),
-                                               "Districts": len(g)}), include_groups=False)
-                   .reset_index())
-    vc = st.columns(4)
-    vc[0].metric(f"{sname} cells", len(v), help="District × crop pairs with both a baseline and an official yield")
-    vc[1].metric("Bad cells caught", f"{caught} of {int(v.actual_low.sum())}",
-                 help=f"Cells that came in ≥20% below typical in {sname} and were flagged in advance (baseline ≤ 0.85)")
-    vc[2].metric("Precision of flags", f"{caught / max(int(v.flagged.sum()), 1):.0%}",
-                 help=f"{int(v.flagged.sum())} cells flagged; share that really came in ≥20% below typical")
-    best = r_by_crop.sort_values("r", ascending=False).iloc[0]
-    vc[3].metric("Best ranking (Pearson r)", f"{best.r:+.2f}", help=f"{best.CropName}; see the per-crop table")
-
-    fig = go.Figure()
-    for i, (crop_name, g) in enumerate(v.groupby("CropName")):
-        fig.add_scatter(x=100 * (g.predicted_RYI - 1), y=100 * (g.official_RYI - 1), mode="markers", name=crop_name,
-                        marker=dict(size=9, opacity=0.8, color=["#2a78d6", "#eb6834", "#16a34a", "#9b59b6"][i % 4],
-                                    line=dict(width=1, color="rgba(255,255,255,0.8)")),
-                        customdata=g[["DistrictName", "yield_kgha"]],
-                        hovertemplate="<b>%{customdata[0]}</b> · " + crop_name + "<br>Baseline: %{x:+.0f}%"
-                                      f"<br>Official {sname}: " + "%{y:+.0f}% (%{customdata[1]:,.0f} kg/ha)<extra></extra>")
-    fig.add_shape(type="line", x0=-70, y0=-70, x1=150, y1=150, line=dict(color="rgba(128,128,128,0.45)", dash="dot"))
-    fig.add_hline(y=-20, line_color="rgba(220,38,38,0.4)", line_dash="dash",
-                  annotation_text="20% below typical", annotation_position="bottom right")
-    fig.update_layout(height=420, margin=dict(l=0, r=0, t=30, b=0), legend=dict(orientation="h", y=1.1, x=0),
-                      xaxis=dict(title="Historical baseline: % vs typical district", ticksuffix="%",
-                                 gridcolor="rgba(128,128,128,0.15)", zeroline=False),
-                      yaxis=dict(title=f"Official {sname}: % vs typical district", ticksuffix="%",
-                                 gridcolor="rgba(128,128,128,0.15)", zeroline=False),
-                      plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
-    v1, v2 = st.columns([2.2, 1])
-    v1.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-    v2.dataframe(r_by_crop.rename(columns={"CropName": "Crop", "r": "Pearson r"}).round(2), hide_index=True,
-                 width="stretch")
-    v2.caption(f"r = correlation between the baseline and the official {sname} result (log RYI). Positive = "
-               "history ranks districts in the right order.")
-    spread = np.log(v.predicted_RYI).std() / np.log(v.official_RYI).std()
-    good = r_by_crop[r_by_crop.r >= .3].sort_values("r", ascending=False).CropName.str.lower().tolist()
-    weak = r_by_crop[r_by_crop.r < .3].CropName.str.lower().tolist()
-    st.markdown(f"**Reading it:** in {sname}, history ranks districts in the right order for "
-                f"{', '.join(good) or 'no crop'}" + (f", but not well for {', '.join(weak)}" if weak else "")
-                + f". Baseline values are about {spread:.1f}× as spread out as the official results, so Imboni uses "
-                "the baseline as a **risk ranking**, not an exact forecast. The next tab shows a stronger forecast "
-                "built from NISR's official tables alone.")
-    with st.expander(f"Table view (out_validation_{vs}.csv)"):
-        st.dataframe(v.rename(columns={"DistrictName": "District", "CropName": "Crop", "yield_kgha": "Official kg/ha",
-                                       "official_RYI": "Official RYI", "predicted_RYI": "Baseline RYI",
-                                       "n_years": "Years of history", "actual_low": "≥20% below typical",
-                                       "flagged": "Flagged in advance"}),
-                     hide_index=True, width="stretch")
-        st.download_button("Download validation (CSV)", v.to_csv(index=False), file_name=f"out_validation_{vs}.csv",
-                           mime="text/csv")
-
-with tabs[3]:
-    section("Forecast from NISR's official tables")
-    st.caption("Predict each district's 2026 position (yield vs the median district) from the same season in 2024 "
-               "and 2025, using NISR's official tables only. Seven major crops, all districts with data.")
-    fm = pd.read_csv(DATA / "out_official_forecast.csv")
-    fc = pd.read_csv(DATA / "out_official_forecast_cells.csv")
-    fs = st.segmented_control("Season", ["A", "B"], default="A", key="fc_season",
-                              format_func=lambda x: f"Season {x} 2026") or "A"
-    m = fm[fm.season == fs].set_index("method")
-    best, naive = m.loc["Last season (2025)"], m.loc["Every district typical"]
-    fcols = st.columns(4)
-    fcols[0].metric("Cells forecast", int(best.cells), help="District × crop pairs with official yields in 2024, "
-                                                            "2025 and 2026 for this season")
-    fcols[1].metric("Average error", f"{best.mae_pct:.1f}%",
-                    help=f"Mean absolute error in log RYI ×100. Assuming every district is typical: {naive.mae_pct:.1f}%")
-    fcols[2].metric("Bad cells caught", f"{int(best.caught)} of {int(best.bad_cells)}",
-                    help="Cells ≥20% below the median district in 2026, flagged in advance (forecast ≤ 0.85)")
-    fcols[3].metric("Precision of flags", f"{best.caught / max(best.flagged, 1):.0%}",
-                    help=f"{int(best.flagged)} cells flagged; share that really came in ≥20% below the median")
-    g = fc[fc.season == fs]
-    figf = go.Figure()
+    cells = pd.read_csv(DATA / "out_official_backtest_cells.csv")
+    pick = st.segmented_control("Season to plot", sorted((cells.year.astype(str) + cells.season).unique()),
+                                default=f"{last.year.max()}A", key="bt_pick") or f"{last.year.max()}A"
+    g = cells[(cells.year == int(pick[:4])) & (cells.season == pick[-1])]
+    figc = go.Figure()
     for bad, (name, color) in {False: ("Other cells", "#1F8A43"), True: ("Ended ≥20% below median", "#E0A100")}.items():
-        c = g[(g.ryi_2026 <= 0.8) == bad]
-        figf.add_scatter(x=100 * (c.ryi_2025 - 1), y=100 * (c.ryi_2026 - 1), mode="markers", name=name,
+        cc = g[(g.ryi_now <= 0.8) == bad]
+        figc.add_scatter(x=100 * (cc.ryi_prev - 1), y=100 * (cc.ryi_now - 1), mode="markers", name=name,
                          marker=dict(size=9 if bad else 7, color=color, opacity=.9 if bad else .55,
                                      line=dict(width=1.5, color="white")),
-                         customdata=c[["DistrictName", "crop"]],
+                         customdata=cc[["DistrictName", "crop"]],
                          hovertemplate="<b>%{customdata[0]}</b> · %{customdata[1]}"
-                                       "<br>2025: %{x:+.0f}%<br>2026: %{y:+.0f}%<extra></extra>")
-    figf.add_hline(y=-20, line=dict(color="#E0A100", width=1, dash="dash"))
-    figf.add_vline(x=-15, line=dict(color="#5E6E65", width=1, dash="dash"))
-    lim = [-80, 160]
-    figf.add_shape(type="line", x0=lim[0], y0=lim[0], x1=lim[1], y1=lim[1],
-                   line=dict(color="rgba(128,128,128,0.45)", dash="dot"))
-    figf.update_layout(height=420, margin=dict(l=0, r=0, t=30, b=0), legend=dict(orientation="h", y=1.1, x=0),
-                       xaxis=dict(title="2025, same season: % vs median district", ticksuffix="%",
+                                       "<br>Year before: %{x:+.0f}%<br>Actual: %{y:+.0f}%<extra></extra>")
+    figc.add_hline(y=-20, line=dict(color="#E0A100", width=1, dash="dash"))
+    figc.add_vline(x=-15, line=dict(color="#5E6E65", width=1, dash="dash"))
+    figc.add_shape(type="line", x0=-80, y0=-80, x1=160, y1=160, line=dict(color="rgba(128,128,128,0.45)", dash="dot"))
+    figc.update_layout(height=420, margin=dict(l=0, r=0, t=30, b=0), legend=dict(orientation="h", y=1.1, x=0),
+                       xaxis=dict(title="Same season, year before: % vs median district", ticksuffix="%",
                                   gridcolor="rgba(128,128,128,0.15)", zeroline=False),
-                       yaxis=dict(title="2026 official: % vs median district", ticksuffix="%",
+                       yaxis=dict(title=f"Official {pick}: % vs median district", ticksuffix="%",
                                   gridcolor="rgba(128,128,128,0.15)", zeroline=False),
                        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
-    f1, f2 = st.columns([2.2, 1])
-    f1.plotly_chart(figf, width="stretch", config={"displayModeBar": False})
-    f2.dataframe(m.reset_index().assign(**{"Bad cells caught": lambda d: d.caught.astype(str) + " of " +
-                                           d.bad_cells.astype(str)})
-                 [["method", "mae_pct", "Bad cells caught"]]
-                 .rename(columns={"method": "Method", "mae_pct": "Error (%)"}), hide_index=True, width="stretch")
-    f2.caption("Dots on the diagonal kept their 2025 position. Left of the grey line = flagged in advance; gold = ended ≥20% below the median district.")
-    st.markdown(f"**Reading it:** a district's position against the median district barely changes from one year to "
-                f"the next in NISR's official tables, so last season's official result predicts 2026 with an average "
-                f"error of **{best.mae_pct:.1f}%** (vs {naive.mae_pct:.1f}% when every district is assumed typical) and "
-                f"flags **{int(best.caught)} of {int(best.bad_cells)}** of the cells that ended ≥20% below the median.")
-    st.caption("Caveat: NISR's district figures are survey estimates; part of this stability may come from how they "
-               "are estimated. Field reports remain the only way to see a sudden change within a season.")
+    st.plotly_chart(figc, width="stretch", config={"displayModeBar": False})
+    st.caption("Dots on the diagonal kept their position. Left of the grey line = flagged in advance; "
+               "gold = ended ≥20% below the median district.")
 
-with tabs[4]:
-    section("Do bad yield years match dry seasons?")
-    rv = load_rain_vs_ryi()
+with tabs[2]:
+    section("Does rainfall explain the cells that moved?")
+    rv = load_rain_vs_official()
     if rv.empty:
-        st.info("No rainfall data yet: run `python fetch_rainfall.py` to build it from CHIRPS.")
+        st.info("No rainfall data yet: run `python fetch_rainfall.py`, then `python prep_official.py`.")
     else:
-        st.caption("CHIRPS seasonal rainfall per district vs yield, both relative to the typical district.",
-                   help="A = Sep–Dec of the previous year, B = Mar–May, C = Jun–Aug. Cells with 3+ years of SAS "
-                        "2020–2024. A countrywide drought cancels out of both sides.")
-        x = 100 * (np.exp(rv.rain_rel) - 1)  # % wetter/drier than the typical district's anomaly
-        y = 100 * (np.exp(rv.ryi_dev) - 1)   # % above/below this cell's own average RYI
+        covered = ", ".join(sorted((rv.Year.astype(str) + rv.Season.str[-1]).unique()))
+        st.caption("CHIRPS seasonal rainfall per district vs the change in official RYI from the same season a year "
+                   f"earlier, both relative to the typical district. Seasons with rainfall data: {covered} "
+                   "(the stored rainfall skips 2025A, 2025B and 2026A; re-run fetch_rainfall.py with more years "
+                   "to add them).",
+                   help="A = Sep–Dec of the previous year, B = Mar–May. Rainfall is log(rain / district average) "
+                        "minus the median across districts that season, so a countrywide drought cancels out, "
+                        "as it does in RYI.")
+        x = 100 * (np.exp(rv.rain_rel) - 1)
+        y = 100 * (np.exp(rv.ryi_dev) - 1)
         r_all = rv.ryi_dev.corr(rv.rain_rel)
         rho = rv.ryi_dev.rank().corr(rv.rain_rel.rank())  # Spearman = Pearson on ranks (no scipy needed)
-        dry = x <= -10
-        bad = y <= -20
+        dry, drop = x <= -10, y <= -20
         c = st.columns(4)
-        c[0].metric("Correlation (Pearson r)", f"{r_all:+.2f}", help=f"Spearman ρ = {rho:+.2f}. n = {len(rv)} cell-years.")
-        c[1].metric("Cell-years", len(rv))
-        c[2].metric("Bad years in relatively dry seasons", f"{bad[dry].mean():.0%}",
-                    help="Share of cell-years ≥20% below the cell's own average RYI, when the district was ≥10% "
-                         "drier than the typical district that season")
-        c[3].metric("Bad years in other seasons", f"{bad[~dry].mean():.0%}")
-
+        c[0].metric("Correlation (Pearson r)", f"{r_all:+.2f}", help=f"Spearman ρ = {rho:+.2f}. n = {len(rv)}.")
+        c[1].metric("Cell-seasons", f"{len(rv):,}")
+        c[2].metric("Dropped ≥20% in relatively dry seasons", f"{drop[dry].mean():.0%}",
+                    help="Share of cells whose RYI fell ≥20% from the year before, when the district was ≥10% drier "
+                         "than the typical district that season")
+        c[3].metric("Dropped ≥20% in other seasons", f"{drop[~dry].mean():.0%}")
         fig = go.Figure(go.Scattergl(
             x=x, y=y, mode="markers",
-            marker=dict(size=8, color="#2a78d6", opacity=0.55, line=dict(width=1, color="rgba(255,255,255,0.8)")),
+            marker=dict(size=7, color="#2a78d6", opacity=0.5, line=dict(width=1, color="rgba(255,255,255,0.8)")),
             customdata=rv[["DistrictName", "CropName", "Season", "Year"]],
             hovertemplate="<b>%{customdata[0]}</b> · %{customdata[1]}<br>%{customdata[2]} %{customdata[3]}"
-                          "<br>Rain vs typical district: %{x:+.0f}%<br>Yield vs own average: %{y:+.0f}%<extra></extra>"))
+                          "<br>Rain vs typical district: %{x:+.0f}%<br>RYI change: %{y:+.0f}%<extra></extra>"))
         fig.add_hline(y=0, line_color="rgba(128,128,128,0.5)", line_width=1)
         fig.add_vline(x=0, line_color="rgba(128,128,128,0.5)", line_width=1)
         fig.update_layout(height=380, margin=dict(l=0, r=0, t=10, b=0), showlegend=False,
                           xaxis=dict(title="Season rainfall vs typical district (relative %)", ticksuffix="%",
                                      gridcolor="rgba(128,128,128,0.15)", zeroline=False),
-                          yaxis=dict(title="RYI vs the cell's own average", ticksuffix="%",
+                          yaxis=dict(title="Change in RYI from the year before", ticksuffix="%",
                                      gridcolor="rgba(128,128,128,0.15)", zeroline=False),
                           plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
         st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-
-        by_crop = (rv.groupby("CropName")
-                     .apply(lambda g: pd.Series({"Pearson r": round(g.ryi_dev.corr(g.rain_rel), 2),
-                                                 "Cell-years": len(g)}), include_groups=False)
-                     .reset_index().rename(columns={"CropName": "Crop"}))
-        by_season = (rv.groupby("Season")
-                       .apply(lambda g: pd.Series({"Pearson r": round(g.ryi_dev.corr(g.rain_rel), 2),
-                                                   "Cell-years": len(g)}), include_groups=False)
-                       .reset_index())
+        by = lambda col: (rv.groupby(col).apply(lambda g: pd.Series({"Pearson r": round(g.ryi_dev.corr(g.rain_rel), 2),
+                                                                      "Cell-seasons": len(g)}), include_groups=False)
+                            .reset_index())
         t1, t2 = st.columns(2)
-        t1.dataframe(by_crop, hide_index=True, width="stretch")
-        t2.dataframe(by_season, hide_index=True, width="stretch")
+        t1.dataframe(by("CropName").rename(columns={"CropName": "Crop"}), hide_index=True, width="stretch")
+        t2.dataframe(by("Season"), hide_index=True, width="stretch")
         strength = ("essentially no" if abs(r_all) < 0.1 else "a weak" if abs(r_all) < 0.3
                     else "a moderate" if abs(r_all) < 0.5 else "a strong")
         st.markdown(f"**Reading it:** there is **{strength} link** (r = {r_all:+.2f}) between a district being "
-                    "relatively dry in a season and that season being a bad year for it. A positive r would mean drier "
-                    "seasons go with worse yields. In 2020–2024 rainfall differences between districts did not explain "
-                    "which district-crop cells had bad years: soils, pests, inputs and survey noise matter more at "
-                    "this scale. That is why Imboni uses rainfall only as one trigger for the irrigation "
-                    "recommendation and never to move the yield estimate.")
-        with st.expander("Table view"):
-            st.dataframe(rv.assign(**{"Rain vs typical %": x.round(0), "Yield vs own avg %": y.round(0)})
-                         [["DistrictName", "CropName", "Season", "Year", "rain_mm", "Rain vs typical %",
-                           "Yield vs own avg %"]], hide_index=True, width="stretch")
+                    "relatively dry and its yield falling against the typical district that season. Rainfall "
+                    "differences between districts don't explain which cells moved: soils, pests, inputs and survey "
+                    "noise matter more at this scale. So Imboni uses rainfall only as one trigger for the irrigation "
+                    "recommendation and never to move the yield estimate. The field-report weights for rain "
+                    "problems are therefore an assumption too.")
 
-with tabs[5]:
+with tabs[3]:
+    section("The cleaned 2020–2024 files")
+    st.caption("The first version of Imboni was built on cleaned, aggregated SAS files. They are now used only for "
+               "tomatoes, which NISR doesn't publish separately.")
+    cv = pd.read_csv(DATA / "out_cleaned_vs_official.csv")
+    st.markdown("**Same years, same districts: do the cleaned files agree with the official tables?** "
+                "Rank correlation of district positions (RYI), 2022–2024, Seasons A and B together.")
+    c1, c2 = st.columns([1.2, 1])
+    c1.dataframe(cv.pivot(index="CropName", columns="Year", values="rank_r").round(2).reset_index()
+                 .rename(columns={"CropName": "Crop"}), hide_index=True, width="stretch")
+    c2.markdown("Agreement is weak to moderate for beans, maize and Irish potatoes, and **none for cassava**. Median "
+                "yields are also in different units (e.g. beans ≈ 6,200 vs 700 kg/ha). The official tables add up "
+                "exactly to NISR's national totals, so Imboni treats them as the reference.")
+    with st.expander("Table view (out_cleaned_vs_official.csv)"):
+        st.dataframe(cv, hide_index=True, width="stretch")
+
+    bt = load_backtest()
+    flags = bt["low_district_flags"]
+    st.markdown("**The cleaned-data baseline, for reference**")
+    c = st.columns(4)
+    c[0].metric("2024 backtest: error reduction", f"{bt['error_reduction_pct']}%",
+                help=f"vs every district typical, mean abs. error in log RYI: {bt['mae_log_model']} vs "
+                     f"{bt['mae_log_naive']}")
+    c[1].metric("2024 backtest: recall", f"{flags['recall']:.0%}")
+    for i, vs in enumerate(["2026A", "2026B"]):
+        v = load_validation(vs)
+        err = 100 * np.abs(np.log(v.predicted_RYI) - np.log(v.official_RYI)).mean()
+        c[2 + i].metric(f"Official {vs}: bad cells caught", f"{int((v.actual_low & v.flagged).sum())} of "
+                                                            f"{int(v.actual_low.sum())}",
+                        help=f"Average error {err:.1f}% on {len(v)} cells (beans, cassava, Irish potatoes, maize)")
+    st.caption("On official 2026 results this baseline had a larger error than assuming every district is typical, "
+               "which is why the alerts no longer use it for the crops NISR publishes.")
+
+with tabs[4]:
     section("Data limitations")
     b = load_baseline()
     st.markdown(f"""
-    - **SAS yield units are inconsistent across years** (e.g. Irish potato values drop roughly 20–30× from 2022 onward).
-      Only within-year relative comparisons (RYI) are used; kg/ha are never shown.
-    - **Short history:** 2020–2024 at most, and only 3 years for Maize and Tomatoes.
-      {int((b.n_years < 3).sum())} of {len(b)} baseline cells have fewer than 3 years.
-    - **Coverage gaps:** Season C has few crops; some district × crop cells are missing or excluded for having
-      < 10 observations. These appear grey on the map.
-    - **Report weights are expert judgement, not estimated.** Condition, pest and rain effects (±0.10 log-RYI per step)
-      have not been calibrated against outcomes: there are no historical field reports to calibrate on.
+    - **Official district figures are survey estimates.** About 25–68 sampled segments per district; yields come from
+      the production farmers report, not crop cuts. Small districts and minor crops are the least precise.
+    - **The baseline can't see a new shock.** It assumes a district repeats its last official position. Only field
+      reports can show a season breaking the pattern.
+    - **Seasons A and B only.** Season C (Jul–Aug, swamps and volcanic highlands) is published only in NISR's annual
+      tables, for a few crops, and is left out.
+    - **Tomatoes** rely on the cleaned 2020–2024 files ({int((b.CropName == 'Tomatoes').sum())} district-season cells),
+      which don't match the official tables for the crops we could check. Treat tomato alerts as indicative only.
+    - **Report weights are assumptions**, not estimated: there are no past field reports to fit them on.
     - **Simulated reports** are clearly labelled demo data and must not be interpreted as observations.
-    - **EICV** consumption uses the 2020 round only; duplicate district rows in the source are summed.
+    - **EICV** consumption uses the 2020 round and covers only beans, cassava, Irish potatoes, maize and tomatoes.
+      Food dependence for banana, paddy rice and sweet potato is unknown and set to neutral.
     - **Establishment Census** gives counts of cooperatives and food processors per district, not names or contacts.
       The cleaned file labels district code 28 as "Unknown District"; it is mapped to Kamonyi (NISR code 28).
     - **Storage:** reports are kept in SQLite. On Streamlit Community Cloud the disk resets when the app restarts,
-      so production use needs a hosted database.
+      so real reports are lost unless downloaded; production use needs a hosted database.
     - **Rainfall:** CHIRPS v2.0 is satellite + station rainfall at ~5 km; small districts (e.g. Nyarugenge) cover only
-      a few pixels. The latest season can be partial (only the months published so far), and is then compared with
-      the average for the same months.
+      a few pixels. The latest season can be partial (only the months published so far).
     - **Boundaries:** geoBoundaries RWA ADM2 (2012 boundaries, CC BY 4.0).
     """)

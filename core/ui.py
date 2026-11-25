@@ -546,6 +546,9 @@ LUCIDE = {
     "calendar": "calendar-days", "database": "database", "clock": "clock", "languages": "languages",
     "offline": "wifi-off", "layers": "layers", "filters": "sliders-horizontal", "dashboard": "layout-dashboard", "target": "target", "scale": "scale",
 }
+# Icon per crop (form, district scorecard); several crops share the closest Lucide icon
+CROP_IC = {"Banana": "eco", "Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", "Maize": "grass",
+           "Paddy rice": "grass", "Sweet potato": "nutrition", "Tomatoes": "local_florist"}
 
 
 @functools.cache

@@ -9,8 +9,10 @@ import streamlit as st
 
 DATA = Path(__file__).resolve().parent.parent / "app_data"  # small processed files only; raw sources live in data/
 
-CROPS = ["Beans", "Cassava", "Irish potatoes", "Maize", "Tomatoes"]
-SEASONS = {"SeasonA": "Season A (Sep–Feb)", "SeasonB": "Season B (Mar–Jun)", "SeasonC": "Season C (Jul–Aug)"}
+# Seven priority crops from NISR's official tables, plus tomatoes (cleaned 2020-2024 files only, not validated)
+CROPS = ["Banana", "Beans", "Cassava", "Irish potatoes", "Maize", "Paddy rice", "Sweet potato", "Tomatoes"]
+# Season C (Jul-Aug: swamps and volcanic highlands, few crops) is left out
+SEASONS = {"SeasonA": "Season A (Sep–Feb)", "SeasonB": "Season B (Mar–Jun)"}
 
 PROVINCES = {
     "Kigali City": ["Gasabo", "Kicukiro", "Nyarugenge"],
@@ -24,11 +26,10 @@ DISTRICTS = sorted(DISTRICT_PROVINCE)
 
 
 def current_season(today: date | None = None) -> str:
-    """Rwanda's agricultural calendar: A = Sep–Feb, B = Mar–Jun, C = Jul–Aug."""
+    """Rwanda's agricultural calendar: A = Sep–Feb, B = Mar–Jun. Season C (Jul–Aug) is not covered, so those
+    months look ahead to the coming Season A."""
     m = (today or date.today()).month
-    if m >= 9 or m <= 2:
-        return "SeasonA"
-    return "SeasonB" if m <= 6 else "SeasonC"
+    return "SeasonB" if 3 <= m <= 6 else "SeasonA"
 
 
 def pct_vs_typical(ryi):
@@ -45,7 +46,20 @@ def fmt_pct(ryi) -> str:
 
 @st.cache_data
 def load_baseline() -> pd.DataFrame:
+    """2020-2024 baseline from the cleaned SAS files (build_baseline.py). Used only for tomatoes."""
     return pd.read_csv(DATA / "out_district_baseline.csv")
+
+
+@st.cache_data
+def load_official_baseline() -> pd.DataFrame:
+    """Each district x crop's latest official NISR result for the season (prep_official.py)."""
+    return pd.read_csv(DATA / "out_official_baseline.csv")
+
+
+@st.cache_data
+def load_official_backtest() -> pd.DataFrame:
+    """Predict each season 2023-2026 from earlier official tables: error and bad cells per method (prep_official.py)."""
+    return pd.read_csv(DATA / "out_official_backtest.csv")
 
 
 @st.cache_data
@@ -64,12 +78,6 @@ def load_consumption() -> pd.DataFrame:
 
 
 @st.cache_data
-def load_official_2026() -> pd.DataFrame:
-    """NISR SAS 2026 Season A Table 13: official yield (kg/ha) and RYI per district & crop (prep_data.py)."""
-    return pd.read_csv(DATA / "official_yield_2026A.csv")
-
-
-@st.cache_data
 def load_irrigation() -> pd.DataFrame:
     """NISR SAS 2026 Season A Table 32: % of irrigated plots using modern vs traditional methods."""
     return pd.read_csv(DATA / "irrigation_2026A.csv")
@@ -77,7 +85,7 @@ def load_irrigation() -> pd.DataFrame:
 
 @st.cache_data
 def load_validation(season: str = "2026A") -> pd.DataFrame:
-    """Historical Season A baseline vs official 2026 Season A RYI (prep_data.py)."""
+    """Cleaned-data 2020-2024 baseline vs official 2026 RYI (prep_official.py)."""
     return pd.read_csv(DATA / f"out_validation_{season}.csv")
 
 
@@ -89,8 +97,9 @@ def load_rainfall() -> pd.DataFrame:
 
 
 @st.cache_data
-def load_rain_vs_ryi() -> pd.DataFrame:
-    path = DATA / "out_rain_vs_ryi.csv"
+def load_rain_vs_official() -> pd.DataFrame:
+    """CHIRPS rainfall vs the change in official RYI from the previous year (prep_official.py)."""
+    path = DATA / "out_rain_vs_official.csv"
     return pd.read_csv(path) if path.exists() else pd.DataFrame()
 
 

@@ -1,6 +1,6 @@
-"""Imboni - CHIRPS seasonal rainfall per district, and its link with relative yields.
+"""Imboni - CHIRPS seasonal rainfall per district.
 
-Run after build_baseline.py (needs data/out_sas_clean_ryi.csv):
+Run (then python prep_official.py, which compares this rainfall with the official yields):
     pip install -r requirements-data.txt
     python fetch_rainfall.py
 
@@ -12,7 +12,6 @@ some of its months are published yet (marked partial; compared with the same mon
 
 Outputs (small, committed):
     app_data/district_rainfall.csv   district x season x year: rain_mm, avg_mm, rain_anom_pct, partial
-    app_data/out_rain_vs_ryi.csv     SAS district x crop x season x year logRYI joined with that season's rainfall
 """
 import re
 import time
@@ -114,22 +113,5 @@ rain["rain_anom_pct"] = 100 * (rain.rain_mm / rain.avg_mm - 1)
 rain[["rain_mm", "avg_mm", "rain_anom_pct"]] = rain[["rain_mm", "avg_mm", "rain_anom_pct"]].round(1)
 rain.sort_values(["Season", "Year", "DistrictName"]).to_csv("app_data/district_rainfall.csv", index=False)
 
-# ---------- Join with SAS relative yields (history only, reliable cells only) ----------
-# RYI is relative to the median district that year, so a countrywide drought cancels out of it. Rainfall is
-# made relative the same way: log(rain / district avg) minus the median of that across districts that season.
-hist = rain[rain.Year.isin(HISTORY)].copy()
-hist["log_rain_anom"] = np.log(hist.rain_mm / hist.avg_mm)
-hist["rain_rel"] = hist.log_rain_anom - hist.groupby(["Season", "Year"]).log_rain_anom.transform("median")
-
-sas = pd.read_csv("data/out_sas_clean_ryi.csv")
-sas = sas[~sas.LowConfidence & sas.Year.isin(HISTORY)]
-j = sas.merge(hist, on=["DistrictName", "Season", "Year"], how="inner")
-# Deviation from the cell's own mean: "was this a bad year for this district, crop and season?"
-j["ryi_dev"] = j.logRYI - j.groupby(["DistrictName", "CropName", "Season"]).logRYI.transform("mean")
-j = j[j.groupby(["DistrictName", "CropName", "Season"]).Year.transform("nunique") >= 3]
-out = j[["DistrictName", "CropName", "Season", "Year", "logRYI", "ryi_dev", "rain_mm", "avg_mm", "rain_anom_pct",
-         "rain_rel"]].round(4)
-out.to_csv("app_data/out_rain_vs_ryi.csv", index=False)
-
 print(f"\nRainfall: {len(rain)} district-season rows -> app_data/district_rainfall.csv")
-print(f"Rain vs RYI: {len(out)} rows, corr(ryi_dev, rain_rel) = {out.ryi_dev.corr(out.rain_rel):.3f}")
+print("Run python prep_official.py next: it compares this rainfall with the official yields.")

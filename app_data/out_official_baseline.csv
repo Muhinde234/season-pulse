@@ -1,0 +1,401 @@
+Season,DistrictName,CropName,baseline_RYI,source_season,prev_RYI,n_years,persistently_low
+SeasonA,Bugesera,Banana,1.07,2026A,1.102,5,False
+SeasonA,Burera,Banana,0.935,2026A,0.91,5,False
+SeasonA,Gakenke,Banana,1.018,2026A,1.013,5,False
+SeasonA,Gasabo,Banana,0.989,2026A,0.973,5,False
+SeasonA,Gatsibo,Banana,1.23,2026A,1.22,5,False
+SeasonA,Gicumbi,Banana,0.996,2026A,1.007,5,False
+SeasonA,Gisagara,Banana,0.829,2026A,0.825,5,False
+SeasonA,Huye,Banana,1.012,2026A,0.987,5,False
+SeasonA,Kamonyi,Banana,0.936,2026A,0.933,5,False
+SeasonA,Karongi,Banana,1.045,2026A,1.051,5,False
+SeasonA,Kayonza,Banana,1.247,2026A,1.275,5,False
+SeasonA,Kirehe,Banana,1.288,2026A,1.247,5,False
+SeasonA,Muhanga,Banana,0.985,2026A,0.99,5,False
+SeasonA,Musanze,Banana,0.972,2026A,0.964,5,False
+SeasonA,Ngoma,Banana,1.231,2026A,1.195,5,False
+SeasonA,Ngororero,Banana,0.763,2026A,0.743,5,True
+SeasonA,Nyabihu,Banana,0.832,2026A,0.82,5,False
+SeasonA,Nyagatare,Banana,1.274,2026A,1.285,5,False
+SeasonA,Nyamagabe,Banana,0.909,2026A,0.882,5,False
+SeasonA,Nyamasheke,Banana,0.835,2026A,0.855,5,False
+SeasonA,Nyanza,Banana,0.815,2026A,0.797,5,False
+SeasonA,Nyarugenge,Banana,1.062,2026A,1.03,5,False
+SeasonA,Nyaruguru,Banana,1.067,2026A,1.058,5,False
+SeasonA,Rubavu,Banana,0.982,2026A,0.993,5,False
+SeasonA,Ruhango,Banana,0.894,2026A,0.914,5,False
+SeasonA,Rulindo,Banana,0.939,2026A,0.914,5,False
+SeasonA,Rusizi,Banana,1.004,2026A,1.021,5,False
+SeasonA,Rutsiro,Banana,1.032,2026A,1.042,5,False
+SeasonA,Rwamagana,Banana,1.291,2026A,1.28,5,False
+SeasonA,Bugesera,Beans,0.637,2026A,0.684,5,True
+SeasonA,Burera,Beans,1.352,2026A,1.385,5,False
+SeasonA,Gakenke,Beans,1.093,2026A,1.122,5,False
+SeasonA,Gasabo,Beans,0.908,2026A,0.926,5,False
+SeasonA,Gatsibo,Beans,1.058,2026A,1.054,5,False
+SeasonA,Gicumbi,Beans,1.179,2026A,1.122,5,False
+SeasonA,Gisagara,Beans,0.895,2026A,0.918,5,False
+SeasonA,Huye,Beans,0.9,2026A,0.889,5,False
+SeasonA,Kamonyi,Beans,0.649,2026A,0.656,5,True
+SeasonA,Karongi,Beans,1.361,2026A,1.368,5,False
+SeasonA,Kayonza,Beans,0.9,2026A,0.993,5,False
+SeasonA,Kicukiro,Beans,0.793,2026A,0.78,5,False
+SeasonA,Kirehe,Beans,0.881,2026A,0.979,5,False
+SeasonA,Muhanga,Beans,0.797,2026A,0.759,5,True
+SeasonA,Musanze,Beans,1.464,2026A,1.613,5,False
+SeasonA,Ngoma,Beans,0.943,2026A,1.007,5,False
+SeasonA,Ngororero,Beans,1.257,2026A,1.248,5,False
+SeasonA,Nyabihu,Beans,1.464,2026A,1.493,5,False
+SeasonA,Nyagatare,Beans,1.155,2026A,1.129,5,False
+SeasonA,Nyamagabe,Beans,1.007,2026A,0.943,5,False
+SeasonA,Nyamasheke,Beans,1.091,2026A,1.117,5,False
+SeasonA,Nyanza,Beans,0.854,2026A,0.876,5,False
+SeasonA,Nyarugenge,Beans,0.759,2026A,0.809,5,False
+SeasonA,Nyaruguru,Beans,1.005,2026A,0.989,5,False
+SeasonA,Rubavu,Beans,0.995,2026A,1.028,5,False
+SeasonA,Ruhango,Beans,0.694,2026A,0.692,5,True
+SeasonA,Rulindo,Beans,1.063,2026A,1.046,5,False
+SeasonA,Rusizi,Beans,1.057,2026A,1.135,5,False
+SeasonA,Rutsiro,Beans,1.193,2026A,1.171,5,False
+SeasonA,Rwamagana,Beans,0.888,2026A,0.911,5,False
+SeasonA,Bugesera,Cassava,1.006,2026A,1.0,5,False
+SeasonA,Burera,Cassava,0.982,2026A,0.988,5,False
+SeasonA,Gakenke,Cassava,0.975,2026A,0.997,5,False
+SeasonA,Gasabo,Cassava,0.945,2026A,0.973,5,False
+SeasonA,Gatsibo,Cassava,1.011,2026A,0.988,5,False
+SeasonA,Gicumbi,Cassava,0.999,2026A,1.062,5,False
+SeasonA,Gisagara,Cassava,1.065,2026A,1.039,5,False
+SeasonA,Huye,Cassava,1.145,2026A,1.122,5,False
+SeasonA,Kamonyi,Cassava,1.079,2026A,1.127,5,False
+SeasonA,Karongi,Cassava,0.634,2026A,0.621,5,True
+SeasonA,Kayonza,Cassava,0.972,2026A,0.918,5,False
+SeasonA,Kicukiro,Cassava,0.786,2026A,0.787,5,False
+SeasonA,Kirehe,Cassava,1.165,2026A,1.146,5,False
+SeasonA,Muhanga,Cassava,1.282,2026A,1.213,5,False
+SeasonA,Musanze,Cassava,0.421,2026A,0.401,5,True
+SeasonA,Ngoma,Cassava,1.041,2026A,0.972,5,False
+SeasonA,Ngororero,Cassava,1.045,2026A,1.055,5,False
+SeasonA,Nyabihu,Cassava,0.72,2026A,0.684,5,True
+SeasonA,Nyagatare,Cassava,1.0,2026A,1.014,5,False
+SeasonA,Nyamagabe,Cassava,0.992,2026A,1.064,5,False
+SeasonA,Nyamasheke,Cassava,0.96,2026A,0.909,5,False
+SeasonA,Nyanza,Cassava,1.091,2026A,1.096,5,False
+SeasonA,Nyarugenge,Cassava,0.93,2026A,0.891,5,False
+SeasonA,Nyaruguru,Cassava,0.985,2026A,0.972,5,False
+SeasonA,Ruhango,Cassava,1.249,2026A,1.224,5,False
+SeasonA,Rulindo,Cassava,0.967,2026A,0.906,5,False
+SeasonA,Rusizi,Cassava,1.025,2026A,1.082,5,False
+SeasonA,Rutsiro,Cassava,1.175,2026A,1.118,5,False
+SeasonA,Rwamagana,Cassava,1.074,2026A,1.019,5,False
+SeasonA,Bugesera,Irish potatoes,0.552,2026A,0.543,5,True
+SeasonA,Burera,Irish potatoes,1.973,2026A,1.891,5,False
+SeasonA,Gakenke,Irish potatoes,1.114,2026A,1.093,5,False
+SeasonA,Gasabo,Irish potatoes,1.057,2026A,1.023,5,False
+SeasonA,Gatsibo,Irish potatoes,0.97,2026A,0.971,5,False
+SeasonA,Gicumbi,Irish potatoes,1.723,2026A,1.623,5,False
+SeasonA,Gisagara,Irish potatoes,0.544,2026A,0.516,5,True
+SeasonA,Huye,Irish potatoes,0.779,2026A,0.761,5,True
+SeasonA,Kamonyi,Irish potatoes,0.749,2026A,0.716,5,True
+SeasonA,Karongi,Irish potatoes,1.22,2026A,1.213,5,False
+SeasonA,Kayonza,Irish potatoes,0.625,2026A,0.593,5,True
+SeasonA,Kirehe,Irish potatoes,0.916,2026A,0.868,5,False
+SeasonA,Muhanga,Irish potatoes,0.697,2026A,0.68,5,True
+SeasonA,Musanze,Irish potatoes,2.278,2026A,2.191,5,False
+SeasonA,Ngoma,Irish potatoes,0.781,2026A,0.784,5,True
+SeasonA,Ngororero,Irish potatoes,1.0,2026A,1.009,5,False
+SeasonA,Nyabihu,Irish potatoes,2.329,2026A,2.271,5,False
+SeasonA,Nyagatare,Irish potatoes,0.981,2026A,0.984,5,False
+SeasonA,Nyamagabe,Irish potatoes,1.347,2026A,1.324,5,False
+SeasonA,Nyamasheke,Irish potatoes,0.808,2026A,0.792,4,False
+SeasonA,Nyanza,Irish potatoes,1.032,2026A,1.0,5,False
+SeasonA,Nyarugenge,Irish potatoes,0.468,2026A,0.451,5,True
+SeasonA,Nyaruguru,Irish potatoes,1.089,2026A,1.025,5,False
+SeasonA,Rubavu,Irish potatoes,2.502,2026A,2.415,5,False
+SeasonA,Ruhango,Irish potatoes,0.579,2026A,0.598,5,True
+SeasonA,Rulindo,Irish potatoes,1.149,2026A,1.087,5,False
+SeasonA,Rusizi,Irish potatoes,0.992,2026A,0.997,5,False
+SeasonA,Rutsiro,Irish potatoes,1.406,2026A,1.352,5,False
+SeasonA,Rwamagana,Irish potatoes,1.105,2026A,1.138,5,False
+SeasonA,Bugesera,Maize,1.044,2026A,0.936,5,False
+SeasonA,Burera,Maize,1.151,2026A,1.218,5,False
+SeasonA,Gakenke,Maize,0.957,2026A,0.962,5,False
+SeasonA,Gasabo,Maize,0.878,2026A,0.919,5,False
+SeasonA,Gatsibo,Maize,1.07,2026A,1.07,5,False
+SeasonA,Gicumbi,Maize,0.81,2026A,0.86,5,False
+SeasonA,Gisagara,Maize,1.089,2026A,1.123,5,False
+SeasonA,Huye,Maize,0.979,2026A,1.065,5,False
+SeasonA,Kamonyi,Maize,1.05,2026A,0.989,5,False
+SeasonA,Karongi,Maize,0.855,2026A,0.863,5,False
+SeasonA,Kayonza,Maize,1.076,2026A,1.118,5,False
+SeasonA,Kicukiro,Maize,0.908,2026A,0.905,5,False
+SeasonA,Kirehe,Maize,1.417,2026A,1.493,5,False
+SeasonA,Muhanga,Maize,1.172,2026A,1.189,5,False
+SeasonA,Musanze,Maize,1.087,2026A,1.107,5,False
+SeasonA,Ngoma,Maize,1.073,2026A,1.122,5,False
+SeasonA,Ngororero,Maize,0.72,2026A,0.785,5,False
+SeasonA,Nyabihu,Maize,0.923,2026A,0.983,5,False
+SeasonA,Nyagatare,Maize,1.626,2026A,1.646,5,False
+SeasonA,Nyamagabe,Maize,0.883,2026A,0.91,5,False
+SeasonA,Nyamasheke,Maize,0.924,2026A,0.974,5,False
+SeasonA,Nyanza,Maize,1.012,2026A,1.085,5,False
+SeasonA,Nyarugenge,Maize,0.732,2026A,0.777,5,True
+SeasonA,Nyaruguru,Maize,1.06,2026A,1.068,5,False
+SeasonA,Rubavu,Maize,0.988,2026A,1.011,5,False
+SeasonA,Ruhango,Maize,0.779,2026A,0.815,5,False
+SeasonA,Rulindo,Maize,1.181,2026A,1.14,5,False
+SeasonA,Rusizi,Maize,1.073,2026A,1.149,5,False
+SeasonA,Rutsiro,Maize,0.818,2026A,0.855,5,False
+SeasonA,Rwamagana,Maize,0.938,2026A,0.988,5,False
+SeasonA,Bugesera,Paddy rice,1.262,2026A,1.295,5,False
+SeasonA,Gakenke,Paddy rice,0.808,2026A,0.723,5,False
+SeasonA,Gasabo,Paddy rice,1.0,2026A,1.008,5,False
+SeasonA,Gatsibo,Paddy rice,1.046,2026A,1.047,5,False
+SeasonA,Gisagara,Paddy rice,0.987,2026A,0.762,5,False
+SeasonA,Huye,Paddy rice,0.982,2026A,1.006,5,False
+SeasonA,Kamonyi,Paddy rice,1.212,2026A,1.271,5,False
+SeasonA,Kayonza,Paddy rice,0.82,2026A,0.8,5,False
+SeasonA,Kicukiro,Paddy rice,1.114,2026A,1.108,5,False
+SeasonA,Kirehe,Paddy rice,1.257,2026A,0.991,5,False
+SeasonA,Muhanga,Paddy rice,0.918,2026A,0.846,5,False
+SeasonA,Ngoma,Paddy rice,1.095,2026A,0.981,5,False
+SeasonA,Nyagatare,Paddy rice,1.106,2026A,1.024,5,False
+SeasonA,Nyamagabe,Paddy rice,0.977,2026A,0.953,5,False
+SeasonA,Nyamasheke,Paddy rice,1.165,2026A,1.0,5,False
+SeasonA,Nyanza,Paddy rice,0.992,2026A,1.027,5,False
+SeasonA,Ruhango,Paddy rice,1.26,2026A,1.094,5,False
+SeasonA,Rulindo,Paddy rice,0.908,2026A,0.848,5,False
+SeasonA,Rusizi,Paddy rice,1.192,2026A,1.065,5,False
+SeasonA,Rwamagana,Paddy rice,0.96,2026A,0.951,5,False
+SeasonA,Bugesera,Sweet potato,0.962,2026A,1.0,5,False
+SeasonA,Burera,Sweet potato,1.149,2026A,1.165,5,False
+SeasonA,Gakenke,Sweet potato,1.108,2026A,1.044,5,False
+SeasonA,Gasabo,Sweet potato,1.052,2026A,1.045,5,False
+SeasonA,Gatsibo,Sweet potato,1.06,2026A,1.11,5,False
+SeasonA,Gicumbi,Sweet potato,1.266,2026A,1.219,5,False
+SeasonA,Gisagara,Sweet potato,0.925,2026A,0.847,5,False
+SeasonA,Huye,Sweet potato,1.085,2026A,1.043,5,False
+SeasonA,Kamonyi,Sweet potato,0.848,2026A,0.791,5,False
+SeasonA,Karongi,Sweet potato,1.319,2026A,1.273,5,False
+SeasonA,Kayonza,Sweet potato,0.836,2026A,0.858,5,False
+SeasonA,Kicukiro,Sweet potato,0.939,2026A,0.973,5,False
+SeasonA,Kirehe,Sweet potato,0.777,2026A,0.809,5,False
+SeasonA,Muhanga,Sweet potato,1.005,2026A,0.952,5,False
+SeasonA,Musanze,Sweet potato,1.11,2026A,1.116,5,False
+SeasonA,Ngoma,Sweet potato,0.979,2026A,1.009,5,False
+SeasonA,Ngororero,Sweet potato,0.946,2026A,0.957,5,False
+SeasonA,Nyabihu,Sweet potato,0.999,2026A,1.003,5,False
+SeasonA,Nyagatare,Sweet potato,0.708,2026A,0.715,5,True
+SeasonA,Nyamagabe,Sweet potato,1.21,2026A,1.154,5,False
+SeasonA,Nyamasheke,Sweet potato,0.701,2026A,0.678,5,True
+SeasonA,Nyanza,Sweet potato,0.918,2026A,0.871,5,False
+SeasonA,Nyarugenge,Sweet potato,0.756,2026A,0.732,5,False
+SeasonA,Nyaruguru,Sweet potato,1.322,2026A,1.266,5,False
+SeasonA,Rubavu,Sweet potato,0.953,2026A,0.938,5,False
+SeasonA,Ruhango,Sweet potato,1.01,2026A,1.001,5,False
+SeasonA,Rulindo,Sweet potato,1.001,2026A,0.931,5,False
+SeasonA,Rusizi,Sweet potato,0.907,2026A,0.886,5,False
+SeasonA,Rutsiro,Sweet potato,1.213,2026A,1.163,5,False
+SeasonA,Rwamagana,Sweet potato,1.073,2026A,1.0,5,False
+SeasonA,Kicukiro,Banana,1.02,2026A,1.014,4,False
+SeasonA,Nyaruguru,Paddy rice,0.83,2026A,0.881,2,False
+SeasonB,Bugesera,Banana,1.009,2026B,1.027,5,False
+SeasonB,Burera,Banana,1.117,2026B,1.086,5,False
+SeasonB,Gakenke,Banana,0.979,2026B,0.97,5,False
+SeasonB,Gasabo,Banana,1.048,2026B,1.051,5,False
+SeasonB,Gatsibo,Banana,1.209,2026B,1.201,5,False
+SeasonB,Gicumbi,Banana,1.048,2026B,1.014,5,False
+SeasonB,Gisagara,Banana,0.968,2026B,0.912,5,False
+SeasonB,Huye,Banana,0.802,2026B,0.826,5,False
+SeasonB,Kamonyi,Banana,0.875,2026B,0.885,5,False
+SeasonB,Karongi,Banana,0.995,2026B,0.993,5,False
+SeasonB,Kayonza,Banana,1.33,2026B,1.343,5,False
+SeasonB,Kicukiro,Banana,1.057,2026B,1.059,5,False
+SeasonB,Kirehe,Banana,1.259,2026B,1.283,5,False
+SeasonB,Muhanga,Banana,0.857,2026B,0.864,5,False
+SeasonB,Musanze,Banana,0.815,2026B,0.831,5,False
+SeasonB,Ngoma,Banana,1.195,2026B,1.204,5,False
+SeasonB,Ngororero,Banana,0.982,2026B,0.917,5,False
+SeasonB,Nyabihu,Banana,0.784,2026B,0.839,5,False
+SeasonB,Nyagatare,Banana,1.184,2026B,1.245,5,False
+SeasonB,Nyamagabe,Banana,0.585,2026B,0.562,5,True
+SeasonB,Nyamasheke,Banana,0.914,2026B,0.929,5,False
+SeasonB,Nyanza,Banana,0.824,2026B,0.794,5,False
+SeasonB,Nyarugenge,Banana,0.992,2026B,0.972,5,False
+SeasonB,Nyaruguru,Banana,0.869,2026B,0.795,5,False
+SeasonB,Rubavu,Banana,1.091,2026B,1.02,5,False
+SeasonB,Ruhango,Banana,0.811,2026B,0.784,5,False
+SeasonB,Rulindo,Banana,1.061,2026B,1.015,5,False
+SeasonB,Rusizi,Banana,1.041,2026B,1.058,5,False
+SeasonB,Rutsiro,Banana,1.005,2026B,1.007,5,False
+SeasonB,Rwamagana,Banana,1.223,2026B,1.252,5,False
+SeasonB,Bugesera,Beans,0.913,2026B,0.858,5,False
+SeasonB,Burera,Beans,1.745,2026B,1.599,5,False
+SeasonB,Gakenke,Beans,1.319,2026B,1.248,5,False
+SeasonB,Gasabo,Beans,0.932,2026B,0.945,5,False
+SeasonB,Gatsibo,Beans,0.977,2026B,0.934,5,False
+SeasonB,Gicumbi,Beans,1.229,2026B,1.246,5,False
+SeasonB,Gisagara,Beans,0.943,2026B,0.912,5,False
+SeasonB,Huye,Beans,0.929,2026B,0.876,5,False
+SeasonB,Kamonyi,Beans,0.855,2026B,0.777,5,False
+SeasonB,Karongi,Beans,1.46,2026B,1.363,5,False
+SeasonB,Kayonza,Beans,0.722,2026B,0.827,5,False
+SeasonB,Kicukiro,Beans,0.894,2026B,0.901,5,False
+SeasonB,Kirehe,Beans,0.993,2026B,0.943,5,False
+SeasonB,Muhanga,Beans,0.831,2026B,0.934,5,False
+SeasonB,Musanze,Beans,1.549,2026B,1.554,5,False
+SeasonB,Ngoma,Beans,1.007,2026B,1.055,5,False
+SeasonB,Ngororero,Beans,1.184,2026B,1.388,5,False
+SeasonB,Nyabihu,Beans,1.504,2026B,1.471,5,False
+SeasonB,Nyagatare,Beans,1.118,2026B,1.073,5,False
+SeasonB,Nyamagabe,Beans,0.984,2026B,0.92,5,False
+SeasonB,Nyamasheke,Beans,1.091,2026B,1.127,5,False
+SeasonB,Nyanza,Beans,0.899,2026B,0.854,5,False
+SeasonB,Nyarugenge,Beans,0.869,2026B,0.839,5,False
+SeasonB,Nyaruguru,Beans,1.146,2026B,1.1,5,False
+SeasonB,Rubavu,Beans,1.255,2026B,1.129,5,False
+SeasonB,Ruhango,Beans,0.913,2026B,0.834,5,False
+SeasonB,Rulindo,Beans,1.165,2026B,1.231,5,False
+SeasonB,Rusizi,Beans,1.126,2026B,1.121,5,False
+SeasonB,Rutsiro,Beans,1.158,2026B,1.218,5,False
+SeasonB,Rwamagana,Beans,0.778,2026B,0.783,5,False
+SeasonB,Bugesera,Cassava,0.968,2026B,1.006,5,False
+SeasonB,Burera,Cassava,0.84,2026B,0.845,5,False
+SeasonB,Gakenke,Cassava,1.019,2026B,1.055,5,False
+SeasonB,Gasabo,Cassava,0.854,2026B,0.775,5,False
+SeasonB,Gatsibo,Cassava,1.297,2026B,1.138,5,False
+SeasonB,Gicumbi,Cassava,1.067,2026B,1.0,5,False
+SeasonB,Gisagara,Cassava,1.002,2026B,1.003,5,False
+SeasonB,Huye,Cassava,1.264,2026B,1.143,5,False
+SeasonB,Kamonyi,Cassava,0.972,2026B,0.973,5,False
+SeasonB,Karongi,Cassava,0.998,2026B,0.99,5,False
+SeasonB,Kayonza,Cassava,1.159,2026B,1.084,5,False
+SeasonB,Kicukiro,Cassava,0.962,2026B,0.797,5,False
+SeasonB,Kirehe,Cassava,1.062,2026B,1.0,5,False
+SeasonB,Muhanga,Cassava,1.142,2026B,1.119,5,False
+SeasonB,Musanze,Cassava,0.834,2026B,0.806,5,False
+SeasonB,Ngoma,Cassava,1.134,2026B,1.029,5,False
+SeasonB,Ngororero,Cassava,0.69,2026B,0.696,5,False
+SeasonB,Nyabihu,Cassava,0.682,2026B,0.679,5,True
+SeasonB,Nyagatare,Cassava,1.361,2026B,1.187,5,False
+SeasonB,Nyamagabe,Cassava,0.973,2026B,0.887,5,False
+SeasonB,Nyamasheke,Cassava,0.858,2026B,0.878,5,False
+SeasonB,Nyanza,Cassava,1.067,2026B,1.025,5,False
+SeasonB,Nyarugenge,Cassava,0.839,2026B,0.755,5,False
+SeasonB,Nyaruguru,Cassava,0.917,2026B,0.893,5,False
+SeasonB,Rubavu,Cassava,0.846,2026B,0.861,5,False
+SeasonB,Ruhango,Cassava,1.298,2026B,1.196,5,False
+SeasonB,Rulindo,Cassava,1.019,2026B,1.103,5,False
+SeasonB,Rusizi,Cassava,0.741,2026B,0.761,5,True
+SeasonB,Rutsiro,Cassava,1.015,2026B,1.009,5,False
+SeasonB,Rwamagana,Cassava,1.283,2026B,1.134,5,False
+SeasonB,Bugesera,Irish potatoes,0.62,2026B,0.598,5,True
+SeasonB,Burera,Irish potatoes,1.579,2026B,1.555,5,False
+SeasonB,Gakenke,Irish potatoes,1.197,2026B,1.204,5,False
+SeasonB,Gasabo,Irish potatoes,0.779,2026B,0.772,5,True
+SeasonB,Gatsibo,Irish potatoes,1.002,2026B,1.034,5,False
+SeasonB,Gicumbi,Irish potatoes,1.38,2026B,1.326,5,False
+SeasonB,Gisagara,Irish potatoes,0.849,2026B,0.816,5,False
+SeasonB,Huye,Irish potatoes,0.869,2026B,0.846,5,False
+SeasonB,Kamonyi,Irish potatoes,1.232,2026B,1.192,5,False
+SeasonB,Karongi,Irish potatoes,0.783,2026B,0.758,5,True
+SeasonB,Kayonza,Irish potatoes,0.919,2026B,0.891,5,False
+SeasonB,Kirehe,Irish potatoes,0.977,2026B,0.854,5,False
+SeasonB,Muhanga,Irish potatoes,0.937,2026B,0.871,5,False
+SeasonB,Musanze,Irish potatoes,2.064,2026B,1.938,5,False
+SeasonB,Ngoma,Irish potatoes,1.06,2026B,1.016,5,False
+SeasonB,Ngororero,Irish potatoes,1.176,2026B,1.131,5,False
+SeasonB,Nyabihu,Irish potatoes,1.809,2026B,1.835,5,False
+SeasonB,Nyagatare,Irish potatoes,0.953,2026B,0.984,5,False
+SeasonB,Nyamagabe,Irish potatoes,1.732,2026B,1.665,5,False
+SeasonB,Nyamasheke,Irish potatoes,1.0,2026B,0.971,5,False
+SeasonB,Nyanza,Irish potatoes,0.918,2026B,0.849,5,False
+SeasonB,Nyarugenge,Irish potatoes,0.626,2026B,,4,False
+SeasonB,Nyaruguru,Irish potatoes,1.784,2026B,1.608,5,False
+SeasonB,Rubavu,Irish potatoes,1.867,2026B,1.843,5,False
+SeasonB,Ruhango,Irish potatoes,0.653,2026B,0.634,5,True
+SeasonB,Rulindo,Irish potatoes,0.926,2026B,0.949,5,False
+SeasonB,Rusizi,Irish potatoes,1.498,2026B,1.545,5,False
+SeasonB,Rutsiro,Irish potatoes,1.097,2026B,1.031,5,False
+SeasonB,Rwamagana,Irish potatoes,0.845,2026B,0.828,5,False
+SeasonB,Bugesera,Maize,0.821,2026B,0.923,5,False
+SeasonB,Burera,Maize,1.178,2026B,1.195,5,False
+SeasonB,Gakenke,Maize,0.931,2026B,0.887,5,False
+SeasonB,Gasabo,Maize,1.138,2026B,1.154,5,False
+SeasonB,Gatsibo,Maize,1.093,2026B,1.112,5,False
+SeasonB,Gicumbi,Maize,0.923,2026B,0.975,5,False
+SeasonB,Gisagara,Maize,0.892,2026B,0.895,5,False
+SeasonB,Huye,Maize,1.033,2026B,0.99,5,False
+SeasonB,Kamonyi,Maize,0.997,2026B,1.068,5,False
+SeasonB,Karongi,Maize,1.003,2026B,0.985,5,False
+SeasonB,Kayonza,Maize,1.023,2026B,1.01,5,False
+SeasonB,Kicukiro,Maize,0.644,2026B,0.687,5,True
+SeasonB,Kirehe,Maize,1.804,2026B,2.133,5,False
+SeasonB,Muhanga,Maize,0.893,2026B,0.947,5,False
+SeasonB,Musanze,Maize,1.367,2026B,1.376,5,False
+SeasonB,Ngoma,Maize,0.739,2026B,0.738,5,True
+SeasonB,Ngororero,Maize,1.021,2026B,1.063,5,False
+SeasonB,Nyabihu,Maize,1.211,2026B,1.223,5,False
+SeasonB,Nyagatare,Maize,1.342,2026B,1.401,5,False
+SeasonB,Nyamagabe,Maize,1.087,2026B,1.065,5,False
+SeasonB,Nyamasheke,Maize,0.855,2026B,0.959,5,False
+SeasonB,Nyanza,Maize,1.136,2026B,1.153,5,False
+SeasonB,Nyarugenge,Maize,1.03,2026B,0.86,5,False
+SeasonB,Nyaruguru,Maize,0.982,2026B,1.039,5,False
+SeasonB,Rubavu,Maize,1.248,2026B,1.294,5,False
+SeasonB,Ruhango,Maize,0.607,2026B,0.803,5,False
+SeasonB,Rulindo,Maize,0.937,2026B,0.926,5,False
+SeasonB,Rusizi,Maize,0.872,2026B,0.9,5,False
+SeasonB,Rutsiro,Maize,0.918,2026B,1.025,5,False
+SeasonB,Rwamagana,Maize,0.771,2026B,0.753,5,False
+SeasonB,Bugesera,Paddy rice,1.195,2026B,1.262,5,False
+SeasonB,Gakenke,Paddy rice,1.168,2026B,1.041,4,False
+SeasonB,Gasabo,Paddy rice,0.947,2026B,0.936,5,False
+SeasonB,Gatsibo,Paddy rice,1.217,2026B,0.96,5,False
+SeasonB,Gisagara,Paddy rice,1.002,2026B,0.863,5,False
+SeasonB,Huye,Paddy rice,0.838,2026B,1.084,5,False
+SeasonB,Kamonyi,Paddy rice,0.932,2026B,0.794,5,False
+SeasonB,Kayonza,Paddy rice,0.99,2026B,0.738,5,False
+SeasonB,Kicukiro,Paddy rice,1.279,2026B,1.306,5,False
+SeasonB,Kirehe,Paddy rice,1.165,2026B,1.27,5,False
+SeasonB,Muhanga,Paddy rice,0.752,2026B,0.663,5,True
+SeasonB,Ngoma,Paddy rice,0.924,2026B,0.886,5,False
+SeasonB,Nyagatare,Paddy rice,0.998,2026B,1.059,5,False
+SeasonB,Nyamagabe,Paddy rice,0.774,2026B,0.355,5,True
+SeasonB,Nyamasheke,Paddy rice,1.018,2026B,1.089,5,False
+SeasonB,Nyanza,Paddy rice,1.065,2026B,0.97,5,False
+SeasonB,Ruhango,Paddy rice,1.123,2026B,1.11,5,False
+SeasonB,Rulindo,Paddy rice,0.845,2026B,1.114,5,False
+SeasonB,Rusizi,Paddy rice,1.08,2026B,1.2,5,False
+SeasonB,Rwamagana,Paddy rice,1.056,2026B,1.0,5,False
+SeasonB,Bugesera,Sweet potato,0.731,2026B,0.704,5,True
+SeasonB,Burera,Sweet potato,1.147,2026B,1.035,5,False
+SeasonB,Gakenke,Sweet potato,1.287,2026B,1.297,5,False
+SeasonB,Gasabo,Sweet potato,0.863,2026B,0.848,5,False
+SeasonB,Gatsibo,Sweet potato,1.196,2026B,1.169,5,False
+SeasonB,Gicumbi,Sweet potato,1.1,2026B,1.055,5,False
+SeasonB,Gisagara,Sweet potato,0.953,2026B,0.986,5,False
+SeasonB,Huye,Sweet potato,1.003,2026B,1.062,5,False
+SeasonB,Kamonyi,Sweet potato,0.884,2026B,0.892,5,False
+SeasonB,Karongi,Sweet potato,1.052,2026B,1.048,5,False
+SeasonB,Kayonza,Sweet potato,0.911,2026B,0.866,5,False
+SeasonB,Kicukiro,Sweet potato,0.854,2026B,0.925,5,False
+SeasonB,Kirehe,Sweet potato,0.916,2026B,0.85,5,False
+SeasonB,Muhanga,Sweet potato,1.02,2026B,1.045,5,False
+SeasonB,Musanze,Sweet potato,1.215,2026B,1.123,5,False
+SeasonB,Ngoma,Sweet potato,0.987,2026B,0.886,5,False
+SeasonB,Ngororero,Sweet potato,0.875,2026B,0.924,5,False
+SeasonB,Nyabihu,Sweet potato,0.916,2026B,0.962,5,False
+SeasonB,Nyagatare,Sweet potato,0.758,2026B,0.72,5,True
+SeasonB,Nyamagabe,Sweet potato,1.035,2026B,1.043,5,False
+SeasonB,Nyamasheke,Sweet potato,0.998,2026B,1.074,5,False
+SeasonB,Nyanza,Sweet potato,1.12,2026B,1.022,5,False
+SeasonB,Nyarugenge,Sweet potato,0.88,2026B,0.803,5,False
+SeasonB,Nyaruguru,Sweet potato,1.189,2026B,1.175,5,False
+SeasonB,Rubavu,Sweet potato,1.088,2026B,1.014,5,False
+SeasonB,Ruhango,Sweet potato,0.798,2026B,0.83,5,False
+SeasonB,Rulindo,Sweet potato,1.232,2026B,1.144,5,False
+SeasonB,Rusizi,Sweet potato,1.021,2026B,1.101,5,False
+SeasonB,Rutsiro,Sweet potato,1.002,2026B,0.979,5,False
+SeasonB,Rwamagana,Sweet potato,0.969,2026B,0.899,5,False
+SeasonB,Nyaruguru,Paddy rice,0.807,2026B,0.676,3,False
+SeasonB,Ngororero,Paddy rice,0.54,2026B,,1,False

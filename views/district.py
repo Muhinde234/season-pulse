@@ -4,17 +4,13 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fmt_pct, load_baseline,
-                       load_cooperatives, load_irrigation, load_official_2026, pct_vs_typical)
+from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fmt_pct, load_cooperatives,
+                       load_irrigation, pct_vs_typical)
 from core.db import get_reports
 from core.official import (MAJOR, district_trend, district_vs_national_practices, latest_official_season,
                            load_district_crops)
-from core.risk import adjusted_table
-from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz, rank_list, section
-
-# Crop and action icons for the scorecard (names resolved to Lucide in core.ui.icon)
-CROP_IC = {"Beans": "grain", "Cassava": "nutrition", "Irish potatoes": "egg", "Maize": "grass",
-           "Tomatoes": "local_florist"}
+from core.risk import adjusted_table, season_baseline
+from core.ui import CROP_IC, LEVEL_STYLE, badge, filter_head, hero, icon, nz, rank_list, section
 ACTION_TAG = {"Small-scale irrigation": ("water_drop", "#0284c7", "Irrigation"),
               "Soil testing & fertility support": ("science", "#16a34a", "Soil fertility"),
               "Post-harvest collection & storage": ("warehouse", "#b45309", "Storage"),
@@ -23,7 +19,7 @@ ACTION_TAG = {"Small-scale irrigation": ("water_drop", "#0284c7", "Irrigation"),
 SCALE = 60  # scorecard bar spans -60% ... +60% vs typical
 
 hero("District Profile", "Everything Imboni knows about one district.", eyebrow="Monitor · District",
-     ic="location_city", meta=[("location_on", "30 districts"), ("history", "2020–2026")])
+     ic="location_city", meta=[("location_on", "30 districts"), ("history", "2022–2026")])
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
@@ -87,12 +83,12 @@ else:
             f'<div class="sp-row-crop"><span class="sp-row-ic">{icon(CROP_IC[r.CropName])}</span>'
             f'<div><b>{html.escape(r.CropName)}</b><small>{meta}</small></div></div>'
             f'<div>{badge(r.level)}</div>'
-            f'<div class="sp-scale" title="Bar: expected this season · tick: 2020–2024 baseline ({fmt_pct(r.baseline_RYI)})">'
+            f'<div class="sp-scale" title="Bar: expected this season · tick: baseline ({fmt_pct(r.baseline_RYI)}, {r.baseline_source})">'
             f'<span class="sp-scale-0"></span><i style="{fill}"></i><em style="left:{base:.1f}%"></em></div>'
             f'<div class="sp-row-v">{fmt_pct(r.adjusted_RYI)}</div>'
             f'<div class="sp-tags">{tags}</div></div>')
     st.markdown('<div class="sp-rows"><div class="sp-row sp-row-h"><span>Crop</span><span>Status</span>'
-                f'<span title="Bar: expected this season, from typical (centre line). Tick: 2020–2024 baseline. '
+                f'<span title="Bar: expected this season, from typical (centre line). Tick: baseline (last official result). '
                 f'Scale −{SCALE}% to +{SCALE}%.">vs typical district</span>'
                 f'<span>Expected</span><span>Recommended action</span></div>{"".join(rows)}</div>',
                 unsafe_allow_html=True)
@@ -101,14 +97,13 @@ else:
 # ---------- history + official 2026 ----------
 left, right = st.columns([1.5, 1], gap="medium")
 with left.container(border=True, key="card_district_1"):
-    section("History by season", "2020–2024 baseline, % vs typical district")
-    b = load_baseline()
-    b = b[b.DistrictName == district]
+    section("Both seasons", "Baseline: last official result, % vs typical district")
     fig = go.Figure()
-    for s, color in zip(seasons, ["#16a34a", "#0284c7", "#ea8a0c"]):
-        g = b[b.Season == s]
+    for s, color in zip(seasons, ["#16a34a", "#0284c7"]):
+        g = season_baseline(s).query("DistrictName == @district").sort_values("CropName")
         fig.add_bar(x=g.CropName, y=pct_vs_typical(g.baseline_RYI), name=SEASONS[s].split(" (")[0], marker_color=color,
-                    marker_line_width=0, hovertemplate="%{x}<br>%{y:+.0f}% vs typical<extra>" + s[-1] + "</extra>")
+                    marker_line_width=0, customdata=g.baseline_source,
+                    hovertemplate="%{x}<br>%{y:+.0f}% vs typical<br>%{customdata}<extra>" + s[-1] + "</extra>")
     fig.add_hline(y=0, line_color="rgba(128,128,128,.6)", line_width=1)
     fig.update_layout(barmode="group", height=330, margin=dict(l=0, r=0, t=10, b=0), bargap=0.3,
                       legend=dict(orientation="h", y=1.12, x=0), plot_bgcolor="rgba(0,0,0,0)",
@@ -118,7 +113,7 @@ with left.container(border=True, key="card_district_1"):
 off_season = latest_official_season(season)
 with right.container(border=True, key="card_district_2"):
     if off_season is None:
-        st.caption("NISR does not publish Season C yields per crop.")
+        st.caption("No official NISR yields for this season.")
     else:
         o = load_district_crops().query("season == @off_season and crop in @MAJOR").dropna(subset=["yield_kgha"])
         o = o.assign(med=o.groupby("crop").yield_kgha.transform("median"))
@@ -136,7 +131,7 @@ if off_season is not None:
     letter = off_season[-1]
     left2, right2 = st.columns([1.5, 1], gap="medium")
     with left2.container(border=True, key="card_district_3"):
-        section("Official yield trend", f"Season {letter}, 2024–2026 · kg/ha vs the median district")
+        section("Official yield trend", f"Season {letter}, 2022–2026 · kg/ha vs the median district")
         tr = district_trend(district, letter)
         crops_here = [c for c in MAJOR if c in set(tr.crop)]
         crop_pick = st.selectbox("Crop", crops_here, key="dp_trend_crop") if crops_here else None
@@ -192,7 +187,7 @@ if r.empty:
 else:
     st.dataframe(
         r.assign(source=r.source.where(r.is_simulated == 0, "SIMULATED"), pests=r.pests.map({0: "No", 1: "Yes"}),
-                 season=r.season.map(lambda s: SEASONS[s].split(" (")[0]))
+                 season=r.season.map(lambda s: SEASONS.get(s, s).split(" (")[0]))
          [["created_at", "crop", "season", "condition", "pests", "rain_problem", "source"]]
          .rename(columns={"created_at": "Submitted", "crop": "Crop", "season": "Season", "condition": "Condition",
                           "pests": "Pests", "rain_problem": "Rain problem", "source": "Source"}),

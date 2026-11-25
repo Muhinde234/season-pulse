@@ -2,8 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from core.data import (CROPS, DISTRICTS, SEASONS, current_season, fmt_pct, load_geojson, load_official_2026,
-                       pct_vs_typical)
+from core.data import CROPS, DISTRICTS, SEASONS, current_season, fmt_pct, load_geojson, pct_vs_typical
 from core.db import get_reports
 from core.risk import adjusted_table
 from core.ui import filter_head, hero, nz, rank_list, section
@@ -12,11 +11,10 @@ from core.ui import filter_head, hero, nz, rank_list, section
 DIVERGING = [[0.0, "#a32626"], [0.25, "#e34948"], [0.5, "#f0efec"], [0.75, "#5598e7"], [1.0, "#1c5cab"]]
 NO_DATA = "#d9d8d4"
 CLIP = 50  # colour saturates at ±50%
-OFFICIAL = "Official 2026 Season A"
-VIEWS = {"Historical baseline": "baseline_RYI", "Adjusted by field reports": "adjusted_RYI", OFFICIAL: "official_RYI"}
+VIEWS = {"Last official result (baseline)": "baseline_RYI", "Adjusted by field reports": "adjusted_RYI"}
 
 hero("District Risk Map", "Yield vs the typical district. **Red** = below, **blue** = above.",
-     eyebrow="Monitor · Map", ic="map", meta=[("location_on", "30 districts"), ("layers", "3 views")])
+     eyebrow="Monitor · Map", ic="map", meta=[("location_on", "30 districts"), ("layers", "2 views")])
 
 seasons = list(SEASONS)
 with st.container(key="toolbar"):
@@ -30,13 +28,6 @@ with st.container(key="toolbar"):
 t = adjusted_table(season, get_reports(season))
 t = t[t.CropName == crop]
 col = VIEWS[view]
-if view == OFFICIAL:
-    official = load_official_2026()
-    if season != "SeasonA" or crop not in set(official.CropName):
-        st.info(f"Official 2026 yields: **Season A** only, for {', '.join(sorted(official.CropName.unique()))}.",
-                icon=":material/info:")
-        st.stop()
-    t = t.merge(official[["DistrictName", "CropName", "yield_kg_ha", "official_RYI"]], on=["DistrictName", "CropName"])
 
 if t.empty:
     st.warning(f"No data for {crop} in {SEASONS[season]}.", icon=":material/warning:")
@@ -45,10 +36,8 @@ if t.empty:
 t = t.assign(pct=pct_vs_typical(t[col]).clip(-CLIP, CLIP))
 hover = [
     f"<b>{r.DistrictName}</b><br>{fmt_pct(r[col])} vs typical district<br>"
-    f"{int(r.n_years)} year(s) of data{' · persistently low' if r.persistently_low else ''}"
+    f"Baseline {fmt_pct(r.baseline_RYI)}: {r.baseline_source}{' · persistently low' if r.persistently_low else ''}"
     f"<br>{int(r.n_reports)} field report(s) this season"
-    + (f"<br>Official 2026 A: {r.yield_kg_ha:,.0f} kg/ha · baseline {fmt_pct(r.baseline_RYI)}" if view == OFFICIAL
-       else "")
     + (f"<br>Rain {r.rain_anom_pct:+.0f}% vs district avg ({r.rain_period})" if pd.notna(r.rain_anom_pct) else "")
     for _, r in t.iterrows()
 ]
@@ -76,12 +65,12 @@ fig.update_layout(height=520, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rg
 m1, m2, m3, m4 = st.columns(4)
 m1.metric("Districts with data", f"{len(t)} / 30")
 m2.metric("≥25% below typical", nz(int((t[col] <= 0.75).sum())))
-m3.metric("Persistently low", nz(int(t.persistently_low.sum())), help="Below typical in 3+ years of data")
+m3.metric("Persistently low", nz(int(t.persistently_low.sum())), help="At least 20% below typical in each of the last 3 official years")
 m4.metric("Field reports", nz(int(t.n_reports.sum()), "None yet"), help="Reports for this crop and season")
 
 left, right = st.columns([2.3, 1])
 with left.container(border=True, key="card_map_1"):
-    section(f"{crop} · {SEASONS[season]}", view)
+    section(f"{crop} · {SEASONS[season]}", f"{view} · {t.baseline_source.iloc[0]}")
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 with right.container(border=True, key="card_map_2"):
     ranked = t.sort_values(col)
@@ -93,7 +82,7 @@ with right.container(border=True, key="card_map_2"):
 with st.expander("Table view"):
     st.dataframe(
         t.sort_values(col).assign(**{"% vs typical": t[col].map(fmt_pct)})
-         [["DistrictName", "Province", "% vs typical", "n_years", "persistently_low", "n_reports"]]
-         .rename(columns={"DistrictName": "District", "n_years": "Years of data",
+         [["DistrictName", "Province", "% vs typical", "baseline_source", "n_years", "persistently_low", "n_reports"]]
+         .rename(columns={"DistrictName": "District", "baseline_source": "Baseline", "n_years": "Years of data",
                           "persistently_low": "Persistently low", "n_reports": "Field reports"}),
         hide_index=True, width="stretch")
