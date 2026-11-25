@@ -25,7 +25,7 @@ moved = last.groupby("year").moved.sum()
 cv = pd.read_csv(DATA / "out_cleaned_vs_official.csv")
 
 hero("Overview", "National snapshot of crop risk for this season.", eyebrow="Monitor · Overview", ic="dashboard",
-     meta=[("calendar", season_name), ("location_on", "30 districts")])
+     meta=[("location_on", "30 districts")])
 
 # ---------- headline numbers ----------
 high, watch = t[t.level == "High"], t[t.level == "Watch"]
@@ -64,7 +64,8 @@ with left.container(border=True, key="card_home_1"):
                       geo_bgcolor="rgba(0,0,0,0)", dragmode=False)
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 with right.container(border=True, key="card_home_2"):
-    top = t[t.level != "Normal"].head(7)
+    # the 7 crops furthest below typical, largest shortfall first
+    top = t[t.level != "Normal"].sort_values("adjusted_RYI").head(7)
     rank_list([(f"{r.DistrictName} · {r.CropName}", r.Province, pct_vs_typical(r.adjusted_RYI))
                for _, r in top.iterrows()], "Top priority alerts")
     st.page_link("views/alerts.py", label="See all alerts and actions", icon=":material/arrow_forward:")
