@@ -117,7 +117,16 @@ RYI 0.7 = "30% below the typical district". Comparing within a season also cance
 ## 7. How it would scale
 Rwanda has a Farmer Promoter in every village (14,000+). They can submit reports through the app, or through SMS/USSD for farmers without smartphones. NISR could use the reports as an early indicator alongside each season's survey.
 
-## 8. Run locally
+## 8. Future work
+- **Role-based views.** Separate screens for farmers, extension officers and planners, each showing what that role needs.
+- **A plain-language farmer view** (web and USSD). It would cover how the farmer's district and crop did last season, what this season's reports say, and what to watch for. Official data is per district and crop, never per farm, so the view would say "your district" and not "your farm".
+- **The report-to-response loop (Pillar 1).** For each report, record who received it, when it was assessed, what advice was given and when, and how the crop ended. That would make the timely-action hypothesis testable. It also needs contact data for farmer promoters and sector agronomists.
+- **Re-fit the field-report weights** once real reports can be compared with the next official NISR results.
+- **Find MINAGRI's published figures** for the PSTA 5 indicators on pest surveillance, extension reach and data collection.
+- **Fill the rainfall gap** (Seasons 2025A, 2025B and 2026A) by re-running `fetch_rainfall.py` over more years.
+- **Store reports in a hosted database**, so they survive app restarts.
+
+## 9. Run locally
 ```bash
 git clone https://github.com/Muhinde234/season-pulse.git
 cd season-pulse
@@ -136,7 +145,7 @@ python prep_official.py    # NISR official SAS tables 2022-2026 -> app_data/ (al
 
 The 37 MB Establishment Census (`data/raw/establishment_census.csv`) is not committed; without it `prep_data.py` keeps the existing cooperative counts.
 
-## 9. Project structure
+## 10. Project structure
 ```
 streamlit_app.py     Streamlit app: navigation, theme
 views/               the pages: home · map · alerts · district · target · practices · report · ussd · model
