@@ -14,7 +14,8 @@ NISR Big Data Hackathon 2026 · Track 1: Agricultural Productivity
 NISR's Seasonal Agricultural Survey (SAS) gives high-quality production estimates, but the results arrive **after the season ends**, when it's too late to act. Meanwhile:
 - Some districts are below typical yields **year after year** (e.g. beans in Eastern Province during Season B), but this isn't turned into targeted action.
 - Last season's official results are a strong guide to where trouble will be, but they can't show a district that suddenly breaks its usual pattern.
-- Farmers and agronomists see problems (dry fields, pests, poor growth) weeks earlier, but nobody collects those observations for planners.
+- Farmers see problems (dry fields, pests, poor growth) during the season, but we found no national record of in-season crop problems. In 2024, 67.1% of farming households received some extension advice, only 13.8% on pest management, and 0.24% of advice came by phone message (NISR AHS 2024). Advice mostly flows *to* farmers; little flows back.
+- **Our hypothesis (not yet tested):** crops whose problems are reported and acted on in time end the season in better condition. The Research questions page sets out what data would test it.
 
 ## 2. Our solution
 Imboni combines **NISR's latest official survey results** with **field reports during the season** to tell planners where productivity is at risk now, and what to do about it.
@@ -28,14 +29,16 @@ Imboni combines **NISR's latest official survey results** with **field reports d
 ### App pages
 - **Overview**: national snapshot for the current season: alerts per district, top priorities, how Imboni works and key findings.
 - **District Profile**: one district at a glance: risk per crop, both seasons, official yields and their 2022–2026 trend, farming practices vs the national average, rainfall, irrigation, local partners and field reports.
-- **Road to +50%**: priority crop yields against Rwanda's PSTA 5 target (+50% productivity of priority food crops by 2029), a scenario calculator for two data-backed levers, and the districts where the most tonnes can be gained.
+- **Trends 2022–2026**: how production, harvested area and yield changed per crop (did more food come from more land or better yields?), and which provinces and districts gained or fell back, with plain-language explanations of each calculation.
+- **Road to +50%**: priority crop yields against PSTA 5's yearly target for each crop, a scenario calculator for two data-backed levers, and the districts where the most tonnes can be gained.
 - **Farming Practices**: small- vs large-scale farmers (yields and use of improved seeds, fertilizer, pesticides, irrigation), district adoption maps, and priority districts for input programmes.
 
 1. **District Risk Map**: districts coloured by yield vs the typical district (crop + season filter): last official result, or adjusted by field reports.
 2. **Submit Field Report**: mobile-friendly form: crop, condition (1–5), pests, rainfall problem.
 3. **Alerts & Recommended Actions**: baseline adjusted by field reports, ranked by risk and food dependence, with the production at stake in tonnes (official area × yield).
-4. **Model & Data Quality**: backtest on every season 2023–2026, rainfall check, how the cleaned files compare with the official tables, and data limitations.
-5. **USSD prototype**: simulates the `*XXX#` menu (Kinyarwanda by default) for farmers without a smartphone. No phone network is involved; reports are saved with source "USSD (simulated)".
+4. **Research questions**: the three pillars as questions, each statement labelled fact, hypothesis, assumption, recommendation or gap; the seven steps from a farmer spotting a problem to the outcome, with the data that exists for each; who does what (NISR, MINAGRI, RAB, NAEB, local government, farmer promoters).
+5. **Model & Data Quality**: backtest on every season 2023–2026, rainfall check, how the cleaned files compare with the official tables, and data limitations.
+6. **USSD prototype**: simulates the `*XXX#` menu (Kinyarwanda by default) for farmers without a smartphone. No phone network is involved; reports are saved with source "USSD (simulated)".
 
 ### Recommended actions (linked to the track's focus areas)
 | Signal | Action |
@@ -51,7 +54,8 @@ Imboni combines **NISR's latest official survey results** with **field reports d
 |---|---|---|
 | **SAS official tables, Seasons A and B 2022–2026** ([NISR SAS releases](https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey)): annual tables for 2022 and 2023, per-season tables for 2024A–2026B | NISR | **The alert baseline** and its backtest; official yields, production and area by district and crop; yields of small- and large-scale farmers; use of seeds, fertilizer, pesticides, irrigation (2024–2026) |
 | Seasonal Agricultural Survey 2020–2024 (cleaned, aggregated) | NISR | Tomato baseline only (NISR publishes tomatoes inside "vegetables"); compared with the official tables |
-| [PSTA 5](https://www.minagri.gov.rw/fileadmin/user_upload/Minagri/Publications/Policies_and_strategies/PSTA_5_Abridged_version_Final.pdf) (2024–2029) | MINAGRI | The +50% productivity target for priority food crops |
+| [PSTA 5](https://www.minagri.gov.rw/fileadmin/user_upload/Minagri/Publications/Policies_and_strategies/PSTA_5_Abridged_version_Final.pdf) (2024/25–2028/29) | MINAGRI | The NST2 goal of "a 50% increase in productivity" (p. 14) and the yearly yield target per priority food crop from a 2023 baseline (results framework, p. 21); indicators on pest surveillance, extension and data collection |
+| [Agricultural Household Survey 2024](https://statistics.gov.rw/data-sources/surveys/Agricultural-Household-Survey) (Jan–Dec 2024), Tables 27 and 29 | NISR | Who receives extension services, what kind, and from whom (Pillar 1 evidence) |
 | EICV household consumption (2020) | NISR | Food dependence: each crop's share of household food spending per district |
 | Establishment Census | NISR | Cooperatives, food processors, exporters per district |
 | Field reports | Collected through the app | In-season adjustment (**simulated reports are clearly labelled**) |
@@ -87,8 +91,13 @@ RYI 0.7 = "30% below the typical district". Comparing within a season also cance
 
 **The earlier baseline from the cleaned 2020–2024 files**, checked against official 2026 results, caught 10 of 21 bad cells in Season A and 4 of 13 in Season B, with a larger error than assuming every district is typical. The alerts no longer use it except for tomatoes.
 
-**Road to +50% (official national yields, Seasons A + B)**
-- No priority crop is on the straight path to +50% by 2029 (+20% expected by 2026). Best: sweet potato +9.5% since 2024; maize, beans and cassava slightly down.
+**Trends 2022–2026 (official tables, Seasons A + B)**
+- Most crops grew production mainly by **planting more land**, not by higher yields: cooking banana +19% (area +17%, yield +1%), paddy rice +12% (area +8%, yield +4%), beans +6% (area +5%, yield +1%). **Maize** is the exception: production +33%, mostly from yield (+18%).
+- Sweet potato, wheat and soybean produced slightly less; cassava yields fell 5% while its area grew 9%.
+
+**Road to +50% (PSTA 5 yearly targets vs NISR Season A national yields)**
+- **The target is not a flat +50%.** PSTA 5 sets a yield target per crop and year from a 2023 baseline, from +12% (wheat) to +200% (soybean) by 2028/29. Its 2023 baselines equal NISR's 2023 Season A national yields for all eight crops, so we compare Season A yields (reading 2025/26 as Season A 2026).
+- In 2025/26, **only wheat met its target** (1.40 vs 1.30 t/ha; already above its 2028/29 target of 1.35). Maize was close (1.99 vs 2.06, −3%). Furthest behind: soybean (−41%), beans (−22%), cooking banana (−14%), cassava (−13%), Irish potato (−12%).
 - Large-scale farmers harvest **2.7×** more maize, 1.8× more paddy rice and 1.5× more Irish potato per hectare, and use improved seeds (69% vs 26%), irrigation (50% vs 12%) and pesticides (90% vs 42%) far more than small-scale farmers.
 - If districts below the top quarter caught up and small-scale farmers closed half their gap to large-scale yields, maize production would rise about **+75%** and beans about **+32%** on the same land.
 
@@ -120,7 +129,7 @@ The processed files in `app_data/` are committed, so the app runs straight away.
 
 ```bash
 python build_baseline.py   # cleaned-data baseline (tomatoes) + 2024 backtest -> app_data/out_district_baseline.csv, out_backtest.json
-python prep_data.py        # census, EICV, SAS 2026 A irrigation table -> app_data/
+python prep_data.py        # census, EICV, SAS 2026 A irrigation table, AHS 2024 extension tables -> app_data/
 python prep_official.py    # NISR official SAS tables 2022-2026 -> app_data/ (alert baseline, backtest, yields, practices, rainfall check)
 # optional, ~250 MB download, then re-run prep_official.py: pip install -r requirements-data.txt && python fetch_rainfall.py
 ```
@@ -135,10 +144,10 @@ core/                data loaders, risk + recommended actions, official-table an
                      Kinyarwanda/English labels, styling
 prep_official.py     Reads NISR's official SAS tables (2022A-2026B): alert baseline, backtest, yields, practices, checks
 build_baseline.py    Cleaned-data RYI baseline (used for tomatoes) + 2024 backtest
-prep_data.py         Aggregates census + EICV, extracts SAS 2026 Season A Table 32 (irrigation)
+prep_data.py         Aggregates census + EICV, extracts SAS 2026 Season A Table 32 (irrigation) and AHS 2024 Tables 27, 29
 fetch_rainfall.py    CHIRPS rainfall per district and season (optional)
 app_data/            Small processed files used by the app (the only folder the app reads)
-data/raw/            Source datasets: SAS 2020–2024 (cleaned), EICV, sas_tables/ (official SAS tables 2022–2026), census not committed
+data/raw/            Source datasets: SAS 2020–2024 (cleaned), EICV, sas_tables/ (official SAS tables 2022–2026), ahs/ (AHS 2024 tables), census not committed
 assets/              Imboni logo and icon
 demo/                Demo video (demo.mp4): download to watch
 .streamlit/          Theme

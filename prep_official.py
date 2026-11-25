@@ -48,7 +48,8 @@ CROPS = {"maize": "Maize", "sorghum": "Sorghum", "paddy rice": "Paddy rice", "wh
          "sweet potato": "Sweet potato", "sweet potatoes": "Sweet potato", "irish potato": "Irish potato",
          "irish potatoes": "Irish potato", "bananas": "Banana", "banana": "Banana", "bean": "Beans", "beans": "Beans",
          "soybean": "Soybean", "soya beans": "Soybean", "groundnuts": "Groundnuts", "groundnut": "Groundnuts",
-         "ground nuts": "Groundnuts", "vegetables": "Vegetables"}
+         "ground nuts": "Groundnuts", "vegetables": "Vegetables",
+         "cooking banana": "Cooking banana"}  # PSTA 5 targets cooking banana, not all bananas
 MAJOR = ["Beans", "Maize", "Irish potato", "Cassava", "Sweet potato", "Paddy rice", "Banana"]
 APP = {"Irish potato": "Irish potatoes"}  # official crop name -> app crop name, where they differ
 # column -> title phrases (any of them; matched after lower-casing and turning "-" and "_" into spaces)

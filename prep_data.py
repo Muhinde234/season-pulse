@@ -6,11 +6,16 @@ Inputs (data/raw/):
     establishment_census.csv       37 MB, not committed; without it the committed aggregate is kept
     eicv_historical.csv            EICV household consumption
     sas_tables/SAS_2026A.xlsx      NISR SAS 2026 Season A official tables (Table 32: irrigation methods)
+    ahs/AHS_2024_Tables.xlsx       NISR Agricultural Household Survey 2024 tables (Jan-Dec 2024)
+                                   https://statistics.gov.rw/data-sources/surveys/Agricultural-Household-Survey
 
 Outputs (app_data/, committed so Streamlit Cloud never needs the raw files):
     district_cooperatives.csv        cooperatives, food processors + goods exporters per district
     district_consumption_2020.csv    EICV 2020 household consumption per district & crop
     irrigation_2026A.csv             Table 32 irrigation methods per district (% of irrigated plots)
+    ahs2024_extension_types.csv      AHS Table 27: % of agricultural households with at least one member who
+                                     received extension services, by type, province and sex of household head
+    ahs2024_extension_sources.csv    AHS Table 29: % of households receiving each type of service, by source
 """
 from pathlib import Path
 
@@ -21,6 +26,7 @@ OUT = Path("app_data")
 CENSUS = RAW / "establishment_census.csv"
 EICV = RAW / "eicv_historical.csv"
 SAS2026 = RAW / "sas_tables" / "SAS_2026A.xlsx"
+AHS = RAW / "ahs" / "AHS_2024_Tables.xlsx"
 SUMMARY_ROWS = {"National", "SSF", "LSF"}  # national total, small- and large-scale farmers
 
 # ---------- Establishment census: cooperatives, food processors and goods exporters only ----------
@@ -75,7 +81,38 @@ irr = irr.assign(modern_pct=irr[["surface", "flood", "drip", "sprinkler", "pivot
 irr[["DistrictName", "modern_pct", "traditional_pct", "surface", "flood", "drip", "sprinkler", "pivot"]].to_csv(
     OUT / "irrigation_2026A.csv", index=False)
 
+
+# ---------- AHS 2024: extension services (Tables 27 and 29) ----------
+def ahs_table(sheet: str, header_word: str) -> pd.DataFrame:
+    """Rows = the labels in the first text column; columns = every later column, named from the header row
+    containing `header_word` (or the row above it, where a label such as "Rwanda" sits one row higher)."""
+    df = pd.read_excel(AHS, sheet_name=sheet, header=None).dropna(how="all").dropna(axis=1, how="all")
+    hdr = next(i for i in df.index if any(str(v).strip().startswith(header_word) for v in df.loc[i]))
+    above = df.index[df.index.get_loc(hdr) - 1]
+    labels = df.iloc[:, 0].astype(str).str.strip()
+    cols = {j: str(df.loc[hdr].iloc[j] if pd.notna(df.loc[hdr].iloc[j]) else df.loc[above].iloc[j]).strip()
+            for j in range(1, df.shape[1])}
+    rows = []
+    for i, label in zip(df.index, labels):
+        vals = {name: pd.to_numeric(df.loc[i].iloc[j], errors="coerce") for j, name in cols.items()}
+        if label not in ("nan", "") and sum(pd.notna(v) for v in vals.values()) >= 3:
+            rows.append({"item": label.replace("…", "...").replace("�", "..."), **vals})
+    return pd.DataFrame(rows)
+
+
+t27 = ahs_table("Table 27", "Kigali")
+t27.columns = ["item", "Kigali", "South", "West", "North", "East", "Rwanda", "Male-headed", "Female-headed"]
+t27["item"] = t27.item.replace({"Households who receive extension services (%)": "Any extension service"})
+t27 = t27[t27.item != "Number of agricultural households (,000)"]
+t27.round(1).to_csv(OUT / "ahs2024_extension_types.csv", index=False)
+
+t29 = ahs_table("Table 29", "Government officials")
+t29.columns = ["service"] + [c.split(" (")[0].strip() for c in t29.columns[1:]]
+t29 = t29.rename(columns={t29.columns[-1]: "households_000"}).drop(columns=["Total"], errors="ignore")
+t29.round(2).to_csv(OUT / "ahs2024_extension_sources.csv", index=False)
+
 print(f"Cooperatives: {len(coops)} districts, {coops.cooperatives.sum()} cooperatives, "
       f"{coops.food_processors.sum()} food processors, {coops.exporters.sum()} goods exporters")
 print(f"EICV 2020: {len(cons)} district-crop rows across {cons.DistrictName.nunique()} districts")
 print(f"Irrigation (SAS 2026 A Table 32): {len(irr)} districts")
+print(f"AHS 2024: {len(t27)} extension-type rows, {len(t29)} extension-source rows")

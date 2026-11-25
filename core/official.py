@@ -1,9 +1,11 @@
 """NISR's official SAS tables (prep_official.py) and the productivity-target analysis built on them.
 
 Everything here uses published numbers only:
-    - yearly national yield = (Season A + Season B production) / (A + B harvested area), Table 6
-    - PSTA 5 / NST2 target: productivity of priority food crops +50% by 2029, from the 2024 baseline
-      (the agricultural year before PSTA 5 began); a straight path to it means +20% by 2026
+    - PSTA 5 (MINAGRI, 2024/25-2028/29): "a 50% increase in productivity ... as outlined in the NST2 goal" (p. 14).
+      Its results framework (p. 21) sets a yield target per priority food crop and year, from a 2023 baseline,
+      source SAS. Those 2023 baselines equal NISR's 2023 Season A national yields for all eight crops (to one
+      decimal), so progress is measured on Season A national yields. We read farming year 2024/25 as Season A 2025
+      (Sep 2024 - Feb 2025) and 2025/26 as Season A 2026: our reading, PSTA 5 doesn't say.
     - district catch-up: districts below the top-quarter (75th percentile) yield of a season reach it
     - small-scale catch-up: small-scale farmers (SSF) close part of the gap to large-scale (LSF) yield;
       SSF's share of harvested area is solved from national = s * SSF + (1 - s) * LSF (Tables 6 and 11/13)
@@ -15,12 +17,27 @@ import streamlit as st
 from core.data import DATA
 
 MAJOR = ["Beans", "Maize", "Irish potato", "Cassava", "Sweet potato", "Paddy rice", "Banana"]
-BASE_YEAR, TARGET_YEAR, TARGET_GAIN = 2024, 2029, 0.50
 LATEST_YEAR = 2026
-EXPECTED_NOW = TARGET_GAIN * (LATEST_YEAR - BASE_YEAR) / (TARGET_YEAR - BASE_YEAR)  # +20% by 2026 on a straight path
 SOURCE_URL = "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey"
 PSTA5_URL = ("https://www.minagri.gov.rw/fileadmin/user_upload/Minagri/Publications/Policies_and_strategies/"
              "PSTA_5_Abridged_version_Final.pdf")
+
+# PSTA 5 results framework, "Productivity for the priority food crops" (p. 21), MT/ha, source SAS.
+# Columns: baseline 2023, then the target for each farming year.
+PSTA_YEARS = ["2023", "2024/25", "2025/26", "2026/27", "2027/28", "2028/29"]
+PSTA_TARGETS = {  # NISR crop name -> yields in PSTA_YEARS order
+    "Maize": [1.7, 1.87, 2.06, 2.26, 2.49, 2.74],
+    "Irish potato": [8.2, 9.2, 10.1, 11.4, 13.1, 14.7],
+    "Paddy rice": [4.0, 4.3, 4.5, 4.8, 5.1, 5.4],
+    "Wheat": [1.2, 1.29, 1.3, 1.32, 1.34, 1.35],
+    "Beans": [0.6, 0.8, 0.9, 1, 1.1, 1.1],
+    "Soybean": [0.4, 0.8, 0.9, 1, 1.1, 1.2],
+    "Cassava": [13.5, 15, 15.7, 16.5, 17.2, 17.9],
+    "Cooking banana": [14.2, 16.3, 17.1, 17.9, 18.8, 19.7],
+}
+PSTA_CROPS = list(PSTA_TARGETS)
+SAS_YEAR = {"2023": 2023, "2024/25": 2025, "2025/26": 2026, "2026/27": 2027, "2027/28": 2028, "2028/29": 2029}
+TARGET_LABEL = PSTA_YEARS[-1]
 
 
 @st.cache_data
@@ -44,30 +61,41 @@ def load_inputs() -> pd.DataFrame:
 
 
 @st.cache_data
-def yearly_yield() -> pd.DataFrame:
-    """crop x year: production, harvested area and yield (MT/ha) for Season A + Season B together."""
-    n = load_national()
-    n = n[n.crop.isin(MAJOR)].assign(year=lambda d: d.season.str[:4].astype(int), letter=lambda d: d.season.str[-1])
-    full = n.groupby(["crop", "year"]).letter.nunique().eq(2)  # only years with both seasons published
-    y = n.groupby(["crop", "year"])[["production_mt", "harvested_ha"]].sum()[full].reset_index()
-    y["yield_t_ha"] = y.production_mt / y.harvested_ha
-    base = y[y.year == BASE_YEAR].set_index("crop").yield_t_ha
-    y["index"] = 100 * y.yield_t_ha / y.crop.map(base)
-    return y
+def season_a_yield() -> pd.DataFrame:
+    """crop x year: NISR's Season A national yield (MT/ha) for the PSTA 5 crops, 2022-2026 (yield table,
+    'National' row: the figure PSTA 5's baselines come from)."""
+    ft = load_farmer_type()
+    ft = ft[ft.crop.isin(PSTA_CROPS) & ft.season.str.endswith("A")].dropna(subset=["national_kgha"])
+    return ft.assign(year=ft.season.str[:4].astype(int), yield_t_ha=ft.national_kgha / 1000)[
+        ["crop", "year", "yield_t_ha"]].sort_values(["crop", "year"])
+
+
+def psta_targets() -> pd.DataFrame:
+    """Long table: crop, PSTA farming year, the Season A year it is compared with, target MT/ha."""
+    return pd.DataFrame([{"crop": c, "psta_year": y, "year": SAS_YEAR[y], "target_t_ha": v}
+                         for c, vals in PSTA_TARGETS.items() for y, v in zip(PSTA_YEARS, vals)])
 
 
 @st.cache_data
 def target_progress() -> pd.DataFrame:
-    """One row per crop: yield in the base and latest year, change so far, what the straight path expects."""
-    y = yearly_yield()
-    b = y[y.year == BASE_YEAR].set_index("crop")
-    l = y[y.year == LATEST_YEAR].set_index("crop")
-    out = pd.DataFrame({"base_t_ha": b.yield_t_ha, "latest_t_ha": l.yield_t_ha}).dropna()
-    out["change"] = out.latest_t_ha / out.base_t_ha - 1
-    out["target_t_ha"] = out.base_t_ha * (1 + TARGET_GAIN)
-    out["status"] = np.where(out.change >= EXPECTED_NOW, "On track",
-                             np.where(out.change > 0, "Behind", "Falling back"))
-    return out.reset_index().sort_values("change")
+    """One row per PSTA crop: baseline, latest Season A yield, that year's PSTA target, and the final target."""
+    y = season_a_yield().set_index(["crop", "year"]).yield_t_ha
+    t = psta_targets()
+    latest = max(yr for yr in SAS_YEAR.values() if yr <= LATEST_YEAR)
+    psta_now = next(k for k, v in SAS_YEAR.items() if v == latest)
+    rows = []
+    for crop in PSTA_CROPS:
+        tt = t[t.crop == crop].set_index("psta_year").target_t_ha
+        rows.append({"crop": crop, "base_t_ha": tt["2023"], "nisr_2023A": y.get((crop, 2023), np.nan),
+                     "latest_t_ha": y.get((crop, latest), np.nan), "psta_now": psta_now,
+                     "target_now": tt[psta_now], "target_t_ha": tt[TARGET_LABEL]})
+    out = pd.DataFrame(rows)
+    out["change"] = out.latest_t_ha / out.base_t_ha - 1                 # since the PSTA 5 baseline
+    out["vs_target_now"] = out.latest_t_ha / out.target_now - 1          # vs this year's PSTA target
+    out["needed"] = out.target_t_ha / out.latest_t_ha - 1                # still to gain by 2028/29
+    out["status"] = np.where(out.vs_target_now >= 0, "On track",
+                             np.where(out.change > 0, "Behind", "Below baseline"))
+    return out.sort_values("vs_target_now")
 
 
 def _season_gains(crop: str, season: str, catch_share: float, gap_share: float) -> dict:
@@ -92,7 +120,7 @@ def _season_gains(crop: str, season: str, catch_share: float, gap_share: float) 
 def scenario(catch_share: float, gap_share: float, year: int = LATEST_YEAR) -> pd.DataFrame:
     """Per crop: % more production from district catch-up and from small-scale catch-up, Seasons A + B."""
     rows = []
-    for crop in MAJOR:
+    for crop in PSTA_CROPS:
         parts = [_season_gains(crop, f"{year}{s}", catch_share, gap_share) for s in "AB"]
         prod = sum(p["production"] for p in parts)
         catch, gap = sum(p["catch_t"] for p in parts), sum(p["gap_t"] for p in parts)

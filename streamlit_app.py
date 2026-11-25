@@ -20,6 +20,7 @@ pages = {
         st.Page("views/district.py", title="District Profile", icon=":material/location_city:"),
     ],
     "Plan": [
+        st.Page("views/trends.py", title="Trends 2022–2026", icon=":material/show_chart:"),
         st.Page("views/target.py", title="Road to +50%", icon=":material/flag:"),
         st.Page("views/practices.py", title="Farming Practices", icon=":material/agriculture:"),
     ],
@@ -28,6 +29,7 @@ pages = {
         st.Page("views/ussd.py", title="USSD prototype", icon=":material/dialpad:"),
     ],
     "About": [
+        st.Page("views/questions.py", title="Research questions", icon=":material/science:"),
         st.Page("views/model.py", title="Model & Data Quality", icon=":material/insights:"),
     ],
 }
