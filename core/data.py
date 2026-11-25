@@ -25,6 +25,29 @@ DISTRICT_PROVINCE = {d: p for p, ds in PROVINCES.items() for d in ds}
 DISTRICTS = sorted(DISTRICT_PROVINCE)
 
 
+@st.cache_resource
+def _data_signature_box() -> dict:
+    return {"sig": None}
+
+
+def refresh_cache_if_data_changed() -> None:
+    """Clear every cached result when a file in app_data/ changes (a new deploy, or a rebuild by the prep scripts).
+    Streamlit keys cached data on the code, not on the files a function reads, so without this a server that picks
+    up new code without restarting keeps serving the old data."""
+    sig = tuple(sorted((p.name, p.stat().st_size, int(p.stat().st_mtime))
+                       for p in DATA.iterdir() if p.is_file() and p.suffix != ".db"))
+    box = _data_signature_box()
+    if box["sig"] != sig:  # also on the first run of a new process: cheap, and safe after a hot reload
+        st.cache_data.clear()
+        box["sig"] = sig
+
+
+def season_year(today: date | None = None) -> int:
+    """Harvest year of the current season: Season A runs Sep-Feb, so Jul-Dec count toward next year's Season A."""
+    today = today or date.today()
+    return today.year + 1 if today.month >= 7 else today.year
+
+
 def current_season(today: date | None = None) -> str:
     """Rwanda's agricultural calendar: A = Sep–Feb, B = Mar–Jun. Season C (Jul–Aug) is not covered, so those
     months look ahead to the coming Season A."""

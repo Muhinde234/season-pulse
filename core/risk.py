@@ -83,10 +83,40 @@ def season_baseline(season: str) -> pd.DataFrame:
         persistently_low=lambda d: d.persistently_low.astype(bool))
 
 
-def adjusted_table(season: str, reports: pd.DataFrame) -> pd.DataFrame:
-    """One row per district x crop with baseline, report adjustment, adjusted RYI and alert level."""
-    b = season_baseline(season)
-    b["baseline_log"] = np.log(b.baseline_RYI)
+def official_result_base(season: str, year: int) -> pd.DataFrame:
+    """A past season, same columns as season_baseline: each district x crop's official NISR result that year (RYI vs
+    the median district), with the year before beside it. Used to look back at what actually happened."""
+    from core.official import APP_TO_OFFICIAL, load_district_crops  # core.official imports core.data, not this
+
+    dc, letter = load_district_crops(), season[-1]
+    to_app = {v: k for k, v in APP_TO_OFFICIAL.items()}
+
+    def ryi(y: int) -> pd.Series:
+        d = dc[(dc.season == f"{y}{letter}") & dc.crop.isin(to_app)].dropna(subset=["yield_kgha"])
+        return (d.yield_kgha / d.groupby("crop").yield_kgha.transform("median")).set_axis(
+            pd.MultiIndex.from_frame(d[["DistrictName", "crop"]]))
+
+    now = ryi(year)
+    if now.empty:
+        return pd.DataFrame(columns=["DistrictName", "CropName", "Season", "baseline_RYI", "prev_RYI", "n_years",
+                                     "persistently_low", "source_season", "baseline_source"])
+    prev, before = ryi(year - 1).reindex(now.index), ryi(year - 2).reindex(now.index)
+    years_with_data = sum(ryi(y).reindex(now.index).notna() for y in range(year - 4, year + 1))
+    out = pd.DataFrame({"baseline_RYI": now.round(3), "prev_RYI": prev.round(3), "n_years": years_with_data,
+                        "persistently_low": (now < 0.8) & (prev < 0.8) & (before < 0.8)}).reset_index()
+    return out.assign(CropName=out.crop.map(to_app), Season=season, source_season=f"{year}{letter}",
+                      baseline_source=f"NISR official {year} Season {letter}").drop(columns="crop")
+
+
+def adjusted_table(season: str, reports: pd.DataFrame, year: int | None = None) -> pd.DataFrame:
+    """One row per district x crop with baseline, report adjustment, adjusted RYI and alert level.
+    `year` given: a past season, built from that year's official results (no field reports apply)."""
+    if year is None:
+        b = season_baseline(season)
+    else:
+        b = official_result_base(season, year)
+        reports = reports.iloc[0:0]
+    b["baseline_log"] = np.log(b.baseline_RYI.astype(float))
 
     r = reports[reports.season == season].copy()
     if len(r):
@@ -112,7 +142,7 @@ def adjusted_table(season: str, reports: pd.DataFrame) -> pd.DataFrame:
     cons = cons.assign(food_share=cons.consumption_rwf_2020
                        / cons.groupby("DistrictName").consumption_rwf_2020.transform("sum"))
     b = b.merge(cons[["DistrictName", "CropName", "food_share"]], on=["DistrictName", "CropName"], how="left")
-    b = b.merge(latest_rainfall(season), on="DistrictName", how="left")
+    b = b.merge(latest_rainfall(season, year), on="DistrictName", how="left")
     b = b.merge(load_irrigation()[["DistrictName", "modern_pct", "traditional_pct"]], on="DistrictName", how="left")
     b["action"] = recommended_actions(b, load_cooperatives())
 
@@ -127,14 +157,17 @@ def adjusted_table(season: str, reports: pd.DataFrame) -> pd.DataFrame:
              .drop(columns="level_order").reset_index(drop=True))
 
 
-def latest_rainfall(season: str) -> pd.DataFrame:
-    """Most recent CHIRPS rainfall for this season type per district (may be partial: only months published)."""
+def latest_rainfall(season: str, year: int | None = None) -> pd.DataFrame:
+    """CHIRPS rainfall for this season type per district: the given year, or the most recent one (may be partial:
+    only months published). Empty when that year isn't in the rainfall file."""
     cols = ["DistrictName", "rain_mm", "avg_mm", "rain_anom_pct", "rain_partial", "rain_period"]
     rain = load_rainfall()
     if rain.empty:
         return pd.DataFrame(columns=cols)
     rain = rain[rain.Season == season]
-    rain = rain[rain.Year == rain.Year.max()]
+    rain = rain[rain.Year == (rain.Year.max() if year is None else year)]
+    if rain.empty:
+        return pd.DataFrame(columns=cols)
     return rain.assign(rain_partial=rain.partial, rain_period=rain.apply(rain_period, axis=1))[cols]
 
 

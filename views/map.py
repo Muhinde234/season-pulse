@@ -1,13 +1,12 @@
-from datetime import date
-
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from core.data import CROPS, DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fmt_pct, load_geojson, pct_vs_typical
+from core.data import CROPS, DISTRICT_PROVINCE, DISTRICTS, SEASONS, fmt_pct, load_geojson, pct_vs_typical, season_year
 from core.db import get_reports
-from core.official import APP_TO_OFFICIAL, attach_official, load_district_crops
+from core.official import (APP_TO_OFFICIAL, attach_official, load_district_crops, seasons_for, year_label,
+                           year_options)
 from core.risk import adjusted_table
 from core.ui import filter_head, hero, nz, rank_list, section
 
@@ -19,21 +18,8 @@ CLIP = 50  # colour saturates at ±50%
 SHOW = ["% vs typical district", "Yield (kg/ha)"]
 
 
-def season_year(today: date | None = None) -> int:
-    """Harvest year of the current season: Season A runs Sep-Feb, so Sep-Dec belong to next year's Season A."""
-    today = today or date.today()
-    return today.year + 1 if today.month >= 7 else today.year
-
-
-NOW_SEASON, NOW_YEAR = current_season(), season_year()
+NOW_YEAR = season_year()
 official = load_district_crops()
-official_years = sorted({int(s[:4]) for s in official.season}, reverse=True)
-YEARS = [NOW_YEAR] + [y for y in official_years if y != NOW_YEAR]
-
-
-def year_label(y: int) -> str:
-    return f"{y} · this season (expected)" if y == NOW_YEAR else f"{y} · official NISR results"
-
 
 hero("District Risk Map", "Yield vs the typical district. **Red** = below, **blue** = above.",
      eyebrow="Monitor · Map", ic="map", meta=[("location_on", "30 districts")])
@@ -42,12 +28,8 @@ with st.container(key="toolbar"):
     st.markdown(filter_head(hint="Pick a crop, then a year and season, then what to show"), unsafe_allow_html=True)
     c1, c2, c3, c4 = st.columns([1, 1.3, 0.9, 1.1])
     crop = c1.selectbox("Crop", CROPS, key="m_crop")
-    year = c2.selectbox("Year", YEARS, format_func=year_label, key="m_year")
-    if year == NOW_YEAR:
-        seasons = [NOW_SEASON]
-    else:
-        seasons = [s for s in SEASONS if f"{year}{s[-1]}" in set(official.season)]
-    season = c3.selectbox("Season", seasons, format_func=lambda s: SEASONS[s].split(" (")[0], key=f"m_season_{year}")
+    year = c2.selectbox("Year", year_options(), format_func=year_label, key="m_year")
+    season = c3.selectbox("Season", seasons_for(year), format_func=lambda s: SEASONS[s].split(" (")[0], key=f"m_season_{year}")
     show = c4.selectbox("Show", SHOW, key="m_show")
 current = year == NOW_YEAR
 season_name = f"{SEASONS[season].split(' (')[0]} {year}"

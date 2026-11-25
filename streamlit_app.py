@@ -6,10 +6,12 @@ from pathlib import Path
 
 import streamlit as st
 
+from core.data import refresh_cache_if_data_changed
 from core.ui import apply_theme, footer, sidebar_brand, sidebar_note
 
 st.set_page_config(page_title="Imboni", page_icon=str(Path(__file__).parent / "assets" / "imboni_icon.png"),
                    layout="wide")
+refresh_cache_if_data_changed()
 apply_theme()
 
 pages = {

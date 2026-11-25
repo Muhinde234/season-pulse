@@ -3,9 +3,9 @@ import html
 import pandas as pd
 import streamlit as st
 
-from core.data import CROPS, PROVINCES, SEASONS, current_season, fmt_pct, pct_vs_typical
+from core.data import CROPS, SEASONS, fmt_pct, pct_vs_typical, season_year
 from core.db import get_reports
-from core.official import attach_official
+from core.official import attach_official, seasons_for, year_label, year_options
 from core.risk import DRY_PCT, HIGH, LEVELS, SURPLUS, TRADITIONAL_PCT, WATCH, adjusted_table
 from core.ui import LEVEL_STYLE, badge, filter_head, hero, icon, nz
 
@@ -34,14 +34,12 @@ TINY = {"Irrigation": "Irrigation", "Soil fertility": "Soil", "Post-harvest stor
         "Value addition": "Processing", "Export": "Export"}  # fits the list column
 METER = 60  # risk meter spans -60% ... +60% vs typical
 
-hero("Alerts & Recommended Actions", "Where yields are at risk this season, and what to do.",
-     eyebrow="Monitor · Alerts", ic="notifications_active",
-     meta=[("calendar", SEASONS[current_season()].split(" (")[0]), ("edit_note", "Updates with every report")])
+hero("Alerts & Recommended Actions", "Where yields are at risk, and what to do.",
+     eyebrow="Monitor · Alerts", ic="notifications_active")
 
 # ---------- filters (dropdowns; an empty dropdown means "all") ----------
-seasons = list(SEASONS)
-FILTER_DEFAULTS = {"af_season": current_season(), "af_levels": ["High", "Watch"], "af_crops": [],
-                   "af_prov": [], "af_acts": [], "al_sim": True}
+NOW_YEAR = season_year()
+FILTER_DEFAULTS = {"af_year": NOW_YEAR, "af_levels": ["High", "Watch"], "af_crops": [], "af_acts": [], "al_sim": True}
 
 
 def is_default(key: str, value) -> bool:
@@ -50,8 +48,9 @@ def is_default(key: str, value) -> bool:
 
 
 def reset_filters() -> None:
-    for k in FILTER_DEFAULTS:  # dropping the stored value lets every widget start from its default again
-        st.session_state.pop(k, None)
+    for k in list(st.session_state):  # dropping the stored value lets every widget start from its default again
+        if k in FILTER_DEFAULTS or k.startswith("af_season_"):
+            st.session_state.pop(k, None)
 
 
 n_active = sum(not is_default(k, st.session_state[k]) for k in FILTER_DEFAULTS if k in st.session_state)
@@ -61,19 +60,21 @@ with st.container(key="atool"):
                 unsafe_allow_html=True)
     h3.button("Reset", icon=":material/restart_alt:", type="tertiary", on_click=reset_filters,
               disabled=not n_active, width="stretch", key="al_reset")
-    c1, c2, c3, c4, c5 = st.columns([.8, 1.4, 1.05, 1.05, 1.3], vertical_alignment="bottom")
-    season = c1.selectbox("Season", seasons, index=seasons.index(current_season()), key="af_season",
+    c1, c2, c3, c4, c5 = st.columns([1.25, .8, 1.3, 1.1, 1.3], vertical_alignment="bottom")
+    year = c1.selectbox("Year", year_options(), format_func=year_label, key="af_year")
+    season = c2.selectbox("Season", seasons_for(year), key=f"af_season_{year}",
                           format_func=lambda s: SEASONS[s].split(" (")[0])
-    levels = c2.multiselect("Risk level", list(LEVELS), default=["High", "Watch"], key="af_levels",
+    levels = c3.multiselect("Risk level", list(LEVELS), default=["High", "Watch"], key="af_levels",
                             placeholder="All levels") or list(LEVELS)
-    crops = c3.multiselect("Crop", CROPS, key="af_crops", placeholder="All crops") or CROPS
-    provinces = c4.multiselect("Province", list(PROVINCES), placeholder="All provinces", key="af_prov",
-                               format_func=lambda p: p.replace(" Province", ""))
+    crops = c4.multiselect("Crop", CROPS, key="af_crops", placeholder="All crops") or CROPS
 
+    current = year == NOW_YEAR
     reports = get_reports(season, include_simulated=st.session_state.get("al_sim", True))
-    t = adjusted_table(season, reports)
-    t = t[t.CropName.isin(crops) & (t.Province.isin(provinces) if provinces else True)]
-    t = attach_official(t, season)  # official yield, area and tonnes below typical (NISR SAS tables)
+    if not current:  # a past season: NISR's official results, no field reports
+        reports = reports.iloc[0:0]
+    t = adjusted_table(season, reports, None if current else year)
+    t = t[t.CropName.isin(crops)]
+    t = attach_official(t, season, None if current else year)  # official yield, area, tonnes below typical
     n_sim = int(reports.is_simulated.sum())
     has = {name: t.action.str.contains(label, regex=False) for name, label in SHORT.items()}
     acts = c5.multiselect("Recommended action", list(SHORT), key="af_acts", placeholder="All actions",
@@ -114,8 +115,19 @@ with h2:
         st.markdown(guide_html(), unsafe_allow_html=True)
         st.toggle("Include simulated reports", value=True, key="al_sim")
 
-# ---------- status + tiles (after crop/province filters, before level/action filters) ----------
-if n_sim:
+# ---------- apply every filter: the tiles and the list both follow them ----------
+view = t[t.level.isin(levels)]
+if acts:
+    view = view[pd.concat([has[a] for a in acts], axis=1).any(axis=1).reindex(view.index, fill_value=False)]
+view = view.reset_index(drop=True)
+crop_reports = reports[reports.crop.isin(crops)] if len(reports) else reports
+
+# ---------- status + tiles ----------
+season_name = f"{SEASONS[season].split(' (')[0]} {year}"
+if not current:
+    note = ("history", f"Looking back: NISR's official results for <b>{season_name}</b>. Levels show how each "
+                       "district actually did; no field reports apply.", "info")
+elif n_sim:
     note = ("science", f"<b>{n_sim} of {len(reports)}</b> reports are simulated demo data", "warn")
 elif reports.empty:
     note = ("info", "No field reports yet this season: estimates are the baseline only", "info")
@@ -125,34 +137,29 @@ if note:
     st.markdown(f'<div class="sp-note sp-note-{note[2]}">{icon(note[0])}<span>{note[1]}</span></div>',
                 unsafe_allow_html=True)
 
-total = max(len(t), 1)
+total = max(len(view), 1)
 level_help = {"High": f"≥{round((1 - HIGH) * 100)}% below typical", "Watch": f"≥{round((1 - WATCH) * 100)}% below",
               "Normal": "near or above typical"}
-covered = int((t.n_reports > 0).sum())
+covered = int((view.n_reports > 0).sum())
 
 
 def tonnes_note(lvl: str) -> str:
-    tons = t.loc[t.level == lvl, "tonnes_below"].sum()
+    tons = view.loc[view.level == lvl, "tonnes_below"].sum()
     return f" · ≈{tons:,.0f} t below typical" if lvl != "Normal" and tons >= 1 else ""
 
 
 tiles = "".join(
     f'<div class="sp-tile" style="--c:{LEVEL_STYLE[lvl]}"><div class="sp-tile-h">{badge(lvl)}'
-    f'<span>{level_help[lvl]}{tonnes_note(lvl)}</span></div><div class="sp-tile-n">{nz(int((t.level == lvl).sum()))}</div>'
-    f'<div class="sp-tile-bar"><i style="width:{100 * (t.level == lvl).sum() / total:.0f}%"></i></div></div>'
+    f'<span>{level_help[lvl]}{tonnes_note(lvl)}</span></div><div class="sp-tile-n">{nz(int((view.level == lvl).sum()))}</div>'
+    f'<div class="sp-tile-bar"><i style="width:{100 * (view.level == lvl).sum() / total:.0f}%"></i></div></div>'
     for lvl in LEVELS)
+reports_sub = ("past season: no field reports" if not current else
+               f"{covered} of {len(view)} district-crops covered" if covered else "no district-crop covered yet")
 tiles += (f'<div class="sp-tile" style="--c:#475569"><div class="sp-tile-h"><span class="sp-badge" '
-          f'style="--c:#475569">Reports</span><span>'
-          f'{f"{covered} of {len(t)} district-crops covered" if covered else "no district-crop covered yet"}'
-          f'</span></div><div class="sp-tile-n">{nz(len(reports), "None yet")}</div><div class="sp-tile-bar"><i style="width:'
-          f'{100 * covered / total:.0f}%"></i></div></div>')
+          f'style="--c:#475569">Reports</span><span>{reports_sub}</span></div>'
+          f'<div class="sp-tile-n">{nz(len(crop_reports), "None" if not current else "None yet")}</div>'
+          f'<div class="sp-tile-bar"><i style="width:{100 * covered / total:.0f}%"></i></div></div>')
 st.markdown(f'<div class="sp-tiles">{tiles}</div>', unsafe_allow_html=True)
-
-# ---------- list ----------
-view = t[t.level.isin(levels)]
-if acts:
-    view = view[pd.concat([has[a] for a in acts], axis=1).any(axis=1).reindex(view.index, fill_value=False)]
-view = view.reset_index(drop=True)
 
 
 def short_actions(a: str) -> str:
@@ -177,7 +184,7 @@ def why(r) -> list[tuple[str, str]]:
         sim = f" ({int(r.n_simulated)} simulated)" if r.n_simulated else ""
         out.append(("edit_note", f"<b>{int(r.n_reports)} field reports</b>{sim}: " + ", ".join(bits)))
     else:
-        out.append(("edit_note", "No field reports yet: the estimate is the baseline"))
+        out.append(("edit_note", "No field reports yet: the estimate is the baseline" if current else "Past season: official result, no field reports"))
     if pd.notna(r.rain_anom_pct):
         out.append(("rainy", f"Rain <b>{r.rain_anom_pct:+.0f}%</b> vs the district average "
                              f"({html.escape(r.rain_period)}{', partial season' if r.rain_partial else ''})"))
@@ -207,7 +214,7 @@ def detail(r) -> str:
     p = float(pct_vs_typical(r.adjusted_RYI))
     pos = (max(min(p, METER), -METER) + METER) / (2 * METER) * 100
     shift = p - float(pct_vs_typical(r.baseline_RYI))
-    sub = f"{shift:+.0f} pts from field reports" if r.n_reports else "baseline, no reports yet"
+    sub = (f"{shift:+.0f} pts from field reports" if r.n_reports else "baseline, no reports yet") if current else "official NISR result"
     reasons = "".join(f'<li>{icon(ic)}<span>{txt}</span></li>' for ic, txt in why(r))
     todo = [a for a in r.action.split(" · ") if a in ACTIONS]
     steps = "".join(
@@ -224,8 +231,8 @@ def detail(r) -> str:
             f'<div class="sp-alert-top">{badge(r.level)}<span class="sp-rank-no">'
             f'{f"priority {r.priority:.2f}" if r.priority else ""}</span></div>'
             f'<div class="sp-alert-t">{html.escape(r.DistrictName)} · {html.escape(r.CropName)}</div>'
-            f'<div class="sp-alert-p">{html.escape(r.Province)} · {SEASONS[season].split(" (")[0]}</div>'
-            f'<div class="sp-alert-v">{fmt_pct(r.adjusted_RYI)}<small>expected vs typical district · {sub}</small></div>'
+            f'<div class="sp-alert-p">{html.escape(r.Province)} · {season_name}</div>'
+            f'<div class="sp-alert-v">{fmt_pct(r.adjusted_RYI)}<small>{"expected" if current else "actual"} vs typical district · {sub}</small></div>'
             f'<div class="sp-meter"><span class="sp-meter-0"></span><i style="left:{pos:.1f}%"></i></div>'
             f'<div class="sp-meter-l"><span>−{METER}%</span><span>typical</span><span>+{METER}%</span></div>'
             f'{stake(r)}'
@@ -250,7 +257,7 @@ with left:
                                                                            if n in TINY) or "Monitor"))
         event = st.dataframe(
             table, hide_index=True, width="stretch", height=560, on_select="rerun", selection_mode="single-row",
-            key=f"al_table_{season}",
+            key=f"al_table_{year}{season}",
             column_order=["level", "DistrictName", "CropName", "Expected", "priority", "tonnes_below", "Actions"],
             column_config={
                 "level": st.column_config.TextColumn("Level", width=58),
@@ -270,7 +277,7 @@ with left:
         sel = view.iloc[rows[0] if rows and rows[0] < len(view) else 0]
     export = t.assign(actions=t.action.map(short_actions)).drop(columns=["baseline_log", "action"])
     st.download_button("Download full ranking (CSV)", export.to_csv(index=False), icon=":material/download:",
-                       file_name=f"imboni_alerts_{season}.csv", mime="text/csv")
+                       file_name=f"imboni_alerts_{year}{season[-1]}.csv", mime="text/csv")
 with right:
     if sel is not None:
         st.markdown(detail(sel), unsafe_allow_html=True)

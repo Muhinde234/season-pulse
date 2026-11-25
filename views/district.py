@@ -4,12 +4,12 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, current_season, fmt_pct, load_cooperatives,
-                       load_irrigation, pct_vs_typical)
+from core.data import (DISTRICT_PROVINCE, DISTRICTS, SEASONS, fmt_pct, load_cooperatives, load_irrigation,
+                       pct_vs_typical, season_year)
 from core.db import get_reports
 from core.official import (MAJOR, district_trend, district_vs_national_practices, latest_official_season,
-                           load_district_crops)
-from core.risk import adjusted_table, season_baseline
+                           load_district_crops, seasons_for, year_label, year_options)
+from core.risk import adjusted_table, official_result_base, season_baseline
 from core.ui import CROP_IC, LEVEL_STYLE, badge, filter_head, hero, icon, nz, rank_list, section
 ACTION_TAG = {"Small-scale irrigation": ("water_drop", "#0284c7", "Irrigation"),
               "Soil testing & fertility support": ("science", "#16a34a", "Soil fertility"),
@@ -22,16 +22,20 @@ hero("District Profile", "Everything Imboni knows about one district.", eyebrow=
      ic="location_city", meta=[("location_on", "30 districts"), ("history", "2022–2026")])
 
 seasons = list(SEASONS)
+NOW_YEAR = season_year()
 with st.container(key="toolbar"):
-    st.markdown(filter_head(hint="Choose a district and season"), unsafe_allow_html=True)
-    c1, c2, _ = st.columns([1, 1, 1.2], vertical_alignment="bottom")
+    st.markdown(filter_head(hint="Choose a district, then a year and season"), unsafe_allow_html=True)
+    c1, c2, c3, _ = st.columns([1, 1.3, .9, .6], vertical_alignment="bottom")
     district = c1.selectbox("District", DISTRICTS, index=DISTRICTS.index("Bugesera"), key="dp_district")
-    season = c2.selectbox("Season", seasons, index=seasons.index(current_season()), key="dp_season2",
+    year = c2.selectbox("Year", year_options(), format_func=year_label, key="dp_year")
+    season = c3.selectbox("Season", seasons_for(year), key=f"dp_season_{year}",
                           format_func=lambda s: SEASONS[s].split(" (")[0])
+current = year == NOW_YEAR
+season_name = f"{SEASONS[season].split(' (')[0]} {year}"
 
 province = DISTRICT_PROVINCE[district]
-reports = get_reports(season)
-t = adjusted_table(season, reports)
+reports = get_reports(season) if current else get_reports(season).iloc[0:0]
+t = adjusted_table(season, reports, None if current else year)
 d = t[t.DistrictName == district].sort_values("adjusted_RYI")
 coops = load_cooperatives().set_index("DistrictName").loc[district]
 irr = load_irrigation().set_index("DistrictName").reindex([district]).iloc[0]
@@ -44,7 +48,7 @@ rain_txt = (f"{rain.rain_anom_pct.iloc[0]:+.0f}%", f"rain vs average · {rain.ra
 kpis = [
     ("crisis_alert", LEVEL_STYLE["High"] if at_risk else LEVEL_STYLE["Normal"],
      f"{at_risk} of {len(d)}" if at_risk else "None", "Crops at risk",
-     f"High or Watch · {SEASONS[season].split(' (')[0]}" if at_risk else "every crop near or above typical"),
+     f"High or Watch · {season_name}" if at_risk else "every crop near or above typical"),
     ("rainy", "#0284c7", rain_txt[0], "Rainfall", rain_txt[1]),
     ("water_drop", "#0891b2", f"{irr.traditional_pct:.0f}%" if pd.notna(irr.traditional_pct) else "–",
      "Traditional irrigation", "of irrigated plots · SAS 2026 A"),
@@ -59,7 +63,8 @@ st.markdown(f'<div class="sp-dhead"><b>{html.escape(district)}</b><span>{html.es
                 for ic, c, n, label, sub in kpis) + "</div>", unsafe_allow_html=True)
 
 # ---------- crops this season ----------
-section(f"Crops this season", SEASONS[season])
+section("Crops this season" if current else "How each crop did",
+        f"{season_name} · expected" if current else f"{season_name} · official NISR results")
 if d.empty:
     st.info("No reliable survey data for this district and season.", icon=":material/info:")
 else:
@@ -90,17 +95,19 @@ else:
     st.markdown('<div class="sp-rows"><div class="sp-row sp-row-h"><span>Crop</span><span>Status</span>'
                 f'<span title="Bar: expected this season, from typical (centre line). Tick: baseline (last official result). '
                 f'Scale −{SCALE}% to +{SCALE}%.">vs typical district</span>'
-                f'<span>Expected</span><span>Recommended action</span></div>{"".join(rows)}</div>',
+                f'<span>{'Expected' if current else 'Result'}</span><span>Recommended action</span></div>{"".join(rows)}</div>',
                 unsafe_allow_html=True)
     st.page_link("views/alerts.py", label="Open in Alerts & Recommended Actions", icon=":material/arrow_forward:")
 
 # ---------- history + official 2026 ----------
 left, right = st.columns([1.5, 1], gap="medium")
 with left.container(border=True, key="card_district_1"):
-    section("Both seasons", "Baseline: last official result, % vs typical district")
+    section("Both seasons", "Last official result, % vs typical district" if current
+            else f"Official results {year}, % vs typical district")
     fig = go.Figure()
     for s, color in zip(seasons, ["#16a34a", "#0284c7"]):
-        g = season_baseline(s).query("DistrictName == @district").sort_values("CropName")
+        g = (season_baseline(s) if current else official_result_base(s, year))
+        g = g.query("DistrictName == @district").sort_values("CropName")
         fig.add_bar(x=g.CropName, y=pct_vs_typical(g.baseline_RYI), name=SEASONS[s].split(" (")[0], marker_color=color,
                     marker_line_width=0, customdata=g.baseline_source,
                     hovertemplate="%{x}<br>%{y:+.0f}% vs typical<br>%{customdata}<extra>" + s[-1] + "</extra>")
@@ -110,7 +117,7 @@ with left.container(border=True, key="card_district_1"):
                       paper_bgcolor="rgba(0,0,0,0)",
                       yaxis=dict(ticksuffix="%", gridcolor="rgba(128,128,128,.15)", zeroline=False))
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
-off_season = latest_official_season(season)
+off_season = latest_official_season(season) if current else f"{year}{season[-1]}"
 with right.container(border=True, key="card_district_2"):
     if off_season is None:
         st.caption("No official NISR yields for this season.")
@@ -153,29 +160,33 @@ if off_season is not None:
     with right2.container(border=True, key="card_district_4"):
         pv = district_vs_national_practices(district, off_season)
         section("Farming practices", f"{district} vs national · {off_season[:4]} Season {letter}")
-        figp = go.Figure()
-        for _, r in pv.iterrows():
-            figp.add_shape(type="line", x0=r.national, x1=r.district, y0=r.label, y1=r.label,
-                           line=dict(color="#C9D3CC", width=2))
-        figp.add_scatter(x=pv.national, y=pv.label, mode="markers", name="National average",
-                         marker=dict(color="#5E6E65", size=10, symbol="line-ns-open", line=dict(width=3)),
-                         hovertemplate="<b>%{y}</b><br>National: %{x:.0f}%<extra></extra>")
-        figp.add_scatter(x=pv.district, y=pv.label, mode="markers+text", name=district,
-                         marker=dict(color=["#1F8A43" if a >= b else "#E0A100" for a, b in zip(pv.district, pv.national)],
-                                     size=11, line=dict(color="white", width=2)),
-                         text=[f"{v:.0f}%" for v in pv.district],
-                         textposition=["middle right" if a >= b else "middle left"
-                                       for a, b in zip(pv.district, pv.national)],
-                         textfont=dict(color="#5E6E65", size=11),
-                         hovertemplate="<b>%{y}</b><br>" + district + ": %{x:.0f}%<extra></extra>")
-        figp.update_layout(height=320, margin=dict(l=120, r=10, t=10, b=0), plot_bgcolor="rgba(0,0,0,0)",
-                           paper_bgcolor="rgba(0,0,0,0)", legend=dict(orientation="h", y=-0.14, x=-0.4),
-                           xaxis=dict(range=[0, 112], ticksuffix="%", gridcolor="rgba(14,59,34,.08)"),
-                           yaxis=dict(showgrid=False))
-        st.plotly_chart(figp, width="stretch", config={"displayModeBar": False})
-        below = pv[pv.district < pv.national - 5].sort_values("national", ascending=False).label.tolist()
-        st.caption(("Below the national average: " + ", ".join(below).lower() + ".") if below
-                   else "At or above the national average on every practice.")
+        if pv.empty:
+            st.caption(f"NISR's per-season tables on farming practices start in 2024; none for {off_season[:4]}.")
+        else:
+            figp = go.Figure()
+            for _, r in pv.iterrows():
+                figp.add_shape(type="line", x0=r.national, x1=r.district, y0=r.label, y1=r.label,
+                               line=dict(color="#C9D3CC", width=2))
+            figp.add_scatter(x=pv.national, y=pv.label, mode="markers", name="National average",
+                             marker=dict(color="#5E6E65", size=10, symbol="line-ns-open", line=dict(width=3)),
+                             hovertemplate="<b>%{y}</b><br>National: %{x:.0f}%<extra></extra>")
+            figp.add_scatter(x=pv.district, y=pv.label, mode="markers+text", name=district,
+                             marker=dict(color=["#1F8A43" if a >= b else "#E0A100"
+                                                for a, b in zip(pv.district, pv.national)],
+                                         size=11, line=dict(color="white", width=2)),
+                             text=[f"{v:.0f}%" for v in pv.district],
+                             textposition=["middle right" if a >= b else "middle left"
+                                           for a, b in zip(pv.district, pv.national)],
+                             textfont=dict(color="#5E6E65", size=11),
+                             hovertemplate="<b>%{y}</b><br>" + district + ": %{x:.0f}%<extra></extra>")
+            figp.update_layout(height=320, margin=dict(l=120, r=10, t=10, b=0), plot_bgcolor="rgba(0,0,0,0)",
+                               paper_bgcolor="rgba(0,0,0,0)", legend=dict(orientation="h", y=-0.14, x=-0.4),
+                               xaxis=dict(range=[0, 112], ticksuffix="%", gridcolor="rgba(14,59,34,.08)"),
+                               yaxis=dict(showgrid=False))
+            st.plotly_chart(figp, width="stretch", config={"displayModeBar": False})
+            below = pv[pv.district < pv.national - 5].sort_values("national", ascending=False).label.tolist()
+            st.caption(("Below the national average: " + ", ".join(below).lower() + ".") if below
+                       else "At or above the national average on every practice.")
 
 # ---------- recent reports ----------
 r = get_reports()

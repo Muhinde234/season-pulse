@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from core.data import DATA
+from core.data import DATA, SEASONS, current_season, season_year
 
 MAJOR = ["Beans", "Maize", "Irish potato", "Cassava", "Sweet potato", "Paddy rice", "Banana"]
 LATEST_YEAR = 2026
@@ -123,6 +123,8 @@ def scenario(catch_share: float, gap_share: float, year: int = LATEST_YEAR) -> p
     for crop in PSTA_CROPS:
         parts = [_season_gains(crop, f"{year}{s}", catch_share, gap_share) for s in "AB"]
         prod = sum(p["production"] for p in parts)
+        if not prod > 0:  # no official production for this crop and year: leave it out rather than divide by 0
+            continue
         catch, gap = sum(p["catch_t"] for p in parts), sum(p["gap_t"] for p in parts)
         rows.append({"crop": crop, "production_t": prod, "catch_t": catch, "gap_t": gap,
                      "catch_pct": 100 * catch / prod, "gap_pct": 100 * gap / prod,
@@ -216,11 +218,33 @@ def latest_official_season(app_season: str) -> str | None:
     return have[-1] if have else None
 
 
-def attach_official(t: pd.DataFrame, app_season: str) -> pd.DataFrame:
-    """Add the latest official yield, the median district yield, harvested area, and the tonnes a district-crop
-    would fall short of a typical district's yield at its expected RYI (harvested area x median x shortfall)."""
+def year_options() -> list[int]:
+    """Year filter: the current season's harvest year first (expected values), then every official year, newest
+    first."""
+    now = season_year()
+    return [now] + sorted({int(s[:4]) for s in load_district_crops().season} - {now}, reverse=True)
+
+
+def seasons_for(year: int) -> list[str]:
+    """Season filter for a year: the current season only for this year, else the seasons NISR published."""
+    if year == season_year():
+        return [current_season()]
+    have = set(load_district_crops().season)
+    return [s for s in SEASONS if f"{year}{s[-1]}" in have]
+
+
+def year_label(year: int) -> str:
+    return f"{year} · this season (expected)" if year == season_year() else f"{year} · official NISR results"
+
+
+def attach_official(t: pd.DataFrame, app_season: str, year: int | None = None) -> pd.DataFrame:
+    """Add the official yield (latest season of that letter, or the given year's), the median district yield,
+    harvested area, and the tonnes a district-crop falls short of a typical district's yield at its RYI
+    (harvested area x median x shortfall)."""
     cols = ["off_season", "off_yield_kgha", "off_median_kgha", "off_harvested_ha", "tonnes_below"]
-    season = latest_official_season(app_season)
+    season = latest_official_season(app_season) if year is None else f"{year}{app_season[-1]}"
+    if season not in set(load_district_crops().season):
+        season = None
     if season is None:
         return t.assign(**{c: np.nan for c in cols})
     d = load_district_crops().query("season == @season").dropna(subset=["yield_kgha"])
