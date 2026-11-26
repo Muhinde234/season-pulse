@@ -151,7 +151,7 @@ with st.expander("Table view", icon=":material/table_rows:"):
         hide_index=True, width="stretch")
 
 # ---------- 4. where to start ----------
-section("Where to start", "districts that would add the most tonnes by reaching the top-quarter yield")
+section("Where to start", "districts that would add the most tonnes by reaching the yield the best quarter of districts already reach")
 crop = st.selectbox("Crop", PSTA_CROPS, key="tg_crop")
 pr = district_priorities(crop).head(10).iloc[::-1]
 if pr.empty:

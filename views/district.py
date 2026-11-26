@@ -65,6 +65,11 @@ st.markdown(f'<div class="sp-dhead"><b>{html.escape(district)}</b><span>{html.es
 # ---------- crops this season ----------
 section("Crops this season" if current else "How each crop did",
         f"{season_name} · expected" if current else f"{season_name} · official NISR results")
+st.caption("Each bar shows a crop's yield vs the typical (median) district for the same crop and season: right of the "
+           "centre line = above typical, left = below. "
+           + ("The small dark tick is the last official NISR result; the bar is that result adjusted by this "
+              "season's field reports (the same when there are no reports)." if current else
+              "These are NISR's official results for that season."))
 if d.empty:
     st.info("No reliable survey data for this district and season.", icon=":material/info:")
 else:

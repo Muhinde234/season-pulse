@@ -108,8 +108,8 @@ fig.update_layout(height=520, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rg
                   hoverlabel=dict(font_family="Inter, sans-serif", font_size=13))
 
 m1, m2, m3, m4 = st.columns(4)
-m1.metric("Districts with data", f"{len(t)} / 30")
-m2.metric("≥25% below typical", nz(int((t.ryi <= 0.75).sum())))
+m1.metric("Below typical", f"{int((t.ryi < 1).sum())} of {len(t)}", help="Districts with any yield below the typical (median) district: every red district on the map")
+m2.metric("High: −25% or lower", nz(int((t.ryi <= 0.75).sum())), help="Districts at least 25% below the typical district, the level of a High alert")
 m3.metric("Typical district", f"{median_kgha:,.0f} kg/ha" if pd.notna(median_kgha) else "–",
           help="The median district: half the districts are above it, half below")
 if current:

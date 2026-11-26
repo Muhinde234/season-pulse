@@ -247,6 +247,10 @@ with left:
     if len(view):
         st.markdown(f'<div class="sp-list-h"><b>{len(view)}</b> alert{"s" if len(view) > 1 else ""} '
                     '<span>· select a row for details</span></div>', unsafe_allow_html=True)
+        st.caption(f"**{'Exp.' if current else 'Result'}** = yield vs the typical (median) district for the same crop "
+                   "and season: −30% means 30% less per hectare. **High** = 25% or more below, **Watch** = 15% or "
+                   "more below. **Priority** puts crops that households depend on more first. **At stake** = tonnes "
+                   "below a typical district's harvest.")
     if view.empty:
         st.info("No alerts match these filters.", icon=":material/filter_alt_off:")
         sel = None

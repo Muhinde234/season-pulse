@@ -13,9 +13,13 @@ CONDITION_COLOR = {1: "#dc2626", 2: "#ea580c", 3: "#ca8a04", 4: "#16a34a", 5: "#
 lang = st.session_state.get("lang", "en")
 hero(t("title", lang), t("intro", lang), eyebrow="Report · Web form", ic="edit_note",
      meta=[("clock", "≈1 min"), ("languages", "Kinyarwanda · English")])
-_, lc = st.columns([3, 1])
+note_col, lc = st.columns([3, 1], vertical_alignment="center")
 with lc:
     lang = lang_toggle()
+note_col.markdown(
+    f'<div class="sp-note sp-note-info">{icon("science")}<span><b>Prototype:</b> this form works, but it has not '
+    "been tested with real farmers yet. A pilot in 2–3 districts is the first step on our roadmap. Until then, "
+    "Imboni's alerts come from NISR's official results.</span></div>", unsafe_allow_html=True)
 
 # Each successful submit bumps the generation so every widget starts empty again
 gen = st.session_state.setdefault("rep_gen", 0)

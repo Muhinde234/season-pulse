@@ -47,9 +47,15 @@ st.markdown('<div class="sp-kpis">' + "".join(
 # ---------- map of alerts per district + top alerts ----------
 left, right = st.columns([1.6, 1], gap="medium")
 with left.container(border=True, key="card_home_1"):
-    section(f"Alerts per district · {season_name}", "High + Watch crops")
-    counts = t[t.level != "Normal"].groupby("DistrictName").size().reindex(DISTRICTS, fill_value=0)
-    hover = [f"<b>{d}</b><br>" + (f"{n} crop{'s' if n > 1 else ''} at High or Watch" if n else "no crop at risk")
+    section(f"Number of crops at risk per district · {season_name}",
+            "Colour = how many crops are at High or Watch, not how far below typical")
+    at_risk = t[t.level != "Normal"].sort_values("adjusted_RYI")
+    counts = at_risk.groupby("DistrictName").size().reindex(DISTRICTS, fill_value=0)
+    crops_txt = at_risk.groupby("DistrictName").apply(
+        lambda g: "<br>".join(f"{r.CropName} {pct_vs_typical(r.adjusted_RYI):+.0f}% ({r.level})"
+                              for _, r in g.iterrows()), include_groups=False)
+    hover = [f"<b>{d}</b><br>" + (f"{n} crop{'s' if n > 1 else ''} at High or Watch:<br>{crops_txt[d]}" if n
+                                  else "no crop at risk")
              for d, n in counts.items()]
     fig = go.Figure(go.Choropleth(
         geojson=load_geojson(), featureidkey="properties.shapeName", locations=counts.index, z=counts.values,
@@ -67,7 +73,10 @@ with right.container(border=True, key="card_home_2"):
     # the 7 crops furthest below typical, largest shortfall first
     top = t[t.level != "Normal"].sort_values("adjusted_RYI").head(7)
     rank_list([(f"{r.DistrictName} · {r.CropName}", r.Province, pct_vs_typical(r.adjusted_RYI))
-               for _, r in top.iterrows()], "Top priority alerts")
+               for _, r in top.iterrows()], "Single crops furthest below typical")
+    st.caption("Each row is one crop in one district, ranked by how far its yield is below the typical (median) "
+               "district: −58% = 58% less per hectare. The map counts crops; this list ranks them, so a district "
+               "with one very low crop can top this list but look light on the map.")
     st.page_link("views/alerts.py", label="See all alerts and actions", icon=":material/arrow_forward:")
 
 # ---------- how it works ----------
