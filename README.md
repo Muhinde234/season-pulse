@@ -5,8 +5,12 @@
 NISR Big Data Hackathon 2026 · Track 1: Agricultural Productivity
 
 🔗 **Live app:** [imboni.streamlit.app](https://imboni.streamlit.app/)  
-👥 **Team:** IGIRIMPUHWE Dositha, IRADUKUNDA HIRWA Nadia · AIMS Rwanda  
-🎬 **Demo video:** we uploaded our demo to the [`demo`](demo/) folder: [`demo/demo.mp4`](demo/demo.mp4). GitHub may not play it in the browser, so open the file and click **Download** (⬇) to watch it.
+👥 **Team Tech Innovators:** IGIRIMPUHWE Dositha, IRADUKUNDA HIRWA Nadia · AIMS Rwanda  
+🎬 **Demo videos** (in the [`demo`](demo/) folder):
+- [`demo/live_demo_Part2.mp4`](demo/live_demo_Part2.mp4): our live demo of the app (Part 2)
+- [`demo/demo.mp4`](demo/demo.mp4): our first demo video
+
+GitHub may not play videos in the browser: open the file and click **Download** (⬇) to watch it.
 
 ---
 
@@ -27,18 +31,26 @@ Imboni combines **NISR's latest official survey results** with **field reports d
 | **Farmers** | A simple report form (Kinyarwanda / English) and how their district compares |
 
 ### App pages
-- **Overview**: national snapshot for the current season: alerts per district, top priorities, how Imboni works and key findings.
+The Map, Alerts and District Profile pages share a **Year** filter, chosen before the Season: the current year shows this season's expected values (last official result plus field reports); 2022–2026 show NISR's official results, so you can look back at what actually happened.
+
+**Monitor**
+- **Overview**: national snapshot for the current season: alerts per district, the crops furthest below typical, how Imboni works and key findings.
+- **District Risk Map**: districts coloured by yield vs the typical district, or by yield in kg/ha, for any crop, year and season; table view downloadable as CSV.
+- **Alerts & Recommended Actions**: every district and crop with a risk level (High, Watch, Normal), why, the production at stake in tonnes, a recommended action and local partners. The tiles follow every filter; the full ranking downloads as CSV.
 - **District Profile**: one district at a glance: risk per crop, both seasons, official yields and their 2022–2026 trend, farming practices vs the national average, rainfall, irrigation, local partners and field reports.
+
+**Plan**
 - **Trends 2022–2026**: how production, harvested area and yield changed per crop (did more food come from more land or better yields?), and which provinces and districts gained or fell back, with plain-language explanations of each calculation.
 - **Road to +50%**: priority crop yields against PSTA 5's yearly target for each crop, a scenario calculator for two data-backed levers, and the districts where the most tonnes can be gained.
 - **Farming Practices**: small- vs large-scale farmers (yields and use of improved seeds, fertilizer, pesticides, irrigation), district adoption maps, and priority districts for input programmes.
 
-1. **District Risk Map**: districts coloured by yield vs the typical district (crop + season filter): last official result, or adjusted by field reports.
-2. **Submit Field Report**: mobile-friendly form: crop, condition (1–5), pests, rainfall problem.
-3. **Alerts & Recommended Actions**: baseline adjusted by field reports, ranked by risk and food dependence, with the production at stake in tonnes (official area × yield).
-4. **Research questions**: the three pillars as questions, each statement labelled fact, hypothesis, assumption, recommendation or gap; the seven steps from a farmer spotting a problem to the outcome, with the data that exists for each; who does what (NISR, MINAGRI, RAB, NAEB, local government, farmer promoters).
-5. **Model & Data Quality**: backtest on every season 2023–2026, rainfall check, how the cleaned files compare with the official tables, and data limitations.
-6. **USSD prototype**: simulates the `*XXX#` menu (Kinyarwanda by default) for farmers without a smartphone. No phone network is involved; reports are saved with source "USSD (simulated)".
+**Report**
+- **Submit Field Report**: mobile-friendly form (Kinyarwanda / English): crop, condition (1–5), pests, rainfall problem. Organisers can load or remove simulated reports and download all reports as CSV.
+- **USSD prototype**: simulates the `*XXX#` menu (Kinyarwanda by default) for farmers without a smartphone. No phone network is involved; reports are saved with source "USSD (simulated)".
+
+**About**
+- **Research questions**: the three pillars as questions, each statement labelled fact, hypothesis, assumption, recommendation or gap; the seven steps from a farmer spotting a problem to the outcome, with the data that exists for each; who does what (NISR, MINAGRI, RAB, NAEB, local government, farmer promoters).
+- **Model & Data Quality**: backtest on every season 2023–2026, rainfall check, how the cleaned files compare with the official tables, and data limitations.
 
 ### Recommended actions (linked to the track's focus areas)
 | Signal | Action |
@@ -115,7 +127,7 @@ RYI 0.7 = "30% below the typical district". Comparing within a season also cance
 - Field reports in the demo are **simulated** unless marked otherwise. The system needs real reporters to reach its full value.
 
 ## 7. How it would scale
-Rwanda has a Farmer Promoter in every village (14,000+). They can submit reports through the app, or through SMS/USSD for farmers without smartphones. NISR could use the reports as an early indicator alongside each season's survey.
+Farmer promoters and Farmer Field School facilitators already reach farmers: in 2024 they were the source of 11.1% and 7.2% of the extension advice farming households received (NISR AHS 2024, Table 29). They could submit reports through the app, or through SMS/USSD for farmers without smartphones. NISR and MINAGRI could use the reports as an early indicator alongside each season's survey.
 
 ## 8. Future work
 - **Role-based views.** Separate screens for farmers, extension officers and planners, each showing what that role needs.
@@ -126,7 +138,10 @@ Rwanda has a Farmer Promoter in every village (14,000+). They can submit reports
 - **Fill the rainfall gap** (Seasons 2025A, 2025B and 2026A) by re-running `fetch_rainfall.py` over more years.
 - **Store reports in a hosted database**, so they survive app restarts.
 
-## 9. Run locally
+## 9. AI use
+We used ChatGPT and Claude for coding support, debugging, research clarification and drafting. Our team chose the problem and the questions, made the project decisions and reviewed the results. We checked important figures and claims against the official NISR and MINAGRI sources linked above, and removed an AI-suggested claim about NISR's method that the source did not support.
+
+## 10. Run locally
 ```bash
 git clone https://github.com/Muhinde234/season-pulse.git
 cd season-pulse
@@ -145,10 +160,11 @@ python prep_official.py    # NISR official SAS tables 2022-2026 -> app_data/ (al
 
 The 37 MB Establishment Census (`data/raw/establishment_census.csv`) is not committed; without it `prep_data.py` keeps the existing cooperative counts.
 
-## 10. Project structure
+## 11. Project structure
 ```
-streamlit_app.py     Streamlit app: navigation, theme
-views/               the pages: home · map · alerts · district · target · practices · report · ussd · model
+streamlit_app.py     Streamlit app: navigation, theme, reloads cached data when app_data/ changes
+views/               the pages: home · map · alerts · district · trends · target · practices · report · ussd ·
+                     questions · model
 core/                data loaders, risk + recommended actions, official-table analysis (official.py), SQLite reports,
                      Kinyarwanda/English labels, styling
 prep_official.py     Reads NISR's official SAS tables (2022A-2026B): alert baseline, backtest, yields, practices, checks
@@ -158,6 +174,6 @@ fetch_rainfall.py    CHIRPS rainfall per district and season (optional)
 app_data/            Small processed files used by the app (the only folder the app reads)
 data/raw/            Source datasets: SAS 2020–2024 (cleaned), EICV, sas_tables/ (official SAS tables 2022–2026), ahs/ (AHS 2024 tables), census not committed
 assets/              Imboni logo and icon
-demo/                Demo video (demo.mp4): download to watch
+demo/                Demo videos (live_demo_Part2.mp4, demo.mp4): download to watch
 .streamlit/          Theme
 ```
