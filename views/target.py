@@ -5,7 +5,7 @@ import streamlit as st
 from plotly.subplots import make_subplots
 
 from core.official import (LATEST_YEAR, PSTA5_URL, PSTA_CROPS, PSTA_YEARS, SOURCE_URL, TARGET_LABEL,
-                           district_priorities, psta_targets, scenario, season_a_yield, target_progress)
+                           district_priorities, psta_targets, season_a_yield, target_progress)
 from core.ui import hero, icon, section
 
 LEAF, GOLD, FOREST, MUTED, GRID = "#1F8A43", "#E0A100", "#0E3B22", "#5E6E65", "rgba(14,59,34,.10)"
@@ -20,8 +20,6 @@ hero("Road to +50%", "Priority crop yields against the PSTA 5 targets, from NISR
 prog = target_progress()
 now = prog.psta_now.iloc[0]
 on_track = prog[prog.status == "On track"]
-sc_default = scenario(1.0, 0.5).merge(prog[["crop", "needed"]], on="crop")
-reach = sc_default[sc_default.total_pct >= 100 * sc_default.needed].crop.tolist()
 
 st.markdown(
     f'<div class="sp-note sp-note-info">{icon("info")}<span>PSTA 5 (MINAGRI) aims for "a 50% increase in '
@@ -34,10 +32,6 @@ kpis = [
      f"{now} target met: {', '.join(on_track.crop) or 'none'}"),
     ("trending_down", RED, prog.iloc[0].crop, "Furthest behind",
      f"{prog.iloc[0].vs_target_now:+.0%} vs its {now} target"),
-    ("scale", GOLD, f"{sc_default.set_index('crop').total_pct.max():.0f}%", "Largest possible gain",
-     f"{sc_default.set_index('crop').total_pct.idxmax()}: both levers below"),
-    ("verified", FOREST, ", ".join(reach) if reach else "None", f"Can reach the {TARGET_LABEL} target",
-     "with both levers set as below"),
 ]
 st.markdown('<div class="sp-kpis">' + "".join(
     f'<div class="sp-kpi" style="--c:{c}"><div class="sp-kpi-ic">{icon(ic)}</div><div><b>{html.escape(str(n))}</b>'
@@ -102,55 +96,7 @@ with st.expander("Yield trend per crop, 2022–2026, against the PSTA 5 targets"
     st.caption("Season A national yield, tonnes per hectare (NISR SAS yield table, 'National' row). Target points "
                "are placed on the Season A that falls in each farming year (2025/26 → Season A 2026).")
 
-# ---------- 3. scenario ----------
-section("Where could the gain come from?", f"extra production on the same land, {LATEST_YEAR} Seasons A + B")
-c1, c2 = st.columns(2)
-catch = c1.slider("Districts below the top quarter catch up by", 0, 100, 100, 10, format="%d%%",
-                  help="Every district whose yield is below the top-quarter (75th percentile) district yield of "
-                       "that season closes this share of the gap. The top quarter is already reached in Rwanda.")
-gap = c2.slider("Small-scale farmers close their gap to large-scale yields by", 0, 100, 50, 10, format="%d%%",
-                help="NISR publishes yields for small-scale (SSF) and large-scale farmers (LSF). Large-scale farmers "
-                     "use far more improved seed, fertilizer and irrigation.")
-sc = scenario(catch / 100, gap / 100).merge(prog[["crop", "needed"]], on="crop").sort_values("total_pct")
-figs = go.Figure()
-figs.add_bar(y=sc.crop, x=sc.catch_pct, orientation="h", name="Districts catch up", marker=dict(color=LEAF),
-             customdata=sc.catch_t, hovertemplate="<b>%{y}</b><br>Districts catch up: +%{x:.1f}% "
-                                                  "(%{customdata:,.0f} t)<extra></extra>")
-figs.add_bar(y=sc.crop, x=sc.gap_pct, orientation="h", name="Small-scale farmers catch up",
-             marker=dict(color=GOLD, cornerradius=4), customdata=sc.gap_t,
-             text=[f"+{v:.0f}%" for v in sc.total_pct], textposition="outside", cliponaxis=False,
-             hovertemplate="<b>%{y}</b><br>Small-scale catch up: +%{x:.1f}% (%{customdata:,.0f} t)<extra></extra>")
-figs.add_scatter(y=sc.crop, x=100 * sc.needed, mode="markers", name=f"Needed for the {TARGET_LABEL} target",
-                 marker=dict(symbol="line-ns-open", size=22, line=dict(width=3, color=FOREST)),
-                 hovertemplate="<b>%{y}</b><br>Needed: +%{x:.0f}% on the Season A " + str(LATEST_YEAR) +
-                               " yield<extra></extra>")
-figs.update_layout(**LAYOUT, barmode="stack", height=380, margin=dict(l=0, r=40, t=10, b=0), bargap=.35,
-                   legend=dict(orientation="h", y=-0.12, x=0, traceorder="normal"),
-                   xaxis=dict(ticksuffix="%", gridcolor=GRID,
-                              range=[0, max(60, sc.total_pct.max() * 1.15, 100 * sc.needed.max() * 1.1)]),
-                   yaxis=dict(showgrid=False))
-figs.update_traces(selector=dict(type="bar"), marker_line_color="white", marker_line_width=2)
-st.plotly_chart(figs, width="stretch", config={"displayModeBar": False})
-passing = sc[sc.total_pct >= 100 * sc.needed].crop.tolist()
-short = sc[sc.total_pct < 100 * sc.needed]
-st.markdown(
-    f'<div class="sp-note sp-note-info">{icon("insights")}<span>'
-    + (f"<b>{', '.join(passing)}</b> would reach the {TARGET_LABEL} target with these levers. " if passing else
-       f"No crop reaches its {TARGET_LABEL} target with these levers alone. ")
-    + (f"Short of it: {', '.join(short.crop.str.lower())}. Crops where large-scale farmers don't out-yield "
-       "small-scale ones gain little from the second lever and need others, such as better varieties and "
-       "irrigation." if len(short) else "")
-    + "</span></div>", unsafe_allow_html=True)
-st.caption("The bars are % more production on the same land in Seasons A + B; the dark tick is the yield gain "
-           f"still needed from Season A {LATEST_YEAR} to the {TARGET_LABEL} target. Comparing the two is approximate.")
-with st.expander("Table view", icon=":material/table_rows:"):
-    st.dataframe(sc.sort_values("total_pct", ascending=False).assign(needed=lambda d: 100 * d.needed).rename(columns={
-        "crop": "Crop", "production_t": f"Production {LATEST_YEAR} (t)", "catch_t": "Districts catch up (t)",
-        "gap_t": "Small-scale catch up (t)", "catch_pct": "Districts (%)", "gap_pct": "Small-scale (%)",
-        "total_pct": "Total (%)", "needed": f"Needed for {TARGET_LABEL} (%)"}).round(1),
-        hide_index=True, width="stretch")
-
-# ---------- 4. where to start ----------
+# ---------- 3. where to start ----------
 section("Where to start", "districts that would add the most tonnes by reaching the yield the best quarter of districts already reach")
 crop = st.selectbox("Crop", PSTA_CROPS, key="tg_crop")
 pr = district_priorities(crop).head(10).iloc[::-1]
@@ -183,9 +129,5 @@ with st.expander("Method and sources", icon=":material/menu_book:"):
 - **Banana:** PSTA 5 targets *cooking* banana, so this page uses NISR's cooking-banana column, not all bananas.
 - **Data:** [NISR SAS releases]({SOURCE_URL}), official tables 2022–2026. District tables add up exactly to NISR's
   national totals.
-- **Districts catch up:** each district below the top-quarter yield of that season and crop closes the chosen share
-  of its gap; extra tonnes = gap × harvested area.
-- **Small-scale catch up:** small-scale farmers' share of harvested area is solved from NISR's national, small-scale
-  and large-scale yields; extra tonnes = that area × (large-scale − small-scale yield) × the chosen share.
-- The two levers are added, so the total is approximate. More production on the same land = higher yield.
+- **Where to start:** each district below the yield the best quarter of districts already reach, for that season and crop, is raised to it; extra tonnes = yield gap × harvested area.
 """)
