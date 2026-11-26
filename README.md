@@ -131,6 +131,7 @@ Farmer promoters and Farmer Field School facilitators already reach farmers: in 
 
 ## 8. Future work
 - **Role-based views.** Separate screens for farmers, extension officers and planners, each showing what that role needs.
+- **A full Kinyarwanda version of the app.** Today only the report form and the USSD prototype are in Kinyarwanda; every page should be.
 - **A plain-language farmer view** (web and USSD). It would cover how the farmer's district and crop did last season, what this season's reports say, and what to watch for. Official data is per district and crop, never per farm, so the view would say "your district" and not "your farm".
 - **The report-to-response loop (Pillar 1).** For each report, record who received it, when it was assessed, what advice was given and when, and how the crop ended. That would make the timely-action hypothesis testable. It also needs contact data for farmer promoters and sector agronomists.
 - **Re-fit the field-report weights** once real reports can be compared with the next official NISR results.
